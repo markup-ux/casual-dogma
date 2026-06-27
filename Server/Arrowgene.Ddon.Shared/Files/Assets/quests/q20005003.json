@@ -1,0 +1,77 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Dweller In The Darkness",
+  "quest_id": 20005003,
+  "base_level": 15,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "HidellPlains",
+  "news_image": 544,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 540
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 90
+    },
+    {
+      "type": "exp",
+      "amount": 720
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Leader's Vest",
+          "item_id": 492,
+          "num": 1
+        },
+        {
+          "comment": "Quality Gala Extract",
+          "item_id": 9361,
+          "num": 5
+        },
+        {
+          "comment": "Black Dye",
+          "item_id": 8140,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 85,
+        "group_id": 4
+      },
+      "enemies": [
+        {
+          "comment": "Brutal Dread Ape",
+          "enemy_id": "0x015502",
+          "named_enemy_params_id": 54,
+          "level": 15,
+          "exp": 1184,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

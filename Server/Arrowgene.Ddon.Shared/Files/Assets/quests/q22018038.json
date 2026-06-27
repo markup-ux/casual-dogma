@@ -1,0 +1,290 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Something Spilling from the Darkness",
+  "quest_id": 22018038,
+  "base_level": 93,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MegadosysPlateau",
+  "news_image": 330,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5500
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 555
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "AreaPoints",
+      "amount": 500
+    },
+    {
+      "type": "exp",
+      "amount": 37800
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Royal Crest Medal (Megadosys District)",
+          "item_id": 18820,
+          "num": 5
+        },
+        {
+          "comment": "Manticore Raw Pelt",
+          "item_id": 17866,
+          "num": 1
+        },
+        {
+          "comment": "Panacea",
+          "item_id": 41,
+          "num": 3
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Crest of Drain Warding",
+          "item_id": 9323,
+          "num": 1,
+          "chance": 0.6
+        },
+        {
+          "comment": "Cracked Amulet",
+          "item_id": 21222,
+          "num": 1,
+          "chance": 0.6
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "comment": "GroupId: 13 - Sword Soldier Dwarf Orcs, War Ready Saurians (Light), War Ready Grimwargs (Light)",
+      "stage_id": {
+        "id": 464,
+        "group_id": 13
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015821",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Sword Soldier Dwarf Orc"
+        },
+        {
+          "enemy_id": "0x015821",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Sword Soldier Dwarf Orc"
+        },
+        {
+          "enemy_id": "0x010470",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Saurian (Light)"
+        },
+        {
+          "enemy_id": "0x010470",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Saurian (Light)"
+        },
+        {
+          "enemy_id": "0x010470",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Saurian (Light)"
+        },
+        {
+          "enemy_id": "0x010470",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Saurian (Light)"
+        },
+        {
+          "enemy_id": "0x010230",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Grimwarg (Light)"
+        },
+        {
+          "enemy_id": "0x010230",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Grimwarg (Light)"
+        },
+        {
+          "enemy_id": "0x010230",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Grimwarg (Light)"
+        }
+      ]
+    },
+    {
+      "comment": "GroupId: 55 - Sword Soldier Dwarf Orcs, War Ready Saurians (Light), War Ready Giant Saurians",
+      "stage_id": {
+        "id": 464,
+        "group_id": 55
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015821",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Sword Soldier Dwarf Orc"
+        },
+        {
+          "enemy_id": "0x015821",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Sword Soldier Dwarf Orc"
+        },
+        {
+          "enemy_id": "0x010470",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Saurian (Light)"
+        },
+        {
+          "enemy_id": "0x010470",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Saurian (Light)"
+        },
+        {
+          "enemy_id": "0x010471",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Giant Saurian"
+        },
+        {
+          "enemy_id": "0x010471",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Giant Saurian"
+        },
+        {
+          "enemy_id": "0x010471",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Giant Saurian"
+        }
+      ]
+    },
+    {
+      "comment": "GroupId: 4 - War-Ready Goremanticore (Light), War Ready Grimwargs (Light)",
+      "stage_id": {
+        "id": 590,
+        "group_id": 4
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015220",
+          "level": 93,
+          "exp": 44000,
+          "is_boss": true,
+          "comment": "War-Ready Goremanticore (Light)"
+        },
+        {
+          "enemy_id": "0x010230",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Grimwarg (Light)"
+        },
+        {
+          "enemy_id": "0x010230",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Grimwarg (Light)"
+        },
+        {
+          "enemy_id": "0x010230",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War Ready Grimwarg (Light)"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 464
+      },
+      "npc_id": "Kirsty0",
+      "message_id": 27939
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Accept",
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [0]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [1]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [1]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [2]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [2]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 464
+      },
+      "announce_type": "Update",
+      "npc_id": "Kirsty0",
+      "message_id": 27941
+    }
+  ]
+}

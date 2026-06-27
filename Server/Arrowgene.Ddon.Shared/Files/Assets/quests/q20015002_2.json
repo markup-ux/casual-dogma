@@ -1,0 +1,118 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Phantoms in the Moonlight (III)",
+  "quest_id": 20015002,
+  "base_level": 21,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BreyaCoast",
+  "news_image": 25,
+  "variant_index": 2,
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 830
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 570
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 110
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Sorcery Bangles",
+          "item_id": 812,
+          "num": 1
+        },
+        {
+          "comment": "Murg Armguards",
+          "item_id": 599,
+          "num": 1
+        },
+        {
+          "comment": "Healing Elixir",
+          "item_id": 7552,
+          "num": 2
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 85
+      },
+      "starting_index": 3,
+      "enemies": [
+        {
+          "comment": "Vigilant Mist Hunter",
+          "enemy_id": "0x011031",
+          "named_enemy_params_id": 53,
+          "level": 21,
+          "exp": 114,
+          "hm_present_no": 69
+        },
+        {
+          "comment": "Vigilant Mist Sorcerer",
+          "enemy_id": "0x011033",
+          "named_enemy_params_id": 53,
+          "level": 21,
+          "exp": 114,
+          "hm_present_no": 71
+        },
+        {
+          "comment": "Vigilant Mist Hunter",
+          "enemy_id": "0x011031",
+          "named_enemy_params_id": 53,
+          "level": 21,
+          "exp": 114,
+          "hm_present_no": 69
+        },
+        {
+          "comment": "Vigilant Mist Sorcerer",
+          "enemy_id": "0x011033",
+          "named_enemy_params_id": 53,
+          "level": 21,
+          "exp": 114,
+          "hm_present_no": 71
+        },
+        {
+          "comment": "Vigilant Mist Hunter",
+          "enemy_id": "0x011031",
+          "named_enemy_params_id": 53,
+          "level": 21,
+          "exp": 114,
+          "hm_present_no": 69
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Raw",
+      "check_commands": [
+        {"type": "IngameTimeRangeNotEq", "Param1": 6, "Param2": 18},
+        {"type": "StageNo", "Param1": 100}
+      ]  
+    },
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

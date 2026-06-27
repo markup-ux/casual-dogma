@@ -1,0 +1,404 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "[Hard] The Green Demon's Return (Seven Calamities)",
+  "quest_id": 21016022,
+  "base_level": 80,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MorrowForest",
+  "news_image": 900,
+  "order_conditions": [
+    {"type": "AreaRank", "Param1": 16, "Param2": 15},
+    {"type": "MainQuestCompleted", "Param1": 20250}
+  ],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 48420
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5138
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 940
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "item_id": "UnappraisedFlowerTrinketKing",
+          "num": 2
+        },
+        {
+          "item_id": "SuperiorStrongGalaExtract",
+          "num": 3
+        },
+        {
+          "item_id": "Panacea",
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 374,
+        "group_id": 15
+      },
+      "starting_index": 8,
+      "enemies": [
+        {
+          "comment": "Phindymian Seeker",
+          "enemy_id": "0x011061",
+          "hm_present_no": 95,
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Phindymian Seeker",
+          "enemy_id": "0x011061",
+          "hm_present_no": 95,
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Phindymian Seeker",
+          "enemy_id": "0x011061",
+          "hm_present_no": 95,
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Phindymian Element Archer",
+          "enemy_id": "0x011067",
+          "hm_present_no": 101,
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Phindymian Element Archer",
+          "enemy_id": "0x011067",
+          "hm_present_no": 101,
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Infected Snow Harpy (Severe)",
+          "enemy_id": "0x010612",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Infected Snow Harpy (Severe)",
+          "enemy_id": "0x010612",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Infected Snow Harpy (Severe)",
+          "enemy_id": "0x010612",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Infected Snow Harpy (Severe)",
+          "enemy_id": "0x010612",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 385,
+        "group_id": 20
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Infected Gorecyclops (Slight)",
+          "enemy_id": "0x015012",
+          "infection_type": 1,
+          "level": 80,
+          "exp": 20175,
+          "is_boss": true,
+          "index": 0
+        },
+        {
+          "comment": "Infected Snow Harpy (Severe)",
+          "enemy_id": "0x011067",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 3
+        },
+        {
+          "comment": "Infected Snow Harpy (Severe)",
+          "enemy_id": "0x011067",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 4
+        },
+        {
+          "comment": "Infected Snow Harpy (Severe)",
+          "enemy_id": "0x011067",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 5
+        },
+        {
+          "comment": "Infected Snow Harpy (Severe)",
+          "enemy_id": "0x011067",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 6
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 385,
+        "group_id": 14
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Infected Behemoth (Severe)",
+          "enemy_id": "0x015712",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 20175,
+          "is_boss": true
+        },
+        {
+          "comment": "Infected Direwolf (Severe)",
+          "enemy_id": "0x010209",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Infected Direwolf (Severe)",
+          "enemy_id": "0x010209",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Infected Direwolf (Severe)",
+          "enemy_id": "0x010209",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 386,
+        "group_id": 2
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Severely Infected Griffin (Severe)",
+          "enemy_id": "0x015310",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 20175,
+          "is_boss": true,
+          "index": 2
+        },
+        {
+          "comment": "Severely Infected Pixie Stymphalides (Severe)",
+          "enemy_id": "0x010614",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 6
+        },
+        {
+          "comment": "Severely Infected Pixie Stymphalides (Severe)",
+          "enemy_id": "0x010614",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 7
+        },
+        {
+          "comment": "Severely Infected Pixie Stymphalides (Severe)",
+          "enemy_id": "0x010614",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 8
+        },
+        {
+          "comment": "Severely Infected Pixie Stymphalides (Severe)",
+          "enemy_id": "0x010614",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 9
+        },
+        {
+          "comment": "Gorecyclops",
+          "enemy_id": "0x015010",
+          "level": 80,
+          "exp": 20175,
+          "is_boss": true,
+          "index": 10
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "NpcTalkAndOrder",
+          "stage_id": {
+            "id": 340
+          },
+          "npc_id": "Arthfael",
+          "message_id": 19990
+        },
+        {
+          "type": "SeekOutEnemiesAtMarkedLocation",
+          "announce_type": "Accept",
+          "result_commands": [
+            {
+              "comment": "Idle dialogue",
+              "type": "QstTalkChg",
+              "Param1": 2600,
+              "Param2": 19991
+            }
+          ],
+          "groups": [0]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 0 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "set_flags": [1],
+          "check_flags": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "check_flags": [3, 4, 5]
+        },
+        {
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 340
+          },
+          "npc_id": "Arthfael",
+          "message_id": 19992
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [1]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [1]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [3]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [2]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [4]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [3]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [3]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [5]
+        }
+      ]
+    }
+  ]
+}

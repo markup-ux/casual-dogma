@@ -1,0 +1,143 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "King of the Fairies",
+    "quest_id": 21015021,
+    "base_level": 80,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "FaranaPlains",
+    "news_image": 262,
+    "order_conditions": [{"type": "AreaRank", "Param1": 15, "Param2": 13}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5106
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 665
+        },
+        {
+            "type": "exp",
+            "amount": 36315
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "PixieCrown",
+                    "num": 1
+                },
+                {
+                    "item_id": "FineFemur",
+                    "num": 2
+                },
+                {
+                    "item_id": "UnappraisedWindTrinketGeneral",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 397,
+                "group_id": 0
+            },
+            "starting_index": 7,
+            "enemies": [
+                {
+                    "comment": "Pixie King",
+                    "enemy_id": "0x010195",
+                    "level": 80,
+                    "exp": 100875,
+                    "is_boss": true
+                },
+                {
+                    "comment": "High Pixie Pow",
+                    "enemy_id": "0x010192",
+                    "level": 80,
+                    "exp": 630,
+                    "repop_count": 1,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "High Pixie Pow",
+                    "enemy_id": "0x010192",
+                    "level": 80,
+                    "exp": 630,
+                    "repop_count": 1,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "High Pixie Pow",
+                    "enemy_id": "0x010192",
+                    "level": 80,
+                    "exp": 630,
+                    "repop_count": 1,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "High Pixie Pow",
+                    "enemy_id": "0x010192",
+                    "level": 80,
+                    "exp": 630,
+                    "repop_count": 1,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "High Pixie Pow",
+                    "enemy_id": "0x010192",
+                    "level": 80,
+                    "exp": 630,
+                    "repop_count": 1,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "Gorechimera",
+                    "enemy_id": "0x015201",
+                    "level": 80,
+                    "exp": 20175,
+                    "is_boss": true
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 371
+            },
+            "npc_id": "Dewey",
+            "message_id": 20004
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2510, "Param2": 20005}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 371
+            },
+            "announce_type": "Update",
+            "npc_id": "Dewey",
+            "message_id": 20006
+        }
+    ]
+}

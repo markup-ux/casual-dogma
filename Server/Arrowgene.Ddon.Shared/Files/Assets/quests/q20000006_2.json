@@ -1,0 +1,138 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Evil Lurking in the Tombs (III)",
+  "quest_id": 20000006,
+  "base_level": 58,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "HidellPlains",
+  "news_image": 541,
+  "order_conditions": [{"type": "AreaRank", "Param1": 1, "Param2": 9}],
+  "variant_index": 2,
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 2100
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1910
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 190
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Spirit Crystal",
+          "item_id": 7909,
+          "num": 1
+        },
+        {
+          "comment": "Ancient Knight's Emblem",
+          "item_id": 8021,
+          "num": 1
+        },
+        {
+          "comment": "Sinister Black Cloth",
+          "item_id": 7947,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 238,
+        "group_id": 9
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Dangerous Death Knight",
+          "enemy_id": "0x010310",
+          "named_enemy_params_id": 56,
+          "level": 58,
+          "exp": 1660,
+          "is_boss": true
+        },
+        {
+          "comment": "Dangerous Living Armor",
+          "enemy_id": "0x010306",
+          "named_enemy_params_id": 56,
+          "level": 57,
+          "exp": 1148
+        },
+        {
+          "comment": "Dangerous Living Armor",
+          "enemy_id": "0x010306",
+          "named_enemy_params_id": 56,
+          "level": 57,
+          "exp": 1148
+        },
+        {
+          "comment": "Dangerous Living Armor",
+          "enemy_id": "0x010306",
+          "named_enemy_params_id": 56,
+          "level": 57,
+          "exp": 1148
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NewNpcTalkAndOrder",
+      "stage_id": {
+        "id": 1,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "npc_id": "Christoph",
+      "message_id": 11011,
+      "flags": [
+        {
+          "type": "QstLayout",
+          "action": "Set",
+          "value": 988
+        }
+      ]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Accept",
+      "groups": [ 0 ],
+      "result_commands": [
+        {
+          "comment": "Idle dialogue",
+          "type": "QstTalkChg",
+          "Param1": 513,
+          "Param2": 11016
+        }
+      ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "NewTalkToNpc",
+      "stage_id": {
+        "id": 1,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "announce_type": "Update",
+      "npc_id": "Christoph",
+      "message_id": 11014
+    }
+  ]
+}

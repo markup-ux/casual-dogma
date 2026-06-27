@@ -1,0 +1,110 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Barren Black Wings",
+    "quest_id": 20085005,
+    "base_level": 47,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "EasternZandora",
+    "order_conditions": [{"type": "AreaRank", "Param1": 11, "Param2": 3}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1550
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 280
+        },
+        {
+            "type": "exp",
+            "amount": 2530
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Gleipnir",
+                    "item_id": 7959,
+                    "num": 1
+                },
+                {
+                    "comment": "Cockatrice Poison Gland",
+                    "item_id": 7745,
+                    "num": 1
+                },
+                {
+                    "comment": "Panacea",
+                    "item_id": 41,
+                    "num": 1
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 1,
+                "group_id": 459
+            },
+            "enemies": [
+                {
+                    "comment": "Brutal Cockatrice",
+                    "enemy_id": "0x015301",
+                    "named_enemy_params_id": 54,
+                    "start_think_tbl_no": 1,
+                    "level": 47,
+                    "exp": 5218,
+                    "is_boss": true
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 61,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "npc_id": "Sonya",
+            "message_id": 16046
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "spawn_time_start": "18 * 3600000 + 0 * 60000",
+            "spawn_time_end": "6 * 3600000 + 59 * 60000",
+            "result_commands": [
+                {
+                    "comment": "Idle dialogue",
+                    "type": "QstTalkChg",
+                    "Param1": 1808,
+                    "Param2": 16047
+                }
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 61,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "announce_type": "Update",
+            "npc_id": "Sonya",
+            "message_id": 16048
+        }
+    ]
+}

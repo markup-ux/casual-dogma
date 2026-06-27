@@ -1,0 +1,243 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Seeds of Contemplation",
+    "quest_id": 21017008,
+    "base_level": 78,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "KingalCanyon",
+    "news_image": 615,
+    "order_conditions": [{"type": "AreaRank", "Param1": 17, "Param2": 13}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5073
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 22110
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "SeabirdSyrinx",
+                    "num": 1
+                },
+                {
+                    "item_id": "StillBeatingHeart",
+                    "num": 1
+                },
+                {
+                    "item_id": "FineFemur",
+                    "num": 1
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 26
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 78,
+                    "exp": 3685,
+                    "index": 4
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 78,
+                    "exp": 3685,
+                    "index": 5
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 78,
+                    "exp": 3685,
+                    "index": 6
+                },
+                {
+                    "comment": "High Pixie Zolda",
+                    "enemy_id": "0x010191",
+                    "level": 78,
+                    "exp": 3685,
+                    "index": 8
+                },
+                {
+                    "comment": "High Pixie Zolda",
+                    "enemy_id": "0x010191",
+                    "level": 78,
+                    "exp": 3685,
+                    "index": 9
+                },
+                {
+                    "comment": "High Pixie Zolda",
+                    "enemy_id": "0x010191",
+                    "level": 78,
+                    "exp": 3685,
+                    "index": 10
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 33
+            },
+            "starting_index": 3,
+            "enemies": [
+                {
+                    "comment": "Grigori",
+                    "enemy_id": "0x015900",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Grigori",
+                    "enemy_id": "0x015900",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "High Pixie Pow",
+                    "enemy_id": "0x010192",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "High Pixie Pow",
+                    "enemy_id": "0x010192",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "High Pixie Pow",
+                    "enemy_id": "0x010192",
+                    "level": 78,
+                    "exp": 3685
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 422,
+                "group_id": 6
+            },
+            "starting_index": 6,
+            "enemies": [
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Severely Infected Demon",
+                    "enemy_id": "0x015910",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Severely Infected Demon",
+                    "enemy_id": "0x015910",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Severely Infected Demon",
+                    "enemy_id": "0x015910",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 78,
+                    "exp": 3685
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 373
+            },
+            "npc_id": "Adelin",
+            "message_id": 19656
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2708, "Param2": 19657}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [1]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [1]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 373
+            },
+            "announce_type": "Update",
+            "npc_id": "Adelin",
+            "message_id": 19658
+        }
+    ]
+}

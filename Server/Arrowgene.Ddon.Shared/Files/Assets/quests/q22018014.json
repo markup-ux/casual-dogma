@@ -1,0 +1,167 @@
+﻿{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Dangerous Daydream",
+  "quest_id": 22018014,
+  "base_level": 85,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "RathniteFoothills",
+  "news_image": 330,
+  "order_conditions": [{"type": "MainQuestCompleted", "Param1": 30040}, {"type": "AreaRank", "Param1": 18, "Param2": 10}],
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5500
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 665
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "AreaPoints",
+      "amount": 500
+    },
+    {
+      "type": "exp",
+      "amount": 37800
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Stone-Curser's Tears",
+          "item_id": 17856,
+          "num": 1
+        },
+        {
+          "comment": "Blood-Colored Spiral Shell",
+          "item_id": 17910,
+          "num": 3
+        },
+        {
+          "comment": "Flesh-Eating Snail",
+          "item_id": 17909,
+          "num": 6
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Beast Luring Meat",
+          "item_id": 18661,
+          "num": 2,
+          "chance": 0.6
+        },
+        {
+          "comment": "Fluttering Rags",
+          "item_id": 17929,
+          "num": 2,
+          "chance": 0.6
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "comment": "GroupId: 10 - War-Ready Goremanticore, Strix, War-Ready Wargs",
+      "stage_id": {
+        "id": 479,
+        "group_id": 10
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015220",
+          "level": 85,
+          "exp": 220000,
+          "is_boss": true,
+          "comment": "War-Ready Goremanticore (Light Armor)"
+        },
+        {
+          "enemy_id": "0x010610",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Strix"
+        },
+        {
+          "enemy_id": "0x010610",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Strix"
+        },
+        {
+          "enemy_id": "0x010610",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Strix"
+        },
+        {
+          "enemy_id": "0x010230",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War-Ready Warg (Light Armor)"
+        },
+        {
+          "enemy_id": "0x010230",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War-Ready Warg (Light Armor)"
+        },
+        {
+          "enemy_id": "0x010230",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War-Ready Warg (Light Armor)"
+        },
+        {
+          "enemy_id": "0x010230",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War-Ready Warg (Light Armor)"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 467
+      },
+      "npc_id": "Michaela",
+      "message_id": 23590
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Accept",
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [0]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 467
+      },
+      "announce_type": "Update",
+      "npc_id": "Michaela",
+      "message_id": 23593
+    }
+  ]
+}

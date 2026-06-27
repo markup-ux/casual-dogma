@@ -1,0 +1,434 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "High Difficulty: Demon Eradication (Dual Crests ★ Debut)",
+  "quest_id": 21000019,
+  "base_level": 65,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "order_conditions": [ { "type": "AreaRank", "Param1": 8, "Param2": 13 } ],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 9379
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 2144
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 275
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Crest of Twilight (Decreased Dark Resist)",
+          "item_id": 16065,
+          "num": 2
+        },
+        {
+          "comment": "Crest of Twilight",
+          "item_id": 9266,
+          "num": 2
+        },
+        {
+          "comment": "Crest of Diminished Dark Resist",
+          "item_id": 9276,
+          "num": 2
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 167,
+        "group_id": 0
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 65,
+          "exp": 792,
+          "index": 0
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 65,
+          "exp": 792,
+          "index": 1
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 65,
+          "exp": 792,
+          "index": 2
+        },
+        {
+          "comment": "Empress Ghost",
+          "enemy_id": "0x015605",
+          "level": 65,
+          "exp": 4900,
+          "is_boss": true,
+          "index": 5
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 167,
+        "group_id": 1
+      },
+      "enemies": [
+        {
+          "comment": "Dark Skeleton Brute",
+          "enemy_id": "0x010324",
+          "level": 65,
+          "exp": 792
+        },
+        {
+          "comment": "Dark Skeleton Brute",
+          "enemy_id": "0x010324",
+          "level": 65,
+          "exp": 792
+        },
+        {
+          "comment": "Dark Skeleton Brute",
+          "enemy_id": "0x010324",
+          "level": 65,
+          "exp": 792
+        },
+        {
+          "comment": "Dark Skeleton Brute",
+          "enemy_id": "0x010324",
+          "level": 65,
+          "exp": 792
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 431,
+        "group_id": 1
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Shadow Goblin Leader",
+          "enemy_id": "0x011160",
+          "level": 65,
+          "exp": 792,
+          "index": 2
+        },
+        {
+          "comment": "Shadow Goblin Leader",
+          "enemy_id": "0x011160",
+          "level": 65,
+          "exp": 792,
+          "index": 3
+        },
+        {
+          "comment": "Shadow Goblin Leader",
+          "enemy_id": "0x011160",
+          "level": 65,
+          "exp": 792,
+          "index": 4
+        },
+        {
+          "comment": "Shadow Sling Goblin",
+          "enemy_id": "0x011132",
+          "level": 65,
+          "exp": 792,
+          "index": 6
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 65,
+          "exp": 792,
+          "index": 9
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 65,
+          "exp": 792,
+          "index": 10
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 431,
+        "group_id": 5
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Shadow Chimera",
+          "enemy_id": "0x015203",
+          "level": 63,
+          "exp": 3908,
+          "is_boss": true,
+          "index": 1
+        },
+        {
+          "comment": "Shadow Wolf",
+          "enemy_id": "0x010206",
+          "level": 65,
+          "exp": 792,
+          "index": 4
+        },
+        {
+          "comment": "Shadow Wolf",
+          "enemy_id": "0x010206",
+          "level": 65,
+          "exp": 792,
+          "index": 5
+        },
+        {
+          "comment": "Shadow Wolf",
+          "enemy_id": "0x010206",
+          "level": 65,
+          "exp": 792,
+          "index": 6
+        },
+        {
+          "comment": "Shadow Harpy",
+          "enemy_id": "0x010607",
+          "level": 65,
+          "exp": 792,
+          "index": 7
+        },
+        {
+          "comment": "Shadow Harpy",
+          "enemy_id": "0x010607",
+          "level": 65,
+          "exp": 792,
+          "index": 9
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 431,
+        "group_id": 7
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Empress Ghost",
+          "enemy_id": "0x015605",
+          "level": 65,
+          "exp": 4900,
+          "is_boss": true,
+          "index": 6
+        },
+        {
+          "comment": "Eliminator",
+          "enemy_id": "0x010508",
+          "level": 65,
+          "exp": 792,
+          "index": 7
+        },
+        {
+          "comment": "Eliminator",
+          "enemy_id": "0x010508",
+          "level": 65,
+          "exp": 792,
+          "index": 8
+        },
+        {
+          "comment": "Empress Ghost",
+          "enemy_id": "0x015605",
+          "level": 65,
+          "exp": 4900,
+          "is_boss": true,
+          "index": 9
+        },
+        {
+          "comment": "Eliminator",
+          "enemy_id": "0x010508",
+          "level": 65,
+          "exp": 792,
+          "index": 10
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 65,
+          "exp": 792,
+          "index": 11
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 65,
+          "exp": 792,
+          "index": 12
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 65,
+          "exp": 792,
+          "index": 13
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 65,
+          "exp": 792,
+          "index": 14
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "NpcTalkAndOrder",
+          "stage_id": {
+            "id": 66
+          },
+          "npc_id": "Scherzo",
+          "message_id": 17078
+        },
+        {
+          "type": "SeekOutEnemiesAtMarkedLocation",
+          "announce_type": "Accept",
+          "result_commands": [
+            {
+              "comment": "Idle dialogue",
+              "type": "QstTalkChg",
+              "Param1": 1905,
+              "Param2": 17079
+            }
+          ],
+          "groups": [0, 1]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [0, 1]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "set_flags": [1],
+          "check_flags": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "check_flags": [3, 4, 5]
+        },
+        {
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 66
+          },
+          "npc_id": "Scherzo",
+          "message_id": 17080
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [2]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [3]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [3]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [3]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [4]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [4]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [4]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [5]
+        }
+      ]
+    }
+  ]
+}

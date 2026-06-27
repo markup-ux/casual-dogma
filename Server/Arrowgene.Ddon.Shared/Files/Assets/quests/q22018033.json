@@ -1,0 +1,152 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Ancient Evil Eye",
+    "quest_id": 22018033,
+    "base_level": 90,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "FeryanaWilderness",
+    "news_image": 330,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5500
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 665
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "AreaPoints",
+            "amount": 500
+        },
+        {
+            "type": "exp",
+            "amount": 50400
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Evil Eye Lens",
+                    "item_id": 17863,
+                    "num": 1
+                },
+                {
+                    "comment": "Superior Strong Gala Extract",
+                    "item_id": 9364,
+                    "num": 3
+                },
+                {
+                    "comment": "Panacea",
+                    "item_id": 41,
+                    "num": 3
+                }
+            ]
+        },
+        {
+            "type": "random",
+            "loot_pool": [
+                {
+                    "comment": "Crest of Shock Prevention",
+                    "item_id": 9321,
+                    "num": 1,
+                    "chance": 0.6
+                },
+                {
+                    "comment": "Cursed Spine",
+                    "item_id": 19651,
+                    "num": 1,
+                    "chance": 0.4
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "comment": "GroupId: 11 - Evil Eye, Tentacles",
+            "stage_id": {
+                "id": 570,
+                "group_id": 11
+            },
+            "enemies": [
+                {
+                    "enemy_id": "0x015400",
+                    "level": 90,
+                    "exp_scheme": "automatic",
+                    "is_boss": true,
+                    "comment": "Evil Eye"
+                }
+            ]
+        },
+        {
+            "comment": "Tentacles",
+            "stage_id": {
+                "id": 570,
+                "group_id": 13
+            },
+            "placement_type": "Manual",
+            "enemies": [
+                {
+                    "comment": "Evil Eye (Tentacle)",
+                    "enemy_id": "0x011410",
+                    "level": 90,
+                    "exp_scheme": "automatic",
+                    "start_think_tbl_no": 1,
+                    "index": 3,
+                    "enemy_target_types_id": 1,
+                    "is_required": false
+                },
+                {
+                    "comment": "Evil Eye (Tentacle)",
+                    "enemy_id": "0x011410",
+                    "level": 90,
+                    "exp_scheme": "automatic",
+                    "start_think_tbl_no": 1,
+                    "index": 4,
+                    "enemy_target_types_id": 1,
+                    "is_required": false
+                },
+                {
+                    "comment": "Evil Eye (Tentacle)",
+                    "enemy_id": "0x011410",
+                    "level": 90,
+                    "exp_scheme": "automatic",
+                    "start_think_tbl_no": 1,
+                    "index": 5,
+                    "enemy_target_types_id": 1,
+                    "is_required": false
+                }
+            ]
+        }
+    ],
+    "processes": [
+        {
+            "blocks": [
+                {
+                    "type": "DiscoverEnemy",
+                    "groups": [ 0 ]
+                },
+                {
+                    "type": "KillGroup",
+                    "announce_type": "Accept",
+                    "reset_group": false,
+                    "groups": [ 0 ]
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "comment": "Spawn Tentacles",
+                    "type": "SpawnGroup",
+                    "groups": [ 1 ]
+                }
+            ]
+        }
+    ]
+}

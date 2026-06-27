@@ -1,0 +1,138 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Stagnant Wings",
+    "quest_id": 21016021,
+    "base_level": 78,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "MorrowForest",
+    "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 13}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5073
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 33615
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "GriffinSpinel",
+                    "num": 1
+                },
+                {
+                    "item_id": "EaglesDamagedTalon",
+                    "num": 1
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 403,
+                "group_id": 3
+            },
+            "starting_index": 1,
+            "enemies": [
+                {
+                    "comment": "Severely Infected Griffin (Critical)",
+                    "enemy_id": "0x015310",
+                    "infection_type": 3,
+                    "level": 78,
+                    "exp": 92195,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Severely Infected Stymphalides (Severe)",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Severely Infected Stymphalides (Severe)",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Severely Infected Stymphalides (Severe)",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Severely Infected Pixie - Seeds of Corruption (Severe)",
+                    "enemy_id": "0x010172",
+                    "infection_type": 2,
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Severely Infected Pixie - Seeds of Corruption (Severe)",
+                    "enemy_id": "0x010172",
+                    "infection_type": 2,
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Severely Infected Pixie - Seeds of Corruption (Severe)",
+                    "enemy_id": "0x010172",
+                    "infection_type": 2,
+                    "level": 78,
+                    "exp": 3685
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 374
+            },
+            "npc_id": "Thorin",
+            "message_id": 20008
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "groups": [0],
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2604, "Param2": 20009}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 374
+            },
+            "announce_type": "Update",
+            "npc_id": "Thorin",
+            "message_id": 20010
+        }
+    ]
+}

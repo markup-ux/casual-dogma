@@ -1,0 +1,190 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Situation in the Waterway",
+  "quest_id": 21000051,
+  "base_level": 68,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "DoweValley",
+  "order_conditions": [{"type": "AreaRank", "Param1": 5, "Param2": 13}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 10665
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 2243
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 290
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Prism Crystal",
+          "item_id": 11808,
+          "num": 3
+        },
+        {
+          "comment": "Gleipnir",
+          "item_id": 7959,
+          "num": 1
+        },
+        {
+          "comment": "Panacea",
+          "item_id": 41,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 329,
+        "group_id": 7
+      },
+      "starting_index": 3,
+      "enemies": [
+        {
+          "comment": "Infected Gorecyclops (Severe)",
+          "enemy_id": "0x015012",
+          "level": 68,
+          "exp": 5925,
+          "is_boss": true,
+          "infection_type": 2
+        },
+        {
+          "comment": "Gargoyle",
+          "enemy_id": "0x010603",
+          "level": 68,
+          "exp": 1185
+        },
+        {
+          "comment": "Gargoyle",
+          "enemy_id": "0x010603",
+          "level": 68,
+          "exp": 1185
+        },
+        {
+          "comment": "Gargoyle",
+          "enemy_id": "0x010603",
+          "level": 68,
+          "exp": 1185
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 329,
+        "group_id": 8
+      },
+      "enemies": [
+        {
+          "comment": "Frost Skeleton Brute",
+          "enemy_id": "0x010321",
+          "start_think_tbl_no": 2,
+          "level": 68,
+          "exp": 1185
+        },
+        {
+          "comment": "Frost Skeleton Brute",
+          "enemy_id": "0x010321",
+          "start_think_tbl_no": 2,
+          "level": 68,
+          "exp": 1185
+        },
+        {
+          "comment": "Frost Skeleton Brute",
+          "enemy_id": "0x010321",
+          "start_think_tbl_no": 2,
+          "level": 68,
+          "exp": 1185
+        },
+        {
+          "comment": "Frost Skeleton Brute",
+          "enemy_id": "0x010321",
+          "start_think_tbl_no": 2,
+          "level": 68,
+          "exp": 1185
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "DiscoverEnemy",
+          "groups": [0],
+          "result_commands": [{"type": "QstLayoutFlagOn", "Param1": 3261}]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "announce_type": "Accept",
+          "groups": [0],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 0}],
+          "check_commands": [{"type": "MyQstFlagOff", "Param1": 1}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "comment": "Group 0 boss HP check",
+          "type": "Raw",
+          "check_commands": [{"type": "EmHpLess", "Param1": 820, "Param2": 7, "Param3": 3, "Param4": 40}]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "groups": [1],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 1}, {"type": "StartTimer", "Param1": 1, "Param2": 30}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 1}],
+          "check_commands": [{"type": "IsMyquestLayoutFlagOff", "Param1": 3263}, {"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 618}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "IsEndTimer", "Param1": 1}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 620}, {"type": "StartTimer", "Param1": 2, "Param2": 15}],
+          "check_commands": [{"type": "IsEndTimer", "Param1": 2}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 619}, {"type": "QstLayoutFlagOn", "Param1": 3263}]
+        }
+      ]
+    }
+  ]
+}

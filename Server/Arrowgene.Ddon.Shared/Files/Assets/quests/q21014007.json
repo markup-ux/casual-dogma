@@ -1,0 +1,301 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Door of Treasures: The Green Over Rainbow",
+    "quest_id": 21014007,
+    "base_level": 70,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ElanWaterGrove",
+    "news_image": 583,
+    "order_conditions": [{"type": "AreaRank", "Param1": 14, "Param2": 4}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 13854
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "exp",
+            "amount": 7675
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Sharp Back Spine",
+                    "item_id": 15969,
+                    "num": 1
+                },
+                {       
+                    "comment": "Bronze Tail Feather",               
+                    "item_id": 15962,
+                    "num": 3
+                },
+                {
+                    "comment": "Panacea",       
+                    "item_id": 41,
+                    "num": 3                    
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 415,
+                "group_id": 7
+            },
+            "comment": "105000G",
+            "enemies": [
+                {
+                    "comment": "Treasure-Bearing Ent",
+                    "enemy_id": "0x015031",
+                    "named_enemy_params_id": 1579,
+                    "level": 70,
+                    "exp": 4940,
+                    "is_boss": true,
+                    "drop_items": [
+                        {
+                            "item_id": 7992,
+                            "item_min": 1,
+                            "item_max": 3,
+                            "quality": 0,
+                            "drop_chance": 0.9
+                        },
+                        {
+                            "item_id": 7987,
+                            "item_min": 1,
+                            "item_max": 6,
+                            "quality": 0,
+                            "drop_chance": 1
+                        },
+                        {
+                            "item_id": 7971,
+                            "item_min": 1,
+                            "item_max": 5,
+                            "quality": 0,
+                            "drop_chance": 1
+                        },
+                        {
+                            "item_id": 19508,
+                            "item_min": 11,
+                            "item_max": 11,
+                            "quality": 0,
+                            "drop_chance": 1.0
+                        }
+                    ]
+                },
+                {
+                    "comment": "Treasure-Bearing Spineback",
+                    "enemy_id": "0x015506",
+                    "named_enemy_params_id": 1579,
+                    "level": 70,
+                    "exp": 5700,
+                    "is_boss": true,
+                    "drop_items": [
+                        {
+                            "item_id": 15969,
+                            "item_min": 1,
+                            "item_max": 1,
+                            "quality": 0,
+                            "drop_chance": 1
+                        },
+                        {
+                            "item_id": 19508,
+                            "item_min": 14,
+                            "item_max": 14,
+                            "quality": 0,
+                            "drop_chance": 1
+                        }
+                    ]
+                },
+                {
+                    "comment": "Treasure-Bearing Spineback",
+                    "enemy_id": "0x015506",
+                    "named_enemy_params_id": 1579,
+                    "level": 70,
+                    "exp": 5700,
+                    "is_boss": true,
+                    "drop_items": [
+                        {
+                            "item_id": 15969,
+                            "item_min": 1,
+                            "item_max": 1,
+                            "quality": 0,
+                            "drop_chance": 1
+                        },
+                        {
+                            "item_id": 19508,
+                            "item_min": 14,
+                            "item_max": 14,
+                            "quality": 0,
+                            "drop_chance": 1
+                        }
+                    ]
+                },
+                {
+                    "comment": "Treasure-Bearing Stymphalides",
+                    "enemy_id": "0x010611",
+                    "named_enemy_params_id": 1579,
+                    "start_think_tbl_no": 2,
+                    "level": 70,
+                    "exp": 532,
+                    "drop_items": [
+                        {
+                            "item_id": 15962,
+                            "item_min": 1,
+                            "item_max": 2,
+                            "quality": 0,
+                            "drop_chance": 0.3
+                        },
+                        {
+                            "item_id": 19508,
+                            "item_min": 11,
+                            "item_max": 11,
+                            "quality": 0,
+                            "drop_chance": 1
+                        }
+                    ]
+                },
+                {
+                    "comment": "Treasure-Bearing Stymphalides",
+                    "enemy_id": "0x010611",
+                    "named_enemy_params_id": 1579,
+                    "start_think_tbl_no": 2,
+                    "level": 70,
+                    "exp": 532,
+                    "drop_items": [
+                        {
+                            "item_id": 15962,
+                            "item_min": 1,
+                            "item_max": 2,
+                            "quality": 0,
+                            "drop_chance": 0.3
+                        },
+                        {
+                            "item_id": 19508,
+                            "item_min": 11,
+                            "item_max": 11,
+                            "quality": 0,
+                            "drop_chance": 1
+                        }
+                    ]               
+                },
+                {
+                    "comment": "Treasure-Bearing Stymphalides",
+                    "enemy_id": "0x010611",
+                    "named_enemy_params_id": 1579,
+                    "start_think_tbl_no": 2,
+                    "level": 70,
+                    "exp": 532,
+                    "drop_items": [
+                        {
+                            "item_id": 15962,
+                            "item_min": 1,
+                            "item_max": 2,
+                            "quality": 0,
+                            "drop_chance": 0.3
+                        },
+                        {
+                            "item_id": 19508,
+                            "item_min": 11,
+                            "item_max": 11,
+                            "quality": 0,
+                            "drop_chance": 1
+                        }
+                    ]                   
+                },
+                {
+                    "comment": "Treasure-Bearing Stymphalides",
+                    "enemy_id": "0x010611",
+                    "named_enemy_params_id": 1579,
+                    "start_think_tbl_no": 2,
+                    "level": 70,
+                    "exp": 532,
+                    "drop_items": [
+                        {
+                            "item_id": 15962,
+                            "item_min": 1,
+                            "item_max": 2,
+                            "quality": 0,
+                            "drop_chance": 0.3
+                        },
+                        {
+                            "item_id": 19508,
+                            "item_min": 11,
+                            "item_max": 11,
+                            "quality": 0,
+                            "drop_chance": 1
+                        }
+                    ]                   
+                },
+                {
+                    "comment": "Treasure-Bearing Stymphalides",
+                    "enemy_id": "0x010611",
+                    "named_enemy_params_id": 1579,
+                    "start_think_tbl_no": 2,
+                    "level": 70,
+                    "exp": 532,
+                    "drop_items": [
+                        {
+                            "item_id": 15962,
+                            "item_min": 1,
+                            "item_max": 2,
+                            "quality": 0,
+                            "drop_chance": 0.3
+                        },
+                        {
+                            "item_id": 19508,
+                            "item_min": 11,
+                            "item_max": 11,
+                            "quality": 0,
+                            "drop_chance": 1
+                        }
+                    ]                   
+                },
+                {
+                    "comment": "Treasure-Bearing Stymphalides",
+                    "enemy_id": "0x010611",
+                    "named_enemy_params_id": 1579,
+                    "start_think_tbl_no": 2,
+                    "level": 70,
+                    "exp": 532,
+                    "drop_items": [
+                        {
+                            "item_id": 15962,
+                            "item_min": 1,
+                            "item_max": 2,
+                            "quality": 0,
+                            "drop_chance": 0.3
+                        },
+                        {
+                            "item_id": 19508,
+                            "item_min": 11,
+                            "item_max": 11,
+                            "quality": 0,
+                            "drop_chance": 1
+                        }
+                    ]                   
+                }
+            ]
+        }
+    ],      
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "reset_group": false,
+            "groups": [0]
+        }
+    ]
+}

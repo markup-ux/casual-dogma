@@ -1,0 +1,180 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "A Call From Beneath the Ivy",
+    "quest_id": 21014020,
+    "base_level": 78,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ElanWaterGrove",
+    "news_image": 583,
+    "order_conditions": [{"type": "AreaRank", "Param1": 14, "Param2": 13}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5073
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 33165
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "TransparentCoarseSand",
+                    "num": 3
+                },
+                {
+                    "item_id": "ProtectedBeastsGreenFur",
+                    "num": 1
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 439,
+                "group_id": 7
+            },
+            "enemies": []
+        },
+        {
+            "stage_id": {
+                "id": 439,
+                "group_id": 7
+            },
+            "starting_index": 5,
+            "enemies": [
+                {
+                    "comment": "Green Guardian",
+                    "enemy_id": "0x010210",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Green Guardian",
+                    "enemy_id": "0x010210",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Dread Ape",
+                    "enemy_id": "0x015502",
+                    "level": 78,
+                    "exp": 18425,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Warg",
+                    "enemy_id": "0x010203",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Warg",
+                    "enemy_id": "0x010203",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Warg",
+                    "enemy_id": "0x010203",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Warg",
+                    "enemy_id": "0x010203",
+                    "level": 78,
+                    "exp": 3685
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NewNpcTalkAndOrder",
+            "stage_id": {
+                "id": 372,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "ArisenCorpsRegimentalSoldier12",
+            "message_id": 20050,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4699, "comment": "Spawns Regimental Soldier 12 NPC"}
+            ]
+        },
+        {
+            "type": "SpawnGroup",
+            "announce_type": "Accept",
+            "groups": [0],
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 535, "Param2": 20051, "comment": "Extra dialogue - Regimental Soldier 12"}
+            ],
+            "check_commands": [
+                {"type": "StageNo", "Param1": 818}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 439,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "ArisenCorpsRegimentalSoldier8",
+            "message_id": 21098,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4697, "comment": "Spawns Regimental Soldier 8 NPC"}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "groups": [1],
+            "result_commands": [
+                {"type": "CallMessage", "Param1": 531, "Param1": 20072},
+                {"type": "MyQstFlagOn", "Param1": 2331, "comment": "Regimental Soldier 8 FSM"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 439,
+                "group_id": 2,
+                "layer_no": 0
+            },
+            "npc_id": "ArisenCorpsRegimentalSoldier8",
+            "message_id": 20052,
+            "result_commands": [
+                {"type": "QstLayoutFlagOff", "Param1": 4697, "comment": "Clears Regimental Soldier 8 NPC"},
+                {"type": "QstLayoutFlagOn", "Param1": 4701, "comment": "Spawns Regimental Soldier 8 (Alive) NPC"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 372,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "ArisenCorpsRegimentalSoldier12",
+            "message_id": 20048
+        }
+    ]
+}

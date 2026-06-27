@@ -1,0 +1,96 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "A Commendable Novice",
+    "quest_id": 21015001,
+    "base_level": 75,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+	"area_id": "FaranaPlains",
+    "news_image": 264,
+    "order_conditions": [{"type": "AreaRank", "Param1": 15, "Param2": 10}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4493
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 665
+        },
+        {
+            "type": "exp",
+            "amount": 24614
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "TarasqueShell",
+                    "num": 1
+                },
+                {					
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {				
+                    "item_id": "Panacea",
+                    "num": 3					
+                }
+            ]
+        }
+    ],
+	"enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 371,
+                "group_id": 3
+            },
+            "starting_index": 10,
+            "enemies": [
+                {
+                    "comment": "Tarasque",
+                    "enemy_id": "0x015720",
+                    "level": 75,
+                    "exp": 60875,
+                    "is_boss": true
+                }
+            ]
+        }
+    ],	
+    "blocks": [	
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 371
+            },
+            "npc_id": "Fionn",
+            "message_id": 19410
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2507, "Param2": 19411}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 371
+            },
+            "announce_type": "Update",
+            "npc_id": "Fionn",
+            "message_id": 19412
+        }
+    ]
+}

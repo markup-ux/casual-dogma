@@ -1,0 +1,449 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "Main",
+    "comment": "A Friendly Visit",
+    "quest_id": 16,
+    "next_quest": 17,
+    "base_level": 43,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "order_conditions": [
+        {"type": "MainQuestCompleted", "Param1": 15},
+        {"type": "AreaRank","Param1": 8,"Param2": 6}
+    ],
+    "rewards": [
+        {
+            "type": "exp",
+            "amount": 10500
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 8000
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 960
+        },
+        {
+            "type": "fixed",
+            "loot_pool": [
+                {
+                    "comment": "Coat of Plates",
+                    "item_id": 8618,
+                    "num": 1
+                }
+            ]
+        },
+        {
+            "type": "fixed",
+            "loot_pool": [
+                {
+                    "comment": "Rebel Banded",
+                    "item_id": 8743,
+                    "num": 1
+                }
+            ]
+        },
+        {
+            "type": "fixed",
+            "loot_pool": [
+                {
+                    "comment": "Raptor Mantle",
+                    "item_id": 8878,
+                    "num": 1
+                }
+            ]
+        }
+
+    ],
+    "enemy_groups": [
+        {
+            "stage_id": {
+                "id": 1,
+                "group_id": 285
+            },
+            "enemies": [
+                {
+                    "comment" : "Orc Captain",
+                    "enemy_id": "0x015820",
+                    "level": 43,
+                    "exp": 537
+                },
+                {
+                    "comment" : "Orc Trooper",
+                    "enemy_id": "0x015812",
+                    "level": 43,
+                    "exp": 258
+                },
+                {
+                    "comment" : "Orc Trooper",
+                    "enemy_id": "0x015812",
+                    "level": 43,
+                    "exp": 258
+                },
+                {
+                    "comment" : "Orc Trooper",
+                    "enemy_id": "0x015812",
+                    "level": 43,
+                    "exp": 258
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 68,
+                "group_id": 4
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment" : "Mogok",
+                    "enemy_id": "0x015840",
+                    "level": 43,
+                    "exp": 5440,
+                    "is_boss": true,
+                    "index": 0
+                },
+                {
+                    "comment" : "Orc Major General",
+                    "enemy_id": "0x015830",
+                    "named_enemy_params_id": 162,
+                    "level": 43,
+                    "exp": 1523,
+                    "is_boss_bgm": true,
+                    "index": 2
+                },
+                {
+                    "comment" : "Orc Grunt (Orc Blitzer)",
+                    "enemy_id": "0x015811",
+                    "named_enemy_params_id": 164,
+                    "level": 42,
+                    "exp": 254,
+                    "is_boss_bgm": true,
+                    "index": 3
+                },
+                {
+                    "comment" : "Orc Grunt (Orc Blitzer)",
+                    "enemy_id": "0x015811",
+                    "named_enemy_params_id": 164,
+                    "level": 42,
+                    "exp": 254,
+                    "is_boss_bgm": true,
+                    "index": 4
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 68,
+                "group_id": 9
+            },
+            "enemies": [
+                {
+                    "comment" : "Guard Colossus",
+                    "enemy_id": "0x015020",
+                    "named_enemy_params_id": 163,
+                    "level": 42,
+                    "exp": 3752,
+                    "is_boss": true
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 1,
+                "group_id": 281
+            },
+            "enemies": []
+        }
+    ],
+    "processes": [
+        {
+            "comment": "Process 0",
+            "blocks": [
+                {
+                    "type": "NpcTalkAndOrder",
+                    "stage_id": {
+                        "id": 3
+                    },
+                    "flags": [
+                        {"type": "WorldManageLayout", "action": "Set", "value": 1215, "quest_id": 70000001, "comment": "Mysial"},
+                        {"type": "WorldManageLayout", "action": "Set", "value": 1218, "quest_id": 70000001, "comment": "Leo"},
+                        {"type": "WorldManageLayout", "action": "Clear", "value": 1219, "quest_id": 70000001, "comment": "Iris"},
+                        {"type": "WorldManageLayout", "action": "Clear", "value": 7390, "quest_id": 70032001, "comment": "The White Dragon (Full)"},
+                        {"type": "WorldManageLayout", "action": "Set", "value": 1294, "quest_id": 70000001, "comment": "The White Dragon (Less Dead)"},
+                        {"type": "WorldManageLayout", "action": "Set", "value": 3859, "quest_id": 70002001, "comment": "Floor Mounted Levers in for gardnox, Large Door"},
+                        {"type": "WorldManageLayout", "action": "Clear", "value": 8630, "quest_id": 70034001, "comment": "Spawns Gurdolin, Lise and Elliot"}
+                    ],
+                    "npc_id": "Leo0",
+                    "message_id": 0
+                },
+                {
+                    "type": "PlayEvent",
+                    "stage_id": {
+                        "id": 3
+                    },
+                    "event_id": 60
+                },
+                {
+                    "type": "TalkToNpc",
+                    "announce_type": "Accept",
+                    "checkpoint": true,
+                    "stage_id": {
+                        "id": 46
+                    },
+                    "flags": [
+                        {"type": "QstLayout", "action": "Set", "value": 1013, "comment": "Vanessa (Audience Chamber)"},
+                        {"type": "WorldManageLayout", "action": "Clear", "value": 1221, "quest_id": 70000001, "comment": "Vanessa (Fort Gritten)"},
+                        {"type": "WorldManageLayout", "action": "Set", "value": 2248, "quest_id": 70000001, "comment": "Messenger (Fort Gritten)"}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 5, "Param2": 8097, "comment": "Leo extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 11, "Param2": 8098, "comment": "Vanessa extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 4, "Param2": 8099, "comment": "Joseph extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 3, "Param2": 8100, "comment": "Klaus extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 2, "Param2": 8101, "comment": "Mysial extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 1003, "Param2": 8102, "comment": "Pamela extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 14, "Param2": 8103, "comment": "Mayleaf extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 1704, "Param2": 11546, "comment": "Regina extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 1707, "Param2": 11547, "comment": "Jordan extra dialogue"}
+                    ],
+                    "npc_id": "Gort",
+                    "message_id": 11548
+                },
+                {
+                    "type": "TalkToNpc",
+                    "announce_type": "Update",
+                    "checkpoint": true,
+                    "stage_id": {
+                        "id": 53
+                    },
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 1703, "Param2": 13876, "comment": "Gort extra dialogue"}
+                    ],
+                    "npc_id": "Sunny",
+                    "message_id": 14876
+                },
+                {
+                    "type": "DiscoverEnemy",
+                    "announce_type": "Update",
+                    "checkpoint": true,
+                    "flags": [
+                        {"type": "WorldManageLayout", "action": "Clear", "value": 1218, "quest_id": 70000001, "comment": "Leo"}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 1701, "Param2": 14877, "comment": "Sunny extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 1704, "Param2": 11543, "comment": "Regina extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 1707, "Param2": 11544, "comment": "Jordan extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 1703, "Param2": 11545, "comment": "Gort extra dialogue"}
+                    ],
+                    "groups": [0]
+                },
+                {
+                    "type": "KillGroup",
+                    "announce_type": "Update",
+                    "reset_group": false,
+                    "groups": [0]
+                },
+                {
+                    "type": "CollectItem",
+                    "announce_type": "Update",
+                    "flags": [
+                        {"type": "QstLayout", "action": "Set", "value": 900, "comment": "General-purpose glitter points (key)"}
+                    ],
+                    "stage_id": {
+                        "id": 1,
+                        "group_id": 1,
+                        "layer_no": 2
+                    }
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "Update",
+                    "flags": [
+                        {"type": "MyQst", "action": "Set", "value": 0, "comment": "Allows gardnox entrance FSM to play"},
+                        {"type": "QstLayout", "action": "Clear", "value": 900, "comment": "General-purpose glitter points (key)"}
+                    ],
+                    "checkpoint": true,
+                    "hand_items": [
+                        {"id": 1038, "amount": 1, "comment": "Key to Gardnox Fortress"}
+                    ],
+                    "check_commands": [
+                        {"type": "HasUsedKey", "Param1": 100, "Param2": 1, "Param3": 1, "Param4": 70002001}
+                    ]
+                },
+                {
+                    "type": "IsStageNo",
+                    "checkpoint": true,
+                    "flags": [
+                        {"type": "MyQst", "action": "Clear", "value": 0, "comment": "Allows gardnox entrance FSM to play"}
+                    ],
+                    "contents_release": [
+                        {
+                            "type": "None",
+                            "flag_info": "Lestania.GardnoxFortress"
+                        }
+                    ],
+                    "consume_items": [
+                        {"id": 1038, "amount": 1, "comment": "Key to Gardnox Fortress"}
+                    ],
+                    "stage_id": {
+                        "id": 68
+                    }
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "Update",
+                    "check_commands": [
+                        {"type": "QuestOmReleaseTouch", "Param1": 402, "Param2": 1, "Param3": 1, "Param4": 70002001}
+                    ]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "announce_type": "Update",
+                    "set_flags": [1],
+                    "check_flags": [2, 3]
+                },
+                {
+                    "type": "PartyGather",
+                    "announce_type": "Update",
+                    "checkpoint": true,
+                    "flags": [
+                        {"type": "MyQst", "action": "Clear", "value": 1, "comment": "Clears flag that started lever processes (used for quest checkpoint)"},
+                        {"type": "WorldManageLayout", "action": "Clear", "value": 3859, "quest_id": 70002001, "comment": "Floor Mounted Levers in for gardnox, Large Door"},
+                        {"type": "WorldManageLayout", "action": "Set", "value": 3860, "quest_id": 70002001, "comment": "Large Door"}
+                    ],
+                    "stage_id": {
+                        "id": 68
+                    },
+                    "location": {
+                        "x": -1006,
+                        "y": -38,
+                        "z": -13241
+                    }
+                },
+                {
+                    "type": "PlayEvent",
+                    "stage_id": {
+                        "id": 68
+                    },
+                    "event_id": 0
+                },
+                {
+                    "type": "KillGroup",
+                    "announce_type": "Update",
+                    "flags": [
+                        {"type": "QstLayout", "action": "Set", "value": 916, "comment": "Gardnok Fort Large Door (lock boss room)"},
+                        {"type": "QstLayout", "action": "Set", "value": 1014, "comment": "Spawn NPCS for battle"},
+                        {"type": "MyQst", "action": "Set", "value": 111, "comment": "Start NPC battle FSM"}
+                    ],
+                    "groups": [1, 2]
+                },
+                {
+                    "type": "PlayEvent",
+                    "flags": [
+                        {"type": "QstLayout", "action": "Clear", "value": 916, "comment": "Gardnok Fort Large Door (lock boss room)"},
+                        {"type": "QstLayout", "action": "Clear", "value": 1014, "comment": "Spawn NPCS for battle"}
+                    ],
+                    "stage_id": {
+                        "id": 68
+                    },
+                    "event_id": 5
+                },
+                {
+                    "type": "TalkToNpc",
+                    "checkpoint": true,
+                    "announce_type": "Update",
+                    "hand_items": [
+                        {"id": 1050, "amount": 1, "comment": "Kieshildt's Vessel of Life"}
+                    ],
+                    "flags": [
+                        {"type": "QstLayout", "action": "Clear", "value": 1013, "comment": "Vanessa (Audience Chamber)"},
+                        {"type": "WorldManageLayout", "action": "Set", "value": 1218, "quest_id": 70000001, "comment": "Leo"},
+                        {"type": "WorldManageLayout", "action": "Set", "value": 1221, "quest_id": 70000001, "comment": "Vanessa (Fort Gritten)"},
+                        {"type": "WorldManageLayout", "action": "Clear", "value": 2248, "quest_id": 70000001, "comment": "Messenger (Fort Gritten)"}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 4, "Param2": 8113, "comment": "Joseph extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 3, "Param2": 8114, "comment": "Klaus extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 2, "Param2": 8115, "comment": "Mysial extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 14, "Param2": 8116, "comment": "Mayleaf extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 1003, "Param2": 8117, "comment": "Pamela extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 1701, "Param2": 14912, "comment": "Sunny extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 1704, "Param2": 11550, "comment": "Regina extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 1707, "Param2": 11551, "comment": "Jordan extra dialogue"},
+                        {"type": "QstTalkChg", "Param1": 1703, "Param2": 11552, "comment": "Gort extra dialogue"}
+                    ],
+                    "stage_id": {
+                        "id": 3
+                    },
+                    "npc_id": "Leo0",
+                    "message_id": 8118
+                }
+            ]
+        },
+        {
+            "comment": "Process 1 (handles lever)",
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [1]
+                },
+                {
+                    "type": "Raw",
+                    "check_commands": [
+                        {"type": "QuestOmReleaseTouch", "Param1": 402, "Param2": 2, "Param3": 1, "Param4": 70002001}
+                    ]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "set_flags": [2]
+                }
+            ]
+        },
+        {
+            "comment": "Process 2 (handles lever)",
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [1]
+                },
+                {
+                    "type": "Raw",
+                    "check_commands": [
+                        {"type": "QuestOmReleaseTouch", "Param1": 402, "Param2": 2, "Param3": 2, "Param4": 70002001}
+                    ]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "set_flags": [3]
+                }
+            ]
+        },
+        {
+            "comment": "Process 3 (plays Gardnox fsm)",
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [0]
+                },
+                {
+                    "comment": "Sends empty group so they don't break the incoming fsm",
+                    "type": "SpawnGroup",
+                    "groups": [3],
+                    "check_commands": [
+                        {"type": "SceHitInWithoutMarker", "Param1": 100, "Param2": 64}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "result_commands": [
+                        {"type": "PlayCameraEvent", "Param1": 100, "Param2": 96}
+                    ]
+                }
+            ]
+        }
+    ]
+}

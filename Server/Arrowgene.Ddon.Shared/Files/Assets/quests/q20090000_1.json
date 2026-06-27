@@ -1,0 +1,179 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Dead City's Chronicles (II)",
+    "quest_id": 20090000,
+    "base_level": 50,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ZandoraWastelands",
+    "order_conditions": [{"type": "MainQuestCompleted", "Param1": 20}],
+    "variant_index": 1,
+    "rewards": [
+        {
+            "type": "exp",
+            "amount": 2500
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1650
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 280
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Demonic Gem",
+                    "item_id": 7911,
+                    "num": 2
+                },
+                {
+                    "comment": "Healing Remedy",
+                    "item_id": 7554,
+                    "num": 3
+                },
+                {
+                    "comment": "Strong Gala Extract",
+                    "item_id": 9363,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 77,
+                "group_id": 23
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Vigilant Shadow Harpy",
+                    "enemy_id": "0x010607",
+                    "named_enemy_params_id": 53,
+                    "start_think_tbl_no": 2,
+                    "level": 49,
+                    "exp": 222,
+                    "repop_count": 2,
+                    "repop_wait_second": 10,
+                    "index": 8
+                },
+                {
+                    "comment": "Vigilant Shadow Harpy",
+                    "enemy_id": "0x010607",
+                    "named_enemy_params_id": 53,
+                    "start_think_tbl_no": 2,
+                    "level": 49,
+                    "exp": 222,
+                    "repop_count": 2,
+                    "repop_wait_second": 10,
+                    "index": 10
+                },
+                {
+                    "comment": "Brutal Shadow Chimera",
+                    "enemy_id": "0x015203",
+                    "named_enemy_params_id": 54,
+                    "level": 50,
+                    "exp": 5110,
+                    "is_boss": true,
+                    "index": 11
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NewNpcTalkAndOrder",
+            "flags": [
+                {
+                    "type": "QstLayout",
+                    "action": "Set",
+                    "value": 1075,
+                    "comment": "Spawns Lise0 and Plum0 NPCs"
+                }
+            ],
+            "result_commands": [
+               {
+                    "comment": "Idle dialogue - Plum",
+                    "type": "QstTalkChg",
+                    "Param1": 500,
+                    "Param2": 8730
+               }
+           ],
+            "stage_id": {
+                "id": 1,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "npc_id": "Lise0",
+            "message_id": 8722
+        },
+        {
+            "type": "DiscoverEnemy",
+            "announce_type": "Accept",
+            "result_commands": [
+               {
+                    "comment": "Idle dialogue - Lise",
+                    "type": "QstTalkChg",
+                    "Param1": 13,
+                    "Param2": 8728
+               },
+               {
+                    "comment": "Idle dialogue update - Plum",
+                    "type": "QstTalkChg",
+                    "Param1": 500,
+                    "Param2": 8735
+               }
+           ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "CollectItem",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 77,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "flags": [
+                {
+                    "type": "QstLayout",
+                    "action": "Set",
+                    "value": 1754,
+                    "comment": "Spawns Glowing Item"
+                }
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 1,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "announce_type": "Update",
+            "result_commands": [
+               {
+                    "comment": "Idle dialogue update - Plum",
+                    "type": "QstTalkChg",
+                    "Param1": 500,
+                    "Param2": 8732
+               }
+            ],
+            "npc_id": "Lise0",
+            "message_id": 8725
+        }
+    ]
+}

@@ -1,0 +1,120 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Guardian of Green Leaves (III)",
+  "quest_id": 20065001,
+  "base_level": 55,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MysreeGrove",
+  "news_image": 567,
+  "order_conditions": [{"type": "AreaRank", "Param1": 6, "Param2": 4}],
+  "variant_index": 2,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1810
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 300
+    },
+    {
+      "type": "exp",
+      "amount": 2110
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Writhing Live Bark",
+          "item_id": 7900,
+          "num": 1
+        },
+        {
+          "comment": "Ent Seed",
+          "item_id": 9390,
+          "num": 2
+        },
+        {
+          "comment": "Ent Branch",
+          "item_id": 9410,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 112,
+        "group_id": 1
+      },
+      "starting_index": 2,
+      "enemies": [
+        {
+          "comment": "Dangerous Ent",
+          "enemy_id": "0x015031",
+          "named_enemy_params_id": 56,
+          "level": 55,
+          "exp": 4160,
+          "is_boss": true
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 112,
+        "group_id": 3
+      },
+      "starting_index": 7,
+      "enemies": [
+        {
+          "comment": "Vigilant Harpy",
+          "enemy_id": "0x010600",
+          "named_enemy_params_id": 53,
+          "level": 55,
+          "exp": 149,
+          "repop_count": 1,
+          "repop_wait_second": 10
+        },
+        {
+          "comment": "Vigilant Harpy",
+          "enemy_id": "0x010600",
+          "named_enemy_params_id": 53,
+          "level": 55,
+          "exp": 149
+        },
+        {
+          "comment": "Vigilant Harpy",
+          "enemy_id": "0x010600",
+          "named_enemy_params_id": 53,
+          "level": 55,
+          "exp": 149
+        },
+        {
+          "comment": "Vigilant Harpy",
+          "enemy_id": "0x010600",
+          "named_enemy_params_id": 53,
+          "level": 55,
+          "exp": 149
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "SpawnGroup",
+      "groups": [ 0 , 1 ],
+      "check_commands": [{"type": "IsEnemyFound", "Param1": 527, "Param2": 1, "Param3": 2}]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 , 1 ]
+    }
+  ]
+}

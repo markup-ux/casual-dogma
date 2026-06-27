@@ -1,0 +1,118 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The White Terror",
+  "quest_id": 22018032,
+  "base_level": 90,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "FeryanaWilderness",
+  "news_image": 330,
+  "order_conditions": [{"type": "MainQuestCompleted", "Param1": 30130}, {"type": "AreaRank", "Param1": 19, "Param2": 10}],
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5500
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 665
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "AreaPoints",
+      "amount": 500
+    },
+    {
+      "type": "exp",
+      "amount": 50400
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Dragonkin Stone Shard",
+          "item_id": 17877,
+          "num": 1
+        },
+        {
+          "comment": "Superior Strong Gala Extract",
+          "item_id": 9364,
+          "num": 3
+        },
+        {
+          "comment": "Panacea",
+          "item_id": 41,
+          "num": 3
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Crest of Greater Power",
+          "item_id": 9196,
+          "num": 1,
+          "chance": 0.6
+        },
+        {
+          "comment": "Cursed Bone Fragment",
+          "item_id": 19650,
+          "num": 1,
+          "chance": 0.6
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "comment": "GroupId: 29 - White Tarasque",
+      "stage_id": {
+        "id": 463,
+        "group_id": 2
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015723",
+          "level": 90,
+          "exp": 44000,
+          "is_boss": true,
+          "comment": "White Tarasque"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 478
+      },
+      "npc_id": "Mustafa",
+      "message_id": 24234
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Accept",
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [0]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 478
+      },
+      "announce_type": "Update",
+      "npc_id": "Mustafa",
+      "message_id": 24238
+    }
+  ]
+}

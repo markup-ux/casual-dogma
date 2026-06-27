@@ -1,0 +1,117 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "An Ancient Perseverance",
+    "quest_id": 20085009,
+    "base_level": 47,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "EasternZandora",
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1290
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 200
+        },
+        {
+            "type": "exp",
+            "amount": 1290
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Crest of Sheer Protection",
+                    "item_id": 9289,
+                    "num": 1
+                },
+                {
+                    "comment": "Crest of Sheer Intelligence",
+                    "item_id": 9293,
+                    "num": 1
+                },
+                {
+                    "comment": "Panacea",
+                    "item_id": 41,
+                    "num": 1
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 65,
+                "group_id": 0
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Brutal Skeleton Warrior",
+                    "enemy_id": "0x010302",
+                    "named_enemy_params_id": 54,
+                    "level": 47,
+                    "exp": 224,
+                    "index": 0
+                },
+                {
+                    "comment": "Brutal Skeleton Warrior",
+                    "enemy_id": "0x010302",
+                    "named_enemy_params_id": 54,
+                    "level": 47,
+                    "exp": 224,
+                    "index": 3
+                },
+                {
+                    "comment": "Brutal Ghost Mail",
+                    "enemy_id": "0x010311",
+                    "named_enemy_params_id": 54,
+                    "level": 47,
+                    "exp": 576,
+                    "index": 6
+                },
+                {
+                    "comment": "Brutal Skeleton Warrior",
+                    "enemy_id": "0x010302",
+                    "named_enemy_params_id": 54,
+                    "level": 47,
+                    "exp": 224,
+                    "index": 7
+                },
+                {
+                    "comment": "Brutal Skeleton Warrior",
+                    "enemy_id": "0x010302",
+                    "named_enemy_params_id": 54,
+                    "level": 47,
+                    "exp": 224,
+                    "index": 8
+                },
+                {
+                    "comment": "Brutal Ghost Mail",
+                    "enemy_id": "0x010311",
+                    "named_enemy_params_id": 54,
+                    "level": 47,
+                    "exp": 576,
+                    "index": 9
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "reset_group": false,
+            "groups": [0]
+        }
+    ]
+}

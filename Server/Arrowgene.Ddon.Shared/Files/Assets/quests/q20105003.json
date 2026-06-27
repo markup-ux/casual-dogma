@@ -1,0 +1,78 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "When The Black Fowl Crows",
+  "quest_id": 20105003,
+  "base_level": 43,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "DeenanWoods",
+  "news_image": 211,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1410
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 220
+    },
+    {
+      "type": "exp",
+      "amount": 1700
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Cursed Cloth",
+          "item_id": 7948,
+          "num": 1
+        },
+        {
+          "comment": "Conqueror's Talisman",
+          "item_id": 9387,
+          "num": 1
+        },
+        {
+          "comment": "Witch's Brew",
+          "item_id": 9421,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 107,
+        "group_id": 6
+      },
+      "starting_index": 3,
+      "enemies": [
+        {
+          "comment": "Brutal Cockatrice",
+          "enemy_id": "0x015301",
+          "named_enemy_params_id": 54,
+          "level": 43,
+          "exp": 4882,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

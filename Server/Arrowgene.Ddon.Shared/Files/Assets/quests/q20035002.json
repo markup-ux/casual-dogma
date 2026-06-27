@@ -1,0 +1,102 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Footsteps in the Halls",
+  "quest_id": 20035002,
+  "base_level": 33,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "DoweValley",
+  "news_image": 75,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1080
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 140
+    },
+    {
+      "type": "exp",
+      "amount": 1080
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Loneliness Gloves",
+          "item_id": 9659,
+          "num": 1
+        },
+        {
+          "comment": "Throwing Skull",
+          "item_id": 9397,
+          "num": 3
+        },
+        {
+          "comment": "Refreshing Remedy",
+          "item_id": 9375,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 69,
+        "group_id": 18
+      },
+      "starting_index": 7,
+      "enemies": [
+        {
+          "comment": "Vigilant Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "named_enemy_params_id": 53,
+          "level": 33,
+          "exp": 151
+        },
+        {
+          "comment": "Vigilant Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "named_enemy_params_id": 53,
+          "level": 33,
+          "exp": 151
+        },
+        {
+          "comment": "Vigilant Undead Swordsman",
+          "enemy_id": "0x010503",
+          "named_enemy_params_id": 53,
+          "level": 33,
+          "exp": 129,
+          "repop_count": 1,
+          "repop_wait_second": 10
+        },
+        {
+          "comment": "Vigilant Undead Swordsman",
+          "enemy_id": "0x010503",
+          "named_enemy_params_id": 53,
+          "level": 33,
+          "exp": 129,
+          "repop_count": 1,
+          "repop_wait_second": 10
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

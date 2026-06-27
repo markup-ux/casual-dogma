@@ -1,0 +1,142 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "A Trampled Heart",
+    "quest_id": 21014021,
+    "base_level": 75,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ElanWaterGrove",
+    "news_image": 531,
+    "order_conditions": [{"type": "AreaRank", "Param1": 14, "Param2": 11}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5073
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 33165
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "ThickShell",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 451,
+                "group_id": 2
+            },
+            "starting_index": 3,
+            "enemies": [
+                {
+                    "comment": "Mole Troll",
+                    "enemy_id": "0x015041",
+                    "level": 75,
+                    "exp": 13675,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Spineback",
+                    "enemy_id": "0x015506",
+                    "level": 75,
+                    "exp": 13675,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 75,
+                    "exp": 2735,
+                    "repop_count": 2,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 75,
+                    "exp": 2735,
+                    "repop_count": 2,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 75,
+                    "exp": 2735,
+                    "repop_count": 2,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 75,
+                    "exp": 2735,
+                    "repop_count": 2,
+                    "repop_wait_second": 10
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NewNpcTalkAndOrder",
+            "stage_id": {
+                "id": 372,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Eluned",
+            "message_id": 19999,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4744, "comment": "Spawns Eluned NPC"}
+            ]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 916, "Param2": 20001}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 372,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Eluned",
+            "message_id": 20002
+        }
+    ]
+}

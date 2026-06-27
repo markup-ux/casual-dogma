@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Verify</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #response_area {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <div>
+            <span class="label">Account ID:</span>
+            <input type="text" id="account_input">
+        </div>
+        <div>
+            <span class="label">Email:</span>
+            <input type="text" id="email_input">
+        </div>
+        <div>
+            <button type="button" onclick="DDON.setup()">Resend verify</button>
+        </div>
+    </div>
+
+    <div id="response_area">
+        <div><span class="label">Message:</span> <span id="resp_message"></span></div>
+        <div><span class="label">Error:</span> <span id="resp_error"></span></div>
+    </div>
+
+    <script>
+        (function () {
+            window.DDON = {
+                API_ACCOUNT: "/api/account",
+
+                setup: function () {
+                    DDON.setLoading();
+
+                    DDON.post(DDON.API_ACCOUNT, {
+                        Action: "resend",
+                        Account: document.getElementById("account_input").value,
+                        Email: document.getElementById("email_input").value,
+                    }, DDON.showResponse);
+                },
+
+                setLoading: function () {
+                    document.getElementById("resp_message").textContent = "Processing...";
+                    document.getElementById("resp_error").textContent = "";
+                },
+
+                showResponse: function (data) {
+                    document.getElementById("resp_message").textContent = data.Message;
+                    document.getElementById("resp_error").textContent = data.Error;
+                },
+
+                post: function (url, data, cb) {
+                    fetch(url, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(data)
+                    })
+                        .then(r => r.json())
+                        .then(cb);
+                }
+            };
+        })();
+    </script>
+
+</body>
+</html>

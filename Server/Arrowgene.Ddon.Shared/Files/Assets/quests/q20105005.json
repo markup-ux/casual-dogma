@@ -1,0 +1,78 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Greenery Falls, Dancing",
+    "quest_id": 20105005,
+    "base_level": 41,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "DeenanWoods",
+    "news_image": 203,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1120
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 180
+        },
+        {
+            "type": "exp",
+            "amount": 900
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Marbled Beast-Steak",
+                    "item_id": 7726,
+                    "num": 3
+                },
+                {
+                    "comment": "Special Mushroom Dip",
+                    "item_id": 9419,
+                    "num": 1
+                },
+                {
+                    "comment": "Enhanced Pickaxe",
+                    "item_id": 9401,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "stage_id": {
+                "id": 1,
+                "group_id": 322
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Brutal Ent",
+                    "enemy_id": "0x015031",
+                    "named_enemy_params_id": 54,
+                    "level": 41,
+                    "exp": 3432,
+                    "is_boss": true
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [ 0 ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "reset_group": false,
+            "groups": [ 0 ]
+        }
+    ]
+}

@@ -1,0 +1,99 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Deadly Frontier",
+  "quest_id": 20075004,
+  "base_level": 43,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "NorthernBetlandPlains",
+  "news_image": 145,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1410
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 220
+    },
+    {
+      "type": "exp",
+      "amount": 1700
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Crest of Greater Protection",
+          "item_id": 9288,
+          "num": 1
+        },
+        {
+          "comment": "Enhanced Lumber Knife",
+          "item_id": 9402,
+          "num": 3
+        },
+        {
+          "comment": "Conqueror's Talisman",
+          "item_id": 9387,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 305
+      },
+      "starting_index": 10,
+      "enemies": [
+        {
+          "comment": "Brutal Armored Cyclops",
+          "enemy_id": "0x015002",
+          "named_enemy_params_id": 54,
+          "level": 43,
+          "exp": 3604,
+          "is_boss": true
+        },
+        {
+          "comment": "Brutal Grimwarg",
+          "enemy_id": "0x010601",
+          "named_enemy_params_id": 54,
+          "level": 42,
+          "exp": 218
+        },
+        {
+          "comment": "Brutal Grimwarg",
+          "enemy_id": "0x010601",
+          "named_enemy_params_id": 54,
+          "level": 42,
+          "exp": 218
+        },
+        {
+          "comment": "Brutal Grimwarg",
+          "enemy_id": "0x010601",
+          "named_enemy_params_id": 54,
+          "level": 42,
+          "exp": 218
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Malicious Armor",
+  "quest_id": 22018030,
+  "base_level": 90,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "FeryanaWilderness",
+  "news_image": 330,
+  "order_conditions": [{"type": "MainQuestCompleted", "Param1": 30130}, {"type": "AreaRank", "Param1": 19, "Param2": 8}],
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5500
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 665
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "AreaPoints",
+      "amount": 500
+    },
+    {
+      "type": "exp",
+      "amount": 37800
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Royal Crest Medal (Feryana District)",
+          "item_id": 18819,
+          "num": 5
+        },
+        {
+          "comment": "Superior Healing Remedy",
+          "item_id": 7555,
+          "num": 10
+        },
+        {
+          "comment": "Superior Strong Gala Extract",
+          "item_id": 9364,
+          "num": 10
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Crest of Drain Warding",
+          "item_id": 9323,
+          "num": 1,
+          "chance": 0.6
+        },
+        {
+          "comment": "Scorpion Tail Husk",
+          "item_id": 19647,
+          "num": 1,
+          "chance": 0.3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "comment": "GroupId: 32 - Skull Lords, Pyro Slimes",
+      "stage_id": {
+        "id": 463,
+        "group_id": 32
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x010313",
+          "level": 90,
+          "exp": 44000,
+          "is_boss": false,
+          "comment": "Skull Lord"
+        },
+        {
+          "enemy_id": "0x010313",
+          "level": 90,
+          "exp": 44000,
+          "is_boss": false,
+          "comment": "Skull Lord"
+        },
+        {
+          "enemy_id": "0x010905",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Pyro Slime"
+        },
+        {
+          "enemy_id": "0x010905",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Pyro Slime"
+        },
+        {
+          "enemy_id": "0x010905",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Pyro Slime"
+        },
+        {
+          "enemy_id": "0x010905",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Pyro Slime"
+        },
+        {
+          "enemy_id": "0x010905",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Pyro Slime"
+        }
+      ]
+    },
+    {
+      "comment": "GroupId: 28 - Living Armor, Mudmen, Frost Corpse Punishers",
+      "stage_id": {
+        "id": 463,
+        "group_id": 28
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x010306",
+          "level": 90,
+          "exp": 44000,
+          "is_boss": false,
+          "comment": "Living Armor"
+        },
+        {
+          "enemy_id": "0x010306",
+          "level": 90,
+          "exp": 44000,
+          "is_boss": false,
+          "comment": "Living Armor"
+        },
+        {
+          "enemy_id": "0x010509",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Mudman"
+        },
+        {
+          "enemy_id": "0x010509",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Mudman"
+        },
+        {
+          "enemy_id": "0x010509",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Mudman"
+        },
+        {
+          "enemy_id": "0x010511",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Frost Corpse Punisher"
+        },
+        {
+          "enemy_id": "0x010511",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Frost Corpse Punisher"
+        },
+        {
+          "enemy_id": "0x010511",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Frost Corpse Punisher"
+        },
+        {
+          "enemy_id": "0x010511",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Frost Corpse Punisher"
+        }
+      ]
+    },
+    {
+      "comment": "GroupId: 1 - Gigant Machina, Ghost Mail, Pyro Slimes",
+      "stage_id": {
+        "id": 501,
+        "group_id": 1
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015850",
+          "level": 90,
+          "exp": 44000,
+          "is_boss": true,
+          "comment": "Gigant Machina"
+        },
+        {
+          "enemy_id": "0x010311",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ghost Mail"
+        },
+        {
+          "enemy_id": "0x010311",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ghost Mail"
+        },
+        {
+          "enemy_id": "0x010905",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Pyro Slime"
+        },
+        {
+          "enemy_id": "0x010905",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Pyro Slime"
+        },
+        {
+          "enemy_id": "0x010905",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Pyro Slime"
+        },
+        {
+          "enemy_id": "0x010905",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Pyro Slime"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 478
+      },
+      "npc_id": "Bilge",
+      "message_id": 23559
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Accept",
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [0]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [1]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [1]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [2]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [2]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 478
+      },
+      "announce_type": "Update",
+      "npc_id": "Bilge",
+      "message_id": 23561
+    }
+  ]
+}

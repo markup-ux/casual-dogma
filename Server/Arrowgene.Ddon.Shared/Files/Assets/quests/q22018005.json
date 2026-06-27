@@ -1,0 +1,313 @@
+﻿{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Serve from Above",
+    "quest_id": 22018005,
+    "base_level": 80,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "RathniteFoothills",
+    "news_image": 330,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5139
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "AreaPoints",
+            "amount": 500
+        },
+        {
+            "type": "exp",
+            "amount": 37800
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Royal Crest Medal (Rathnite District)",
+                    "item_id": 18815,
+                    "num": 5
+                },
+                {
+                    "comment": "Rock Leather",
+                    "item_id": 17870,
+                    "num": 3
+                },
+                {
+                    "comment": "Goblin's Spellstaff",
+                    "item_id": 17867,
+                    "num": 3
+                }
+            ]
+        },
+        {
+            "type": "random",
+            "loot_pool": [
+                {
+                    "comment": "Random Item 1",
+                    "item_id": 18655,
+                    "num": 1,
+                    "chance": 0.6
+                },
+                {
+                    "comment": "Random Item 2",
+                    "item_id": 9261,
+                    "num": 1,
+                    "chance": 0.6
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "comment": "GroupId: 0 - Sword Soldier Orcs, Grim Goblins",
+            "stage_id": {
+                "id": 461,
+                "group_id": 26
+            },
+            "starting_index": 6,
+            "enemies": [
+                {
+                    "enemy_id": "0x015821",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Sword Soldier Orc"
+                },
+                {
+                    "enemy_id": "0x015821",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Sword Soldier Orc"
+                },
+                {
+                    "enemy_id": "0x015821",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Sword Soldier Orc"
+                },
+                {
+                    "enemy_id": "0x010120",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Grim Goblin"
+                },
+                {
+                    "enemy_id": "0x010120",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Grim Goblin"
+                },
+                {
+                    "enemy_id": "0x010120",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Grim Goblin"
+                }
+            ]
+        },
+        {
+            "comment": "GroupId: 1 - Blunt Soldier Orcs, Goblin Shamans",
+            "stage_id": {
+                "id": 461,
+                "group_id": 67
+            },
+            "starting_index": 6,
+            "enemies": [
+                {
+                    "enemy_id": "0x015822",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Blunt Soldier Orc"
+                },
+                {
+                    "enemy_id": "0x015822",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Blunt Soldier Orc"
+                },
+                {
+                    "enemy_id": "0x015822",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Blunt Soldier Orc"
+                },
+                {
+                    "enemy_id": "0x015822",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Blunt Soldier Orc"
+                },
+                {
+                    "enemy_id": "0x010140",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Goblin Shaman"
+                },
+                {
+                    "enemy_id": "0x010140",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Goblin Shaman"
+                },
+                {
+                    "enemy_id": "0x010140",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Goblin Shaman"
+                }
+            ]
+        },
+        {
+            "comment": "GroupId: 2 - Ranged Soldier Dwarf Orcs, War Ready Ogre",
+            "stage_id": {
+                "id": 461,
+                "group_id": 4
+            },
+            "starting_index": 6,
+            "enemies": [
+                {
+                    "enemy_id": "0x015824",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Ranged Soldier Dwarf Orc"
+                },
+                {
+                    "enemy_id": "0x015824",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Ranged Soldier Dwarf Orc"
+                },
+                {
+                    "enemy_id": "0x015824",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 18000,
+                    "is_boss": false,
+                    "comment": "Ranged Soldier Dwarf Orc"
+                },
+                {
+                    "enemy_id": "0x015510",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 458,
+                    "level": 80,
+                    "exp": 210000,
+                    "is_boss": true,
+                    "comment": "War Ready Ogre (Light Armor)"
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NewNpcTalkAndOrder",
+            "stage_id": {
+                "id": 461
+            },
+            "npc_id": "Soule",
+            "message_id": 23506,
+            "flags": [
+                {
+                    "type": "QstLayout",
+                    "action": "Set",
+                    "value": 5425
+                }
+            ]
+        },
+        {
+            "type": "DiscoverEnemy",
+            "announce_type": "Accept",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "DiscoverEnemy",
+            "announce_type": "Update",
+            "groups": [1]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [1]
+        },
+        {
+            "type": "DiscoverEnemy",
+            "announce_type": "Update",
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 461
+            },
+            "announce_type": "Update",
+            "npc_id": "Soule",
+            "message_id": 23512
+        }
+    ]
+}

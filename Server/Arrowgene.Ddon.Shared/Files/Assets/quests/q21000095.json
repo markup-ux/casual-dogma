@@ -1,0 +1,329 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Door of Treasures: Thunderous Roar",
+  "quest_id": 21000095,
+  "base_level": 70,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "ZandoraWastelands",
+  "order_conditions": [ { "type": "AreaRank", "Param1": 10, "Param2": 13 } ],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 6675
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 13854
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 300
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Zandora Medal",
+          "item_id": 11009,
+          "num": 1
+        },
+        {
+          "comment": "Superior Healing Remedy",
+          "item_id": 7555,
+          "num": 3
+        },
+        {
+          "comment": "Superior Strong Gala Extract",
+          "item_id": 9364,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 363,
+        "group_id": 5
+      },
+      "comment": "Up to 99000G",
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Treasure-Bearing Drake",
+          "enemy_id": "0x015700",
+          "named_enemy_params_id": 1119,
+          "level": 70,
+          "exp": 11020,
+          "drop_items": [
+            {
+              "item_id": 7928,
+              "item_min": 1,
+              "item_max": 4,
+              "quality": 0,
+              "drop_chance": 0.9
+            },
+            {
+              "item_id": 7806,
+              "item_min": 1,
+              "item_max": 2,
+              "quality": 0,
+              "drop_chance": 0.9
+            },
+            {
+              "item_id": 7930,
+              "item_min": 1,
+              "item_max": 1,
+              "quality": 0,
+              "drop_chance": 0.3
+            },
+            {
+              "item_id": 19508,
+              "item_min": 9,
+              "item_max": 9,
+              "quality": 0,
+              "drop_chance": 1.0
+            },
+            {
+              "item_id": 19508,
+              "item_min": 2,
+              "item_max": 2,
+              "quality": 0,
+              "drop_chance": 0.1
+            }
+          ],
+          "is_boss": true,
+          "index": 0
+        },
+        {
+          "comment": "Treasure-Bearing Witch",
+          "enemy_id": "0x015604",
+          "named_enemy_params_id": 1119,
+          "level": 70,
+          "exp": 6675,
+          "drop_items": [
+            {
+              "item_id": 7832,
+              "item_min": 1,
+              "item_max": 1,
+              "quality": 0,
+              "drop_chance": 0.2
+            },
+            {
+              "item_id": 7894,
+              "item_min": 1,
+              "item_max": 2,
+              "quality": 0,
+              "drop_chance": 0.6
+            },
+            {
+              "item_id": 7900,
+              "item_min": 1,
+              "item_max": 2,
+              "quality": 0,
+              "drop_chance": 0.9
+            },
+            {
+              "item_id": 7947,
+              "item_min": 1,
+              "item_max": 2,
+              "quality": 0,
+              "drop_chance": 0.4
+            },
+            {
+              "item_id": 19508,
+              "item_min": 9,
+              "item_max": 9,
+              "quality": 0,
+              "drop_chance": 1.0
+            },
+            {
+              "item_id": 19508,
+              "item_min": 2,
+              "item_max": 2,
+              "quality": 0,
+              "drop_chance": 0.1
+            }
+          ],
+          "is_boss": true,
+          "index": 3
+        },
+        {
+          "comment": "Treasure-Bearing Strix",
+          "enemy_id": "0x010610",
+          "named_enemy_params_id": 1119,
+          "level": 70,
+          "exp": 456,
+          "drop_items": [
+            {
+              "item_id": 7778,
+              "item_min": 1,
+              "item_max": 4,
+              "quality": 0,
+              "drop_chance": 0.9
+            },
+            {
+              "item_id": 19508,
+              "item_min": 9,
+              "item_max": 9,
+              "quality": 0,
+              "drop_chance": 1.0
+            },
+            {
+              "item_id": 19508,
+              "item_min": 2,
+              "item_max": 2,
+              "quality": 0,
+              "drop_chance": 0.1
+            }
+          ],
+          "repop_count": 1,
+          "repop_wait_second": 10,
+          "index": 4
+        },
+        {
+          "comment": "Treasure-Bearing Strix",
+          "enemy_id": "0x010610",
+          "named_enemy_params_id": 1119,
+          "level": 70,
+          "exp": 456,
+          "drop_items": [
+            {
+              "item_id": 7778,
+              "item_min": 1,
+              "item_max": 4,
+              "quality": 0,
+              "drop_chance": 0.9
+            },
+            {
+              "item_id": 19508,
+              "item_min": 9,
+              "item_max": 9,
+              "quality": 0,
+              "drop_chance": 1.0
+            },
+            {
+              "item_id": 19508,
+              "item_min": 2,
+              "item_max": 2,
+              "quality": 0,
+              "drop_chance": 0.1
+            }
+          ],
+          "repop_count": 1,
+          "repop_wait_second": 10,
+          "index": 5
+        },
+        {
+          "comment": "Treasure-Bearing Strix",
+          "enemy_id": "0x010610",
+          "named_enemy_params_id": 1119,
+          "level": 70,
+          "exp": 456,
+          "drop_items": [
+            {
+              "item_id": 7778,
+              "item_min": 1,
+              "item_max": 4,
+              "quality": 0,
+              "drop_chance": 0.9
+            },
+            {
+              "item_id": 19508,
+              "item_min": 9,
+              "item_max": 9,
+              "quality": 0,
+              "drop_chance": 1.0
+            },
+            {
+              "item_id": 19508,
+              "item_min": 2,
+              "item_max": 2,
+              "quality": 0,
+              "drop_chance": 0.1
+            }
+          ],
+          "index": 6
+        },
+        {
+          "comment": "Treasure-Bearing Strix",
+          "enemy_id": "0x010610",
+          "named_enemy_params_id": 1119,
+          "level": 70,
+          "exp": 456,
+          "drop_items": [
+            {
+              "item_id": 7778,
+              "item_min": 1,
+              "item_max": 4,
+              "quality": 0,
+              "drop_chance": 0.9
+            },
+            {
+              "item_id": 19508,
+              "item_min": 9,
+              "item_max": 9,
+              "quality": 0,
+              "drop_chance": 1.0
+            },
+            {
+              "item_id": 19508,
+              "item_min": 2,
+              "item_max": 2,
+              "quality": 0,
+              "drop_chance": 0.1
+            }
+          ],
+          "index": 7
+        },
+        {
+          "comment": "Treasure-Bearing Strix",
+          "enemy_id": "0x010610",
+          "named_enemy_params_id": 1119,
+          "level": 70,
+          "exp": 456,
+          "drop_items": [
+            {
+              "item_id": 7778,
+              "item_min": 1,
+              "item_max": 4,
+              "quality": 0,
+              "drop_chance": 0.9
+            },
+            {
+              "item_id": 19508,
+              "item_min": 9,
+              "item_max": 9,
+              "quality": 0,
+              "drop_chance": 1.0
+            },
+            {
+              "item_id": 19508,
+              "item_min": 2,
+              "item_max": 2,
+              "quality": 0,
+              "drop_chance": 0.1
+            }
+          ],
+          "index": 8
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

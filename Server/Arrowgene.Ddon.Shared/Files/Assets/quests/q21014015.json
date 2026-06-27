@@ -1,0 +1,147 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Medal To Set an Example",
+  "quest_id": 21014015,
+  "base_level": 73,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "ElanWaterGrove",
+  "news_image": 581,
+  "order_conditions": [{"type": "AreaRank", "Param1": 14, "Param2": 7}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 19665
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 4408
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 555
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "item_id": "SharpBackSpine",
+          "num": 1
+        },
+        {
+          "item_id": "StiffCrocodileSkin",
+          "num": 3
+        },
+        {
+          "item_id": "SuperiorHealingRemedy",
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 425,
+        "group_id": 4
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Spineback",
+          "enemy_id": "0x015506",
+          "level": 73,
+          "exp": 10925,
+          "is_boss": true,
+          "index": 0
+        },
+        {
+          "comment": "Spineback",
+          "enemy_id": "0x015506",
+          "level": 73,
+          "exp": 10925,
+          "is_boss": true,
+          "index": 1
+        },
+        {
+          "comment": "Foot Biter",
+          "enemy_id": "0x011500",
+          "level": 73,
+          "exp": 2185,
+          "index": 2
+        },
+        {
+          "comment": "Foot Biter",
+          "enemy_id": "0x011500",
+          "level": 73,
+          "exp": 2185,
+          "index": 3
+        },
+        {
+          "comment": "Foot Biter",
+          "enemy_id": "0x011500",
+          "level": 73,
+          "exp": 2185,
+          "index": 9
+        },
+        {
+          "comment": "Foot Biter",
+          "enemy_id": "0x011500",
+          "level": 73,
+          "exp": 2185,
+          "index": 10
+        },
+        {
+          "comment": "Foot Biter",
+          "enemy_id": "0x011500",
+          "level": 73,
+          "exp": 2185,
+          "index": 11
+        },
+        {
+          "comment": "Foot Biter",
+          "enemy_id": "0x011500",
+          "level": 73,
+          "exp": 2185,
+          "index": 12
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 339
+      },
+      "npc_id": "Dirith1",
+      "message_id": 19406
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Accept",
+      "result_commands": [
+        {"type": "QstTalkChg", "Param1": 559, "Param2": 19407}
+      ],
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 339
+      },
+      "announce_type": "Update",
+      "npc_id": "Dirith1",
+      "message_id": 19408
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Thorny Path to Understanding",
+    "quest_id": 21016011,
+    "base_level": 80,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "MorrowForest",
+    "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 14}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5106
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 665
+        },
+        {
+            "type": "exp",
+            "amount": 36315
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "InfectedGiantUlna",
+                    "num": 1
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 374,
+                "group_id": 14
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Severely Infected Pixie (Club)",
+                    "enemy_id": "0x010171",
+                    "level": 80,
+                    "exp": 4035,
+                    "repop_count": 2,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "Severely Infected Pixie (Club)",
+                    "enemy_id": "0x010171",
+                    "level": 80,
+                    "exp": 4035,
+                    "repop_count": 2,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "Ghoul",
+                    "enemy_id": "0x015503",
+                    "level": 80,
+                    "exp": 20175,
+                    "is_boss": true
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 374,
+                "group_id": 23
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Severely Infected Warg",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 4
+                },
+                {
+                    "comment": "Severely Infected Warg",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 5
+                },
+                {
+                    "comment": "Severely Infected Warg",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 6
+                },
+                {
+                    "comment": "Severely Infected Stymphalides",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 8
+                },
+                {
+                    "comment": "Severely Infected Stymphalides",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 8
+                },
+                {
+                    "comment": "Severely Infected Stymphalides",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 8
+                },
+                {
+                    "comment": "Severely Infected Warg",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 11
+                },
+                {
+                    "comment": "Severely Infected Stymphalides",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 12
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 374,
+                "group_id": 30
+            },
+            "starting_index": 5,
+            "enemies": [
+                {
+                    "comment": "Severely Infected Gorecyclops (Critical)",
+                    "enemy_id": "0x015017",
+                    "level": 80,
+                    "exp": 20175,
+                    "infection_type": 3,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Severely Infected Stymphalides",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Severely Infected Stymphalides",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Severely Infected Stymphalides",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Severely Infected Stymphalides",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Severely Infected Stymphalides",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 402
+            },
+            "npc_id": "Morgana",
+            "message_id": 19641
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 4511, "Param2": 19642}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [1]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [1]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 402
+            },
+            "announce_type": "Update",
+            "npc_id": "Morgana",
+            "message_id": 19643
+        }
+    ]
+}

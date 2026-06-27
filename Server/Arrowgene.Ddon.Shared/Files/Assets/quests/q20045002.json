@@ -1,0 +1,85 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Shadows Within the Cave",
+  "quest_id": 20045002,
+  "base_level": 21,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "VoldenMines",
+  "news_image": 537,
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 970
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 690
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 110
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Murg Armguards",
+          "item_id": 599,
+          "num": 1
+        },
+        {
+          "comment": "Lestania Wine",
+          "item_id": 9409,
+          "num": 2
+        },
+        {
+          "comment": "Conqueror's Amulet",
+          "item_id": 9381,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 103,
+        "group_id": 1
+      },
+      "starting_index": 7,
+      "enemies": [
+        {
+          "comment": "Vigilant Chimera",
+          "enemy_id": "0x015200",
+          "named_enemy_params_id": 53,
+          "level": 21,
+          "exp": 2460,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Raw",
+      "check_commands": [
+        {"type": "IngameTimeRangeNotEq", "Param1": 6, "Param2": 18},
+        {"type": "StageNo", "Param1": 518}
+      ]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

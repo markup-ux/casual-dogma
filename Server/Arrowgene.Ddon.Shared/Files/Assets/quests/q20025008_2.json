@@ -1,0 +1,150 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Blue-Scaled Wicked Dragon (Nine Calamities)",
+  "quest_id": 20025008,
+  "base_level": 60,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "news_image": 44,
+  "variant_index": 2,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 3960
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 490
+    },
+    {
+      "type": "exp",
+      "amount": 6930
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Crest of Intelligence+",
+          "item_id": 11741,
+          "num": 1
+        },
+        {
+          "comment": "Spectral Dragon Claw",
+          "item_id": 7802,
+          "num": 1
+        },
+        {
+          "comment": "Spectral Dragonscale",
+          "item_id": 7922,
+          "num": 2
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Crest of Intelligence+",
+          "item_id": 11741,
+          "num": 1,
+          "chance": 0.1
+        },
+        {
+          "comment": "Crest of Wisdom",
+          "item_id": 9294,
+          "num": 1,
+          "chance": 0.1
+        },
+        {
+          "comment": "Crest of Sheer Intelligence",
+          "item_id": 9293,
+          "num": 1,
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Crest of Intelligence+",
+          "item_id": 11741,
+          "num": 1,
+          "chance": 0.1
+        },
+        {
+          "comment": "Crest of Wisdom",
+          "item_id": 9294,
+          "num": 1,
+          "chance": 0.1
+        },
+        {
+          "comment": "Crest of Sheer Intelligence",
+          "item_id": 9293,
+          "num": 1,
+          "chance": 0.1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 269
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Deep Mist Wyrm",
+          "enemy_id": "0x015711",
+          "named_enemy_params_id": 592,
+          "level": 60,
+          "exp": 9860,
+          "is_boss": true,
+          "index": 0
+        },
+        {
+          "comment": "Deep Newt (Blue Newt)",
+          "enemy_id": "0x010460",
+          "named_enemy_params_id": 593,
+          "level": 60,
+          "exp": 257,
+          "index": 2
+        },
+        {
+          "comment": "Deep Newt (Blue Newt)",
+          "enemy_id": "0x010460",
+          "named_enemy_params_id": 593,
+          "level": 60,
+          "exp": 257,
+          "index": 3
+        },
+        {
+          "comment": "Deep Newt (Blue Newt)",
+          "enemy_id": "0x010460",
+          "named_enemy_params_id": 593,
+          "level": 60,
+          "exp": 257,
+          "index": 5
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

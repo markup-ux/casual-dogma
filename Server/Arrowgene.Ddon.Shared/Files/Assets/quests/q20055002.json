@@ -1,0 +1,89 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Mystery of Mysree Limestone Cave",
+  "quest_id": 20055002,
+  "base_level": 34,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MysreeForest",
+  "news_image": 536,
+  "order_conditions": [{"type": "AreaRank", "Param1": 3, "Param2": 9}],
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1120
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 170
+    },
+    {
+      "type": "exp",
+      "amount": 1570
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Monster Gallstone",
+          "item_id": 7865,
+          "num": 3
+        },
+        {
+          "comment": "Throwing Skull",
+          "item_id": 9397,
+          "num": 2
+        },
+        {
+          "comment": "Concoction of Light",
+          "item_id": 9376,
+          "num": 3
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Superior Healing Potion",
+          "item_id": 35,
+          "num": 9,
+          "chance": 1.0
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 159,
+        "group_id": 13
+      },
+      "enemies": [
+        {
+          "comment": "Vigilant Troll",
+          "enemy_id": "0x015040",
+          "named_enemy_params_id": 53,
+          "level": 34,
+          "exp": 2736,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

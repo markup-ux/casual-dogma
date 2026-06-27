@@ -1,0 +1,137 @@
+﻿{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Expose The One in the Shadows",
+    "quest_id": 22018011,
+    "base_level": 83,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "RathniteFoothills",
+    "news_image": 330,
+    "order_conditions": [{"type": "AreaRank", "Param1": 18, "Param2": 5}, {"type": "MainQuestCompleted", "Param1": 30060}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5500
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 37800
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": 17878,
+                    "num": 1
+                },
+                {
+                    "item_id": 18815,
+                    "num": 5
+                },
+                {
+                    "item_id": 17880,
+                    "num": 3
+                }
+            ]
+        },
+        {
+            "type": "random",
+            "loot_pool": [
+                {
+                    "item_id": 17892,
+                    "num": 1,
+                    "chance": 0.6
+                },
+                {
+                    "item_id": 18508,
+                    "num": 2,
+                    "chance": 0.6
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "comment": "GroupId: 0 - Aqua Jellies, Medusa, and Frost Machina",
+            "stage_id": {
+                "id": 496,
+                "group_id": 1
+            },
+            "enemies": [
+                {
+                    "enemy_id": "0x015851",
+                    "level": 83,
+                    "exp": 100000,
+                    "is_boss": true
+                },
+                {
+                    "enemy_id": "0x015610",
+                    "level": 83,
+                    "exp": 90000,
+                    "is_boss": true
+                },
+                {
+                    "enemy_id": "0x010904",
+                    "level": 83,
+                    "exp": 4500,
+                    "is_boss": false
+                },
+                {
+                    "enemy_id": "0x010904",
+                    "level": 83,
+                    "exp": 4500,
+                    "is_boss": false
+                },
+                {
+                    "enemy_id": "0x010904",
+                    "level": 83,
+                    "exp": 4500,
+                    "is_boss": false
+                },
+                {
+                    "enemy_id": "0x010904",
+                    "level": 83,
+                    "exp": 4500,
+                    "is_boss": false
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 480
+            },
+            "npc_id": "Gerald",
+            "message_id": 23611
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 480
+            },
+            "announce_type": "Update",
+            "npc_id": "Gerald",
+            "message_id": 23589
+        }
+    ]
+}

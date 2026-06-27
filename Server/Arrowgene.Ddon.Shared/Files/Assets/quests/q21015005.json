@@ -1,0 +1,139 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Time Restriction: Midday Harvest",
+    "quest_id": 21015005,
+    "base_level": 70,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "FaranaPlains",
+    "news_image": 261,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5772
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 750
+        },
+        {
+            "type": "exp",
+            "amount": 3070
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "SparklingWater",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "processes": [
+        {
+            "blocks": [
+                {
+                    "type": "NpcTalkAndOrder",
+                    "stage_id": {
+                        "id": 341
+                    },
+                    "npc_id": "Razanailt",
+                    "message_id": 19669
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "Accept",
+                    "check_commands": [
+                        {"type": "StageNo", "Param1": 930},
+                        {"type": "IngameTimeRangeEq", "Param1": 11, "Param2": 15}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 2501, "Param2": 19670}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "CheckpointAndUpdate",
+                    "check_commands": [
+                        {"type": "TalkNpc", "Param1": 930, "Param2": 2600},
+                        {"type": "IngameTimeRangeEq", "Param1": 11, "Param2": 15}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 2501, "Param2": 19671}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "CheckpointAndUpdate",
+                    "result_commands": [
+                        {"type": "MyQstFlagOn", "Param1": 0},
+                        {"type": "QstTalkChg", "Param1": 2501, "Param2": 19672}
+                    ],
+                    "check_commands": [
+                        {"type": "HaveItemAllBag", "Param1": 15944, "Param2": 5}
+                    ]
+                },
+                {
+                    "type": "DeliverItems",
+                    "announce_type": "CheckpointAndUpdate",
+                    "stage_id": {
+                        "id": 341
+                    },
+                    "npc_id": "Razanailt",
+                    "items": [
+                        {
+                            "comment": "Farana Mint",
+                            "id": 15944,
+                            "amount": 5
+                        }
+                    ],
+                    "message_id": 19673
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [0]
+                },
+                {
+                    "type": "Raw",
+                    "check_commands": [
+                        {"type": "IngameTimeRangeEq", "Param1": 11, "Param2": 15},
+                        {"type": "StageNoWithoutMarker", "Param1": 120}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "result_commands": [
+                        {"type": "QstLayoutFlagOn", "Param1": 4319},
+                        {"type": "CallMessage", "Param1": 1, "Param1": 19930}
+                    ],
+                    "check_commands": [
+                        {"type": "IngameTimeRangeNotEq", "Param1": 11, "Param2": 15}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "result_commands": [
+                        {"type": "QstLayoutFlagOff", "Param1": 4319},
+                        {"type": "CallMessage", "Param1": 1, "Param1": 19931}
+                    ]
+                }
+            ]
+        }
+    ]
+}

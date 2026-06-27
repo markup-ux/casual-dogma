@@ -1,0 +1,257 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Steady Beasts' Path",
+    "quest_id": 21017010,
+    "base_level": 75,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+	"area_id": "KingalCanyon",
+    "news_image": 650,
+    "order_conditions": [{"type": "AreaRank", "Param1": 17, "Param2": 10}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4493
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 665
+        },
+        {
+            "type": "exp",
+            "amount": 21915
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "HardLeatherCloth",
+                    "num": 3
+                },
+                {					
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {				
+                    "item_id": "Panacea",
+                    "num": 3					
+                }
+            ]
+        }
+    ],
+	"enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 15
+            },
+			"starting_index": 5,
+            "enemies": [
+                {
+					"comment": "Rock Saurian",
+                    "enemy_id": "0x010450",
+                    "level": 75,
+                    "exp": 2435
+				},
+                {
+					"comment": "Rock Saurian",
+                    "enemy_id": "0x010450",
+                    "level": 75,
+                    "exp": 2435
+				},
+                {
+					"comment": "Rock Saurian",
+                    "enemy_id": "0x010450",
+                    "level": 75,
+                    "exp": 2435
+				},
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 75,
+                    "exp": 2435
+				},
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 75,
+                    "exp": 2435
+				},
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 75,
+                    "exp": 2435
+				}
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 18
+            },
+			"starting_index": 5,
+            "enemies": [
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 75,
+                    "exp": 2435
+				},
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 75,
+                    "exp": 2435
+				},
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 75,
+                    "exp": 2435
+				},
+                {
+					"comment": "Gargoyle",
+                    "enemy_id": "0x010603",
+                    "level": 75,
+                    "exp": 2435
+				},
+                {
+					"comment": "Gargoyle",
+                    "enemy_id": "0x010603",
+                    "level": 75,
+                    "exp": 2435
+				},
+                {
+					"comment": "Gargoyle",
+                    "enemy_id": "0x010603",
+                    "level": 75,
+                    "exp": 2435
+				},
+                {
+					"comment": "Gargoyle",
+                    "enemy_id": "0x010603",
+                    "level": 75,
+                    "exp": 2435
+				}
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 455,
+                "group_id": 5
+            },
+			"placement_type": "manual",
+            "enemies": [
+				{
+					"comment": "Empress Ghost",
+                    "enemy_id": "0x015605",
+                    "level": 75,
+                    "exp": 12175,
+                    "is_boss": true,
+					"index": 7
+                },
+                {
+					"comment": "Shadow Wolf",
+                    "enemy_id": "0x010206",
+                    "level": 75,
+                    "exp": 2435,
+					"index": 8
+				},
+                {
+					"comment": "Shadow Wolf",
+                    "enemy_id": "0x010206",
+                    "level": 75,
+                    "exp": 2435,
+					"index": 9
+				},
+                {
+					"comment": "Gargoyle",
+                    "enemy_id": "0x010603",
+                    "level": 75,
+                    "exp": 2435,
+					"index": 11
+				},
+                {
+					"comment": "Gargoyle",
+                    "enemy_id": "0x010603",
+                    "level": 75,
+                    "exp": 2435,
+					"index": 12
+				},
+                {
+					"comment": "Gargoyle",
+                    "enemy_id": "0x010603",
+                    "level": 75,
+                    "exp": 2435,
+					"index": 13
+				},
+                {
+					"comment": "Gargoyle",
+                    "enemy_id": "0x010603",
+                    "level": 75,
+                    "exp": 2435,
+					"index": 14
+				}
+            ]
+        }
+    ],	
+    "blocks": [	
+        {
+            "type": "NpcTalkAndOrder",	
+            "stage_id": {
+                "id": 377
+            },				
+            "npc_id": "Conan",
+            "message_id": 19653
+        },
+        {				
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2702, "Param2": 19654}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {				
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [1]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [1]
+        },
+        {				
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]			
+        },
+        {				
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 377
+            },
+            "announce_type": "Update",
+            "npc_id": "Conan",
+            "message_id": 19655	
+        }
+    ]
+}

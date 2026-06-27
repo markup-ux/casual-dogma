@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <RootNamespace>Arrowgene.Ddon.GameServer</RootNamespace>
+        <Title>Dragons Dogma Online - Game Server</Title>
+        <Company>DDON Team</Company>
+        <Product>Ddon.GameServer</Product>
+        <Version>$(Version)</Version>
+        <Copyright>Copyright © 2019-2026 DDON Team</Copyright>
+        <LangVersion>13</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    </PropertyGroup>
+    <Import Project="./../SetSourceRevision.targets" />
+    <ItemGroup>
+      <ProjectReference Include="..\Arrowgene.Ddon.Server\Arrowgene.Ddon.Server.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Chat\Command\Commands\" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
+      <PackageReference Include="Microsoft.NETCore.Jit" Version="2.0.8" />
+    </ItemGroup>
+    <ItemGroup>
+      <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+        <_Parameter1>Arrowgene.Ddon.Test</_Parameter1>
+      </AssemblyAttribute>
+    </ItemGroup>
+</Project>

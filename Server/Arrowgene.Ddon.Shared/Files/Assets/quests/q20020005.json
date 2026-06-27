@@ -1,0 +1,150 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Gathering of Demons in the Old Temple",
+  "quest_id": 20020005,
+  "base_level": 38,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "news_image": 53,
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 1600
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1250
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 180
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Ruby Pendant",
+          "item_id": 8975,
+          "num": 1
+        },
+        {
+          "comment": "Angel's Talisman",
+          "item_id": 9388,
+          "num": 1
+        },
+        {
+          "comment": "Witch's Brew",
+          "item_id": 9421,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 74,
+        "group_id": 0
+      },
+      "starting_index": 3,
+      "enemies": [
+        {
+          "comment": "Vigilant Grimwarg",
+          "enemy_id": "0x010205",
+          "named_enemy_params_id": 53,
+          "level": 38,
+          "exp": 202
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 74,
+        "group_id": 14
+      },
+      "starting_index": 2,
+      "enemies": [
+        {
+          "comment": "Vigilant Colossus",
+          "enemy_id": "0x015020",
+          "named_enemy_params_id": 53,
+          "level": 38,
+          "exp": 3528,
+          "is_boss": true
+        },
+        {
+          "comment": "Vigilant Grimwarg",
+          "enemy_id": "0x010205",
+          "named_enemy_params_id": 53,
+          "level": 38,
+          "exp": 202
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NewNpcTalkAndOrder",
+      "flags": [
+        {
+          "type": "QstLayout",
+          "action": "Set",
+          "value": 1000,
+          "comment": "Spawns ArisenCorpsRegimentalSoldier8"
+        }
+      ],
+      "stage_id": {
+        "id": 1,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "npc_id": "ArisenCorpsRegimentalSoldier8",
+      "message_id": 11145
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Accept",
+      "groups": [ 0 ],
+      "result_commands": [
+        {
+          "comment": "Idle dialogue",
+          "type": "QstTalkChg",
+          "Param1": 531,
+          "Param2": 11152
+        }
+      ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Update",
+      "groups": [ 1 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 1 ]
+    },
+    {
+      "type": "NewTalkToNpc",
+      "stage_id": {
+        "id": 1,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "announce_type": "Update",
+      "npc_id": "ArisenCorpsRegimentalSoldier8",
+      "message_id": 11148
+    }
+  ]
+}

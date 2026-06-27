@@ -1,0 +1,158 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Undying Pride",
+  "quest_id": 20030004,
+  "base_level": 32,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "DoweValley",
+  "news_image": 521,
+  "variant_index": 1,
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 1260
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1050
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 160
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Resolver Arms",
+          "item_id": 924,
+          "num": 1
+        },
+        {
+          "comment": "Iron Bracers",
+          "item_id": 712,
+          "num": 1
+        },
+        {
+          "comment": "Three-Herb Salad",
+          "item_id": 9410,
+          "num": 2
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Survivor's Cape",
+          "item_id": 1015,
+          "num": 1,
+          "chance": 0.3
+        },
+        {
+          "comment": "Silver Ingot",
+          "item_id": 7875,
+          "num": 2,
+          "chance": 0.3
+        },
+        {
+          "comment": "Ancient Grimoire",
+          "item_id": 7764,
+          "num": 1,
+          "chance": 0.3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 154,
+        "group_id": 2
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Brutal Wight",
+          "enemy_id": "0x015600",
+          "named_enemy_params_id": 54,
+          "level": 32,
+          "exp": 1757,
+          "is_boss": true,
+          "index": 7
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NewNpcTalkAndOrder",
+      "flags": [
+        {
+          "type": "QstLayout",
+          "action": "Set",
+          "value": 1040,
+          "comment": "Spawns Gerd1 NPC"
+        }
+      ],
+      "stage_id": {
+        "id": 1,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "npc_id": "Gerd1",
+      "message_id": 11403
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Accept",
+      "result_commands": [
+        {
+          "type": "QstTalkChg",
+          "Param1": 7,
+          "Param2": 11969,
+          "comment": "Idle dialogue"
+        }
+      ],
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "CollectItem",
+      "announce_type": "Update",
+      "stage_id": {
+        "id": 154,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "flags": [
+        {
+          "type": "QstLayout",
+          "action": "Set",
+          "value": 1159,
+          "comment": "Spawns Glowing Item"
+        }
+      ]
+    },
+    {
+      "type": "NewTalkToNpc",
+      "stage_id": {
+        "id": 1,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "announce_type": "Update",
+      "npc_id": "Gerd1",
+      "message_id": 11967
+    }
+  ]
+}

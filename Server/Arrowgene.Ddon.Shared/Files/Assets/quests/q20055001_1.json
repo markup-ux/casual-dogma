@@ -1,0 +1,78 @@
+    {
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "A Strange Creature Dances In the Forest (II)",
+    "quest_id": 20055001,
+    "variant_index": 1,
+    "base_level": 18,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "MysreeForest",
+    "news_image": 101,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 590
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 90
+        },
+        {
+            "type": "exp",
+            "amount": 830
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Knight's Honor",
+                    "item_id": 95,
+                    "num": 1
+                },
+                {
+                    "comment": "Fortifier",
+                    "item_id": 9377,
+                    "num": 2
+                },
+                {
+                    "comment": "Fireproof Draught",
+                    "item_id": 9370,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "stage_id": {
+                "id": 1,
+                "group_id": 57
+            },
+            "enemies": [
+                {
+                    "comment": "Brutal Sphinx",
+                    "enemy_id": "0x015302",
+                    "named_enemy_params_id": 54,
+                    "level": 18,
+                    "exp": 2392,
+                    "is_boss": true
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [ 0 ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "reset_group": false,
+            "groups": [ 0 ]
+        }
+    ]
+}

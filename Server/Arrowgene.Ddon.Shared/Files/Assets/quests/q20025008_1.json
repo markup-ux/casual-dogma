@@ -1,0 +1,144 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Blue-Scaled Wicked Dragon (The Twelve Calamities Descend!)",
+  "quest_id": 20025008,
+  "base_level": 55,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "news_image": 44,
+  "variant_index": 1,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 3990
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 360
+    },
+    {
+      "type": "exp",
+      "amount": 5440
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Bluish Gray Dragonscale",
+          "item_id": 7932,
+          "num": 1
+        },
+        {
+          "comment": "Silver Bristle",
+          "item_id": 7782,
+          "num": 2
+        },
+        {
+          "comment": "Alkahest",
+          "item_id": 7833,
+          "num": 3
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [        
+        {
+          "comment": "Crest of Dragonsbane II",
+          "item_id": 9236,
+          "num": 1,
+          "chance": 0.1
+        },
+        {
+          "comment": "Crest of Dragonsbane",
+          "item_id": 9235,
+          "num": 1,
+          "chance": 0.1
+        },
+        {
+          "comment": "Crest of Drowning",
+          "item_id": 9246,
+          "num": 1,
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Crest of Dragonsbane II",
+          "item_id": 9236,
+          "num": 1,
+          "chance": 0.1
+        },
+        {
+          "comment": "Crest of Dragonsbane",
+          "item_id": 9235,
+          "num": 1,
+          "chance": 0.1
+        },
+        {
+          "comment": "Crest of Drowning",
+          "item_id": 9246,
+          "num": 1,
+          "chance": 0.1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 269
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Deep Lake Lindwurm",
+          "enemy_id": "0x015707",
+          "named_enemy_params_id": 516,
+          "level": 55,
+          "exp": 8480,
+          "is_boss": true,
+          "index": 0
+        },
+        {
+          "comment": "Dangerous Silver Roar",
+          "enemy_id": "0x015505",
+          "named_enemy_params_id": 46,
+          "level": 55,
+          "exp": 4085,
+          "is_boss": true,
+          "index": 4
+        },
+        {
+          "comment": "Dangerous Silver Roar",
+          "enemy_id": "0x015505",
+          "named_enemy_params_id": 46,
+          "level": 55,
+          "exp": 4085,
+          "is_boss": true,
+          "index": 5
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>DDON Launcher</AssemblyName>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\background.png" />
+  </ItemGroup>
+
+  <!--
+    launcher.config.json is intentionally NOT copied to the output directory.
+    The app creates it on first run from the defaults in LauncherConfig, so a
+    rebuild never overwrites a user's saved settings/session. The file in the
+    project root is kept only as a reference template.
+  -->
+
+  <!--
+    Package the level-sync applier next to the launcher (in an .\applier\ folder) so the
+    auto-installer can find it at .\applier\setup.cmd in both build and publish output.
+    apply_sync.exe is shipped when present (so players don't need Python); otherwise the
+    .py is copied as a dev fallback.
+  -->
+  <ItemGroup>
+    <None Include="..\client-mod\applier\setup.cmd" Link="applier\setup.cmd" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\client-mod\applier\install_applier_task.ps1" Link="applier\install_applier_task.ps1" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\client-mod\applier\uninstall_applier_task.ps1" Link="applier\uninstall_applier_task.ps1" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\client-mod\applier\README.md" Link="applier\README.md" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\client-mod\applier\apply_sync.exe" Link="applier\apply_sync.exe" CopyToOutputDirectory="PreserveNewest" Condition="Exists('..\client-mod\applier\apply_sync.exe')" />
+    <None Include="..\client-mod\applier\apply_sync.py" Link="applier\apply_sync.py" CopyToOutputDirectory="PreserveNewest" Condition="!Exists('..\client-mod\applier\apply_sync.exe')" />
+  </ItemGroup>
+
+</Project>

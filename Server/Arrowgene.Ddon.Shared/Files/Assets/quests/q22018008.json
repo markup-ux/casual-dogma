@@ -1,0 +1,277 @@
+﻿{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Rioting Beasts",
+  "quest_id": 22018008,
+  "base_level": 83,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "RathniteFoothills",
+  "news_image": 330,
+  "order_conditions": [{"type": "AreaRank", "Param1": 18, "Param2": 5}, {"type": "MainQuestCompleted", "Param1": 30050}],
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5500
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 555
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "AreaPoints",
+      "amount": 500
+    },
+    {
+      "type": "exp",
+      "amount": 37800
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Royal Crest Medal (Rathnite District)",
+          "item_id": 18815,
+          "num": 5
+        },
+        {
+          "comment": "Rock Leather",
+          "item_id": 17870,
+          "num": 3
+        },
+        {
+          "comment": "Giant Apophyllite",
+          "item_id": 17872,
+          "num": 3
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Volcanic Mountain Ash",
+          "item_id": 21259,
+          "num": 3,
+          "chance": 0.6
+        },
+        {
+          "comment": "Giant Apophyllite",
+          "item_id": 17872,
+          "num": 1,
+          "chance": 0.6
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "comment": "GroupId: 30 - Saurians, Giant Saurians",
+      "stage_id": {
+        "id": 462,
+        "group_id": 30
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x010400",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Saurian"
+        },
+        {
+          "enemy_id": "0x010400",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Saurian"
+        },
+        {
+          "enemy_id": "0x010400",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Saurian"
+        },
+        {
+          "enemy_id": "0x010400",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Saurian"
+        },
+        {
+          "enemy_id": "0x010401",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Giant Saurian"
+        },
+        {
+          "enemy_id": "0x010401",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Giant Saurian"
+        }
+      ]
+    },
+    {
+      "comment": "GroupId: 27 - Saurians, Giant Saurians",
+      "stage_id": {
+        "id": 462,
+        "group_id": 27
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x010400",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Saurian"
+        },
+        {
+          "enemy_id": "0x010400",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Saurian"
+        },
+        {
+          "enemy_id": "0x010400",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Saurian"
+        },
+        {
+          "enemy_id": "0x010400",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Saurian"
+        },
+        {
+          "enemy_id": "0x010401",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Giant Saurian"
+        },
+        {
+          "enemy_id": "0x010401",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Giant Saurian"
+        }
+      ]
+    },
+    {
+      "comment": "GroupId: 10 - Saurians, Wight, Ogre",
+      "stage_id": {
+        "id": 496,
+        "group_id": 10
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x010400",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Saurian"
+        },
+        {
+          "enemy_id": "0x010400",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Saurian"
+        },
+        {
+          "enemy_id": "0x010400",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Saurian"
+        },
+        {
+          "enemy_id": "0x010400",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Saurian"
+        },
+        {
+          "enemy_id": "0x015600",
+          "level": 83,
+          "exp": 44000,
+          "is_boss": false,
+          "comment": "Wight"
+        },
+        {
+          "enemy_id": "0x015500",
+          "level": 83,
+          "exp": 170000,
+          "is_boss": true,
+          "comment": "Ogre"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 462
+      },
+      "npc_id": "Asena",
+      "message_id": 23519
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Accept",
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [0]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [1]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [1]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [2]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [2]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 462
+      },
+      "announce_type": "Update",
+      "npc_id": "Asena",
+      "message_id": 23518
+    }
+  ]
+}

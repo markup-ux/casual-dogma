@@ -1,0 +1,155 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Faint Ill Omen",
+  "quest_id": 20065000,
+  "base_level": 36,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MysreeGrove",
+  "news_image": 128,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 990
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 150
+    },
+    {
+      "type": "exp",
+      "amount": 990
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Noir Gambeson",
+          "item_id": 8608,
+          "num": 1
+        },
+        {
+          "comment": "Demon's Talisman",
+          "item_id": 9389,
+          "num": 1
+        },
+        {
+          "comment": "Throwing Knife",
+          "item_id": 9398,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 135
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Vigilant Mist Priest",
+          "enemy_id": "0x011032",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 70,
+          "level": 36,
+          "exp": 188,
+          "index": 0
+        },
+        {
+          "comment": "Vigilant Mist Priest",
+          "enemy_id": "0x011032",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 70,
+          "level": 36,
+          "exp": 188,
+          "index": 3
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 136
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Vigilant Mist Priest",
+          "enemy_id": "0x011032",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 70,
+          "level": 36,
+          "exp": 188
+        },
+        {
+          "comment": "Vigilant Mist Priest",
+          "enemy_id": "0x011032",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 70,
+          "level": 36,
+          "exp": 188
+        },
+        {
+          "comment": "Vigilant Mist Sorcerer",
+          "enemy_id": "0x011033",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 71,
+          "level": 36,
+          "exp": 188
+        },
+        {
+          "comment": "Vigilant Mist Sorcerer",
+          "enemy_id": "0x011033",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 71,
+          "level": 36,
+          "exp": 188
+        },
+        {
+          "comment": "Vigilant Mist Sorcerer",
+          "enemy_id": "0x011033",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 71,
+          "level": 36,
+          "exp": 188
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Raw",
+      "check_commands": [
+        {"type": "IngameTimeRangeNotEq", "Param1": 6, "Param2": 18},
+        {"type": "StageNo", "Param1": 100}
+      ]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Update",
+      "groups": [ 1 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 1 ]
+    }
+  ]
+}

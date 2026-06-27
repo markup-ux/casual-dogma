@@ -1,0 +1,138 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Door of Treasures: Claws that Cleave the Glacier",
+    "quest_id": 21015024,
+    "base_level": 75,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "FaranaPlains",
+    "news_image": 526,
+    "order_conditions": [{"type": "AreaRank", "Param1": 15, "Param2": 11}],
+    "quest_layout_set_info_flags": [
+        {
+            "flag_no": 4738,
+            "stage_no": 831,
+            "group_id": 8
+        }
+    ],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 26961
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "exp",
+            "amount": 13675
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "AzureDragonscale",
+                    "num": 1
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 440,
+                "group_id": 8
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Treasure-Bearing Wyrm",
+                    "enemy_id": "0x015701",
+                    "named_enemy_params_id": 1579,
+                    "level": 75,
+                    "exp": 11660,
+                    "is_boss": true,
+                    "index": 0
+                },
+                {
+                    "comment": "Treasure-Bearing Frost Corpse Punisher",
+                    "enemy_id": "0x010511",
+                    "named_enemy_params_id": 1579,
+                    "level": 75,
+                    "exp": 340,
+                    "repop_count": 1,
+                    "repop_wait_second": 10,
+                    "index": 1
+                },
+                {
+                    "comment": "Treasure-Bearing Frost Corpse Punisher",
+                    "enemy_id": "0x010511",
+                    "named_enemy_params_id": 1579,
+                    "level": 75,
+                    "exp": 340,
+                    "repop_count": 1,
+                    "repop_wait_second": 10,
+                    "index": 2
+                },
+                {
+                    "comment": "Treasure-Bearing Frost Corpse Punisher",
+                    "enemy_id": "0x010511",
+                    "named_enemy_params_id": 1579,
+                    "level": 75,
+                    "exp": 340,
+                    "index": 3
+                },
+                {
+                    "comment": "Treasure-Bearing Frost Corpse Punisher",
+                    "enemy_id": "0x010511",
+                    "named_enemy_params_id": 1579,
+                    "level": 75,
+                    "exp": 340,
+                    "index": 4
+                },
+                {
+                    "comment": "Treasure-Bearing Wight",
+                    "enemy_id": "0x015600",
+                    "named_enemy_params_id": 1579,
+                    "level": 75,
+                    "exp": 3770,
+                    "is_boss": true,
+                    "index": 6
+                },
+                {
+                    "comment": "Treasure-Bearing Wight",
+                    "enemy_id": "0x015600",
+                    "named_enemy_params_id": 1579,
+                    "level": 75,
+                    "exp": 3770,
+                    "is_boss": true,
+                    "index": 7
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "reset_group": false,
+            "groups": [0]
+        }
+    ]
+}

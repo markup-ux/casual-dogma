@@ -1,0 +1,140 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Time Restriction: Rainy Collection",
+    "quest_id": 21014006,
+    "base_level": 75,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+	"area_id": "ElanWaterGrove",
+    "news_image": 281,
+    "order_conditions": [{"type": "AreaRank", "Param1": 14, "Param2": 8}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 11233
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 1662
+        },
+        {
+            "type": "exp",
+            "amount": 5470
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "StiffCrocodileSkin",
+                    "num": 3
+                },
+                {					
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                },
+                {				
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3					
+                }
+            ]
+        }
+    ],
+    "processes": [
+        {
+            "blocks": [
+                {
+                    "type": "NpcTalkAndOrder",
+                    "stage_id": {
+                        "id": 339
+                    },
+                    "npc_id": "Musel0",
+                    "message_id": 19664
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "Accept",
+                    "check_commands": [
+                        {"type": "StageNo", "Param1": 910},
+                        {"type": "WeatherEq", "Param1": 3}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 4509, "Param2": 19665}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "CheckpointAndUpdate",
+                    "check_commands": [
+                        {"type": "TalkNpc", "Param1": 910, "Param2": 2600},
+                        {"type": "WeatherEq", "Param1": 3}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 4509, "Param2": 19666}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "CheckpointAndUpdate",
+                    "result_commands": [
+                        {"type": "MyQstFlagOn", "Param1": 0},
+                        {"type": "QstTalkChg", "Param1": 4509, "Param2": 19667}
+                    ],
+                    "check_commands": [
+                        {"type": "HaveItemAllBag", "Param1": 15949, "Param2": 5}
+                    ]
+                },
+                {
+                    "type": "DeliverItems",
+                    "announce_type": "CheckpointAndUpdate",
+                    "stage_id": {
+                        "id": 339
+                    },
+                    "npc_id": "Musel0",
+                    "items": [
+                        {
+                            "comment": "Elana Water",
+                            "id": 15949,
+                            "amount": 5
+                        }
+                    ],
+                    "message_id": 19668
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [0]
+                },
+                {
+                    "type": "Raw",
+                    "check_commands": [
+                        {"type": "WeatherEq", "Param1": 3},
+                        {"type": "StageNo", "Param1": 121}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "result_commands": [
+                        {"type": "QstLayoutFlagOn", "Param1": 4317},
+                        {"type": "CallMessage", "Param1": 1, "Param1": 19928}
+                    ],
+                    "check_commands": [
+                        {"type": "WeatherNotEq", "Param1": 3}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "result_commands": [
+                        {"type": "QstLayoutFlagOff", "Param1": 4317},
+                        {"type": "CallMessage", "Param1": 1, "Param1": 19929}
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,180 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Forgotten Evil Image",
+  "quest_id": 21000013,
+  "base_level": 57,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "HidellPlains",
+  "news_image": 541,
+  "order_conditions": [{"type": "AreaRank", "Param1": 1, "Param2": 13}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 2965
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1880
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 235
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Sacred Blessed Cloth",
+          "item_id": 7943,
+          "num": 1
+        },
+        {
+          "comment": "Cedar Wood",
+          "item_id": 7967,
+          "num": 2
+        },
+        {
+          "comment": "Superior Healing Remedy",
+          "item_id": 7555,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups" : [
+    {
+      "stage_id": {
+        "id": 87,
+        "group_id": 1
+      },
+      "starting_index": 9,
+      "enemies": [
+        {
+          "comment": "Infected Gorecyclops (Severe)",
+          "enemy_id": "0x015012",
+          "level": 57,
+          "exp": 3292,
+          "is_boss": true,
+          "infection_type": 2
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 87,
+        "group_id": 7
+      },
+      "enemies": [
+        {
+          "comment": "Goblin Bomber",
+          "enemy_id": "0x011150",
+          "level": 57,
+          "exp": 656
+        },
+        {
+          "comment": "Goblin Bomber",
+          "enemy_id": "0x011150",
+          "level": 57,
+          "exp": 656
+        },
+        {
+          "comment": "Goblin Bomber",
+          "enemy_id": "0x011150",
+          "level": 57,
+          "exp": 656
+        },
+        {
+          "comment": "Goblin Bomber",
+          "enemy_id": "0x011150",
+          "level": 57,
+          "exp": 656
+        },
+        {
+          "comment": "Goblin Bomber",
+          "enemy_id": "0x011150",
+          "level": 57,
+          "exp": 656
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "comment": "This dungeon is unlocked early, so a check is necessary",
+          "type": "Raw",
+          "check_commands": [{"type": "CheckAreaRank", "Param1": 1, "Param1": 13}]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [0],
+          "result_commands": [{"type": "QstLayoutFlagOn", "Param1": 2995}]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "announce_type": "Accept",
+          "groups": [0],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 0}],
+          "check_commands": [{"type": "MyQstFlagOff", "Param1": 1}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "comment": "Group 0 boss HP check",
+          "type": "Raw",
+          "check_commands": [{"type": "EmHpLess", "Param1": 502, "Param2": 1, "Param3": 9, "Param4": 40}]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "groups": [1],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 1}, {"type": "StartTimer", "Param1": 1, "Param2": 30}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 1}],
+          "check_commands": [{"type": "IsMyquestLayoutFlagOff", "Param1": 2997}, {"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 565}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "IsEndTimer", "Param1": 1}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 567}, {"type": "StartTimer", "Param1": 2, "Param2": 15}],
+          "check_commands": [{"type": "IsEndTimer", "Param1": 2}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 566}, {"type": "QstLayoutFlagOn", "Param1": 2997}]
+        }
+      ]
+    }
+  ]
+}

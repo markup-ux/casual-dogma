@@ -1,0 +1,101 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "After That Dragon!",
+  "quest_id": 20035009,
+  "base_level": 36,
+  "minimum_item_rank": 0,
+  "discoverable": false,
+  "area_id": "DoweValley",
+  "news_image": 64,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1180
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 230
+    },
+    {
+      "type": "exp",
+      "amount": 1660
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Dragon Hide",
+          "item_id": 7928,
+          "num": 3
+        },
+        {
+          "comment": "Wild Steak",
+          "item_id": 9412,
+          "num": 2
+        },
+        {
+          "comment": "Angel's Talisman",
+          "item_id": 9388,
+          "num": 1
+        }
+      ]
+    },
+    {
+        "type": "random",
+        "loot_pool": [
+            {
+                "comment": "Small Thief's Key",
+                "item_id": 9429,
+                "num": 2,
+                "chance": 0.7
+            },
+            {
+                "comment": "Crest of Greater Power",
+                "item_id": 9196,
+                "num": 1,
+                "chance": 0.7
+            },
+            {
+                "comment": "Red Alloy Ingot",
+                "item_id": 7888,
+                "num": 1,
+                "chance": 0.7
+            }
+        ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 228
+      },
+      "enemies": [
+        {
+          "comment": "Dangerous Lindwurm",
+          "enemy_id": "0x015707",
+          "named_enemy_params_id": 56,
+          "level": 36,
+          "exp": 6466,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "show_marker": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

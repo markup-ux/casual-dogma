@@ -1,0 +1,182 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Bitter Old Grudge",
+  "quest_id": 22018036,
+  "base_level": 90,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MegadosysPlateau",
+  "news_image": 667,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5500
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 300
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "AreaPoints",
+      "amount": 500
+    },
+    {
+      "type": "exp",
+      "amount": 25200
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Royal Crest Medal (Megadosys District)",
+          "item_id": 18820,
+          "num": 5
+        },
+        {
+          "comment": "War Demon's Ancestor Nasal Cartilage",
+          "item_id": 21219,
+          "num": 3
+        },
+        {
+          "comment": "Superior Healing Remedy",
+          "item_id": 7555,
+          "num": 10
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Crest of Shock Prevention",
+          "item_id": 9321,
+          "num": 1,
+          "chance": 0.6
+        },
+        {
+          "comment": "Cursed Spine",
+          "item_id": 19651,
+          "num": 1,
+          "chance": 0.4
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "comment": "GroupId: 1 - Ancestor Orcs, Captain Ancestor Orc, Cragger",
+      "stage_id": {
+        "id": 597,
+        "group_id": 1
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015831",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ancestor Orc"
+        },
+        {
+          "enemy_id": "0x015831",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ancestor Orc"
+        },
+        {
+          "enemy_id": "0x015831",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ancestor Orc"
+        },
+        {
+          "enemy_id": "0x015831",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ancestor Orc"
+        },
+        {
+          "enemy_id": "0x015831",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ancestor Orc"
+        },
+        {
+          "enemy_id": "0x015831",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ancestor Orc"
+        },
+        {
+          "enemy_id": "0x015839",
+          "level": 90,
+          "exp": 44000,
+          "is_boss": false,
+          "comment": "Captain Ancestor Orc"
+        },
+        {
+          "enemy_id": "0x015508",
+          "level": 90,
+          "exp": 44000,
+          "is_boss": true,
+          "comment": "Cragger"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 584
+      },
+      "npc_id": "Umit",
+      "message_id": 27928
+    },
+    {
+      "type": "DeliverItems",
+      "stage_id": {
+        "id": 584
+      },
+      "npc_id": "Umit",
+      "announce_type": "Accept",
+      "items": [
+        {
+          "id": 21214,
+          "amount": 5,
+          "comment": "Rose Megadosys"
+        }
+	],
+      "message_id": 27929
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [0]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 584
+      },
+      "announce_type": "Update",
+      "npc_id": "Umit",
+      "message_id": 27931
+    }
+  ]
+}

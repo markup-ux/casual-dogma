@@ -1,0 +1,187 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "An Old Enemy",
+    "quest_id": 21017020,
+    "base_level": 80,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "KingalCanyon",
+    "news_image": 615,
+    "order_conditions": [{"type": "AreaRank", "Param1": 17, "Param2": 14}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5106
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 665
+        },
+        {
+            "type": "exp",
+            "amount": 36165
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "BlackClawOfMisfortune",
+                    "num": 1
+                },
+                {
+                    "item_id": "DeformedHornOfMisfortune",
+                    "num": 1
+                },
+                {
+                    "item_id": "DubiousAnimalPelt",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 448,
+                "group_id": 3
+            },
+            "placement_type": "manual",
+            "enemies": []
+        },
+        {
+            "stage_id": {
+                "id": 448,
+                "group_id": 3
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Scourge (Slight)",
+                    "enemy_id": "0x020601",
+					"infection_type": 1,
+                    "level": 80,
+                    "exp": 100875,
+                    "is_boss": true,
+                    "index": 1
+                },
+                {
+                    "comment": "Infected Show Harpy (Severe)",
+                    "enemy_id": "0x010612",
+					"infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "is_manual_set": true,
+                    "is_required": false,
+                    "index": 2
+                },
+                {
+                    "comment": "Infected Show Harpy (Severe)",
+                    "enemy_id": "0x010612",
+					"infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "is_manual_set": true,
+                    "is_required": false,
+                    "index": 3
+                },
+                {
+                    "comment": "Infected Show Harpy (Severe)",
+                    "enemy_id": "0x010612",
+					"infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "is_manual_set": true,
+                    "is_required": false,
+                    "index": 4
+                },
+                {
+                    "comment": "Infected Show Harpy (Severe)",
+                    "enemy_id": "0x010612",
+					"infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "is_manual_set": true,
+                    "is_required": false,
+                    "index": 8
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NewNpcTalkAndOrder",
+            "stage_id": {
+                "id": 373,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Anelian",
+            "message_id": 20068,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4714, "comment": "Spawns Aneirin NPC"}
+            ]
+        },
+        {
+            "type": "SpawnGroup",
+            "announce_type": "Accept",
+            "groups": [0],
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 4754, "Param2": 20069, "comment": "Extra dialogue - Aneirin"}
+            ],
+            "check_commands": [
+                {"type": "StageNo", "Param1": 866}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 448,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Isaac",
+            "message_id": 21107,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4712, "comment": "Spawns Isaac NPC"}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "groups": [1],
+            "result_commands": [
+                {"type": "CallMessage", "Param1": 550, "Param1": 20081},
+                {"type": "MyQstFlagOn", "Param1": 2340, "comment": "Isaac FSM"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 448,
+                "group_id": 2,
+                "layer_no": 0
+            },
+            "npc_id": "Isaac",
+            "message_id": 20070,
+            "result_commands": [
+                {"type": "QstLayoutFlagOff", "Param1": 4712, "comment": "Clears Isaac NPC"},
+                {"type": "QstLayoutFlagOn", "Param1": 4716, "comment": "Spawns Isaac (Alive) NPC"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 373,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Anelian",
+            "message_id": 20066
+        }
+    ]
+}

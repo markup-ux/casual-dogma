@@ -1,0 +1,147 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Reclaiming the Route",
+  "quest_id": 20020011,
+  "base_level": 34,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "news_image": 525,
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 1120
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1120
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 140
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Lapis Lazuli",
+          "item_id": 7902,
+          "num": 3
+        },
+        {
+          "comment": "Enhanced Lockpick",
+          "item_id": 9403,
+          "num": 3
+        },
+        {
+          "comment": "Exquisite Fried Meat",
+          "item_id": 9416,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 120,
+        "group_id": 2
+      },
+      "enemies": [
+        {
+          "comment": "Vigilant Orc Tosser",
+          "enemy_id": "0x015801",
+          "named_enemy_params_id": 53,
+          "level": 34,
+          "exp": 186,
+          "index": 0
+        },
+        {
+          "comment": "Vigilant Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "named_enemy_params_id": 53,
+          "level": 34,
+          "exp": 154,
+          "index": 1
+        },
+        {
+          "comment": "Vigilant Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "named_enemy_params_id": 53,
+          "level": 34,
+          "exp": 154,
+          "index": 2
+        },
+        {
+          "comment": "Vigilant Orc Tosser",
+          "enemy_id": "0x015801",
+          "named_enemy_params_id": 53,
+          "level": 34,
+          "exp": 186,
+          "index": 3
+        },
+        {
+          "comment": "Vigilant Orc Tosser",
+          "enemy_id": "0x015801",
+          "named_enemy_params_id": 53,
+          "level": 34,
+          "exp": 186,
+          "index": 4
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NewNpcTalkAndOrder",
+      "flags": [
+        {
+          "type": "QstLayout",
+          "action": "Set",
+          "value": 1005,
+          "comment": "Spawns ArisenCorpsRegimentalSoldier10"
+        }
+      ],
+      "stage_id": {
+        "id": 66,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "npc_id": "ArisenCorpsRegimentalSoldier10",
+      "message_id": 11392
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Accept",
+      "groups": [ 0 ],
+      "result_commands": [
+        {
+          "comment": "Idle dialogue",
+          "type": "QstTalkChg",
+          "Param1": 533,
+          "Param2": 12618
+        }
+      ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "NewTalkToNpc",
+      "stage_id": {
+        "id": 66,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "announce_type": "Update",
+      "npc_id": "ArisenCorpsRegimentalSoldier10",
+      "message_id": 12615
+    }
+  ]
+}

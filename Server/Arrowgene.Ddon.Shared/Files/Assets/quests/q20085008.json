@@ -1,0 +1,79 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Dead Lord's Retainer",
+    "quest_id": 20085008,
+    "base_level": 57,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "EasternZandora",
+    "news_image": 168,
+    "order_conditions": [{"type": "AreaRank", "Param1": 11, "Param2": 9}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1880
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "exp",
+            "amount": 2190
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Dark Metal",
+                    "item_id": 7887,
+                    "num": 1
+                },
+                {
+                    "comment": "Demon Arming Points",
+                    "item_id": 8022,
+                    "num": 1
+                },
+                {
+                    "comment": "Panacea",
+                    "item_id": 41,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 92,
+                "group_id": 11
+            },
+            "starting_index": 1,
+            "enemies": [
+                {
+                    "comment": "Brutal Gigant Machina",
+                    "enemy_id": "0x015850",
+                    "named_enemy_params_id": 54,
+                    "level": 57,
+                    "exp": 5248,
+                    "is_boss": true
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "reset_group": false,
+            "groups": [0]
+        }
+    ]
+}

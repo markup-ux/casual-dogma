@@ -1,0 +1,195 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Assault of Demons",
+  "quest_id": 21016014,
+  "base_level": 75,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MorrowForest",
+  "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 9}],
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 4493
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 665
+    },
+    {
+      "type": "exp",
+      "amount": 21915
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "item_id": "InfectedGiantUlna",
+          "num": 1
+        },
+        {
+          "item_id": "BloodiedGiantTusk",
+          "num": 1
+        },
+        {
+          "item_id": "SuperiorHealingRemedy",
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups" : [
+    {
+      "stage_id": {
+        "id": 378,
+        "group_id": 4
+      },
+      "enemies": [
+        {
+          "comment": "Severely Infected Behemoth (Severe)",
+          "enemy_id": "0x015717",
+          "infection_type": 2,
+          "level": 75,
+          "exp": 13675,
+          "is_boss": true
+        },
+        {
+          "comment": "Phindymian Hunter",
+          "enemy_id": "0x011062",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 96
+        },
+        {
+          "comment": "Phindymian Hunter",
+          "enemy_id": "0x011062",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 96
+        },
+        {
+          "comment": "Phindymian Priest",
+          "enemy_id": "0x011063",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 97
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 378,
+        "group_id": 7
+      },
+      "enemies": [
+        {
+          "comment": "Phindymian Priest",
+          "enemy_id": "0x011063",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 97
+        },
+        {
+          "comment": "Phindymian Hunter",
+          "enemy_id": "0x011062",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 96
+        },
+        {
+          "comment": "Phindymian Priest",
+          "enemy_id": "0x011063",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 97
+        },
+        {
+          "comment": "Phindymian Priest",
+          "enemy_id": "0x011063",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 97
+        },
+        {
+          "comment": "Phindymian Priest",
+          "enemy_id": "0x011063",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 97
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "DiscoverEnemy",
+          "groups": [0]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "announce_type": "Accept",
+          "groups": [0],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 0}],
+          "check_commands": [{"type": "MyQstFlagOff", "Param1": 1}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "comment": "Group 0 boss HP check",
+          "type": "Raw",
+          "check_commands": [{"type": "EmHpLess", "Param1": 950, "Param2": 4, "Param3": 0, "Param4": 40}]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "groups": [1],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 1}, {"type": "StartTimer", "Param1": 1, "Param2": 30}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 1}],
+          "check_commands": [{"type": "IsMyquestLayoutFlagOff", "Param1": 4425}, {"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 753}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "IsEndTimer", "Param1": 1}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 755}, {"type": "StartTimer", "Param1": 2, "Param2": 15}],
+          "check_commands": [{"type": "IsEndTimer", "Param1": 2}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 754}, {"type": "QstLayoutFlagOn", "Param1": 4425}]
+        }
+      ]
+    }
+  ]
+}

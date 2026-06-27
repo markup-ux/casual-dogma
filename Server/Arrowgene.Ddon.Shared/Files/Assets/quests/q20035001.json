@@ -1,0 +1,78 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Sleeping Giant",
+  "quest_id": 20035001,
+  "base_level": 35,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "DoweValley",
+  "news_image": 72,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1150
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 230
+    },
+    {
+      "type": "exp",
+      "amount": 1610
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Golem Magickal Rock",
+          "item_id": 7866,
+          "num": 1
+        },
+        {
+          "comment": "Lapis Lazuli",
+          "item_id": 7902,
+          "num": 3
+        },
+        {
+          "comment": "Old Forest Dwellers' Key",
+          "item_id": 9066,
+          "num": 2
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 69,
+        "group_id": 6
+      },
+      "starting_index": 1,
+      "enemies": [
+        {
+          "comment": "Keywarden Golem",
+          "enemy_id": "0x015100",
+          "named_enemy_params_id": 387,
+          "level": 35,
+          "exp": 3000,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

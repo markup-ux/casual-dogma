@@ -1,0 +1,141 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Secret Dealings",
+    "quest_id": 21000097,
+    "base_level": 68,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "BloodbaneIsle",
+    "news_image": 533,
+    "order_conditions": [{"type": "AreaRank", "Param1": 13, "Param2": 13}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 2243
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 290
+        },
+        {
+            "type": "exp",
+            "amount": 10665
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "PhytonLiquid",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 319,
+                "group_id": 1
+            },
+            "starting_index": 9,
+            "enemies": [
+                {
+                    "comment": "Shadow Chimera",
+                    "enemy_id": "0x015203",
+                    "level": 68,
+                    "exp": 5925,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Shadow Goblin Leader",
+                    "enemy_id": "0x011160",
+                    "level": 68,
+                    "exp": 1185
+                },
+                {
+                    "comment": "Shadow Goblin Leader",
+                    "enemy_id": "0x011160",
+                    "level": 68,
+                    "exp": 1185
+                },
+                {
+                    "comment": "Shadow Goblin Fighter",
+                    "enemy_id": "0x011131",
+                    "level": 68,
+                    "exp": 1185
+                },
+                {
+                    "comment": "Shadow Goblin Fighter",
+                    "enemy_id": "0x011131",
+                    "level": 68,
+                    "exp": 1185
+                },
+                {
+                    "comment": "Shadow Goblin Fighter",
+                    "enemy_id": "0x011131",
+                    "level": 68,
+                    "exp": 1185
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 317
+            },
+            "npc_id": "Gunther",
+            "message_id": 17481
+        },
+        {
+            "type": "DeliverItems",
+            "stage_id": {
+                "id": 317
+            },
+            "npc_id": "Gunther",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2401, "Param2": 17482, "comment": "Extra dialogue - Gunther"}
+            ],
+            "items": [
+                {"id": 8033, "amount": 2, "comment": "Aliment Extractant"}
+            ],
+            "message_id": 17483
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2401, "Param2": 17484, "comment": "Extra dialogue 2 - Gunther"}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 317
+            },
+            "announce_type": "Update",
+            "npc_id": "Gunther",
+            "message_id": 17485
+        }
+    ]
+}

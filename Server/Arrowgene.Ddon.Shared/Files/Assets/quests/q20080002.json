@@ -1,0 +1,143 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Sole Sign",
+    "quest_id": 20080002,
+    "base_level": 50,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "EasternZandora",
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1370
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 280
+        },
+        {
+            "type": "exp",
+            "amount": 2140
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Shadowy Claw",
+                    "item_id": 7800,
+                    "num": 1
+                },
+                {
+                    "comment": "Enhanced Lumber Knife",
+                    "item_id": 9402,
+                    "num": 3
+                },
+                {
+                    "comment": "Healing Remedy",
+                    "item_id": 7554,
+                    "num": 3
+                }
+            ]
+        },
+        {
+            "type": "random",
+            "loot_pool": [
+                {
+                    "comment": "Healing Potion",
+                    "item_id": 34,
+                    "num": 9,
+                    "chance": 1.0
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 94,
+                "group_id": 4
+            },
+            "starting_index": 5,
+            "enemies": [
+                {
+                    "comment": "Brutal Shadow Chimera",
+                    "enemy_id": "0x015203",
+                    "named_enemy_params_id": 54,
+                    "level": 50,
+                    "exp": 5100,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Vigilant Shadow Wolf",
+                    "enemy_id": "0x010206",
+                    "named_enemy_params_id": 53,
+                    "level": 50,
+                    "exp": 256,
+                    "repop_count": 1,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "Vigilant Shadow Wolf",
+                    "enemy_id": "0x010206",
+                    "named_enemy_params_id": 53,
+                    "level": 50,
+                    "exp": 256,
+                    "repop_count": 1,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "Vigilant Shadow Wolf",
+                    "enemy_id": "0x010206",
+                    "named_enemy_params_id": 53,
+                    "level": 50,
+                    "exp": 256
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 1,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "npc_id": "Dion",
+            "message_id": 11296
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {
+                    "comment": "Idle dialogue",
+                    "type": "QstTalkChg",
+                    "Param1": 1805,
+                    "Param2": 11302
+                }
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [ 0 ]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 1,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "announce_type": "Update",
+            "npc_id": "Dion",
+            "message_id": 11299
+        }
+    ]
+}

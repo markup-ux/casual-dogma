@@ -1,0 +1,64 @@
+# --- Secrets and local-only config ---
+.env
+launcher.config.json
+
+# --- Personal / not part of the game stack ---
+career/
+_ptest/
+rhythm-test/
+skilltool/
+_tmp*.py
+server-log.txt
+server-err.txt
+start-ghidra.bat
+
+# --- Game client (copyrighted — obtain separately) ---
+Client/
+Dragon's Dogma Online.7z
+
+# --- Reverse-engineering tooling (not required to play) ---
+re-tools/
+tools/re/
+tools/x64dbg/
+tools/ScyllaHide/
+
+# --- Build outputs ---
+[Bb]in/
+[Oo]bj/
+target/
+Logs/
+*.log
+.vs/
+.idea/
+publish/
+release/
+packages/
+
+# --- Python ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- Client-mod runtime / RE scratch ---
+client-mod/sync/
+client-mod/applier/applier.log
+client-mod/applier/*_test.log
+client-mod/applier/elevated_test.txt
+client-mod/applier/install_task.log
+client-mod/ghidra_*.txt
+client-mod/find*.log
+client-mod/find*.cand
+client-mod/find*.snap
+client-mod/disasm*.log
+client-mod/diagnose_report.txt
+
+# --- Prebuilt launcher at repo root (build from Launcher/) ---
+DDON Launcher.exe
+
+# --- OS junk ---
+*.DS_Store
+Thumbs.db
+
+# --- Keep prebuilt client-mod release binaries ---
+!client-mod/dist/

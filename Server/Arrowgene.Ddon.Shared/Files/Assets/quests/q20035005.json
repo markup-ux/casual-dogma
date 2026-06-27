@@ -1,0 +1,103 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Apes of Mayhem",
+  "quest_id": 20035005,
+  "base_level": 30,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "DoweValley",
+  "news_image": 63,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 990
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 160
+    },
+    {
+      "type": "exp",
+      "amount": 1150
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Hard Leather Cloth",
+          "item_id": 7937,
+          "num": 3
+        },
+        {
+          "comment": "Fortifier",
+          "item_id": 9377,
+          "num": 3
+        },
+        {
+          "comment": "Wild Steak",
+          "item_id": 9412,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 214
+      },
+      "starting_index": 4,
+      "enemies": [
+        {
+          "comment": "Brutal Dread Ape",
+          "enemy_id": "0x015502",
+          "named_enemy_params_id": 54,
+          "start_think_tbl_no": 1,
+          "level": 30,
+          "exp": 2048,
+          "is_boss": true
+        },
+        {
+          "comment": "Vigilant Brute Ape",
+          "enemy_id": "0x015504",
+          "named_enemy_params_id": 53,
+          "start_think_tbl_no": 1,
+          "level": 28,
+          "exp": 182
+        },
+        {
+          "comment": "Vigilant Brute Ape",
+          "enemy_id": "0x015504",
+          "named_enemy_params_id": 53,
+          "start_think_tbl_no": 1,
+          "level": 28,
+          "exp": 182
+        },
+        {
+          "comment": "Vigilant Brute Ape",
+          "enemy_id": "0x015504",
+          "named_enemy_params_id": 53,
+          "start_think_tbl_no": 1,
+          "level": 28,
+          "exp": 182
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

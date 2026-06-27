@@ -1,0 +1,217 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Beckoning Demons",
+    "quest_id": 21016016,
+    "base_level": 80,
+    "minimum_item_rank": 0,
+    "discoverable": false,
+    "area_id": "MorrowForest",
+    "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 13}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5106
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 665
+        },
+        {
+            "type": "exp",
+            "amount": 48420
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Elemental Lace",
+                    "item_id": 16006,
+                    "num": 1
+                },
+                {
+                    "comment": "Silvery Snow Steel Ingot",
+                    "item_id": 16005,
+                    "num": 1
+                },
+                {
+                    "comment": "Scroll of True Shadow",
+                    "item_id": 16007,
+                    "num": 1
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 374,
+                "group_id": 25
+            },
+            "enemies": [
+                {
+                    "comment": "Severely Infected Pixie (Severe)",
+                    "enemy_id": "0x010170",
+                    "infection_type": 2,
+                    "level": 75,
+                    "exp": 520
+                },
+                {
+                    "comment": "Severely Infected Pixie",
+                    "enemy_id": "0x010170",
+                    "level": 75,
+                    "exp": 520
+                },
+                {
+                    "comment": "Severely Infected Pixie",
+                    "enemy_id": "0x010170",
+                    "level": 75,
+                    "exp": 520
+                },
+                {
+                    "comment": "Severely Infected Pixie",
+                    "enemy_id": "0x010170",
+                    "level": 75,
+                    "exp": 520
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 374,
+                "group_id": 34
+            },
+            "enemies": [
+                {
+                    "comment": "Ghoul",
+                    "enemy_id": "0x015503",
+                    "level": 80,
+                    "exp": 20175,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Ghoul",
+                    "enemy_id": "0x015503",
+                    "level": 80,
+                    "exp": 20175,
+                    "is_boss": true
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 374,
+                "group_id": 22
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Severely Infected Griffin (Critical)",
+                    "enemy_id": "0x015310",
+                    "infection_type": 3,
+                    "level": 80,
+                    "exp": 20175,
+                    "is_boss": true,
+                    "index": 0
+                },
+                {
+                    "comment": "Severely Infected Warg (Severe)",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 3
+                },
+                {
+                    "comment": "Severely Infected Warg (Severe)",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 4
+                },
+                {
+                    "comment": "Severely Infected Warg (Severe)",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 5
+                },
+                {
+                    "comment": "Severely Infected Warg (Severe)",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 7
+                },
+                {
+                    "comment": "Severely Infected Warg (Severe)",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 8
+                },
+                {
+                    "comment": "Wounded Ghoul",
+                    "enemy_id": "0x015503",
+                    "named_enemy_params_id": 927,
+                    "level": 80,
+                    "exp": 5800,
+                    "is_boss": true,
+                    "index": 9
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "groups": [1]
+        },
+        {
+            "type": "CollectItem",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 374, "group_id": 0, "layer_no": 0
+            },
+            "flags": [
+                {"type": "QstLayout", "action": "Set", "value": 4642}
+            ],
+            "result_commands": [
+                {"type": "CallGeneralAnnounce", "Param1": 0, "Param2": 815}
+            ]
+        },
+        {
+            "type": "DiscoverEnemy",
+            "announce_type": "Update",
+            "flags": [
+                {"type": "QstLayout", "action": "Clear", "value": 4642}
+            ],
+            "result_commands": [
+                {"type": "CallGeneralAnnounce", "Param1": 0, "Param2": 100036}
+            ],
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]
+        }
+    ]
+}

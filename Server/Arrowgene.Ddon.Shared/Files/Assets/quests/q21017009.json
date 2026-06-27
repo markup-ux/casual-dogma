@@ -1,0 +1,247 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Eyes Burdened by Tomorrow",
+    "quest_id": 21017009,
+    "base_level": 80,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "KingalCanyon",
+    "news_image": 301,
+    "order_conditions": [{"type": "AreaRank", "Param1": 17, "Param2": 14}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5106
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 665
+        },
+        {
+            "type": "exp",
+            "amount": 24210
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "DubiousAnimalPelt",
+                    "num": 3
+                },
+                {
+                    "item_id": "SeabirdSyrinx",
+                    "num": 1
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 26
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Ghost Mail",
+                    "enemy_id": "0x010311",
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 4
+                },
+                {
+                    "comment": "Ghost Mail",
+                    "enemy_id": "0x010311",
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 5
+                },
+                {
+                    "comment": "Shadow Harpy",
+                    "enemy_id": "0x010607",
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 7
+                },
+                {
+                    "comment": "Shadow Harpy",
+                    "enemy_id": "0x010607",
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 8
+                },
+                {
+                    "comment": "Shadow Harpy",
+                    "enemy_id": "0x010607",
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 9
+                },
+                {
+                    "comment": "Shadow Harpy",
+                    "enemy_id": "0x010607",
+                    "level": 80,
+                    "exp": 4035,
+                    "index": 10
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 29
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Living Armor",
+                    "enemy_id": "0x010306",
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Living Armor",
+                    "enemy_id": "0x010306",
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 80,
+                    "exp": 4035
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 448,
+                "group_id": 6
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Eliminator Slay",
+                    "enemy_id": "0x010530",
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Eliminator Slay",
+                    "enemy_id": "0x010530",
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 80,
+                    "exp": 4035
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 373
+            },
+            "npc_id": "Adelin",
+            "message_id": 19650
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [{"type": "QstTalkChg", "Param1": 2708, "Param2": 19651}],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [1]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [1]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 373
+            },
+            "announce_type": "Update",
+            "npc_id": "Adelin",
+            "message_id": 19652
+        }
+    ]
+}

@@ -1,0 +1,194 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Heartache's Cause",
+    "quest_id": 21014009,
+    "base_level": 73,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ElanWaterGrove",
+    "news_image": 282,
+    "order_conditions": [{"type": "AreaRank", "Param1": 14, "Param2": 8}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4408
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 19665
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "SharpBackSpine",
+                    "num": 1
+                },
+                {
+                    "item_id": "DemonWolfsSinewyMeat",
+                    "num": 3
+                },
+                {
+                    "item_id": "BronzeTailFeather",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 372,
+                "group_id": 22
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Warg",
+                    "enemy_id": "0x010203",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Warg",
+                    "enemy_id": "0x010203",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Warg",
+                    "enemy_id": "0x010203",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Warg",
+                    "enemy_id": "0x010203",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 73,
+                    "exp": 2185
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 372,
+                "group_id": 30
+            },
+            "enemies": [
+                {
+                    "comment": "Little Spine",
+                    "enemy_id": "0x015507",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Little Spine",
+                    "enemy_id": "0x015507",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Little Spine",
+                    "enemy_id": "0x015507",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Little Spine",
+                    "enemy_id": "0x015507",
+                    "level": 73,
+                    "exp": 2185
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 372,
+                "group_id": 20
+            },
+            "enemies": [
+                {
+                    "comment": "Spineback",
+                    "enemy_id": "0x015506",
+                    "level": 73,
+                    "exp": 10925,
+                    "is_boss": true
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 339
+            },
+            "npc_id": "Dirith1",
+            "message_id": 19255
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 559, "Param2": 19258}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [1]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [1]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 339
+            },
+            "announce_type": "Update",
+            "npc_id": "Dirith1",
+            "message_id": 19259
+        }
+    ]
+}

@@ -1,0 +1,145 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Verifying a Rumor",
+    "quest_id": 21016001,
+    "base_level": 75,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "MorrowForest",
+    "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 9}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4493
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 665
+        },
+        {
+            "type": "exp",
+            "amount": 24614
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "MurkyDragonFang",
+                    "num": 1
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 374,
+                "group_id": 32
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Severely Infected Behemoth (Severe)",
+                    "enemy_id": "0x015717",
+                    "infection_type": 2,
+                    "level": 75,
+                    "exp": 12175,
+                    "is_boss": true,
+                    "index": 0
+                },
+                {
+                    "comment": "Severely Infected Warg",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 75,
+                    "exp": 2435,
+                    "index": 2
+                },
+                {
+                    "comment": "Severely Infected Warg",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 75,
+                    "exp": 2435,
+                    "index": 3
+                },
+                {
+                    "comment": "Severely Infected Warg",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 75,
+                    "exp": 2435,
+                    "index": 4
+                },
+                {
+                    "comment": "Severely Infected Warg",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 75,
+                    "exp": 2435,
+                    "index": 5
+                },
+                {
+                    "comment": "Severely Infected Warg",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 75,
+                    "exp": 2435,
+                    "index": 6
+                },
+                {
+                    "comment": "Severely Infected Warg",
+                    "enemy_id": "0x010220",
+                    "infection_type": 2,
+                    "level": 75,
+                    "exp": 2435,
+                    "index": 7
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 340
+            },
+            "npc_id": "Finbar",
+            "message_id": 19433
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "groups": [0],
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2606, "Param2": 19434}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 340
+            },
+            "announce_type": "Update",
+            "npc_id": "Finbar",
+            "message_id": 19435
+        }
+    ]
+}

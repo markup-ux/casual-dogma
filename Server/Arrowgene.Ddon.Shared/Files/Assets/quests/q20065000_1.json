@@ -1,0 +1,156 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Faint Ill Omen (II)",
+  "quest_id": 20065000,
+  "base_level": 40,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MysreeGrove",
+  "news_image": 128,
+  "variant_index": 1,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1320
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 200
+    },
+    {
+      "type": "exp",
+      "amount": 1540
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Gold Ingot",
+          "item_id": 7877,
+          "num": 2
+        },
+        {
+          "comment": "Mithril Ingot",
+          "item_id": 7880,
+          "num": 3
+        },
+        {
+          "comment": "Forest Dweller's Old Key",
+          "item_id": 9066,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 135
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Vigilant Mist Hunter",
+          "enemy_id": "0x011031",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 69,
+          "level": 40,
+          "exp": 196,
+          "index": 0
+        },
+        {
+          "comment": "Vigilant Mist Hunter",
+          "enemy_id": "0x011031",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 69,
+          "level": 40,
+          "exp": 196,
+          "index": 3
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 136
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Vigilant Mist Priest",
+          "enemy_id": "0x011032",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 70,
+          "level": 40,
+          "exp": 196
+        },
+        {
+          "comment": "Vigilant Mist Priest",
+          "enemy_id": "0x011032",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 70,
+          "level": 40,
+          "exp": 196
+        },
+        {
+          "comment": "Vigilant Mist Hunter",
+          "enemy_id": "0x011031",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 69,
+          "level": 40,
+          "exp": 196
+        },
+        {
+          "comment": "Vigilant Mist Hunter",
+          "enemy_id": "0x011031",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 69,
+          "level": 40,
+          "exp": 196
+        },
+        {
+          "comment": "Vigilant Mist Hunter",
+          "enemy_id": "0x011031",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 69,
+          "level": 40,
+          "exp": 196
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Raw",
+      "check_commands": [
+        {"type": "IngameTimeRangeNotEq", "Param1": 6, "Param2": 18},
+        {"type": "StageNo", "Param1": 100}
+      ]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Update",
+      "groups": [ 1 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 1 ]
+    }
+  ]
+}

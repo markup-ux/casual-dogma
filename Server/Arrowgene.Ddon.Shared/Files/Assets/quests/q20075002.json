@@ -1,0 +1,96 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Raging Demonic Bird",
+  "quest_id": 20075002,
+  "base_level": 45,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "NorthernBetlandPlains",
+  "news_image": 142,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1480
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 230
+    },
+    {
+      "type": "exp",
+      "amount": 2070
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Gold Ingot",
+          "item_id": 7877,
+          "num": 2
+        },
+        {
+          "comment": "Witch's Brew",
+          "item_id": 9421,
+          "num": 1
+        },
+        {
+          "comment": "Enhanced Pickaxe",
+          "item_id": 9401,
+          "num": 2
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Crest of Ice Warding",
+          "item_id": 9303,
+          "num": 1,
+          "chance": 0.4
+        },
+        {
+          "comment": "Sandcrystal",
+          "item_id": 7852,
+          "num": 3,
+          "chance": 0.6
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 310
+      },
+      "starting_index": 2,
+      "enemies": [
+        {
+          "comment": "Brutal Cockatrice",
+          "enemy_id": "0x015301",
+          "named_enemy_params_id": 54,
+          "start_think_tbl_no": 2,
+          "level": 45,
+          "exp": 5050,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

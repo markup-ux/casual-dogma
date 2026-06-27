@@ -1,0 +1,167 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Flawless Grave-Robbing",
+    "quest_id": 21015020,
+    "base_level": 78,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "FaranaPlains",
+    "news_image": 623,
+    "order_conditions": [{"type": "AreaRank", "Param1": 15, "Param2": 13}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5073
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 33165
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "TwistedIronScrap",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 367,
+                "group_id": 6
+            },
+            "enemies": []
+        },
+        {
+            "stage_id": {
+                "id": 367,
+                "group_id": 6
+            },
+            "starting_index": 8,
+            "enemies": [
+                {
+                    "comment": "Frost Corpse Torturer",
+                    "enemy_id": "0x010512",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Frost Corpse Torturer",
+                    "enemy_id": "0x010512",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Frost Corpse Torturer",
+                    "enemy_id": "0x010512",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Wight",
+                    "enemy_id": "0x015600",
+                    "level": 78,
+                    "exp": 18425,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Living Armor",
+                    "enemy_id": "0x010306",
+                    "level": 78,
+                    "exp": 3685
+                },
+                {
+                    "comment": "Living Armor",
+                    "enemy_id": "0x010306",
+                    "level": 78,
+                    "exp": 3685
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 411
+            },
+            "npc_id": "Henin",
+            "message_id": 20056
+        },
+        {
+            "type": "SpawnGroup",
+            "announce_type": "Accept",
+            "groups": [0],
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2556, "Param2": 20057, "comment": "Extra dialogue - Henin"}
+            ],
+            "check_commands": [
+                {"type": "StageNo", "Param1": 861}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 367,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Ludovika",
+            "message_id": 21108,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4702, "comment": "Spawns Ludovika NPC"}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "groups": [1],
+            "result_commands": [
+                {"type": "CallMessage", "Param1": 4735, "Param1": 20075},
+                {"type": "MyQstFlagOn", "Param1": 2334, "comment": "Ludovika FSM"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 367,
+                "group_id": 2,
+                "layer_no": 0
+            },
+            "npc_id": "Ludovika",
+            "message_id": 20058,
+            "result_commands": [
+                {"type": "QstLayoutFlagOff", "Param1": 4702, "comment": "Clears Ludovika NPC"},
+                {"type": "QstLayoutFlagOn", "Param1": 4706, "comment": "Spawns Ludovika (Alive) NPC"}
+            ]
+        },
+        {
+            "type": "TalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 411
+            },
+            "npc_id": "Henin",
+            "message_id": 20054
+        }
+    ]
+}

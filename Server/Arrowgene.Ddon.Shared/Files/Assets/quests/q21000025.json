@@ -1,0 +1,188 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Door of Treasures: Bloodlust",
+    "quest_id": 21000025,
+    "base_level": 63,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "BloodbaneIsle",
+    "order_conditions": [{"type": "AreaRank", "Param1": 13, "Param2": 2}],
+    "news_image": 521,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 11880
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 250
+        },
+        {
+            "type": "exp",
+            "amount": 3783
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Ice Cube Fragment",
+                    "item_id": 11504,
+                    "num": 3
+                },
+                {
+                    "comment": "Aliment Extractant",
+                    "item_id": 8033,
+                    "num": 1
+                },
+                {
+                    "comment": "Superior Healing Remedy",
+                    "item_id": 7555,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 330,
+                "group_id": 6
+            },          
+            "enemies": [
+                {
+                    "comment": "Treasure-Bearing Silver Roar",
+                    "enemy_id": "0x015505",
+                    "named_enemy_params_id": 1119,
+                    "level": 60,
+                    "exp": 4370,
+                    "drop_items": [
+                        {
+                            "item_id": 7782,
+                            "item_min": 1,
+                            "item_max": 2,
+                            "quality": 0,
+                            "drop_chance": 0.6
+                        },
+                        {
+                            "item_id": 7759,
+                            "item_min": 1,
+                            "item_max": 3,
+                            "quality": 0,
+                            "drop_chance": 0.9
+                        },
+                        {
+                            "item_id": 7744,
+                            "item_min": 1,
+                            "item_max": 1,
+                            "quality": 0,
+                            "drop_chance": 0.4
+                        },
+                        {
+                            "item_id": 18828,
+                            "item_min": 1,
+                            "item_max": 1,
+                            "quality": 0,
+                            "drop_chance": 1.0
+                        }
+                    ],
+                    "is_boss": true
+                },
+                {
+                    "comment": "Treasure-Bearing Silver Roar",
+                    "enemy_id": "0x015505",
+                    "named_enemy_params_id": 1119,
+                    "level": 60,
+                    "exp": 4370,
+                    "drop_items": [
+                        {
+                            "item_id": 7782,
+                            "item_min": 1,
+                            "item_max": 2,
+                            "quality": 0,
+                            "drop_chance": 0.6
+                        },
+                        {
+                            "item_id": 7759,
+                            "item_min": 1,
+                            "item_max": 3,
+                            "quality": 0,
+                            "drop_chance": 0.9
+                        },
+                        {
+                            "item_id": 7744,
+                            "item_min": 1,
+                            "item_max": 1,
+                            "quality": 0,
+                            "drop_chance": 0.4
+                        },
+                        {
+                            "item_id": 18828,
+                            "item_min": 1,
+                            "item_max": 1,
+                            "quality": 0,
+                            "drop_chance": 1.0
+                        }
+                    ],
+                    "is_boss": true
+                },
+                {
+                    "comment": "Frost Skeleton",
+                    "enemy_id": "0x010315",
+                    "level": 60,
+                    "exp": 756
+                },
+                {
+                    "comment": "Frost Skeleton",
+                    "enemy_id": "0x010315",
+                    "level": 60,
+                    "exp": 756
+                },
+                {
+                    "comment": "Frost Skeleton",
+                    "enemy_id": "0x010315",
+                    "level": 60,
+                    "exp": 756
+                },
+                {
+                    "comment": "Aqua Jelly",
+                    "enemy_id": "0x010904",
+                    "level": 60,
+                    "exp": 756              
+                },
+                {
+                    "comment": "Aqua Jelly",
+                    "enemy_id": "0x010904",
+                    "level": 60,
+                    "exp": 756              
+                },
+                {
+                    "comment": "Aqua Jelly",
+                    "enemy_id": "0x010904",
+                    "level": 60,
+                    "exp": 756              
+                },
+                {
+                    "comment": "Aqua Jelly",
+                    "enemy_id": "0x010904",
+                    "level": 60,
+                    "exp": 756              
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "reset_group": false,
+            "groups": [0]
+        }
+    ]
+}

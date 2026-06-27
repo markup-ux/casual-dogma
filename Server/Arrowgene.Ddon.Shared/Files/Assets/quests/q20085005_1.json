@@ -1,0 +1,122 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Barren Black Wings (II)",
+    "quest_id": 20085005,
+    "base_level": 49,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "EasternZandora",
+    "order_conditions": [{"type": "AreaRank", "Param1": 11, "Param2": 3}],
+    "variant_index": 1,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1610
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "exp",
+            "amount": 2640
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Blue Steel Ingot",
+                    "item_id": 7885,
+                    "num": 1
+                },
+                {
+                    "comment": "Healing Remedy",
+                    "item_id": 7554,
+                    "num": 3
+                },
+                {
+                    "comment": "Strong Gala Extract",
+                    "item_id": 9363,
+                    "num": 3
+                }
+            ]
+        },
+        {
+            "type": "random",
+            "loot_pool": [
+                {
+                    "comment": "Gleipnir",
+                    "item_id": 7959,
+                    "num": 1,
+                    "chance": 0.7
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 1,
+                "group_id": 459
+            },
+            "enemies": [
+                {
+                    "comment": "Brutal Black Griffin",
+                    "enemy_id": "0x015303",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 54,
+                    "level": 49,
+                    "exp": 5343,
+                    "is_boss": true
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 61,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "npc_id": "Sonya",
+            "message_id": 16046
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "spawn_time_start": "18 * 3600000 + 0 * 60000",
+            "spawn_time_end": "6 * 3600000 + 59 * 60000",
+            "result_commands": [
+                {
+                    "comment": "Idle dialogue",
+                    "type": "QstTalkChg",
+                    "Param1": 1808,
+                    "Param2": 16047
+                }
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 61,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "announce_type": "Update",
+            "npc_id": "Sonya",
+            "message_id": 16048
+        }
+    ]
+}

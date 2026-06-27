@@ -1,0 +1,434 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "High Difficulty: A Silence-Breaking Roar (Dual Crests ★ Debut)",
+  "quest_id": 21000015,
+  "base_level": 65,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BreyaCoast",
+  "order_conditions": [ { "type": "AreaRank", "Param1": 2, "Param2": 13 } ],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 9379
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 2144
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 275
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Crest of Electrocution (Decreased Lightning Resist)",
+          "item_id": 16063,
+          "num": 2
+        },
+        {
+          "comment": "Crest of Electrocution",
+          "item_id": 9262,
+          "num": 2
+        },
+        {
+          "comment": "Crest of Diminished Lightning Resist",
+          "item_id": 9272,
+          "num": 2
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 33,
+        "group_id": 1
+      },
+      "starting_index": 10,
+      "enemies": [
+        {
+          "comment": "Witch",
+          "enemy_id": "0x015604",
+          "level": 65,
+          "exp": 3026,
+          "is_boss": true
+        },
+        {
+          "comment": "Dark Skeleton Brute",
+          "enemy_id": "0x010324",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Dark Skeleton Brute",
+          "enemy_id": "0x010324",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 65,
+          "exp": 630
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 333,
+        "group_id": 6
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Large Newt",
+          "enemy_id": "0x010461",
+          "level": 65,
+          "exp": 630,
+          "index": 2
+        },
+        {
+          "comment": "Large Newt",
+          "enemy_id": "0x010461",
+          "level": 65,
+          "exp": 630,
+          "index": 5
+        },
+        {
+          "comment": "Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "level": 65,
+          "exp": 630,
+          "index": 6
+        },
+        {
+          "comment": "Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "level": 65,
+          "exp": 630,
+          "index": 7
+        },
+        {
+          "comment": "Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "level": 65,
+          "exp": 630,
+          "index": 8
+        },
+        {
+          "comment": "Bolt Skeleton Brute",
+          "enemy_id": "0x010322",
+          "level": 65,
+          "exp": 630,
+          "index": 9
+        },
+        {
+          "comment": "Bolt Skeleton Brute",
+          "enemy_id": "0x010322",
+          "level": 65,
+          "exp": 630,
+          "index": 10
+        },
+        {
+          "comment": "Bolt Skeleton Brute",
+          "enemy_id": "0x010322",
+          "level": 65,
+          "exp": 630,
+          "index": 11
+        },
+        {
+          "comment": "Bolt Skeleton Brute",
+          "enemy_id": "0x010322",
+          "level": 65,
+          "exp": 630,
+          "index": 12
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 333,
+        "group_id": 3
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Wight",
+          "enemy_id": "0x015600",
+          "level": 65,
+          "exp": 3026,
+          "is_boss": true
+        },
+        {
+          "comment": "Bolt Skeleton Brute",
+          "enemy_id": "0x010322",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Bolt Skeleton Brute",
+          "enemy_id": "0x010322",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Mudman",
+          "enemy_id": "0x010509",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Mudman",
+          "enemy_id": "0x010509",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Mudman",
+          "enemy_id": "0x010509",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Bolt Skeleton Brute",
+          "enemy_id": "0x010322",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Mudman",
+          "enemy_id": "0x010509",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Mudman",
+          "enemy_id": "0x010509",
+          "level": 65,
+          "exp": 630
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 333,
+        "group_id": 7
+      },
+      "starting_index": 1,
+      "enemies": [
+        {
+          "comment": "Lindwurm",
+          "enemy_id": "0x015707",
+          "level": 65,
+          "exp": 15761,
+          "is_boss": true
+        },
+        {
+          "comment": "Giant Saurian",
+          "enemy_id": "0x010401",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Giant Saurian",
+          "enemy_id": "0x010401",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Giant Saurian",
+          "enemy_id": "0x010401",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Giant Saurian",
+          "enemy_id": "0x010401",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Mudman",
+          "enemy_id": "0x010509",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Mudman",
+          "enemy_id": "0x010509",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Mudman",
+          "enemy_id": "0x010509",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Mudman",
+          "enemy_id": "0x010509",
+          "level": 65,
+          "exp": 630
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "NpcTalkAndOrder",
+          "stage_id": {
+            "id": 26
+          },
+          "npc_id": "ONeill",
+          "message_id": 17052
+        },
+        {
+          "type": "SeekOutEnemiesAtMarkedLocation",
+          "announce_type": "Accept",
+          "result_commands": [
+            {
+              "comment": "Idle dialogue",
+              "type": "QstTalkChg",
+              "Param1": 1205,
+              "Param2": 17050
+            }
+          ],
+          "groups": [0]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 0 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "set_flags": [1],
+          "check_flags": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "check_flags": [3, 4, 5]
+        },
+        {
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 26
+          },
+          "npc_id": "ONeill",
+          "message_id": 17051
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [1]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [1]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [3]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [2]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [4]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [3]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [3]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [5]
+        }
+      ]
+    }
+  ]
+}

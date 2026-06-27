@@ -1,0 +1,79 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Deadly Frontier (II)",
+  "quest_id": 20075004,
+  "base_level": 45,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "NorthernBetlandPlains",
+  "news_image": 145,
+  "variant_index": 1,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 2970
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 230
+    },
+    {
+      "type": "exp",
+      "amount": 3560
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Mithril Ingot",
+          "item_id": 7880,
+          "num": 3
+        },
+        {
+          "comment": "Old Forest Dwellers' Key",
+          "item_id": 9066,
+          "num": 3
+        },
+        {
+          "comment": "Enhanced Lockpick",
+          "item_id": 9403,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 305
+      },
+      "starting_index": 10,
+      "enemies": [
+        {
+          "comment": "Bounty Ghoul",
+          "enemy_id": "0x015503",
+          "named_enemy_params_id": 458,
+          "level": 45,
+          "exp": 3700,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

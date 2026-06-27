@@ -1,0 +1,87 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Whirling Hawk on a Dark Night",
+  "quest_id": 20025009,
+  "base_level": 36,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "news_image": 43,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1180
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 230
+    },
+    {
+      "type": "exp",
+      "amount": 1660
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Cathedral Bottoms",
+          "item_id": 9719,
+          "num": 1
+        },
+        {
+          "comment": "Five-Herb Salad",
+          "item_id": 9414,
+          "num": 2
+        },
+        {
+          "comment": "Enhanced Lumber Knife",
+          "item_id": 9402,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 242
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Brutal Griffin",
+          "enemy_id": "0x015300",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 54,
+          "level": 36,
+          "exp": 4200,
+          "is_boss": true,
+          "index": 6
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Raw",
+      "check_commands": [
+        {"type": "IngameTimeRangeNotEq", "Param1": 6, "Param2": 18},
+        {"type": "StageNo", "Param1": 100}
+      ]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

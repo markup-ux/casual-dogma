@@ -1,0 +1,170 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Rampage of Old Soldiers",
+    "quest_id": 21016012,
+    "base_level": 73,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "MorrowForest",
+    "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 4}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4408
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 13110
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "UnappraisedFlowerTrinketSoldier",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 418,
+                "group_id": 2
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Phindymian Warrior",
+                    "enemy_id": "0x011066",
+                    "level": 73,
+                    "exp": 2185,
+                    "hm_present_no": 100,
+                    "index": 0
+                },
+                {
+                    "comment": "Phindymian Warrior",
+                    "enemy_id": "0x011066",
+                    "level": 73,
+                    "exp": 2185,
+                    "hm_present_no": 100,
+                    "index": 1
+                },
+                {
+                    "comment": "Phindymian Warrior",
+                    "enemy_id": "0x011066",
+                    "level": 73,
+                    "exp": 2185,
+                    "hm_present_no": 100,
+                    "index": 2
+                },
+                {
+                    "comment": "Phindymian Warrior",
+                    "enemy_id": "0x011066",
+                    "level": 73,
+                    "exp": 2185,
+                    "hm_present_no": 100,
+                    "index": 3
+                },
+                {
+                    "comment": "Phindymian Element Archer",
+                    "enemy_id": "0x011067",
+                    "level": 73,
+                    "exp": 2185,
+                    "hm_present_no": 101,
+                    "index": 8
+                },
+                {
+                    "comment": "Phindymian Element Archer",
+                    "enemy_id": "0x011067",
+                    "level": 73,
+                    "exp": 2185,
+                    "hm_present_no": 101,
+                    "index": 9
+                },
+                {
+                    "comment": "Phindymian Element Archer",
+                    "enemy_id": "0x011067",
+                    "level": 73,
+                    "exp": 2185,
+                    "hm_present_no": 101,
+                    "index": 10
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 374
+            },
+            "npc_id": "Zolta",
+            "message_id": 19579
+        },
+        {
+            "type": "NewTalkToNpc",
+            "flags": [
+                {"type": "QstLayout", "action": "Set", "value": 4344, "comment": "Spawns Intyre NPC"}
+            ],
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2608, "Param2": 19580}
+            ],
+            "stage_id": {
+                "id": 418,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "announce_type": "Accept",
+            "npc_id": "Inataya",
+            "message_id": 21101
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "groups": [0],
+            "flags": [
+                {"type": "MyQst", "action": "Set", "value": 2118, "comment": "Intyre FSM"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "flags": [
+                {"type": "QstLayout", "action": "Clear", "value": 4344, "comment": "Spawns Intyre NPC"},
+                {"type": "QstLayout", "action": "Set", "value": 4349, "comment": "Spawns Intyre (Alive) NPC"}
+            ],
+            "stage_id": {
+                "id": 418,
+                "group_id": 2,
+                "layer_no": 0
+            },
+            "announce_type": "Update",
+            "npc_id": "Inataya",
+            "message_id": 19582
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 374
+            },
+            "announce_type": "Update",
+            "npc_id": "Zolta",
+            "message_id": 19577
+        }
+    ]
+}

@@ -1,0 +1,259 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Snow-White Gleam in the Deep Woods",
+  "quest_id": 21014017,
+  "base_level": 78,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "ElanWaterGrove",
+  "news_image": 537,
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 29220
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 4493
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 675
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Platinum Blood",
+          "item_id": 15935,
+          "num": 1
+        },
+        {
+          "comment": "Dazzling Silver Plume",
+          "item_id": 15967,
+          "num": 1
+        },
+        {
+          "comment": "Sharp Back Spine",
+          "item_id": 15969,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 439,
+        "group_id": 6
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Warg",
+          "enemy_id": "0x010203",
+          "level": 78,
+          "exp": 3685,
+          "index": 3
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 78,
+          "exp": 3685,
+          "index": 5
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 78,
+          "exp": 3685,
+          "index": 6
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 78,
+          "exp": 3685,
+          "index": 7
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 78,
+          "exp": 3685,
+          "index": 8
+        },
+        {
+          "comment": "Warg",
+          "enemy_id": "0x010203",
+          "level": 78,
+          "exp": 3685,
+          "index": 9
+        },
+        {
+          "comment": "Warg",
+          "enemy_id": "0x010203",
+          "level": 78,
+          "exp": 3685,
+          "index": 10
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 439,
+        "group_id": 2
+      },
+      "starting_index": 7,
+      "enemies": [
+        {
+          "comment": "Foot Biter",
+          "enemy_id": "0x011500",
+          "level": 78,
+          "exp": 3685
+        },
+        {
+          "comment": "Foot Biter",
+          "enemy_id": "0x011500",
+          "level": 78,
+          "exp": 3685
+        },
+        {
+          "comment": "Foot Biter",
+          "enemy_id": "0x011500",
+          "level": 78,
+          "exp": 3685
+        },
+        {
+          "comment": "Foot Biter",
+          "enemy_id": "0x011500",
+          "level": 78,
+          "exp": 3685
+        },
+        {
+          "comment": "Green Guardian",
+          "enemy_id": "0x010210",
+          "level": 78,
+          "exp": 3685
+        },
+        {
+          "comment": "Green Guardian",
+          "enemy_id": "0x010210",
+          "level": 78,
+          "exp": 3685
+        },
+        {
+          "comment": "Green Guardian",
+          "enemy_id": "0x010210",
+          "level": 78,
+          "exp": 3685
+        },
+        {
+          "comment": "Green Guardian",
+          "enemy_id": "0x010210",
+          "level": 78,
+          "exp": 3685
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 439,
+        "group_id": 3
+      },
+      "starting_index": 7,
+      "enemies": [
+        {
+          "comment": "White Griffin",
+          "enemy_id": "0x015320",
+          "level": 78,
+          "exp": 92125,
+          "is_boss": true
+        },
+        {
+          "comment": "Green Guardian",
+          "enemy_id": "0x010210",
+          "level": 78,
+          "exp": 3685
+        },
+        {
+          "comment": "Green Guardian",
+          "enemy_id": "0x010210",
+          "level": 78,
+          "exp": 3685
+        },
+        {
+          "comment": "Green Guardian",
+          "enemy_id": "0x010210",
+          "level": 78,
+          "exp": 3685
+        },
+        {
+          "comment": "Green Guardian",
+          "enemy_id": "0x010210",
+          "level": 78,
+          "exp": 3685
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 339
+      },
+      "npc_id": "Dirith1",
+      "message_id": 20036
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Accept",
+      "result_commands": [
+        {"type": "QstTalkChg", "Param1": 559, "Param2": 20037}
+      ],
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [0]
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Update",
+      "groups": [1]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [1]
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Update",
+      "groups": [2]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [2]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 339
+      },
+      "announce_type": "Update",
+      "npc_id": "Dirith1",
+      "message_id": 20038
+    }
+  ]
+}

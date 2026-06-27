@@ -1,0 +1,128 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Where the Sage Sleeps",
+    "quest_id": 21016015,
+    "base_level": 75,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "MorrowForest",
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 8987
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "exp",
+            "amount": 68375
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 374,
+                "group_id": 4
+            },
+            "starting_index": 5,
+            "enemies": [
+                {
+                    "comment": "Bounty Severely Infected Behemoth (Severe)",
+                    "enemy_id": "0x015717",
+                    "named_enemy_params_id": 1160,
+                    "infection_type": 2,
+                    "level": 75,
+                    "exp": 95725,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Severely Infected Stymphalides (Severe)",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 75,
+                    "exp": 2735,
+                    "is_required": false
+                },
+                {
+                    "comment": "Severely Infected Stymphalides (Severe)",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 75,
+                    "exp": 2735,
+                    "is_required": false
+                },
+                {
+                    "comment": "Severely Infected Stymphalides (Severe)",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 75,
+                    "exp": 2735,
+                    "is_required": false
+                },
+                {
+                    "comment": "Severely Infected Stymphalides (Severe)",
+                    "enemy_id": "0x010614",
+                    "infection_type": 2,
+                    "level": 75,
+                    "exp": 2735,
+                    "is_required": false
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 340
+            },
+            "npc_id": "Milan",
+            "message_id": 19448
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "groups": [0],
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2602, "Param2": 19449}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 340
+            },
+            "announce_type": "Update",
+            "npc_id": "Milan",
+            "message_id": 19450
+        }
+    ]
+}

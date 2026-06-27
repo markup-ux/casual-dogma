@@ -1,0 +1,222 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Warm Night Outlaw",
+    "quest_id": 21014011,
+    "base_level": 75,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ElanWaterGrove",
+    "news_image": 583,
+    "order_conditions": [{"type": "AreaRank", "Param1": 14, "Param2": 10}],
+    "rewards": [
+        {
+            "type": "exp",
+            "amount": 21915
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4493
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 665
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "AncientManuscriptScrap",
+                    "num": 3
+                },
+                {
+                    "item_id": "SharpBackSpine",
+                    "num": 1
+                },
+                {
+                    "item_id": "BronzeTailFeather",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "stage_id": {
+                "id": 372,
+                "group_id": 16
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Dread Ape",
+                    "enemy_id": "0x015502",
+                    "level": 75,
+                    "exp": 12175,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 75,
+                    "exp": 2435
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 372,
+                "group_id": 32
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Troll",
+                    "enemy_id": "0x015040",
+                    "level": 75,
+                    "exp": 12175,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Warg",
+                    "enemy_id": "0x010203",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Warg",
+                    "enemy_id": "0x010203",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Warg",
+                    "enemy_id": "0x010203",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Warg",
+                    "enemy_id": "0x010203",
+                    "level": 75,
+                    "exp": 2435
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 416,
+                "group_id": 6
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Spineback",
+                    "enemy_id": "0x015506",
+                    "level": 75,
+                    "exp": 12175,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Little Spine",
+                    "enemy_id": "0x015507",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Little Spine",
+                    "enemy_id": "0x015507",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Little Spine",
+                    "enemy_id": "0x015507",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Little Spine",
+                    "enemy_id": "0x015507",
+                    "level": 75,
+                    "exp": 2435
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 372
+            },
+            "npc_id": "Gobinet",
+            "message_id": 19620
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 557, "Param2": 19621}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [1]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [1]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 372
+            },
+            "announce_type": "Update",
+            "npc_id": "Gobinet",
+            "message_id": 19622
+        }
+    ]
+}

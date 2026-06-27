@@ -1,0 +1,70 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "A Shopkeeper's Distress",
+    "quest_id": 21000010,
+    "base_level": 55,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "BloodbaneIsle",
+    "news_image": 15,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4537
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 562
+        },
+        {
+            "type": "exp",
+            "amount": 1591
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "BlowResistantCloth",
+                    "num": 2
+                },
+                {
+                    "item_id": "LargeScallopShell",
+                    "num": 5
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 317
+            },
+            "npc_id": "Gunther",
+            "message_id": 17137
+        },
+        {
+            "type": "DeliverItems",
+            "stage_id": {
+                "id": 2
+            },
+            "npc_id": "Sally",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2401, "Param2": 17138, "comment": "Extra dialogue - Gunther"},
+                {"type": "QstTalkChg", "Param1": 4709, "Param2": 17139, "comment": "Extra dialogue - Sally"}
+            ],
+            "items": [
+                {"id": 11508, "amount": 6, "comment": "Saltpetre Chunk"}
+            ],
+            "message_id": 17140
+        }
+    ]
+}

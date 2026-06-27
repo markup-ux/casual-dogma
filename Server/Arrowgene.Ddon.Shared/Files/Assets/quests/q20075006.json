@@ -1,0 +1,133 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Evil in the Dark Night",
+  "quest_id": 20075006,
+  "base_level": 43,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "NorthernBetlandPlains",
+  "news_image": 142,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1410
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 280
+    },
+    {
+      "type": "exp",
+      "amount": 1700
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Crest of Greater Intelligence",
+          "item_id": 9292,
+          "num": 1
+        },
+        {
+          "comment": "Wine-Boiled Mushroom",
+          "item_id": 9411,
+          "num": 2
+        },
+        {
+          "comment": "Sprite's Talisman",
+          "item_id": 9390,
+          "num": 1
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Wild Steak",
+          "item_id": 9412,
+          "num": 2,
+          "chance": 1.0
+        },
+        {
+          "comment": "Meatloaf",
+          "item_id": 9408,
+          "num": 1,
+          "chance": 1.0
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 315
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Brutal Witch",
+          "enemy_id": "0x015604",
+          "named_enemy_params_id": 54,
+          "start_think_tbl_no": 1,
+          "level": 43,
+          "exp": 2856,
+          "is_boss": true,
+          "index": 0
+        },
+        {
+          "comment": "Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "start_think_tbl_no": 8,
+          "is_manual_set": true,
+          "is_required": false,
+          "level": 43,
+          "exp": 188,
+          "index": 4
+        },
+        {
+          "comment": "Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "start_think_tbl_no": 8,
+          "is_manual_set": true,
+          "is_required": false,
+          "level": 43,
+          "exp": 188,
+          "index": 5
+        },
+        {
+          "comment": "Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "start_think_tbl_no": 8,
+          "is_manual_set": true,
+          "is_required": false,
+          "level": 43,
+          "exp": 188,
+          "index": 6
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Raw",
+      "check_commands": [
+        {"type": "IngameTimeRangeNotEq", "Param1": 6, "Param2": 18},
+        {"type": "StageNo", "Param1": 100}
+      ]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    { "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

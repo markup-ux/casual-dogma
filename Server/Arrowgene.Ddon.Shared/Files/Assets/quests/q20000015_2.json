@@ -1,0 +1,139 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Knight And Arisen (III)",
+  "quest_id": 20000015,
+  "base_level": 16,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "HidellPlains",
+  "news_image": 541,
+  "variant_index": 2,
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 730
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 520
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 60
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Noble Greaves",
+          "item_id": 480,
+          "num": 1
+        },
+        {
+          "comment": "Demon's Periapt",
+          "item_id": 44,
+          "num": 2
+        },
+        {
+          "comment": "Purifying Decoction",
+          "item_id": 9372,
+          "num": 2
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 33
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Vigilant Orc Tosser",
+          "enemy_id": "0x015801",
+          "named_enemy_params_id": 53,
+          "level": 16,
+          "exp": 103,
+          "repop_count": 1,
+          "repop_wait_second": 10,
+          "index": 0
+        },
+        {
+          "comment": "Vigilant Orc Tosser",
+          "enemy_id": "0x015801",
+          "named_enemy_params_id": 53,
+          "level": 16,
+          "exp": 103,
+          "repop_count": 1,
+          "repop_wait_second": 10,
+          "index": 5
+        },
+        {
+          "comment": "Vigilant Orc Tosser",
+          "enemy_id": "0x015801",
+          "named_enemy_params_id": 53,
+          "level": 16,
+          "exp": 103,
+          "repop_count": 1,
+          "repop_wait_second": 10,
+          "index": 7
+        },
+        {
+          "comment": "Vigilant Orc Tosser",
+          "enemy_id": "0x015801",
+          "named_enemy_params_id": 53,
+          "level": 16,
+          "exp": 103,
+          "repop_count": 1,
+          "repop_wait_second": 10,
+          "index": 8
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 2,
+        "group_id": 0
+      },
+      "npc_id": "Heinz2",
+      "message_id": 11371
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Accept",
+      "result_commands": [
+        {
+          "comment": "Idle dialogue",
+          "type": "QstTalkChg",
+          "Param1": 8,
+          "Param2": 11387
+        }
+      ],
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 2,
+        "group_id": 0
+      },
+      "announce_type": "Update",
+      "npc_id": "Heinz2",
+      "message_id": 11834
+    }
+  ]
+}

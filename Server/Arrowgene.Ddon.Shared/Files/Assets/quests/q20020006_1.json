@@ -1,0 +1,277 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Urgent Directive: Eliminate the Demons to the North (II)",
+  "quest_id": 20020006,
+  "base_level": 41,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "news_image": 42,
+  "order_conditions": [{"type": "AreaRank", "Param1": 5, "Param2": 8}],
+  "variant_index": 1,
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 1480
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1350
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 190
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Rosewood",
+          "item_id": 7966,
+          "num": 3
+        },
+        {
+          "comment": "Conqueror's Talisman",
+          "item_id": 9387,
+          "num": 1
+        },
+        {
+          "comment": "Five-Herb Salad",
+          "item_id": 9414,
+          "num": 2
+        }
+      ]
+  },
+  {
+      "type": "random",
+      "loot_pool": [
+          {
+              "comment": "Crest of Freezing",
+              "item_id": 9259,
+              "num": 1,
+              "chance": 1.0
+          }
+      ]
+  }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 240
+      },
+      "placement_type": "manual",
+      "enemies": [
+       {
+          "comment": "Brutal Orc Trooper",
+          "enemy_id": "0x015812",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 54,
+          "level": 41,
+          "exp": 250,
+          "index": 2
+        },
+        {
+          "comment": "Brutal Grimwarg",
+          "enemy_id": "0x010205",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 54,
+          "level": 40,
+          "exp": 210,
+          "index": 3
+        },
+        {
+          "comment": "Brutal Orc Captain",
+          "enemy_id": "0x015820",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 54,
+          "level": 41,
+          "exp": 519,
+          "index": 4
+        },
+        {
+          "comment": "Brutal Orc Trooper",
+          "enemy_id": "0x015812",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 54,
+          "level": 41,
+          "exp": 250,
+          "index": 7
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 253
+      },
+      "starting_index": 1,
+      "enemies": [
+        {
+          "comment": "Brutal Undead Swordsman",
+          "enemy_id": "0x010503",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 54,
+          "level": 41,
+          "exp": 153
+        },
+        {
+          "comment": "Brutal Undead Swordsman",
+          "enemy_id": "0x010503",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 54,
+          "level": 41,
+          "exp": 153
+        },
+        {
+          "comment": "Brutal Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 54,
+          "level": 41,
+          "exp": 181
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 261
+      },
+      "starting_index": 2,
+      "enemies": [
+        {
+          "comment": "Brutal Grimwarg",
+          "enemy_id": "0x010205",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 54,
+          "level": 40,
+          "exp": 210
+        },
+        {
+          "comment": "Brutal Chimera",
+          "enemy_id": "0x015200",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 54,
+          "level": 41,
+          "exp": 3660,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "comment": "Process 0",
+      "blocks": [
+        {
+          "type": "NpcTalkAndOrder",
+          "stage_id": {
+            "id": 66,
+            "group_id": 1,
+            "layer_no": 1
+          },
+          "npc_id": "Vanessa0",
+          "message_id": 11387
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Accept",
+          "set_flags": [ 1 ],
+          "check_flags": [ 2, 3, 4 ],
+          "result_commands": [
+            {
+              "comment": "Idle dialogue",
+              "type": "QstTalkChg",
+              "Param1": 11,
+              "Param2": 12006
+            }
+          ]
+        },
+        {
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 66,
+            "group_id": 1,
+            "layer_no": 1
+          },
+          "announce_type": "CheckpointAndUpdate",
+          "npc_id": "Vanessa0",
+          "message_id": 12003
+        }
+      ]
+    },
+    {
+      "comment": "Process1 (Group 1)",
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [ 1 ]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [ 0 ]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 0 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "set_flags": [ 2 ]
+        }
+      ]
+    },
+    {
+      "comment": "Process2 (Group 2)",
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [ 1 ]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [ 1 ]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 1 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "set_flags": [ 3 ]
+        }
+      ]
+    },
+    {
+      "comment": "Process3 (Group 3)",
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [ 1 ]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [ 2 ]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 2 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "set_flags": [ 4 ]
+        }
+      ]
+    }
+  ]
+}

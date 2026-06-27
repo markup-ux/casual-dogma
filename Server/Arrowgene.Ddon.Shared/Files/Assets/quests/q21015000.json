@@ -1,0 +1,260 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Store Girl's Trials",
+    "quest_id": 21015000,
+    "base_level": 73,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "FaranaPlains",
+    "news_image": 593,
+    "order_conditions": [{"type": "AreaRank", "Param1": 15, "Param2": 7}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4408
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 13110
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Twisted Iron Scrap",
+                    "item_id": 15919,
+                    "num": 3
+                },
+                {
+                    "comment": "Superior Healing Remedy",
+                    "item_id": 7555,
+                    "num": 3
+                },
+                {
+                    "comment": "Superior Strong Gala Extract",
+                    "item_id": 9364,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "stage_id": {
+                "id": 371,
+                "group_id": 49
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 73,
+                    "exp": 2185
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 371,
+                "group_id": 27
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "level": 73,
+                    "exp": 2185
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 420,
+                "group_id": 6
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 2
+                },
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 3
+                },
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 4
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 12
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 13
+                },
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 14
+                },
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 15
+                },
+                {
+                    "comment": "Large Newt",
+                    "enemy_id": "0x010461",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 16
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 341
+            },
+            "npc_id": "Evey",
+            "message_id": 19623
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2503, "Param2": 19624}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [1]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [1]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 341
+            },
+            "announce_type": "Update",
+            "npc_id": "Evey",
+            "message_id": 19625
+        }
+    ]
+}

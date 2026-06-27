@@ -1,0 +1,182 @@
+﻿{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Cowardly Soldier's Distraction",
+    "quest_id": 22018003,
+    "base_level": 80,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "RathniteFoothills",
+    "news_image": 330,
+    "order_conditions": [{"type": "AreaRank", "Param1": 18, "Param2": 2}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5139
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "AreaPoints",
+            "amount": 500
+        },
+        {
+            "type": "exp",
+            "amount": 37800
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Acre Royal Family Intaglio",
+                    "item_id": 17912,
+                    "num": 1
+                },
+                {
+                    "comment": "Royal Crest Medal (Rathnite District)",
+                    "item_id": 18815,
+                    "num": 5
+                },
+                {
+                    "comment": "Highly Viscous Slime Liquid",
+                    "item_id": 17880,
+                    "num": 3
+                }
+            ]
+        },
+        {
+            "type": "random",
+            "loot_pool": [
+                {
+                    "comment": "Random Item 1",
+                    "item_id": 17870,
+                    "num": 2,
+                    "chance": 0.6
+                },
+                {
+                    "comment": "Random Item 2",
+                    "item_id": 9324,
+                    "num": 1,
+                    "chance": 0.6
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "comment": "GroupId: 0 - Troll, Green Guardians, Deep Slimes",
+            "stage_id": {
+                "id": 493,
+                "group_id": 10
+            },
+            "enemies": [
+                {
+                    "enemy_id": "0x015040",
+                    "level": 80,
+                    "exp": 100000,
+                    "is_boss": true,
+                    "comment": "Troll"
+                },
+                {
+                    "enemy_id": "0x010210",
+                    "level": 80,
+                    "exp": 6000,
+                    "is_boss": false,
+                    "comment": "Green Guardian"
+                },
+                {
+                    "enemy_id": "0x010210",
+                    "level": 80,
+                    "exp": 6000,
+                    "is_boss": false,
+                    "comment": "Green Guardian"
+                },
+                {
+                    "enemy_id": "0x010210",
+                    "level": 80,
+                    "exp": 6000,
+                    "is_boss": false,
+                    "comment": "Green Guardian"
+                },
+                {
+                    "enemy_id": "0x010901",
+                    "level": 80,
+                    "exp": 4500,
+                    "is_boss": false,
+                    "comment": "Deep Slime"
+                },
+                {
+                    "enemy_id": "0x010901",
+                    "level": 80,
+                    "exp": 4500,
+                    "is_boss": false,
+                    "comment": "Deep Slime"
+                },
+                {
+                    "enemy_id": "0x010901",
+                    "level": 80,
+                    "exp": 4500,
+                    "is_boss": false,
+                    "comment": "Deep Slime"
+                },
+                {
+                    "enemy_id": "0x010901",
+                    "level": 80,
+                    "exp": 4500,
+                    "is_boss": false,
+                    "comment": "Deep Slime"
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 461
+            },
+            "npc_id": "Fran",
+            "message_id": 23482
+        },
+        {
+            "type": "DeliverItems",
+            "stage_id": {
+                "id": 461
+            },
+            "npc_id": "Fran",
+            "announce_type": "Accept",
+            "items": [
+                {
+                    "id": 17911,
+                    "amount": 5
+                }
+            ],
+            "message_id": 23484
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 461
+            },
+            "announce_type": "Update",
+            "npc_id": "Fran",
+            "message_id": 23486
+        }
+    ]
+}

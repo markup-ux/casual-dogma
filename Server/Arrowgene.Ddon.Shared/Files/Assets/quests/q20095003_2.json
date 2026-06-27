@@ -1,0 +1,106 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Sinister Beasts (III)",
+    "quest_id": 20095003,
+    "base_level": 57,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ZandoraWastelands",
+    "variant_index": 2,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1880
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "exp",
+            "amount": 2630
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Pearl Shell",
+                    "item_id": 9796,
+                    "num": 1
+                },
+                {
+                    "comment": "Blue Steel Ingot",
+                    "item_id": 7885,
+                    "num": 1
+                },
+                {
+                    "comment": "Sand of Reminiscence",
+                    "item_id": 9441,
+                    "num": 1
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 164,
+                "group_id": 0
+            },
+            "starting_index": 8,
+            "enemies": [
+                {
+                    "comment": "Legendary Chimera",
+                    "enemy_id": "0x015200",
+                    "named_enemy_params_id": 57,
+                    "level": 57,
+                    "exp": 4620,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Brutal Shadow Goblin Leader",
+                    "enemy_id": "0x011160",
+                    "named_enemy_params_id": 54,
+                    "level": 55,
+                    "exp": 270
+                },
+                {
+                    "comment": "Brutal Shadow Goblin Leader",
+                    "enemy_id": "0x011160",
+                    "named_enemy_params_id": 54,
+                    "level": 55,
+                    "exp": 270
+                },
+                {
+                    "comment": "Brutal Shadow Goblin Leader",
+                    "enemy_id": "0x011160",
+                    "named_enemy_params_id": 54,
+                    "level": 55,
+                    "exp": 270
+                },
+                {
+                    "comment": "Brutal Shadow Goblin Leader",
+                    "enemy_id": "0x011160",
+                    "named_enemy_params_id": 54,
+                    "level": 55,
+                    "exp": 270
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "reset_group": false,
+            "groups": [0]
+        }
+    ]
+}

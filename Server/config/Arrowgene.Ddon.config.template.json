@@ -1,0 +1,221 @@
+{
+  "LogPath": "Logs",
+  "WebServerSetting": {
+    "PublicWebEndPoint": {
+      "IpAddress": "127.0.0.1",
+      "Port": 52099,
+      "IsHttps": false,
+      "HttpsCertPath": "",
+      "HttpsCertPw": "",
+      "SslProtocols": 0,
+      "DomainName": ""
+    },
+    "WebSetting": {
+      "ServerHeader": "",
+      "WebEndpoints": [
+        {
+          "IpAddress": "0.0.0.0",
+          "Port": 52099,
+          "IsHttps": false,
+          "HttpsCertPath": "",
+          "HttpsCertPw": "",
+          "SslProtocols": 0,
+          "DomainName": ""
+        }
+      ],
+      "WebFolder": "Files/www"
+    },
+    "MailSetting": {
+      "MailRequired": false,
+      "IsHttps": false,
+      "DomainUrl": "www.dd.on",
+      "SmtpServer": "smtp.dd.on",
+      "SmtpPort": 587,
+      "SmtpUser": "no-reply@dd.on",
+      "SmtpPassword": "p@55VV0rD",
+      "FromAddress": "no-reply@dd.on",
+      "TemplatePath": "Files/mail_templates",
+      "LogoLink": "http://127.0.0.1:52099/launcher/logo.png",
+      "SubjectNewAccount": "DDON - Welcome to Ddon!",
+      "SubjectVerifyEmail": "DDON - Verify your email address",
+      "SubjectPasswordReset": "DDON - Password reset request"
+    }
+  },
+  "GameServerSetting": {
+    "ServerSetting": {
+      "Id": 10,
+      "Name": "Game",
+      "ListenIpAddress": "0.0.0.0",
+      "ServerPort": 52000,
+      "LogLevel": 0,
+      "LogUnknownPackets": true,
+      "LogOutgoingPackets": true,
+      "LogOutgoingPacketPayload": false,
+      "LogIncomingPackets": true,
+      "LogIncomingPacketPayload": false,
+      "LogIncomingPacketStructure": false,
+      "LogOutgoingPacketStructure": false,
+      "TcpServerSettings": {
+        "Identity": "Game",
+        "MaxConnections": 100,
+        "BufferSize": 8192,
+        "OrderingLaneCount": 1,
+        "ConcurrentAccepts": 10,
+        "MaxQueuedSendBytes": 8388608,
+        "SendStorageMode": 0,
+        "ListenSocketRetries": 5,
+        "ListenSocketSettings": {
+          "Backlog": 128,
+          "DontFragment": true,
+          "DualMode": false,
+          "ExclusiveAddressUse": false,
+          "NoDelay": false,
+          "ReceiveBufferSize": 8192,
+          "ReceiveTimeout": 0,
+          "SendBufferSize": 8192,
+          "SendTimeout": 0,
+          "Ttl": 64,
+          "LingerEnabled": false,
+          "LingerTime": 30,
+          "SocketOptions": [
+            {
+              "Level": "Socket",
+              "Name": 4,
+              "Value": false
+            }
+          ]
+        },
+        "ClientSocketTimeoutSeconds": -1,
+        "ClientSocketSettings": {
+          "Backlog": 128,
+          "DontFragment": true,
+          "DualMode": false,
+          "ExclusiveAddressUse": false,
+          "NoDelay": false,
+          "ReceiveBufferSize": 8192,
+          "ReceiveTimeout": 0,
+          "SendBufferSize": 8192,
+          "SendTimeout": 0,
+          "Ttl": 64,
+          "LingerEnabled": false,
+          "LingerTime": 30,
+          "SocketOptions": [
+            {
+              "Level": "Socket",
+              "Name": 4,
+              "Value": false
+            }
+          ]
+        }
+      },
+      "ConsumerQueueCapacityPerLane": 100000
+    }
+  },
+  "GameMetricSettings": {
+    "Enabled": false,
+    "MetricsSink": 0,
+    "SamplingIntervalMs": 1000,
+    "FileMetricsSinkRetentionMin": 1440,
+    "FileMetricsExportPath": "Files/www/metrics/snapshot",
+    "FileMetricsExportIntervalMs": 30000
+  },
+  "LoginServerSetting": {
+    "ServerSetting": {
+      "Id": 1,
+      "Name": "Login",
+      "ListenIpAddress": "0.0.0.0",
+      "ServerPort": 52100,
+      "LogLevel": 0,
+      "LogUnknownPackets": true,
+      "LogOutgoingPackets": true,
+      "LogOutgoingPacketPayload": false,
+      "LogIncomingPackets": true,
+      "LogIncomingPacketPayload": false,
+      "LogIncomingPacketStructure": false,
+      "LogOutgoingPacketStructure": false,
+      "TcpServerSettings": {
+        "Identity": "Login",
+        "MaxConnections": 100,
+        "BufferSize": 8192,
+        "OrderingLaneCount": 1,
+        "ConcurrentAccepts": 10,
+        "MaxQueuedSendBytes": 8388608,
+        "SendStorageMode": 0,
+        "ListenSocketRetries": 5,
+        "ListenSocketSettings": {
+          "Backlog": 128,
+          "DontFragment": true,
+          "DualMode": false,
+          "ExclusiveAddressUse": false,
+          "NoDelay": false,
+          "ReceiveBufferSize": 8192,
+          "ReceiveTimeout": 0,
+          "SendBufferSize": 8192,
+          "SendTimeout": 0,
+          "Ttl": 64,
+          "LingerEnabled": false,
+          "LingerTime": 30,
+          "SocketOptions": [
+            {
+              "Level": "Socket",
+              "Name": 4,
+              "Value": false
+            }
+          ]
+        },
+        "ClientSocketTimeoutSeconds": -1,
+        "ClientSocketSettings": {
+          "Backlog": 128,
+          "DontFragment": true,
+          "DualMode": false,
+          "ExclusiveAddressUse": false,
+          "NoDelay": false,
+          "ReceiveBufferSize": 8192,
+          "ReceiveTimeout": 0,
+          "SendBufferSize": 8192,
+          "SendTimeout": 0,
+          "Ttl": 64,
+          "LingerEnabled": false,
+          "LingerTime": 30,
+          "SocketOptions": [
+            {
+              "Level": "Socket",
+              "Name": 4,
+              "Value": false
+            }
+          ]
+        }
+      },
+      "ConsumerQueueCapacityPerLane": 100000
+    },
+    "AccountRequired": true,
+    "NoOperationTimeOutTime": 14400,
+    "KickOnMultipleLogin": false,
+    "KickOnMultipleLoginTries": 3,
+    "KickOnMultipleLoginTimer": 5000
+  },
+  "LoginMetricSettings": {
+    "Enabled": false,
+    "MetricsSink": 0,
+    "SamplingIntervalMs": 1000,
+    "FileMetricsSinkRetentionMin": 1440,
+    "FileMetricsExportPath": "Files/www/metrics/snapshot",
+    "FileMetricsExportIntervalMs": 30000
+  },
+  "DatabaseSetting": {
+    "Type": "sqlite",
+    "DatabaseFolder": "Files/Database",
+    "Host": "localhost",
+    "Port": 3306,
+    "User": "",
+    "Password": "",
+    "Database": "Ddon",
+    "WipeOnStartup": false,
+    "EnableTracing": false,
+    "BufferSize": 32768,
+    "NoResetOnClose": true,
+    "EnablePooling": true,
+    "MaxAutoPrepare": 200
+  },
+  "AssetPath": "Files/Assets"
+}

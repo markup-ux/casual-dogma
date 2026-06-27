@@ -1,0 +1,139 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Time Restriction: Daybreak Mining",
+    "quest_id": 21017005,
+    "base_level": 70,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "KingalCanyon",
+    "news_image": 301,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5772
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 750
+        },
+        {
+            "type": "exp",
+            "amount": 3070
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "ValleySpringWater",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "processes": [
+        {
+            "blocks": [
+                {
+                    "type": "NpcTalkAndOrder",
+                    "stage_id": {
+                        "id": 377
+                    },
+                    "npc_id": "Ciaran",
+                    "message_id": 19689
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "Accept",
+                    "check_commands": [
+                        {"type": "StageNo", "Param1": 921},
+                        {"type": "IngameTimeRangeEq", "Param1": 5, "Param2": 10}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 2700, "Param2": 19690}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "CheckpointAndUpdate",
+                    "check_commands": [
+                        {"type": "TalkNpc", "Param1": 921, "Param2": 2700},
+                        {"type": "IngameTimeRangeEq", "Param1": 5, "Param2": 10}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 2700, "Param2": 19691}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "CheckpointAndUpdate",
+                    "result_commands": [
+                        {"type": "MyQstFlagOn", "Param1": 0},
+                        {"type": "QstTalkChg", "Param1": 2700, "Param2": 19692}
+                    ],
+                    "check_commands": [
+                        {"type": "HaveItemAllBag", "Param1": 15953, "Param2": 5}
+                    ]
+                },
+                {
+                    "type": "DeliverItems",
+                    "announce_type": "CheckpointAndUpdate",
+                    "stage_id": {
+                        "id": 377
+                    },
+                    "npc_id": "Ciaran",
+                    "items": [
+                        {
+                            "comment": "Ringing Ore",
+                            "id": 15953,
+                            "amount": 5
+                        }
+                    ],
+                    "message_id": 19693
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [0]
+                },
+                {
+                    "type": "Raw",
+                    "check_commands": [
+                        {"type": "IngameTimeRangeEq", "Param1": 5, "Param2": 10},
+                        {"type": "StageNoWithoutMarker", "Param1": 122}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "result_commands": [
+                        {"type": "QstLayoutFlagOn", "Param1": 4326},
+                        {"type": "CallMessage", "Param1": 1, "Param1": 19940}
+                    ],
+                    "check_commands": [
+                        {"type": "IngameTimeRangeNotEq", "Param1": 5, "Param2": 10}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "result_commands": [
+                        {"type": "QstLayoutFlagOff", "Param1": 4326},
+                        {"type": "CallMessage", "Param1": 1, "Param1": 19941}
+                    ]
+                }
+            ]
+        }
+    ]
+}

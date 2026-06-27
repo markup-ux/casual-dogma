@@ -1,0 +1,111 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Fiery Titan (III)",
+    "quest_id": 20095000,
+    "base_level": 56,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ZandoraWastelands",
+    "order_conditions": [{"type": "MainQuestCompleted", "Param1": 20}],
+    "variant_index": 2,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1840
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 290
+        },
+        {
+            "type": "exp",
+            "amount": 2580
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Alchemite",
+                    "item_id": 7871,
+                    "num": 1
+                },
+                {
+                    "comment": "Dirty Sheet Metal",
+                    "item_id": 8029,
+                    "num": 1
+                },
+                {
+                    "comment": "Chipped Gold Lump",
+                    "item_id": 8025,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 77,
+                "group_id": 24
+            },
+            "enemies": [
+                {
+                    "comment": "Dangerous Damned Golem",
+                    "enemy_id": "0x015103",
+                    "named_enemy_params_id": 56,
+                    "level": 56,
+                    "exp": 5054,
+                    "is_boss": true
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NewNpcTalkAndOrder",
+            "flags": [
+                {"type": "QstLayout", "action": "Set", "value": 1655, "comment": "Spawns Christoph NPC"}
+            ],
+            "stage_id": {
+                "id": 1,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "npc_id": "Christoph",
+            "message_id": 16102
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+               {
+                    "comment": "Idle dialogue",
+                    "type": "QstTalkChg",
+                    "Param1": 513,
+                    "Param2": 16103
+               }
+           ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 1,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "announce_type": "Update",
+            "npc_id": "Christoph",
+            "message_id": 16104
+        }
+    ]
+}

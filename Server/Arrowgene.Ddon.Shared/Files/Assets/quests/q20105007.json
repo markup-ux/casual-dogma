@@ -1,0 +1,79 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Sudden Urge to Kill",
+  "quest_id": 20105007,
+  "base_level": 41,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "DeenanWoods",
+  "news_image": 204,
+  "order_conditions": [{"type": "AreaRank", "Param1": 7, "Param2": 2}],
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1350
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 210
+    },
+    {
+      "type": "exp",
+      "amount": 1620
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Spirit Silver Ingot",
+          "item_id": 7884,
+          "num": 2
+        },
+        {
+          "comment": "Rare Meat Paté",
+          "item_id": 9420,
+          "num": 1
+        },
+        {
+          "comment": "Enhanced Lumber Knife",
+          "item_id": 9402,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 97,
+        "group_id": 7
+      },
+      "starting_index": 1,
+      "enemies": [
+        {
+          "comment": "Brutal Silver Roar",
+          "enemy_id": "0x015505",
+          "named_enemy_params_id": 54,
+          "level": 41,
+          "exp": 3287,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Time Restriction: Dredging at Dawn",
+    "quest_id": 21014023,
+    "base_level": 75,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ElanWaterGrove",
+    "news_image": 283,
+    "order_conditions": [{"type": "AreaRank", "Param1": 14, "Param2": 11}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 11233
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 1662
+        },
+        {
+            "type": "exp",
+            "amount": 5470
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "AshenFlowerRock",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "processes": [
+        {
+            "blocks": [
+                {
+                    "type": "NpcTalkAndOrder",
+                    "stage_id": {
+                        "id": 339
+                    },
+                    "npc_id": "Musel0",
+                    "message_id": 20016
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "Accept",
+                    "check_commands": [
+                        {"type": "StageNo", "Param1": 910},
+                        {"type": "IngameTimeRangeEq", "Param1": 4, "Param2": 7}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 4509, "Param2": 20017}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "CheckpointAndUpdate",
+                    "check_commands": [
+                        {"type": "TalkNpc", "Param1": 910, "Param2": 2600},
+                        {"type": "IngameTimeRangeEq", "Param1": 4, "Param2": 7}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 4509, "Param2": 20018}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "CheckpointAndUpdate",
+                    "result_commands": [
+                        {"type": "MyQstFlagOn", "Param1": 0},
+                        {"type": "QstTalkChg", "Param1": 4509, "Param2": 20019}
+                    ],
+                    "check_commands": [
+                        {"type": "HaveItemAllBag", "Param1": 16002, "Param2": 5}
+                    ]
+                },
+                {
+                    "type": "DeliverItems",
+                    "announce_type": "CheckpointAndUpdate",
+                    "stage_id": {
+                        "id": 339
+                    },
+                    "npc_id": "Musel0",
+                    "items": [
+                        {
+                            "comment": "Smooth White Mud",
+                            "id": 16002,
+                            "amount": 5
+                        }
+                    ],
+                    "message_id": 20020
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [0]
+                },
+                {
+                    "type": "Raw",
+                    "check_commands": [
+                        {"type": "IngameTimeRangeEq", "Param1": 4, "Param2": 7},
+                        {"type": "StageNo", "Param1": 121}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "result_commands": [
+                        {"type": "QstLayoutFlagOn", "Param1": 4684},
+                        {"type": "CallMessage", "Param1": 1, "Param1": 20098}
+                    ],
+                    "check_commands": [
+                        {"type": "IngameTimeRangeNotEq", "Param1": 4, "Param2": 7}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "result_commands": [
+                        {"type": "QstLayoutFlagOff", "Param1": 4684},
+                        {"type": "CallMessage", "Param1": 1, "Param1": 20099}
+                    ]
+                }
+            ]
+        }
+    ]
+}

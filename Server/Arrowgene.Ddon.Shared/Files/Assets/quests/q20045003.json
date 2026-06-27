@@ -1,0 +1,78 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Tunnel Beast",
+  "quest_id": 20045003,
+  "base_level": 23,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "VoldenMines",
+  "news_image": 533,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 750
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 110
+    },
+    {
+      "type": "exp",
+      "amount": 970
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Drilled Plate Sheet",
+          "item_id": 7881,
+          "num": 1
+        },
+        {
+          "comment": "Quality Gala Extract",
+          "item_id": 9361,
+          "num": 2
+        },
+        {
+          "comment": "Demon's Amulet",
+          "item_id": 9383,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 101,
+        "group_id": 5
+      },
+      "starting_index": 9,
+      "enemies": [
+        {
+          "comment": "Vigilant Chimera",
+          "enemy_id": "0x015200",
+          "named_enemy_params_id": 53,
+          "level": 23,
+          "exp": 2580,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

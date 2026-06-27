@@ -1,0 +1,420 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "High Difficulty: Thank You for Your Trouble (Dual Crests ★ Debut)",
+  "quest_id": 21000043,
+  "base_level": 65,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "VoldenMines",
+  "order_conditions": [ { "type": "AreaRank", "Param1": 4, "Param2": 13 } ],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 9379
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 2144
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 275
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Crest of Superior Magick (Lowered Magick Defense)",
+          "item_id": 16058,
+          "num": 2
+        },
+        {
+          "comment": "Crest of Superior Magick",
+          "item_id": 9202,
+          "num": 2
+        },
+        {
+          "comment": "Crest of Dwindled Magick Defense",
+          "item_id": 9284,
+          "num": 2
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 72,
+        "group_id": 12
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Rock Saurian Spinel",
+          "enemy_id": "0x010451",
+          "level": 65,
+          "exp": 630,
+          "index": 6
+        },
+        {
+          "comment": "Rock Saurian Spinel",
+          "enemy_id": "0x010451",
+          "level": 65,
+          "exp": 630,
+          "index": 7
+        },
+        {
+          "comment": "Colossus",
+          "enemy_id": "0x015020",
+          "level": 63,
+          "exp": 3026,
+          "is_boss": true,
+          "index": 11
+        },
+        {
+          "comment": "Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "level": 65,
+          "exp": 630,
+          "index": 12
+        },
+        {
+          "comment": "Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "level": 65,
+          "exp": 630,
+          "index": 13
+        },
+        {
+          "comment": "Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "level": 65,
+          "exp": 630,
+          "index": 14
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 410,
+        "group_id": 2
+      },
+      "starting_index": 6,
+      "enemies": [
+        {
+          "comment": "Flame Skeleton Brute",
+          "enemy_id": "0x010320",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Flame Skeleton Brute",
+          "enemy_id": "0x010320",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Redcap Slinger",
+          "enemy_id": "0x011112",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Redcap Slinger",
+          "enemy_id": "0x011112",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Flame Skeleton Brute",
+          "enemy_id": "0x010320",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Redcap Slinger",
+          "enemy_id": "0x011112",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Redcap Slinger",
+          "enemy_id": "0x011112",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Redcap Slinger",
+          "enemy_id": "0x011112",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Redcap Slinger",
+          "enemy_id": "0x011112",
+          "level": 65,
+          "exp": 630
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 410,
+        "group_id": 3
+      },
+      "starting_index": 1,
+      "enemies": [
+        {
+          "comment": "Griffin",
+          "enemy_id": "0x015300",
+          "level": 65,
+          "exp": 3026,
+          "is_boss": true
+        },
+        {
+          "comment": "Ghost Mail",
+          "enemy_id": "0x010311",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Ghost Mail",
+          "enemy_id": "0x010311",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Harpy",
+          "enemy_id": "0x010600",
+          "start_think_tbl_no": 2,
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Harpy",
+          "enemy_id": "0x010600",
+          "start_think_tbl_no": 2,
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Harpy",
+          "enemy_id": "0x010600",
+          "start_think_tbl_no": 2,
+          "level": 65,
+          "exp": 630
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 410,
+        "group_id": 6
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Golem",
+          "enemy_id": "0x015100",
+          "start_think_tbl_no": 2,
+          "level": 65,
+          "exp": 15761,
+          "is_boss": true
+        },
+        {
+          "comment": "Rock Saurian Spinel",
+          "enemy_id": "0x010451",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Rock Saurian Spinel",
+          "enemy_id": "0x010451",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Rock Saurian Spinel",
+          "enemy_id": "0x010451",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Rock Saurian Spinel",
+          "enemy_id": "0x010451",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Flame Skeleton Brute",
+          "enemy_id": "0x010320",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Flame Skeleton Brute",
+          "enemy_id": "0x010320",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Flame Skeleton Brute",
+          "enemy_id": "0x010320",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Flame Skeleton Brute",
+          "enemy_id": "0x010320",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Flame Skeleton Brute",
+          "enemy_id": "0x010320",
+          "level": 65,
+          "exp": 630
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "NpcTalkAndOrder",
+          "stage_id": {
+            "id": 80
+          },
+          "npc_id": "Roy",
+          "message_id": 17116
+        },
+        {
+          "type": "SeekOutEnemiesAtMarkedLocation",
+          "announce_type": "Accept",
+          "result_commands": [
+            {
+              "comment": "Idle dialogue",
+              "type": "QstTalkChg",
+              "Param1": 1604,
+              "Param2": 17117
+            }
+          ],
+          "groups": [0]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 0 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "set_flags": [1],
+          "check_flags": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "check_flags": [3, 4, 5]
+        },
+        {
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 80
+          },
+          "npc_id": "Roy",
+          "message_id": 17118
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [1]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [1]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [3]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [2]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [4]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [3]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [3]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [5]
+        }
+      ]
+    }
+  ]
+}

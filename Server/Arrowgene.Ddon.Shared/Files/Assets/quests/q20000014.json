@@ -1,0 +1,85 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Heart Throbs Once More",
+  "quest_id": 20000014,
+  "base_level": 8,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "HidellPlains",
+  "news_image": 14,
+  "order_conditions": [{"type": "ClearPersonalQuest", "Param1": 60000016}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 260
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 790
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 20
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Leather Bottoms",
+          "item_id": 446,
+          "num": 1
+        },
+        {
+          "comment": "Healing Potion",
+          "item_id": 34,
+          "num": 2
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 2,
+        "group_id": 1
+      },
+      "npc_id": "Mayleaf0",
+      "message_id": 11370
+    },
+    {
+      "type": "DeliverItems",
+      "stage_id": {
+        "id": 2,
+        "group_id": 1
+      },
+      "npc_id": "Mayleaf0",
+      "announce_type": "Accept",
+      "result_commands": [
+        {
+          "comment": "Idle dialogue - Mayleaf",
+          "type": "QstTalkChg",
+          "Param1": 14,
+          "Param2": 11829
+        },
+        {
+          "comment": "Idle dialogue - Pamela",
+          "type": "QstTalkChg",
+          "Param1": 1003,
+          "Param2": 11824
+        }
+      ],
+      "items": [
+        {
+          "comment": "Fluorite Earrings",
+          "id": 8931,
+          "amount": 1
+        }
+      ],
+      "message_id": 11825
+    }
+  ]
+}

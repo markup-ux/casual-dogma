@@ -1,0 +1,163 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "An Intruder in Too Deep",
+  "quest_id": 22018039,
+  "base_level": 90,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MegadosysPlateau",
+  "news_image": 330,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5500
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 300
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "AreaPoints",
+      "amount": 500
+    },
+    {
+      "type": "exp",
+      "amount": 25200
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Royal Crest Medal (Megadosys District)",
+          "item_id": 18820,
+          "num": 5
+        },
+        {
+          "comment": "Strong Heat-Resistant Scale",
+          "item_id": 21223,
+          "num": 3
+        },
+        {
+          "comment": "Cursed Letter",
+          "item_id": 17878,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "comment": "GroupId: 16 - Witch, Harpies, Giant Geo Saurians",
+      "stage_id": {
+        "id": 597,
+        "group_id": 16
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015604",
+          "level": 90,
+          "exp": 44000,
+          "is_boss": false,
+          "comment": "Witch"
+        },
+        {
+          "enemy_id": "0x010600",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Harpy"
+        },
+        {
+          "enemy_id": "0x010600",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Harpy"
+        },
+        {
+          "enemy_id": "0x010600",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Harpy"
+        },
+        {
+          "enemy_id": "0x010600",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Harpy"
+        },
+        {
+          "enemy_id": "0x010421",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Giant Geo Saurian"
+        },
+        {
+          "enemy_id": "0x010421",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Giant Geo Saurian"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 464
+      },
+      "npc_id": "Kirsty0",
+      "message_id": 27945
+    },
+    {
+      "type": "NewTalkToNpc",
+      "stage_id": {
+        "id": 597
+      },
+      "announce_type": "Accept",
+      "npc_id": "Revento",
+      "message_id": 27952,
+      "groups": [0],
+      "flags": [
+        {
+          "type": "QstLayout",
+          "action": "Set",
+          "value": 7352
+        }
+      ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [0]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 597
+      },
+      "announce_type": "Update",
+      "npc_id": "Revento",
+      "message_id": 0
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 464
+      },
+      "announce_type": "Update",
+      "npc_id": "Kirsty0",
+      "message_id": 27944
+    }
+  ]
+}

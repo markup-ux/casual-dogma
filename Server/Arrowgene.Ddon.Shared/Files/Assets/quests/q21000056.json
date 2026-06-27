@@ -1,0 +1,456 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "High Difficulty: Monsters Full of Ambition (Crests x Quests 2017)",
+  "quest_id": 21000056,
+  "base_level": 70,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "EasternZandora",
+  "order_conditions": [ { "type": "AreaRank", "Param1": 11, "Param2": 13 } ],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 16020
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 2309
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 300
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Crest of Power+",
+          "item_id": 11719,
+          "num": 1
+        },
+        {
+          "comment": "Crest of Herculean Power (Stun)",
+          "item_id": 16044,
+          "num": 1
+        },
+        {
+          "comment": "Crest of Herculean Power (Lowered Defense)",
+          "item_id": 16050,
+          "num": 1
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Crest of Power+",
+          "item_id": 11719,
+          "num": 1,
+          "chance": 0.1
+        },
+        {
+          "comment": "Crest of Magick+",
+          "item_id": 11720,
+          "num": 1,
+          "chance": 0.1
+        },
+        {
+          "comment": "Crest of Greater Power+",
+          "item_id": 13658,
+          "num": 1,
+          "chance": 0.1
+        },
+        {
+          "comment": "Crest of Greater Magick+",
+          "item_id": 13659,
+          "num": 1,
+          "chance": 0.1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 37,
+        "group_id": 1
+      },
+      "starting_index": 4,
+      "enemies": [
+        {
+          "comment": "Bolt Grimwarg",
+          "enemy_id": "0x010211",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Bolt Grimwarg",
+          "enemy_id": "0x010211",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Bolt Grimwarg",
+          "enemy_id": "0x010211",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Bolt Grimwarg",
+          "enemy_id": "0x010211",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 70,
+          "exp": 1335
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 432,
+        "group_id": 1
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Bolt Grimwarg",
+          "enemy_id": "0x010211",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Bolt Grimwarg",
+          "enemy_id": "0x010211",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Bolt Grimwarg",
+          "enemy_id": "0x010211",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Bolt Grimwarg",
+          "enemy_id": "0x010211",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 70,
+          "exp": 1335
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 432,
+        "group_id": 7
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Empress Ghost",
+          "enemy_id": "0x015605",
+          "level": 70,
+          "exp": 5925,
+          "is_boss": true,
+          "index": 4
+        },
+        {
+          "comment": "Eliminator",
+          "enemy_id": "0x010508",
+          "level": 70,
+          "exp": 1335,
+          "index": 5
+        },
+        {
+          "comment": "Eliminator",
+          "enemy_id": "0x010508",
+          "level": 70,
+          "exp": 1335,
+          "index": 6
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 1335,
+          "index": 8
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 1335,
+          "index": 9
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 1335,
+          "index": 10
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 1335,
+          "index": 11
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 432,
+        "group_id": 9
+      },
+      "starting_index": 6,
+      "enemies": [
+        {
+          "comment": "Death Knight",
+          "enemy_id": "0x010310",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Ghost",
+          "enemy_id": "0x015620",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Death Knight",
+          "enemy_id": "0x010310",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Dark Skeleton Brute",
+          "enemy_id": "0x010324",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Dark Skeleton Brute",
+          "enemy_id": "0x010324",
+          "level": 70,
+          "exp": 1335
+        },
+        {
+          "comment": "Dark Skeleton Brute",
+          "enemy_id": "0x010324",
+          "level": 70,
+          "exp": 1335
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "NpcTalkAndOrder",
+          "stage_id": {
+            "id": 61
+          },
+          "npc_id": "Nadia",
+          "message_id": 17333
+        },
+        {
+          "type": "SeekOutEnemiesAtMarkedLocation",
+          "announce_type": "Accept",
+          "result_commands": [
+            {
+              "comment": "Idle dialogue",
+              "type": "QstTalkChg",
+              "Param1": 1811,
+              "Param2": 17334
+            }
+          ],
+          "groups": [0]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 0 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "set_flags": [1],
+          "check_flags": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "check_flags": [3, 4, 5]
+        },
+        {
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 61
+          },
+          "npc_id": "Nadia",
+          "message_id": 17335
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [1]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [1]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [3]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [2]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [4]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [3]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [3]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [5]
+        }
+      ]
+    }
+  ]
+}

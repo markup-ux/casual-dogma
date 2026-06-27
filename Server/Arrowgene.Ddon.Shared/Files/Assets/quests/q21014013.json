@@ -1,0 +1,162 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Arisen Corps' Blunder",
+    "quest_id": 21014013,
+    "base_level": 70,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ElanWaterGrove",
+    "news_image": 583,
+    "order_conditions": [{"type": "AreaRank", "Param1": 14, "Param2": 4}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 2309
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "exp",
+            "amount": 13814
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "PurplePetals",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 415,
+                "group_id": 2
+            },
+            "enemies": []
+        },
+        {
+            "stage_id": {
+                "id": 415,
+                "group_id": 2
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Troll",
+                    "enemy_id": "0x015040",
+                    "level": 70,
+                    "exp": 7675,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Saurian Sage",
+                    "enemy_id": "0x010430",
+                    "level": 70,
+                    "exp": 1535
+                },
+                {
+                    "comment": "Saurian Sage",
+                    "enemy_id": "0x010430",
+                    "level": 70,
+                    "exp": 1535
+                },
+                {
+                    "comment": "Saurian Sage",
+                    "enemy_id": "0x010430",
+                    "level": 70,
+                    "exp": 1535
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NewNpcTalkAndOrder",
+            "stage_id": {
+                "id": 372,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "ArisenCorpsRegimentalSoldier7",
+            "message_id": 19511,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4480, "comment": "Spawns Regimental Soldier NPC"}
+            ]
+        },
+        {
+            "type": "SpawnGroup",
+            "announce_type": "Accept",
+            "groups": [0],
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 530, "Param2": 19512, "comment": "Extra dialogue - Regimental Soldier 7"}
+            ],
+            "check_commands": [
+                {"type": "StageNo", "Param1": 814}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 415,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "ArisenCorpsRegimentalSoldier6",
+            "message_id": 21096,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4477, "comment": "Spawns Regimental Soldier 6 NPC"}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "groups": [1],
+            "result_commands": [
+                {"type": "CallMessage", "Param1": 529, "Param1": 19514},
+                {"type": "MyQstFlagOn", "Param1": 2098, "comment": "Regimental Soldier 6 FSM"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 415,
+                "group_id": 2,
+                "layer_no": 0
+            },
+            "npc_id": "ArisenCorpsRegimentalSoldier6",
+            "message_id": 19563,
+            "result_commands": [
+                {"type": "QstLayoutFlagOff", "Param1": 4477, "comment": "Clears Regimental Soldier 6 NPC"},
+                {"type": "QstLayoutFlagOn", "Param1": 4482, "comment": "Spawns Regimental Soldier 6 (Alive) NPC"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 372,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "ArisenCorpsRegimentalSoldier7",
+            "message_id": 19509
+        }
+    ]
+}

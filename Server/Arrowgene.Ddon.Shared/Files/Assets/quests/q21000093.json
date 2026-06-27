@@ -1,0 +1,87 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Solitary Master",
+  "quest_id": 21000093,
+  "base_level": 65,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "ZandoraWastelands",
+  "order_conditions": [ { "type": "AreaRank", "Param1": 10, "Param2": 11 } ],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 3940
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5360
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 687
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Slimy Hide",
+          "item_id": 11806,
+          "num": 2
+        },
+        {
+          "comment": "Superior Strong Gala Extract",
+          "item_id": 9364,
+          "num": 3
+        },
+        {
+          "comment": "Panacea",
+          "item_id": 41,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 139
+      },
+      "npc_id": "Dian",
+      "message_id": 17194
+    },
+    {
+      "type": "DeliverItems",
+      "stage_id": {
+        "id": 1
+      },
+      "npc_id": "Alkane",
+      "announce_type": "Accept",
+      "result_commands": [
+        {
+          "comment": "Idle dialogue - Dian",
+          "type": "QstTalkChg",
+          "Param1": 4507,
+          "Param2": 17227
+        },
+        {
+          "comment": "Idle dialogue - Alkane",
+          "type": "QstTalkChg",
+          "Param1": 1403,
+          "Param2": 17228
+        }
+      ],
+      "items": [
+        {
+          "comment": "Gold-Stained Animal Fur",
+          "id": 11803,
+          "amount": 6
+        }
+      ],
+      "message_id": 17232
+    }
+  ]
+}

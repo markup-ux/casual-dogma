@@ -1,0 +1,138 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Dark Shadow Covering the Sky (II)",
+    "quest_id": 20095002,
+    "base_level": 50,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ZandoraWastelands",
+    "order_conditions": [{"type": "MainQuestCompleted", "Param1": 20}],
+    "variant_index": 1,
+    "news_image": 182,
+    "rewards": [
+        {
+            "type": "exp",
+            "amount": 2690
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1650
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Moist Black Leather",
+                    "item_id": 7742,
+                    "num": 1
+                },
+                {
+                    "comment": "Panacea",
+                    "item_id": 41,
+                    "num": 1
+                },
+                {
+                    "comment": "Healing Remedy",
+                    "item_id": 7554,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 1,
+                "group_id": 397
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Vigilant Harpy",
+                    "enemy_id": "0x010600",
+                    "named_enemy_params_id": 53,
+                    "level": 50,
+                    "exp": 138,
+                    "index": 0
+                },
+                {
+                    "comment": "Vigilant Harpy",
+                    "enemy_id": "0x010600",
+                    "named_enemy_params_id": 53,
+                    "level": 50,
+                    "exp": 138,
+                    "index": 1
+                },
+                {
+                    "comment": "Brutal Black Griffin",
+                    "enemy_id": "0x015303",
+                    "named_enemy_params_id": 54,
+                    "level": 50,
+                    "exp": 5420,
+                    "is_boss": true,
+                    "index": 6
+                },
+                {
+                    "comment": "Vigilant Harpy",
+                    "enemy_id": "0x010600",
+                    "named_enemy_params_id": 53,
+                    "level": 50,
+                    "exp": 138,
+                    "index": 7
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NewNpcTalkAndOrder",
+            "flags": [
+                {"type": "QstLayout", "action": "Set", "value": 1657, "comment": "Spawns 禁域守の神官 NPC"}
+            ],
+            "stage_id": {
+                "id": 1,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "npc_id": "4701",
+            "message_id": 16055
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+               {
+                    "comment": "Idle dialogue",
+                    "type": "QstTalkChg",
+                    "Param1": 4701,
+                    "Param2": 16056
+               }
+           ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 1,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "announce_type": "Update",
+            "npc_id": "4701",
+            "message_id": 16057
+        }
+    ]
+}

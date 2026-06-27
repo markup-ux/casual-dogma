@@ -1,0 +1,130 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Champion from that Day",
+    "quest_id": 21015015,
+    "base_level": 73,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "FaranaPlains",
+    "order_conditions": [{"type": "AreaRank", "Param1": 15, "Param2": 7}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4408
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 19665
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "CompositeOrgan",
+                    "num": 1
+                },
+                {
+                    "item_id": "TwistedIronScrap",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 420,
+                "group_id": 7
+            },
+            "enemies": [
+                {
+                    "comment": "Gorechimera",
+                    "enemy_id": "0x015201",
+                    "level": 73,
+                    "exp": 10925,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Pixie Jabber",
+                    "enemy_id": "0x010155",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Pixie Jabber",
+                    "enemy_id": "0x010155",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 73,
+                    "exp": 2185
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 341
+            },
+            "npc_id": "Evey",
+            "message_id": 19429
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2503, "Param2": 19430}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 341
+            },
+            "announce_type": "Update",
+            "npc_id": "Evey",
+            "message_id": 19431
+        }
+    ]
+}

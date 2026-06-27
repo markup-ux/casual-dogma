@@ -1,0 +1,91 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Scaled Soldiers",
+  "quest_id": 20055000,
+  "base_level": 16,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MysreeForest",
+  "news_image": 105,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 440
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 80
+    },
+    {
+      "type": "exp",
+      "amount": 420
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Iron Legs",
+          "item_id": 8403,
+          "num": 1
+        },
+        {
+          "comment": "Superior Healing Potion",
+          "item_id": 35,
+          "num": 2
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 47
+      },
+      "starting_index": 4,
+      "enemies": [
+        {
+          "comment": "Vigilant Giant Saurian",
+          "enemy_id": "0x010401",
+          "named_enemy_params_id": 53,
+          "level": 16,
+          "exp": 107,
+          "repop_count": 2,
+          "repop_wait_second": 10
+        },
+        {
+          "comment": "Vigilant Giant Saurian",
+          "enemy_id": "0x010401",
+          "named_enemy_params_id": 53,
+          "level": 16,
+          "exp": 107,
+          "repop_count": 2,
+          "repop_wait_second": 10
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Raw",
+      "check_commands": [
+        {"type": "IngameTimeRangeNotEq", "Param1": 6, "Param2": 18},
+        {"type": "StageNo", "Param1": 100}
+      ]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "show_marker": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

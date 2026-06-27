@@ -1,0 +1,101 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Ambush In The Well's Depths",
+  "quest_id": 20005002,
+  "base_level": 11,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "HidellPlains",
+  "news_image": 501,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 300
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 50
+    },
+    {
+      "type": "exp",
+      "amount": 540
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Thief's Mask",
+          "item_id": 489,
+          "num": 1
+        },
+        {
+          "comment": "Absorbent Cloth",
+          "item_id": 9368,
+          "num": 2
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 134,
+        "group_id": 0
+      },
+      "enemies": [
+        {
+          "comment": "Vigilant Orc Soldier",
+          "enemy_id": "0x015800",
+          "named_enemy_params_id": 53,
+          "level": 11,
+          "exp": 80
+        },
+        {
+          "comment": "Vigilant Orc Tosser",
+          "enemy_id": "0x015801",
+          "named_enemy_params_id": 53,
+          "level": 11,
+          "exp": 80,
+          "repop_count": 1,
+          "repop_wait_second": 10
+        },
+        {
+          "comment": "Vigilant Orc Soldier",
+          "enemy_id": "0x015800",
+          "named_enemy_params_id": 53,
+          "level": 11,
+          "exp": 80
+        },
+        {
+          "comment": "Vigilant Orc Soldier",
+          "enemy_id": "0x015800",
+          "named_enemy_params_id": 53,
+          "level": 11,
+          "exp": 80
+        },
+        {
+          "comment": "Vigilant Orc Tosser",
+          "enemy_id": "0x015801",
+          "named_enemy_params_id": 53,
+          "level": 11,
+          "exp": 80
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

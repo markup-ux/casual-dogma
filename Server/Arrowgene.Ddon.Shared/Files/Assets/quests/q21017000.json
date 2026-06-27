@@ -1,0 +1,235 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Dining Danger",
+    "quest_id": 21017000,
+    "base_level": 70,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+	"area_id": "KingalCanyon",
+    "news_image": 325,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 2309
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "exp",
+            "amount": 9210
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "HardLeatherCloth",
+                    "num": 3
+                },
+                {					
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {				
+                    "item_id": "Panacea",
+                    "num": 3					
+                }
+            ]
+        }
+    ],
+	"enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 8
+            },
+			"starting_index": 3,
+            "enemies": [
+                {
+					"comment": "Rock Saurian",
+                    "enemy_id": "0x010450",
+                    "level": 70,
+                    "exp": 1535
+				},
+                {
+					"comment": "Rock Saurian",
+                    "enemy_id": "0x010450",
+                    "level": 70,
+                    "exp": 1535
+				},
+                {
+					"comment": "Rock Saurian",
+                    "enemy_id": "0x010450",
+                    "level": 70,
+                    "exp": 1535
+				},
+                {
+					"comment": "Rock Saurian",
+                    "enemy_id": "0x010450",
+                    "level": 70,
+                    "exp": 1535
+				},
+                {
+					"comment": "Rock Saurian",
+                    "enemy_id": "0x010450",
+                    "level": 70,
+                    "exp": 1535
+				},
+                {
+					"comment": "Rock Saurian Spinel",
+                    "enemy_id": "0x010451",
+                    "level": 70,
+                    "exp": 1535
+				}
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 10
+            },
+			"starting_index": 5,
+            "enemies": [
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 70,
+                    "exp": 1535
+				},
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 70,
+                    "exp": 1535
+				},
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 70,
+                    "exp": 1535
+				},
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 70,
+                    "exp": 1535
+				},
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 70,
+                    "exp": 1535
+				},
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 70,
+                    "exp": 1535
+				}
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 11
+            },
+			"placement_type": "manual",
+            "enemies": [
+				{
+					"comment": "Death Knight",
+                    "enemy_id": "0x010310",
+                    "level": 70,
+                    "exp": 1535,
+					"index": 3
+                },
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 70,
+                    "exp": 1535,
+					"index": 6
+				},
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 70,
+                    "exp": 1535,
+					"index": 7
+				},
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 70,
+                    "exp": 1535,
+					"index": 8
+				},
+                {
+					"comment": "Grimwarg",
+                    "enemy_id": "0x010205",
+                    "level": 70,
+                    "exp": 1535,
+					"index": 9
+				}
+            ]
+        }
+    ],	
+    "blocks": [	
+        {
+            "type": "NpcTalkAndOrder",	
+            "stage_id": {
+                "id": 377
+            },				
+            "npc_id": "Shena",
+            "message_id": 19644
+        },
+        {				
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2704, "Param2": 19645}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {				
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [1]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [1]
+        },
+        {				
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]			
+        },
+        {				
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 377
+            },
+            "announce_type": "Update",
+            "npc_id": "Shena",
+            "message_id": 19646		
+        }
+    ]
+}

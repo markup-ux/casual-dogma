@@ -1,0 +1,432 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "[Hard] To End This (Seven Calamities)",
+  "quest_id": 21016002,
+  "base_level": 80,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MorrowForest",
+  "news_image": 900,
+  "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 10}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 48420
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5138
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 940
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "item_id": "UnappraisedFlowerTrinketKing",
+          "num": 2
+        },
+        {
+          "item_id": "SuperiorStrongGalaExtract",
+          "num": 3
+        },
+        {
+          "item_id": "Panacea",
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 374,
+        "group_id": 13
+      },
+      "starting_index": 10,
+      "enemies": [
+        {
+          "comment": "Skull Lord",
+          "enemy_id": "0x010313",
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Skull Lord",
+          "enemy_id": "0x010313",
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Pixie Jabber",
+          "enemy_id": "0x010155",
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Pixie Jabber",
+          "enemy_id": "0x010155",
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Pixie Jabber",
+          "enemy_id": "0x010155",
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Pixie Jabber",
+          "enemy_id": "0x010155",
+          "level": 80,
+          "exp": 4035
+        },
+        {
+          "comment": "Witch",
+          "enemy_id": "0x015604",
+          "level": 80,
+          "exp": 20175,
+          "is_boss": true
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 378,
+        "group_id": 2
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Phindymian Defender",
+          "enemy_id": "0x011064",
+          "hm_present_no": 98,
+          "level": 80,
+          "exp": 4035,
+          "index": 0
+        },
+        {
+          "comment": "Phindymian Sorcerer",
+          "enemy_id": "0x011065",
+          "hm_present_no": 99,
+          "level": 80,
+          "exp": 4035,
+          "index": 1
+        },
+        {
+          "comment": "Phindymian Sorcerer",
+          "enemy_id": "0x011065",
+          "hm_present_no": 99,
+          "level": 80,
+          "exp": 4035,
+          "index": 2
+        },
+        {
+          "comment": "Phindymian Sorcerer",
+          "enemy_id": "0x011065",
+          "hm_present_no": 99,
+          "level": 80,
+          "exp": 4035,
+          "index": 3
+        },
+        {
+          "comment": "Severely Infected Warg (Severe)",
+          "enemy_id": "0x010220",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 6
+        },
+        {
+          "comment": "Severely Infected Warg (Severe)",
+          "enemy_id": "0x010220",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 7
+        },
+        {
+          "comment": "Severely Infected Warg (Severe)",
+          "enemy_id": "0x010220",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 8
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 378,
+        "group_id": 3
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Severely Infected Gorecyclops (Severe)",
+          "enemy_id": "0x015017",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 20175,
+          "is_boss": true,
+          "index": 0
+        },
+        {
+          "comment": "Severely Infected Pixie [Seeds of Corruption] (Severe)",
+          "enemy_id": "0x010172",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 2
+        },
+        {
+          "comment": "Severely Infected Pixie [Seeds of Corruption] (Severe)",
+          "enemy_id": "0x010172",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 3
+        },
+        {
+          "comment": "Severely Infected Pixie [Seeds of Corruption] (Severe)",
+          "enemy_id": "0x010172",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 4
+        },
+        {
+          "comment": "Severely Infected Stymphalides (Severe)",
+          "enemy_id": "0x010614",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 5
+        },
+        {
+          "comment": "Severely Infected Stymphalides (Severe)",
+          "enemy_id": "0x010614",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 6
+        },
+        {
+          "comment": "Severely Infected Stymphalides (Severe)",
+          "enemy_id": "0x010614",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 7
+        },
+        {
+          "comment": "Severely Infected Stymphalides (Severe)",
+          "enemy_id": "0x010614",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 8
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 378,
+        "group_id": 6
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Severely Infected Behemoth (Severe)",
+          "enemy_id": "0x015717",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 20175,
+          "is_boss": true,
+          "index": 0
+        },
+        {
+          "comment": "Gorecyclops",
+          "enemy_id": "0x015010",
+          "level": 80,
+          "exp": 20175,
+          "is_boss": true,
+          "index": 9
+        },
+        {
+          "comment": "Severely Infected Pixie [Club] (Severe)",
+          "enemy_id": "0x010171",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 10
+        },
+        {
+          "comment": "Severely Infected Pixie [Club] (Severe)",
+          "enemy_id": "0x010171",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 11
+        },
+        {
+          "comment": "Severely Infected Pixie [Club] (Severe)",
+          "enemy_id": "0x010171",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 12
+        },
+        {
+          "comment": "Severely Infected Pixie [Club] (Severe)",
+          "enemy_id": "0x010171",
+          "infection_type": 2,
+          "level": 80,
+          "exp": 4035,
+          "index": 13
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "NpcTalkAndOrder",
+          "stage_id": {
+            "id": 340
+          },
+          "npc_id": "Arthfael",
+          "message_id": 19437
+        },
+        {
+          "type": "SeekOutEnemiesAtMarkedLocation",
+          "announce_type": "Accept",
+          "result_commands": [
+            {
+              "comment": "Idle dialogue",
+              "type": "QstTalkChg",
+              "Param1": 2600,
+              "Param2": 19438
+            }
+          ],
+          "groups": [0]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 0 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "set_flags": [1],
+          "check_flags": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "check_flags": [3, 4, 5]
+        },
+        {
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 340
+          },
+          "npc_id": "Arthfael",
+          "message_id": 19439
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [1]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [1]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [3]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [2]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [4]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [3]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [3]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [5]
+        }
+      ]
+    }
+  ]
+}

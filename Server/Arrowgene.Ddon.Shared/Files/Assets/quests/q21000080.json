@@ -1,0 +1,88 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "That Day and Now",
+  "quest_id": 21000080,
+  "base_level": 65,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MergodaRuins",
+  "news_image": 15,
+  "order_conditions": [{"type": "AreaRank", "Param1": 12, "Param2": 11}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 3940
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5360
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 687
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Mergan Cloth",
+          "item_id": 7950,
+          "num": 1
+        },
+        {
+          "comment": "Superior Strong Gala Extract",
+          "item_id": 9364,
+          "num": 3
+        },
+        {
+          "comment": "Panacea",
+          "item_id": 41,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 63
+      },
+      "npc_id": "Theodor",
+      "message_id": 17410
+    },
+    {
+      "type": "DeliverItems",
+      "stage_id": {
+        "id": 2
+      },
+      "npc_id": "Renton0",
+      "announce_type": "Accept",
+      "result_commands": [
+        {
+          "comment": "Idle dialogue - Theodor",
+          "type": "QstTalkChg",
+          "Param1": 10,
+          "Param2": 17411
+        },
+        {
+          "comment": "Idle dialogue - Renton",
+          "type": "QstTalkChg",
+          "Param1": 1029,
+          "Param2": 17412
+        }
+      ],
+      "items": [
+        {
+          "comment": "Slimy Hide",
+          "id": 11806,
+          "amount": 6
+        }
+      ],
+      "message_id": 17413
+    }
+  ]
+}

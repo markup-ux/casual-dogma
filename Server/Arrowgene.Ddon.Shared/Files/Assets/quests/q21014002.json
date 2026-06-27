@@ -1,0 +1,385 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "High Difficulty: Lurker in the Deep Woods",
+  "quest_id": 21014002,
+  "base_level": 75,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "ElanWaterGrove",
+  "news_image": 282,
+  "order_conditions": [{"type": "AreaRank", "Param1": 14, "Param2": 10}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 29220
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 4493
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 675
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Platinum Blood",
+          "item_id": 15935,
+          "num": 1
+        },
+        {
+          "comment": "Dazzling Silver Plume",
+          "item_id": 15967,
+          "num": 1
+        },
+        {
+          "comment": "Sharp Back Spine",
+          "item_id": 15969,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 372,
+        "group_id": 34
+      },
+      "starting_index": 2,
+      "enemies": [
+        {
+          "comment": "Spineback",
+          "enemy_id": "0x015506",
+          "level": 75,
+          "exp": 12175,
+          "is_boss": true
+        },
+        {
+          "comment": "Little Spine",
+          "enemy_id": "0x015507",
+          "level": 75,
+          "exp": 2435
+        },
+        {
+          "comment": "Little Spine",
+          "enemy_id": "0x015507",
+          "level": 75,
+          "exp": 2435
+        },
+        {
+          "comment": "Little Spine",
+          "enemy_id": "0x015507",
+          "level": 75,
+          "exp": 2435
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 416,
+        "group_id": 1
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Silver Roar",
+          "enemy_id": "0x015505",
+          "level": 75,
+          "exp": 12175,
+          "is_boss": true,
+          "index": 0
+        },
+        {
+          "comment": "Brute Ape",
+          "enemy_id": "0x015504",
+          "level": 75,
+          "exp": 2435,
+          "index": 2
+        },
+        {
+          "comment": "Brute Ape",
+          "enemy_id": "0x015504",
+          "level": 75,
+          "exp": 2435,
+          "index": 3
+        },
+        {
+          "comment": "Warg",
+          "enemy_id": "0x010203",
+          "level": 75,
+          "exp": 2435,
+          "index": 4
+        },
+        {
+          "comment": "Warg",
+          "enemy_id": "0x010203",
+          "level": 75,
+          "exp": 2435,
+          "index": 5
+        },
+        {
+          "comment": "Warg",
+          "enemy_id": "0x010203",
+          "level": 75,
+          "exp": 2435,
+          "index": 6
+        },
+        {
+          "comment": "Warg",
+          "enemy_id": "0x010203",
+          "level": 75,
+          "exp": 2435,
+          "index": 7
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 416,
+        "group_id": 3
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Ent",
+          "enemy_id": "0x015031",
+          "level": 75,
+          "exp": 12175,
+          "is_boss": true,
+          "index": 0
+        },
+        {
+          "comment": "Mole Troll",
+          "enemy_id": "0x015041",
+          "level": 75,
+          "exp": 12175,
+          "is_boss": true,
+          "index": 2
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 75,
+          "exp": 2435,
+          "index": 4
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 75,
+          "exp": 2435,
+          "index": 5
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 75,
+          "exp": 2435,
+          "index": 6
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 75,
+          "exp": 2435,
+          "index": 7
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 75,
+          "exp": 2435,
+          "index": 8
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 416,
+        "group_id": 4
+      },
+      "enemies": [
+        {
+          "comment": "White Griffin",
+          "enemy_id": "0x015320",
+          "level": 75,
+          "exp": 60875,
+          "is_boss": true,
+          "index": 0
+        },
+        {
+          "comment": "White Chimera",
+          "enemy_id": "0x015202",
+          "level": 75,
+          "exp": 12175,
+          "index": 1
+        },
+        {
+          "comment": "Saurian Sage",
+          "enemy_id": "0x010430",
+          "level": 75,
+          "exp": 2435,
+          "index": 2
+        },
+        {
+          "comment": "Saurian Sage",
+          "enemy_id": "0x010430",
+          "level": 75,
+          "exp": 2435,
+          "index": 5
+        },
+        {
+          "comment": "Saurian Sage",
+          "enemy_id": "0x010430",
+          "level": 75,
+          "exp": 2435,
+          "index": 12
+        },
+        {
+          "comment": "Saurian Sage",
+          "enemy_id": "0x010430",
+          "level": 75,
+          "exp": 2435,
+          "index": 17
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "NpcTalkAndOrder",
+          "stage_id": {
+            "id": 339
+          },
+          "npc_id": "Musel0",
+          "message_id": 19393
+        },
+        {
+          "type": "SeekOutEnemiesAtMarkedLocation",
+          "announce_type": "Accept",
+          "result_commands": [
+            {"type": "QstTalkChg", "Param1": 4509, "Param2": 19394}
+          ],
+          "groups": [0]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 0 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "set_flags": [1],
+          "check_flags": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "check_flags": [3, 4, 5]
+        },
+        {
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 339
+          },
+          "npc_id": "Musel0",
+          "message_id": 19395
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [1]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [1]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [3]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [2]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [4]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [3]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [3]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [5]
+        }
+      ]
+    }
+  ]
+}

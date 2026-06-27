@@ -1,0 +1,96 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Ordeal of the Weak",
+    "quest_id": 21015009,
+    "base_level": 70,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+	"area_id": "FaranaPlains",
+    "news_image": 902,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4618
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 600
+        },
+        {
+            "type": "exp",
+            "amount": 38375
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                },
+                {					
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {				
+                    "item_id": "Panacea",
+                    "num": 3					
+                }
+            ]
+        }
+    ],
+	"enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 371,
+                "group_id": 40
+            },
+            "starting_index": 3,
+            "enemies": [
+                {
+                    "comment": "Bounty Gorechimera",
+                    "enemy_id": "0x015201",
+                    "named_enemy_params_id": 458,
+                    "level": 70,
+                    "exp": 53725,
+                    "is_boss": true
+                }
+            ]
+        }
+    ],	
+    "blocks": [	
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 341
+            },
+            "npc_id": "Flannan",
+            "message_id": 19425
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2504, "Param2": 19426}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 341
+            },
+            "announce_type": "Update",
+            "npc_id": "Flannan",
+            "message_id": 19427
+        }
+    ]
+}

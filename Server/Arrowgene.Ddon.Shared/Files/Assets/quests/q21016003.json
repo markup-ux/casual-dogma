@@ -1,0 +1,74 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "A Kind Reward",
+    "quest_id": 21016003,
+    "base_level": 73,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "MorrowForest",
+    "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 4}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 11020
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 1387
+        },
+        {
+            "type": "exp",
+            "amount": 10925
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "UnappraisedFlowerTrinketGeneral",
+                    "num": 1
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 374
+            },
+            "npc_id": "Winnie",
+            "message_id": 19440
+        },
+        {
+            "type": "DeliverItems",
+            "stage_id": {
+                "id": 341
+            },
+            "npc_id": "Flannan",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type":"QstTalkChg", "Param1": 2609, "Param2": 19441, "comment": "Extra dialogue - Wynne"},
+                {"type":"QstTalkChg", "Param1": 2504, "Param2": 19442, "comment": "Extra dialogue - Flannan"}
+            ],
+            "items": [
+                {
+                    "comment": "Unappraised Flower Trinket (Soldier)",
+                    "id": 13483,
+                    "amount": 6
+                }
+            ],
+            "message_id": 19443
+        }
+    ]
+}

@@ -1,0 +1,291 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "In Return for a Bed and a Meal",
+  "quest_id": 22018021,
+  "base_level": 88,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "FeryanaWilderness",
+  "news_image": 330,
+  "order_conditions": [{"type": "AreaRank", "Param1": 19, "Param2": 2}],
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 13750
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 555
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "AreaPoints",
+      "amount": 500
+    },
+    {
+      "type": "exp",
+      "amount": 21000
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Royal Crest Medal (Feryana District)",
+          "item_id": 18819,
+          "num": 5
+        },
+        {
+          "comment": "Fluttering Rags",
+          "item_id": 17929,
+          "num": 3
+        },
+        {
+          "comment": "Superior Healing Remedy",
+          "item_id": 7555,
+          "num": 10
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Fluttering Rags",
+          "item_id": 17929,
+          "num": 1,
+          "chance": 0.6
+        },
+        {
+          "comment": "Superior Strong Gala Extract",
+          "item_id": 9364,
+          "num": 1,
+          "chance": 0.6
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "comment": "GroupId: 21 - Shadow Goblins, Shadow Harpies",
+      "stage_id": {
+        "id": 463,
+        "group_id": 21
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x011130",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Shadow Goblin"
+        },
+        {
+          "enemy_id": "0x011130",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Shadow Goblin"
+        },
+        {
+          "enemy_id": "0x011130",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Shadow Goblin"
+        },
+        {
+          "enemy_id": "0x011130",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Shadow Goblin"
+        },
+        {
+          "enemy_id": "0x010607",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Shadow Harpy"
+        },
+        {
+          "enemy_id": "0x010607",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Shadow Harpy"
+        },
+        {
+          "enemy_id": "0x010607",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Shadow Harpy"
+        }
+      ]
+    },
+    {
+      "comment": "GroupId: 25 - Ghosts, Shadow Wolves",
+      "stage_id": {
+        "id": 463,
+        "group_id": 25
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015620",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ghost"
+        },
+        {
+          "enemy_id": "0x015620",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ghost"
+        },
+        {
+          "enemy_id": "0x015620",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ghost"
+        },
+        {
+          "enemy_id": "0x015620",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ghost"
+        },
+        {
+          "enemy_id": "0x010206",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Shadow Wolf"
+        },
+        {
+          "enemy_id": "0x010206",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Shadow Wolf"
+        },
+        {
+          "enemy_id": "0x010206",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Shadow Wolf"
+        }
+      ]
+    },
+    {
+      "comment": "GroupId: 1 - Misery Ghosts, Death Knight",
+      "stage_id": {
+        "id": 499,
+        "group_id": 1
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015621",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Misery Ghost"
+        },
+        {
+          "enemy_id": "0x015621",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Misery Ghost"
+        },
+        {
+          "enemy_id": "0x015621",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Misery Ghost"
+        },
+        {
+          "enemy_id": "0x015621",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Misery Ghost"
+        },
+        {
+          "enemy_id": "0x010310",
+          "level": 85,
+          "exp": 44000,
+          "is_boss": true,
+          "comment": "Death Knight"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NewNpcTalkandOrder",
+      "stage_id": {
+        "id": 463
+      },
+      "npc_id": "Versa",
+      "message_id": 24213,
+      "flags": [
+        {
+            "type": "QstLayout",
+            "action": "Set",
+            "value": 5453
+        }
+    ]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Accept",
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [0]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [1]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [1]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [2]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [2]
+    },
+    {
+      "type": "NewTalkToNpc",
+      "stage_id": {
+        "id": 463
+      },
+      "announce_type": "Update",
+      "npc_id": "Versa",
+      "message_id": 24215
+    }
+  ]
+}

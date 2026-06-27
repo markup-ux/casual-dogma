@@ -1,0 +1,211 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Within This Beautiful Scenery",
+  "quest_id": 21000037,
+  "base_level": 63,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BloodbaneIsle",
+  "news_image": 242,
+  "order_conditions": [{"type": "AreaRank", "Param1": 13, "Param2": 4}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 6976
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 2078
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 265
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Discolored Spore-covered Feather",
+          "item_id": 13223,
+          "num": 1
+        },
+        {
+          "comment": "Moonglow",
+          "item_id": 7981,
+          "num": 5
+        },
+        {
+          "comment": "Superior Healing Remedy",
+          "item_id": 7555,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 335,
+        "group_id": 1
+      },
+      "starting_index": 1,
+      "enemies": [
+        {
+          "comment": "Infected Griffin (Slight)",
+          "enemy_id": "0x015306",
+          "infection_type": 1,
+		  "set_type": 3,
+          "level": 63,
+          "exp": 8800,
+          "is_boss": true
+        },
+        {
+          "comment": "Infected Hobgoblin Fighter",
+          "enemy_id": "0x010161",
+          "level": 63,
+          "exp": 352,
+          "repop_count": 1,
+          "repop_wait_second": 10
+        },
+        {
+          "comment": "Infected Hobgoblin Fighter",
+          "enemy_id": "0x010161",
+          "level": 63,
+          "exp": 352
+        },
+        {
+          "comment": "Infected Hobgoblin Fighter",
+          "enemy_id": "0x010161",
+          "level": 63,
+          "exp": 352
+        },
+        {
+          "comment": "Infected Hobgoblin Fighter",
+          "enemy_id": "0x010161",
+          "level": 63,
+          "exp": 352
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 335,
+        "group_id": 11
+      },
+      "enemies": [
+        {
+          "comment": "Gargoyle",
+          "enemy_id": "0x010603",
+          "start_think_tbl_no": 3,
+          "level": 63,
+          "exp": 457
+        },
+        {
+          "comment": "Gargoyle",
+          "enemy_id": "0x010603",
+          "start_think_tbl_no": 3,
+          "level": 63,
+          "exp": 457
+        },
+        {
+          "comment": "Gargoyle",
+          "enemy_id": "0x010603",
+          "start_think_tbl_no": 3,
+          "level": 63,
+          "exp": 457
+        },
+        {
+          "comment": "Gargoyle",
+          "enemy_id": "0x010603",
+          "start_think_tbl_no": 3,
+          "level": 63,
+          "exp": 457
+        },
+        {
+          "comment": "Gargoyle",
+          "enemy_id": "0x010603",
+          "start_think_tbl_no": 3,
+          "level": 63,
+          "exp": 457
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "CheckAreaRank", "Param1": 13, "Param1": 4}]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [0],
+          "result_commands": [{"type": "QstLayoutFlagOn", "Param1": 3191}]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "announce_type": "Accept",
+          "groups": [0],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 0}],
+          "check_commands": [{"type": "MyQstFlagOff", "Param1": 1}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "comment": "Group 0 boss HP check",
+          "type": "Raw",
+          "check_commands": [{"type": "EmHpLess", "Param1": 110, "Param2": 1, "Param3": 1, "Param4": 40}]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "groups": [1],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 1}, {"type": "StartTimer", "Param1": 1, "Param2": 30}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 1}],
+          "check_commands": [{"type": "IsMyquestLayoutFlagOff", "Param1": 3193}, {"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 610}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "IsEndTimer", "Param1": 1}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 612}, {"type": "StartTimer", "Param1": 2, "Param2": 15}],
+          "check_commands": [{"type": "IsEndTimer", "Param1": 2}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 611}, {"type": "QstLayoutFlagOn", "Param1": 3193}]
+        }
+      ]
+    }
+  ]
+}

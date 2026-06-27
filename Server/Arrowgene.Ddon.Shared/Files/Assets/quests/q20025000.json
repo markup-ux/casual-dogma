@@ -1,0 +1,78 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Resident Demonic Lion",
+  "quest_id": 20025000,
+  "base_level": 38,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "news_image": 54,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1250
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 200
+    },
+    {
+      "type": "exp",
+      "amount": 1460
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Crest of Incineration",
+          "item_id": 9258,
+          "num": 1
+        },
+        {
+          "comment": "Special Mushroom Dip",
+          "item_id": 9419,
+          "num": 1
+        },
+        {
+          "comment": "Exquisite Fried Meat",
+          "item_id": 9416,
+          "num": 2
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 74,
+        "group_id": 7
+      },
+      "starting_index": 4,
+      "enemies": [
+        {
+          "comment": "Brutal Chimera",
+          "enemy_id": "0x015200",
+          "named_enemy_params_id": 54,
+          "level": 38,
+          "exp": 3480,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

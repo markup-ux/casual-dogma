@@ -1,0 +1,400 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "High Difficulty: The Sealed Darkness (Seven Calamities)",
+  "quest_id": 21000081,
+  "base_level": 80,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MergodaRuins",
+  "order_conditions": [ { "type": "AreaRank", "Param1": 12, "Param2": 13 } ],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 48420
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5138
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 940
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Unappraised Star Trinket (King)",
+          "item_id": 13481,
+          "num": 2
+        },
+        {
+          "comment": "Superior Strong Gala Extract",
+          "item_id": 9364,
+          "num": 3
+        },
+        {
+          "comment": "Panacea",
+          "item_id": 41,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 62,
+        "group_id": 1
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Mergan Healer",
+          "enemy_id": "0x011023",
+          "hm_present_no": 62,
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Mergan Healer",
+          "enemy_id": "0x011023",
+          "hm_present_no": 62,
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Mergan Defender",
+          "enemy_id": "0x011024",
+          "hm_present_no": 63,
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Mergan Defender",
+          "enemy_id": "0x011024",
+          "hm_present_no": 63,
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Mergan Defender",
+          "enemy_id": "0x011024",
+          "hm_present_no": 63,
+          "level": 80,
+          "exp": 630
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 424,
+        "group_id": 3
+      },
+      "starting_index": 1,
+      "enemies": [
+        {
+          "comment": "Goliath",
+          "enemy_id": "0x015102",
+          "level": 80,
+          "exp": 3026,
+          "is_boss": true
+        },
+        {
+          "comment": "Lux Brute Skeleton",
+          "enemy_id": "0x010323",
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Lux Brute Skeleton",
+          "enemy_id": "0x010323",
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Alchemized Harpy",
+          "enemy_id": "0x010606",
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Alchemized Harpy",
+          "enemy_id": "0x010606",
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Alchemized Harpy",
+          "enemy_id": "0x010606",
+          "level": 80,
+          "exp": 630
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 424,
+        "group_id": 1
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Mergan Mage",
+          "enemy_id": "0x011025",
+          "hm_present_no": 64,
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Alchemy Eye",
+          "enemy_id": "0x015420",
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Alchemy Eye",
+          "enemy_id": "0x015420",
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Mergan Mage",
+          "enemy_id": "0x011025",
+          "hm_present_no": 64,
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Mergan Element Archer",
+          "enemy_id": "0x011027",
+          "hm_present_no": 66,
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Mergan Element Archer",
+          "enemy_id": "0x011027",
+          "hm_present_no": 66,
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Alchemy Eye",
+          "enemy_id": "0x015420",
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Alchemy Eye",
+          "enemy_id": "0x015420",
+          "level": 80,
+          "exp": 630
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 424,
+        "group_id": 5
+      },
+      "starting_index": 1,
+      "enemies": [
+        {
+          "comment": "Wyrm",
+          "enemy_id": "0x015701",
+          "level": 78,
+          "exp": 15761,
+          "is_boss": true
+        },
+        {
+          "comment": "Giant Saurian",
+          "enemy_id": "0x010401",
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Giant Saurian",
+          "enemy_id": "0x010401",
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Giant Saurian",
+          "enemy_id": "0x010401",
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Aqua Jelly",
+          "enemy_id": "0x010904",
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Aqua Jelly",
+          "enemy_id": "0x010904",
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Aqua Jelly",
+          "enemy_id": "0x010904",
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Aqua Jelly",
+          "enemy_id": "0x010904",
+          "level": 80,
+          "exp": 630
+        },
+        {
+          "comment": "Aqua Jelly",
+          "enemy_id": "0x010904",
+          "level": 80,
+          "exp": 630
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "NpcTalkAndOrder",
+          "stage_id": {
+            "id": 237
+          },
+          "npc_id": "Beatrix",
+          "message_id": 17414
+        },
+        {
+          "type": "SeekOutEnemiesAtMarkedLocation",
+          "announce_type": "Accept",
+          "result_commands": [
+            {
+              "comment": "Idle dialogue",
+              "type": "QstTalkChg",
+              "Param1": 2301,
+              "Param2": 17415
+            }
+          ],
+          "groups": [0]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 0 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "set_flags": [1],
+          "check_flags": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "check_flags": [3, 4, 5]
+        },
+        {
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 237
+          },
+          "npc_id": "Beatrix",
+          "message_id": 17416
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [1]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [1]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [3]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [2]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [4]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [3]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [3]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [5]
+        }
+      ]
+    }
+  ]
+}

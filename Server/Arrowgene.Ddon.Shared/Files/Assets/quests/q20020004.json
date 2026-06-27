@@ -1,0 +1,188 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Lise’s Lost Property",
+  "quest_id": 20020004,
+  "base_level": 42,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "news_image": 527,
+  "order_conditions": [{"type": "AreaRank", "Param1": 8, "Param2": 7}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 1150
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1380
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 180
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "King Bay Leaf",
+          "item_id": 7983,
+          "num": 3
+        },
+        {
+          "comment": "Superior Quality Gala Extract",
+          "item_id": 9362,
+          "num": 3
+        },
+        {
+          "comment": "Throwing Knife",
+          "item_id": 9398,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 118,
+        "group_id": 0
+      },
+      "enemies": [
+        {
+          "comment": "Vigilant Orc Vanguard",
+          "enemy_id": "0x015802",
+          "named_enemy_params_id": 53,
+          "level": 45,
+          "exp": 239,
+          "is_required": false
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 118,
+        "group_id": 2
+      },
+      "enemies": [
+        {
+          "comment": "Vigilant Orc Vanguard",
+          "enemy_id": "0x015802",
+          "named_enemy_params_id": 53,
+          "level": 45,
+          "exp": 239,
+          "is_required": false
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 118,
+        "group_id": 3
+      },
+      "enemies": [
+        {
+          "comment": "Vigilant Orc Vanguard",
+          "enemy_id": "0x015802",
+          "named_enemy_params_id": 53,
+          "level": 45,
+          "exp": 239,
+          "is_required": false
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "NewNpcTalkAndOrder",
+          "flags": [
+            {
+              "type": "QstLayout",
+              "action": "Set",
+              "value": 999,
+              "comment": "Spawns Lise0 NPC"
+            }
+          ],
+          "stage_id": {
+            "id": 66,
+            "group_id": 1,
+            "layer_no": 1
+          },
+          "npc_id": "Lise0",
+          "message_id": 11133
+        },
+        {
+          "type": "CollectItem",
+          "announce_type": "Accept",
+          "result_commands": [
+            {
+              "comment": "Idle dialogue - Lise",
+              "type": "QstTalkChg",
+              "Param1": 13,
+              "Param2": 11141
+            },
+            {
+              "comment": "Idle dialogue - Plum",
+              "type": "QstTalkChg",
+              "Param1": 500,
+              "Param2": 11143
+            }
+          ],
+          "stage_id": {
+            "id": 118,
+            "group_id": 1,
+            "layer_no": 1
+          },
+          "flags": [
+            {
+              "type": "QstLayout",
+              "action": "Set",
+              "value": 1145,
+              "comment": "Spawns Glowing Item"
+            }
+          ]
+        },
+        {
+          "type": "NewTalkToNpc",
+          "stage_id": {
+            "id": 66,
+            "group_id": 1,
+            "layer_no": 1
+          },
+          "announce_type": "CheckpointAndUpdate",
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 0
+            },
+            {
+              "comment": "Idle dialogue - Plum",
+              "type": "QstTalkChg",
+              "Param1": 500,
+              "Param2": 11144
+            }
+          ],
+          "npc_id": "Lise0",
+          "message_id": 11138
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [ { "type": "MyQstFlagOn", "Param1": 0 } ]
+        },
+        {
+          "type": "SpawnGroup",
+          "groups": [0, 1, 2]
+        }
+      ]
+    }
+  ]
+}

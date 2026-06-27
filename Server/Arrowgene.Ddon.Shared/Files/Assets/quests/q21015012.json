@@ -1,0 +1,174 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "A Foreign Investigation",
+    "quest_id": 21015012,
+    "base_level": 70,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "FaranaPlains",
+    "news_image": 538,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 2309
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "exp",
+            "amount": 9210
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Red Chromium",
+                    "item_id": 7879,
+                    "num": 3
+                },
+                {
+                    "comment": "Superior Strong Gala Extract",
+                    "item_id": 9364,
+                    "num": 3
+                },
+                {
+                    "comment": "Panacea",
+                    "item_id": 41,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 413,
+                "group_id": 3
+            },
+            "enemies": []
+        },
+        {
+            "stage_id": {
+                "id": 413,
+                "group_id": 3
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 3
+                },
+                {
+                    "comment": "Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 5
+                },
+                {
+                    "comment": "Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 6
+                },
+                {
+                    "comment": "Undead Warrior",
+                    "enemy_id": "0x010504",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 7
+                },
+                {
+                    "comment": "Undead Warrior",
+                    "enemy_id": "0x010504",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 8
+                },
+                {
+                    "comment": "Undead Warrior",
+                    "enemy_id": "0x010504",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 9
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 341
+            },
+            "npc_id": "Lewela",
+            "message_id": 19525
+        },
+        {
+            "type": "SpawnGroup",
+            "announce_type": "Accept",
+            "groups": [0],
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2505, "Param2": 19526, "comment": "Extra dialogue - Llywela"}
+            ],
+            "check_commands": [
+                {"type": "StageNo", "Param1": 812}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 413,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Fergal",
+            "message_id": 21094,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4489, "comment": "Spawns Fergal NPC"}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "groups": [1],
+            "result_commands": [
+                {"type": "CallMessage", "Param1": 4756, "Param1": 19530},
+                {"type": "MyQstFlagOn", "Param1": 2106, "comment": "Fergal FSM"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 413,
+                "group_id": 2,
+                "layer_no": 0
+            },
+            "npc_id": "Fergal",
+            "message_id": 19559,
+            "result_commands": [
+                {"type": "QstLayoutFlagOff", "Param1": 4489, "comment": "Clears Fergal NPC"},
+                {"type": "QstLayoutFlagOn", "Param1": 4494, "comment": "Spawns Fergal (Alive) NPC"}
+            ]
+        },
+        {
+            "type": "TalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 341
+            },
+            "npc_id": "Lewela",
+            "message_id": 19527
+        }
+    ]
+}

@@ -1,0 +1,113 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Abandoned Giant Warrior",
+    "quest_id": 20995004,
+    "base_level": 53,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "MergodaRuins",
+    "news_image": 225,
+    "order_conditions": [{"type": "MainQuestCompleted", "Param1": 23}, {"type": "AreaRank", "Param1": 12, "Param2": 4}],
+    "rewards": [
+        {
+            "type": "exp",
+            "amount": 2440
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1740
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 270
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Dirty Sheet Metal",
+                    "item_id": 8029,
+                    "num": 1
+                },
+                {
+                    "comment": "Enhanced Pickaxe",
+                    "item_id": 9401,
+                    "num": 3
+                },
+                {
+                    "comment": "Healing Remedy",
+                    "item_id": 7554,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 76,
+                "group_id": 5
+            },
+                "placement_type": "manual",
+                "enemies": [
+                {
+                    "comment": "Dangerous Damned Golem",
+                    "enemy_id": "0x015103",
+                    "named_enemy_params_id": 56,
+                    "level": 53,
+                    "exp": 4867,
+                    "is_boss": true,
+                    "index": 4
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NewNpcTalkAndOrder",
+            "flags": [
+                {"type": "QstLayout", "action": "Set", "value": 1619, "comment": "Spawns 亡都の錬金術師 NPC"}
+            ],
+            "stage_id": {
+                "id": 76,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "npc_id": "4740",
+            "message_id": 16070
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [ 
+                { 
+                "type": "QstTalkChg", 
+                "Param1": 4740, 
+                "Param2": 16071,
+                "comment": "Idle dialogue"
+                }
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 76,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "announce_type": "Update",
+            "npc_id": "4740",
+            "message_id": 16072
+        }
+    ]
+}

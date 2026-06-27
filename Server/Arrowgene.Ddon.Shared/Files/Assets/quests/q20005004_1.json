@@ -1,0 +1,120 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Whispers of the Dark (II)",
+  "quest_id": 20005004,
+  "base_level": 14,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "HidellPlains",
+  "news_image": 541,
+  "variant_index": 1,
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 1150
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 820
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 130
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Grand Surcoat",
+          "item_id": 550,
+          "num": 1
+        },
+        {
+          "comment": "Sorcerer's Coat",
+          "item_id": 761,
+          "num": 1
+        },
+        {
+          "comment": "Black Skull",
+          "item_id": 7769,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 88,
+        "group_id": 4
+      },
+      "starting_index": 6,
+      "enemies": [
+        {
+          "comment": "Brutal Wight",
+          "enemy_id": "0x015600",
+          "named_enemy_params_id": 54,
+          "start_think_tbl_no": 2,
+          "level": 14,
+          "exp": 900,
+          "is_boss": true
+        },
+        {
+          "comment": "Skeleton Knight",
+          "enemy_id": "0x010301",
+          "start_think_tbl_no": 8,
+          "repop_count": 2,
+          "level": 12,
+          "exp": 186,
+          "is_required": false,
+          "is_manual_set": true
+        },
+        {
+          "comment": "Skeleton Knight",
+          "enemy_id": "0x010301",
+          "start_think_tbl_no": 8,
+          "repop_count": 1,
+          "level": 12,
+          "exp": 186,
+          "is_required": false,
+          "is_manual_set": true
+        },
+        {
+          "comment": "Skeleton Knight",
+          "enemy_id": "0x010301",
+          "start_think_tbl_no": 8,
+          "repop_count": 1,
+          "level": 12,
+          "exp": 186,
+          "is_required": false,
+          "is_manual_set": true
+        },
+        {
+          "comment": "Skeleton Knight",
+          "enemy_id": "0x010301",
+          "start_think_tbl_no": 8,
+          "repop_count": 2,
+          "level": 13,
+          "exp": 214,
+          "is_required": false,
+          "is_manual_set": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

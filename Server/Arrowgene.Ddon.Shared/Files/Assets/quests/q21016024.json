@@ -1,0 +1,350 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Door of Jewelry: Guarding Treasure in the Defiled Forest",
+    "quest_id": 21016024,
+    "base_level": 78,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "MorrowForest",
+    "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 13}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5073
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 44220
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "UnappraisedWindTrinketGeneral",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 403,
+                "group_id": 13
+            },
+            "enemies": [
+                {
+                    "comment": "Jewelry-Bearing Severely Infected Gorecyclops (Severe)",
+                    "enemy_id": "0x015017",
+                    "named_enemy_params_id": 1586,
+                    "infection_type": 2,
+                    "level": 78,
+                    "exp": 12360,
+                    "is_boss": true,
+					"drop_items": [
+						{
+							"item_id": 15927,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 0,
+							"drop_chance": 0.8
+						},
+						{
+							"item_id": 11408,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 0,
+							"drop_chance": 1.0
+						},
+						{
+							"item_id": 15963,
+							"item_min": 1,
+							"item_max": 2,
+							"quality": 0,
+							"drop_chance": 0.9
+						},
+						{
+							"item_id": 17858,
+							"item_min": 1,
+							"item_max": 4,
+							"quality": 0,
+							"drop_chance": 0.4
+						},
+						{
+							"item_id": 13487,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 5,
+							"drop_chance": 1.0
+						}
+					]
+                },
+                {
+                    "comment": "Jewelry-Bearing Severely Infected Stymphalides (Severe)",
+                    "enemy_id": "0x010611",
+                    "named_enemy_params_id": 1586,
+                    "infection_type": 2,
+                    "level": 78,
+                    "exp": 618,
+					"drop_items": [
+						{
+							"item_id": 7803,
+							"item_min": 1,
+							"item_max": 3,
+							"quality": 0,
+							"drop_chance": 0.8
+						},
+						{
+							"item_id": 8013,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 0,
+							"drop_chance": 0.3
+						},
+						{
+							"item_id": 13487,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 5,
+							"drop_chance": 1.0
+						}
+					]
+                },
+                {
+                    "comment": "Jewelry-Bearing Severely Infected Stymphalides (Severe)",
+                    "enemy_id": "0x010611",
+                    "named_enemy_params_id": 1586,
+                    "infection_type": 2,
+                    "level": 78,
+                    "exp": 618,
+					"drop_items": [
+						{
+							"item_id": 7803,
+							"item_min": 1,
+							"item_max": 3,
+							"quality": 0,
+							"drop_chance": 0.8
+						},
+						{
+							"item_id": 8013,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 0,
+							"drop_chance": 0.3
+						},
+						{
+							"item_id": 13487,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 5,
+							"drop_chance": 1.0
+						}
+					]
+                },
+                {
+                    "comment": "Jewelry-Bearing Severely Infected Stymphalides (Severe)",
+                    "enemy_id": "0x010611",
+                    "named_enemy_params_id": 1586,
+                    "infection_type": 2,
+                    "level": 78,
+                    "exp": 618,
+					"drop_items": [
+						{
+							"item_id": 7803,
+							"item_min": 1,
+							"item_max": 3,
+							"quality": 0,
+							"drop_chance": 0.8
+						},
+						{
+							"item_id": 8013,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 0,
+							"drop_chance": 0.3
+						},
+						{
+							"item_id": 13487,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 5,
+							"drop_chance": 1.0
+						}
+					]
+                },
+                {
+                    "comment": "Jewelry-Bearing Severely Infected Stymphalides (Severe)",
+                    "enemy_id": "0x010611",
+                    "named_enemy_params_id": 1586,
+                    "infection_type": 2,
+                    "level": 78,
+                    "exp": 618,
+					"drop_items": [
+						{
+							"item_id": 7803,
+							"item_min": 1,
+							"item_max": 3,
+							"quality": 0,
+							"drop_chance": 0.8
+						},
+						{
+							"item_id": 8013,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 0,
+							"drop_chance": 0.3
+						},
+						{
+							"item_id": 13487,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 5,
+							"drop_chance": 1.0
+						}
+					]
+                },
+                {
+                    "comment": "Jewelry-Bearing Severely Infected Warg (Severe)",
+                    "enemy_id": "0x010220",
+                    "named_enemy_params_id": 1586,
+                    "infection_type": 2,
+                    "level": 78,
+                    "exp": 700,
+					"drop_items": [
+						{
+							"item_id": 15960,
+							"item_min": 1,
+							"item_max": 3,
+							"quality": 0,
+							"drop_chance": 0.6
+						},
+						{
+							"item_id": 11408,
+							"item_min": 1,
+							"item_max": 3,
+							"quality": 0,
+							"drop_chance": 0.8
+						},
+						{
+							"item_id": 18655,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 0,
+							"drop_chance": 0.3
+						},
+						{
+							"item_id": 13487,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 5,
+							"drop_chance": 1.0
+						}
+					]
+                },
+                {
+                    "comment": "Jewelry-Bearing Severely Infected Warg (Severe)",
+                    "enemy_id": "0x010220",
+                    "named_enemy_params_id": 1586,
+                    "infection_type": 2,
+                    "level": 78,
+                    "exp": 700,
+					"drop_items": [
+						{
+							"item_id": 15960,
+							"item_min": 1,
+							"item_max": 3,
+							"quality": 0,
+							"drop_chance": 0.6
+						},
+						{
+							"item_id": 11408,
+							"item_min": 1,
+							"item_max": 3,
+							"quality": 0,
+							"drop_chance": 0.8
+						},
+						{
+							"item_id": 18655,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 0,
+							"drop_chance": 0.3
+						},
+						{
+							"item_id": 13487,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 5,
+							"drop_chance": 1.0
+						}
+					]
+                },
+                {
+                    "comment": "Jewelry-Bearing Severely Infected Warg (Severe)",
+                    "enemy_id": "0x010220",
+                    "named_enemy_params_id": 1586,
+                    "infection_type": 2,
+                    "level": 78,
+                    "exp": 700,
+					"drop_items": [
+						{
+							"item_id": 15960,
+							"item_min": 1,
+							"item_max": 3,
+							"quality": 0,
+							"drop_chance": 0.6
+						},
+						{
+							"item_id": 11408,
+							"item_min": 1,
+							"item_max": 3,
+							"quality": 0,
+							"drop_chance": 0.8
+						},
+						{
+							"item_id": 18655,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 0,
+							"drop_chance": 0.3
+						},
+						{
+							"item_id": 13487,
+							"item_min": 1,
+							"item_max": 1,
+							"quality": 5,
+							"drop_chance": 1.0
+						}
+					]
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "reset_group": false,
+            "groups": [0]
+        }
+    ]
+}

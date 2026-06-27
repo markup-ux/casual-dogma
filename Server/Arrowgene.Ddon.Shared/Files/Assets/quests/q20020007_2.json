@@ -1,0 +1,117 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Situation on the Mountain Road (Bounty)",
+  "quest_id": 20020007,
+  "base_level": 35,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "news_image": 43,
+  "variant_index": 2,
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 3230
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 2310
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 180
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Superior Healing Elixir",
+          "item_id": 7553,
+          "num": 3
+        },
+        {
+          "comment": "Superior Quality Gala Extract",
+          "item_id": 9362,
+          "num": 3
+        },
+        {
+          "comment": "Enhanced Lockpick",
+          "item_id": 9403,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 222
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Bounty Griffin",
+          "enemy_id": "0x015300",
+          "named_enemy_params_id": 458,
+          "level": 35,
+          "exp": 4125,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NewNpcTalkAndOrder",
+      "flags": [
+        {
+          "type": "QstLayout",
+          "action": "Set",
+          "value": 1001,
+          "comment": "Spawns ArisenCorpsRegimentalSoldier9"
+        }
+      ],
+      "stage_id": {
+        "id": 1,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "npc_id": "ArisenCorpsRegimentalSoldier9",
+      "message_id": 11388
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Accept",
+      "groups": [ 0 ],
+      "result_commands": [
+        {
+          "comment": "Idle dialogue",
+          "type": "QstTalkChg",
+          "Param1": 532,
+          "Param2": 12256
+        }
+      ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "NewTalkToNpc",
+      "stage_id": {
+        "id": 1,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "announce_type": "Update",
+      "npc_id": "ArisenCorpsRegimentalSoldier9",
+      "message_id": 12252
+    }
+  ]
+}

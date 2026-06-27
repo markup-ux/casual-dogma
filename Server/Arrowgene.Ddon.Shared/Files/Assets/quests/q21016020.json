@@ -1,0 +1,177 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Wandering Puppets",
+    "quest_id": 21016020,
+    "base_level": 75,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "MorrowForest",
+    "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 11}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4494
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "exp",
+            "amount": 16410
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "GnarledBranch",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 404,
+                "group_id": 5
+            },
+            "starting_index": 9,
+            "enemies": [
+                {
+                    "comment": "Phindymian Warrior",
+                    "enemy_id": "0x011066",
+                    "level": 75,
+                    "exp": 2735,
+                    "hm_present_no": 100
+                },
+                {
+                    "comment": "Phindymian Warrior",
+                    "enemy_id": "0x011066",
+                    "level": 75,
+                    "exp": 2735,
+                    "hm_present_no": 100
+                },
+                {
+                    "comment": "Phindymian Warrior",
+                    "enemy_id": "0x011066",
+                    "level": 75,
+                    "exp": 2735,
+                    "hm_present_no": 100
+                },
+                {
+                    "comment": "Phindymian Warrior",
+                    "enemy_id": "0x011066",
+                    "level": 75,
+                    "exp": 2735,
+                    "hm_present_no": 100
+                },
+                {
+                    "comment": "Phindymian Hunter",
+                    "enemy_id": "0x011062",
+                    "level": 75,
+                    "exp": 2735,
+                    "hm_present_no": 96
+                },
+                {
+                    "comment": "Phindymian Hunter",
+                    "enemy_id": "0x011062",
+                    "level": 75,
+                    "exp": 2735,
+                    "hm_present_no": 96
+                },
+                {
+                    "comment": "Phindymian Hunter",
+                    "enemy_id": "0x011062",
+                    "level": 75,
+                    "exp": 2735,
+                    "hm_present_no": 96
+                },
+                {
+                    "comment": "Phindymian Priest",
+                    "enemy_id": "0x011063",
+                    "level": 75,
+                    "exp": 2735,
+                    "hm_present_no": 97
+                },
+                {
+                    "comment": "Phindymian Priest",
+                    "enemy_id": "0x011063",
+                    "level": 75,
+                    "exp": 2735,
+                    "hm_present_no": 97
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 340
+            },
+            "npc_id": "Milan",
+            "message_id": 20062
+        },
+        {
+            "type": "NewTalkToNpc",
+            "flags": [
+                {"type": "QstLayout", "action": "Set", "value": 4707, "comment": "Spawns Cornelia NPC"}
+            ],
+            "stage_id": {
+                "id": 404,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2062, "Param2": 20063}
+            ],
+            "announce_type": "Accept",
+            "npc_id": "Cornelia0",
+            "message_id": 21109
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "groups": [0],
+            "flags": [
+                {"type": "MyQst", "action": "Set", "value": 2337, "comment": "Cornelia FSM"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "flags": [
+                {"type": "QstLayout", "action": "Clear", "value": 4707, "comment": "Spawns Cornelia NPC"},
+                {"type": "QstLayout", "action": "Set", "value": 4711, "comment": "Spawns Cornelia NPC"}
+            ],
+            "stage_id": {
+                "id": 404,
+                "group_id": 2,
+                "layer_no": 0
+            },
+            "announce_type": "Update",
+            "npc_id": "Cornelia0",
+            "message_id": 20064
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 340
+            },
+            "announce_type": "Update",
+            "npc_id": "Milan",
+            "message_id": 20060
+        }
+    ]
+}

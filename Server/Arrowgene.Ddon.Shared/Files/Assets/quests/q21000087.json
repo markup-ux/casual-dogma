@@ -1,0 +1,139 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Door of Dragon Force: A Monstrous Encounter",
+    "quest_id": 21000087,
+    "base_level": 68,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "BloodbaneIsle",
+    "news_image": 582,
+    "order_conditions": [{"type": "AreaRank", "Param1": 13, "Param2": 11}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 2243
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 290
+        },
+        {
+            "type": "exp",
+            "amount": 14220
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Mirage Crystal",
+                    "item_id": 11809,
+                    "num": 2
+                },
+                {
+                    "comment": "Stone Bouquet",
+                    "item_id": 11790,
+                    "num": 1
+                },
+                {
+                    "comment": "Panacea",
+                    "item_id": 41,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 408,
+                "group_id": 15
+            },
+            "comment": "Enemies drop a total of 1722 BO",
+            "enemies": [
+                {
+                    "comment": "Dragonforce-Bearing Infected Gorecyclops (Severe)",
+                    "enemy_id": "0x015012",
+                    "named_enemy_params_id": 1198,
+                    "infection_type": 2,
+                    "level": 68,
+                    "exp": 7440,
+                    "blood_orbs": 907,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Dragonforce-Bearing Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "named_enemy_params_id": 1198,
+                    "level": 68,
+                    "exp": 502,
+                    "blood_orbs": 163
+                },
+                {
+                    "comment": "Dragonforce-Bearing Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "named_enemy_params_id": 1198,
+                    "level": 68,
+                    "exp": 502,
+                    "blood_orbs": 163
+                },
+                {
+                    "comment": "Dragonforce-Bearing Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "named_enemy_params_id": 1198,
+                    "level": 68,
+                    "exp": 502,
+                    "blood_orbs": 163
+                },
+                {
+                    "comment": "Dragonforce-Bearing Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "named_enemy_params_id": 1198,
+                    "level": 68,
+                    "exp": 502,
+                    "blood_orbs": 163
+                },
+                {
+                    "comment": "Dragonforce-Bearing Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "named_enemy_params_id": 1198,
+                    "level": 68,
+                    "exp": 502,
+                    "blood_orbs": 163               
+                },
+                {
+                    "comment": "Large Newt",
+                    "enemy_id": "0x010461",
+                    "level": 68,
+                    "exp": 1185             
+                },
+                {
+                    "comment": "Large Newt",
+                    "enemy_id": "0x010461",
+                    "level": 68,
+                    "exp": 1185             
+                },
+                {
+                    "comment": "Large Newt",
+                    "enemy_id": "0x010461",
+                    "level": 68,
+                    "exp": 1185             
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "reset_group": false,
+            "groups": [0]
+        }
+    ]
+}

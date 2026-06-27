@@ -1,0 +1,404 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "High Difficulty: The Specter's Invasion",
+    "quest_id": 21015002,
+    "base_level": 80,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "FaranaPlains",
+    "news_image": 900,
+    "order_conditions": [{"type": "AreaRank", "Param1": 15, "Param2": 10}],
+    "rewards": [
+        {
+            "type": "exp",
+            "amount": 48420
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5138
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 940
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "UnappraisedStarTrinketKing",
+                    "num": 2
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "stage_id": {
+                "id": 371,
+                "group_id": 55
+            },
+            "starting_index": 3,
+            "enemies": [
+                {
+                    "comment": "Chimera",
+                    "enemy_id": "0x015200",
+                    "level": 80,
+                    "exp": 21000,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 80,
+                    "exp": 4200
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 80,
+                    "exp": 4200
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 80,
+                    "exp": 4200
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 80,
+                    "exp": 4200
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 80,
+                    "exp": 4200
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 420,
+                "group_id": 1
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Wight",
+                    "enemy_id": "0x015600",
+                    "level": 80,
+                    "exp": 21000,
+                    "is_boss": true,
+                    "index": 0
+                },
+                {
+                    "comment": "Undead Warrior",
+                    "enemy_id": "0x010504",
+                    "level": 80,
+                    "exp": 4200,
+                    "index": 1
+                },
+                {
+                    "comment": "Undead Warrior",
+                    "enemy_id": "0x010504",
+                    "level": 80,
+                    "exp": 4200,
+                    "index": 2
+                },
+                {
+                    "comment": "Frost Corpse Torturer",
+                    "enemy_id": "0x010512",
+                    "start_think_tbl_no": 8,
+                    "level": 80,
+                    "exp": 4200,
+                    "is_required": false,
+                    "is_manual_set": true,
+                    "index": 3
+                },
+                {
+                    "comment": "Undead Warrior",
+                    "enemy_id": "0x010504",
+                    "level": 80,
+                    "exp": 4200,
+                    "index": 8
+                },
+                {
+                    "comment": "Frost Corpse Torturer",
+                    "enemy_id": "0x010512",
+                    "start_think_tbl_no": 8,
+                    "level": 80,
+                    "exp": 4200,
+                    "is_required": false,
+                    "is_manual_set": true,
+                    "index": 9
+                },
+                {
+                    "comment": "Frost Corpse Torturer",
+                    "enemy_id": "0x010512",
+                    "start_think_tbl_no": 8,
+                    "level": 80,
+                    "exp": 4200,
+                    "is_required": false,
+                    "is_manual_set": true,
+                    "index": 10
+                },
+                {
+                    "comment": "Frost Corpse Torturer",
+                    "enemy_id": "0x010512",
+                    "start_think_tbl_no": 8,
+                    "level": 80,
+                    "exp": 4200,
+                    "is_required": false,
+                    "is_manual_set": true,
+                    "index": 11
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 420,
+                "group_id": 3
+            },
+            "enemies": [
+                {
+                    "comment": "Empress Ghost",
+                    "enemy_id": "0x015605",
+                    "level": 80,
+                    "exp": 21000,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "start_think_tbl_no": 2,
+                    "level": 80,
+                    "exp": 4200
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "start_think_tbl_no": 2,
+                    "level": 80,
+                    "exp": 4200
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "start_think_tbl_no": 2,
+                    "level": 80,
+                    "exp": 4200
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "start_think_tbl_no": 2,
+                    "level": 80,
+                    "exp": 4200
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "start_think_tbl_no": 2,
+                    "level": 80,
+                    "exp": 4200
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "start_think_tbl_no": 2,
+                    "level": 80,
+                    "exp": 4200
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 420,
+                "group_id": 5
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Mist Wyrm",
+                    "enemy_id": "0x015711",
+                    "level": 80,
+                    "exp": 105000,
+                    "is_boss": true,
+                    "index": 0
+                },
+                {
+                    "comment": "Pixie Jabber",
+                    "enemy_id": "0x010155",
+                    "level": 80,
+                    "exp": 4200,
+                    "index": 1
+                },
+                {
+                    "comment": "Pixie Jabber",
+                    "enemy_id": "0x010155",
+                    "level": 80,
+                    "exp": 4200,
+                    "index": 2
+                },
+                {
+                    "comment": "Pixie Jabber",
+                    "enemy_id": "0x010155",
+                    "level": 80,
+                    "exp": 4200,
+                    "index": 3
+                },
+                {
+                    "comment": "Pixie Jabber",
+                    "enemy_id": "0x010155",
+                    "level": 80,
+                    "exp": 4200,
+                    "index": 4
+                },
+                {
+                    "comment": "Wyrm",
+                    "enemy_id": "0x015701",
+                    "level": 80,
+                    "exp": 21000,
+                    "is_boss": true,
+                    "index": 5
+                },
+                {
+                    "comment": "Pixie Jabber",
+                    "enemy_id": "0x010155",
+                    "level": 80,
+                    "exp": 4200,
+                    "index": 7
+                },
+                {
+                    "comment": "Pixie Jabber",
+                    "enemy_id": "0x010155",
+                    "level": 80,
+                    "exp": 4200,
+                    "index": 8
+                }
+            ]
+        }
+    ],
+    "processes": [
+        {
+            "blocks": [
+                {
+                    "type": "NpcTalkAndOrder",
+                    "stage_id": {
+                        "id": 341
+                    },
+                    "npc_id": "Razanailt",
+                    "message_id": 19414
+                },
+                {
+                    "type": "SeekOutEnemiesAtMarkedLocation",
+                    "announce_type": "Accept",
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 2501, "Param2": 19415, "comment": "Extra dialogue - Razanailt"}
+                    ],
+                    "groups": [0]
+                },
+                {
+                    "type": "KillGroup",
+                    "announce_type": "Update",
+                    "reset_group": false,
+                    "groups": [0]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "announce_type": "CheckpointAndUpdate",
+                    "set_flags": [1],
+                    "check_flags": [2, 3, 4]
+                },
+                {
+                    "type": "TalkToNpc",
+                    "stage_id": {
+                        "id": 341
+                    },
+                    "announce_type": "CheckpointAndUpdate",
+                    "npc_id": "Razanailt",
+                    "message_id": 19416
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [1]
+                },
+                {
+                    "type": "DiscoverEnemy",
+                    "groups": [1]
+                },
+                {
+                    "type": "KillGroup",
+                    "announce_type": "Update",
+                    "reset_group": false,
+                    "groups": [1]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "announce_type": "Update",
+                    "set_flags": [2]
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [1]
+                },
+                {
+                    "type": "DiscoverEnemy",
+                    "groups": [2]
+                },
+                {
+                    "type": "KillGroup",
+                    "reset_group": false,
+                    "groups": [2]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "announce_type": "Update",
+                    "set_flags": [3]
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [1]
+                },
+                {
+                    "type": "DiscoverEnemy",
+                    "groups": [3]
+                },
+                {
+                    "type": "KillGroup",
+                    "reset_group": false,
+                    "groups": [3]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "set_flags": [4]
+                }
+            ]
+        }
+    ]
+}

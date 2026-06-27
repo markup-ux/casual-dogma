@@ -1,0 +1,276 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Urgent Directive: Eliminate the Demons to the North",
+  "quest_id": 20020006,
+  "base_level": 35,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "news_image": 42,
+  "order_conditions": [{"type": "AreaRank", "Param1": 5, "Param2": 8}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 1150
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1150
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 150
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Scroll of Great Strength",
+          "item_id": 8007,
+          "num": 3
+        },
+        {
+          "comment": "Throwblast",
+          "item_id": 52,
+          "num": 3
+        },
+        {
+          "comment": "Throwing Knife",
+          "item_id": 9398,
+          "num": 2
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Superior Healing Potion",
+          "item_id": 35,
+          "num": 2,
+          "chance": 1.0
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 240
+      },
+      "placement_type": "manual",
+      "enemies": [
+       {
+          "comment": "Vigilant Orc Vanguard",
+          "enemy_id": "0x015802",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 53,
+          "level": 34,
+          "exp": 186,
+          "index": 2
+        },
+        {
+          "comment": "Vigilant Grimwarg",
+          "enemy_id": "0x010205",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 53,
+          "level": 34,
+          "exp": 186,
+          "index": 3
+        },
+        {
+          "comment": "Vigilant Orc Captain",
+          "enemy_id": "0x015820",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 53,
+          "level": 35,
+          "exp": 465,
+          "index": 4
+        },
+        {
+          "comment": "Vigilant Orc Vanguard",
+          "enemy_id": "0x015802",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 53,
+          "level": 34,
+          "exp": 186,
+          "index": 7
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 253
+      },
+      "starting_index": 1,
+      "enemies": [
+        {
+          "comment": "Vigilant Undead Swordsman",
+          "enemy_id": "0x010503",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 53,
+          "level": 33,
+          "exp": 129
+        },
+        {
+          "comment": "Vigilant Undead Swordsman",
+          "enemy_id": "0x010503",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 53,
+          "level": 33,
+          "exp": 129
+        },
+        {
+          "comment": "Vigilant Skeleton Sorcerer",
+          "enemy_id": "0x010309",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 53,
+          "level": 35,
+          "exp": 158
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 261
+      },
+      "starting_index": 2,
+      "enemies": [
+        {
+          "comment": "Vigilant Grimwarg",
+          "enemy_id": "0x010205",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 53,
+          "level": 34,
+          "exp": 186
+        },
+        {
+          "comment": "Brutal Chimera",
+          "enemy_id": "0x015200",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 54,
+          "level": 35,
+          "exp": 3300,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "comment": "Process 0",
+      "blocks": [
+        {
+          "type": "NpcTalkAndOrder",
+          "stage_id": {
+            "id": 66,
+            "group_id": 1,
+            "layer_no": 1
+          },
+          "npc_id": "Vanessa0",
+          "message_id": 11387
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Accept",
+          "set_flags": [ 1 ],
+          "check_flags": [ 2, 3, 4 ],
+          "result_commands": [
+            {
+              "comment": "Idle dialogue",
+              "type": "QstTalkChg",
+              "Param1": 11,
+              "Param2": 12006
+            }
+          ]
+        },
+        {
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 66,
+            "group_id": 1,
+            "layer_no": 1
+          },
+          "announce_type": "CheckpointAndUpdate",
+          "npc_id": "Vanessa0",
+          "message_id": 12003
+        }
+      ]
+    },
+    {
+      "comment": "Process1 (Group 1)",
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [ 1 ]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [ 0 ]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 0 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "set_flags": [ 2 ]
+        }
+      ]
+    },
+    {
+      "comment": "Process2 (Group 2)",
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [ 1 ]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [ 1 ]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 1 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "set_flags": [ 3 ]
+        }
+      ]
+    },
+    {
+      "comment": "Process3 (Group 3)",
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [ 1 ]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [ 2 ]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 2 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "set_flags": [ 4 ]
+        }
+      ]
+    }
+  ]
+}

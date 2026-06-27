@@ -1,0 +1,378 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "High Difficulty: The Demon's Nest",
+    "quest_id": 21000024,
+    "base_level": 60,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "BloodbaneIsle",
+    "news_image": 581,
+    "order_conditions": [{"type": "AreaRank", "Param1": 13, "Param2": 2}],
+    "rewards": [
+        {
+            "type": "exp",
+            "amount": 9079
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1980
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 250
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "SaltpetreChunk",
+                    "num": 2
+                },
+                {
+                    "item_id": "QualityGalaMushroom",
+                    "num": 7
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "stage_id": {
+                "id": 335,
+                "group_id": 4
+            },
+            "starting_index": 1,
+            "enemies": [
+                {
+                    "comment": "Ogre",
+                    "enemy_id": "0x015500",
+                    "level": 60,
+                    "exp": 3783,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Bolt Skeleton",
+                    "enemy_id": "0x010316",
+                    "level": 60,
+                    "exp": 756
+                },
+                {
+                    "comment": "Bolt Skeleton",
+                    "enemy_id": "0x010316",
+                    "level": 60,
+                    "exp": 756
+                },
+                {
+                    "comment": "Bolt Skeleton",
+                    "enemy_id": "0x010316",
+                    "level": 60,
+                    "exp": 756
+                },
+                {
+                    "comment": "Acid Blob",
+                    "enemy_id": "0x010911",
+                    "level": 60,
+                    "exp": 756
+                },
+                {
+                    "comment": "Acid Blob",
+                    "enemy_id": "0x010911",
+                    "level": 60,
+                    "exp": 756
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 318,
+                "group_id": 1
+            },
+            "enemies": [
+                {
+                    "comment": "Large Newt",
+                    "enemy_id": "0x010461",
+                    "level": 60,
+                    "exp": 756
+                },
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 60,
+                    "exp": 756
+                },
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 60,
+                    "exp": 756
+                },
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 60,
+                    "exp": 756
+                },
+                {
+                    "comment": "Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "level": 60,
+                    "exp": 756
+                },
+                {
+                    "comment": "Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "level": 60,
+                    "exp": 756
+                },
+                {
+                    "comment": "Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "level": 60,
+                    "exp": 756
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 318,
+                "group_id": 2
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Infected Hobgoblin",
+                    "enemy_id": "0x010160",
+                    "level": 60,
+                    "exp": 756,
+                    "index": 4
+                },
+                {
+                    "comment": "Infected Hobgoblin",
+                    "enemy_id": "0x010160",
+                    "level": 60,
+                    "exp": 756,
+                    "index": 5
+                },
+                {
+                    "comment": "Bolt Skeleton Brute",
+                    "enemy_id": "0x010307",
+                    "level": 60,
+                    "exp": 756,
+                    "index": 6
+                },
+                {
+                    "comment": "Infected Snow Harpy - Severe",
+                    "enemy_id": "0x010612",
+                    "start_think_tbl_no": 1,
+                    "infection_type": 2,
+                    "level": 60,
+                    "exp": 756,
+                    "index": 9
+                },
+                {
+                    "comment": "Infected Snow Harpy - Severe",
+                    "enemy_id": "0x010612",
+                    "start_think_tbl_no": 1,
+                    "infection_type": 2,
+                    "level": 60,
+                    "exp": 756,
+                    "index": 10
+                },
+                {
+                    "comment": "Infected Snow Harpy - Severe",
+                    "enemy_id": "0x010612",
+                    "start_think_tbl_no": 1,
+                    "infection_type": 2,
+                    "level": 60,
+                    "exp": 756,
+                    "index": 11
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 318,
+                "group_id": 6
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Infected Gorecyclops - Slight",
+                    "enemy_id": "0x015012",
+                    "level": 60,
+                    "exp": 18915,
+                    "is_boss": true,
+                    "infected_type": 1,
+                    "index": 5
+                },
+                {
+                    "comment": "Infected Snow Harpy",
+                    "enemy_id": "0x010612",
+                    "start_think_tbl_no": 1,
+                    "level": 60,
+                    "exp": 756,
+                    "index": 7
+                },
+                {
+                    "comment": "Infected Snow Harpy",
+                    "enemy_id": "0x010612",
+                    "start_think_tbl_no": 1,
+                    "level": 60,
+                    "exp": 756,
+                    "index": 8
+                },
+                {
+                    "comment": "Infected Snow Harpy",
+                    "enemy_id": "0x010612",
+                    "start_think_tbl_no": 1,
+                    "level": 60,
+                    "exp": 756,
+                    "index": 9
+                },
+                {
+                    "comment": "Hobgoblin Leader",
+                    "enemy_id": "0x010113",
+                    "level": 60,
+                    "exp": 756,
+                    "index": 11
+                },
+                {
+                    "comment": "Hobgoblin Leader",
+                    "enemy_id": "0x010113",
+                    "level": 60,
+                    "exp": 756,
+                    "index": 12
+                }
+            ]
+        }
+    ],
+    "processes": [
+        {
+            "blocks": [
+                {
+                    "type": "NpcTalkAndOrder",
+                    "stage_id": {
+                        "id": 317
+                    },
+                    "npc_id": "Bertrand",
+                    "message_id": 17153
+                },
+                {
+                    "type": "SeekOutEnemiesAtMarkedLocation",
+                    "announce_type": "Accept",
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 549, "Param2": 17154, "comment": "Extra dialogue - Bertrand"}
+                    ],
+                    "groups": [0]
+                },
+                {
+                    "type": "KillGroup",
+                    "announce_type": "Update",
+                    "reset_group": false,
+                    "groups": [0]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "announce_type": "CheckpointAndUpdate",
+                    "set_flags": [1],
+                    "check_flags": [2]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "announce_type": "CheckpointAndUpdate",
+                    "check_flags": [3, 4, 5]
+                },
+                {
+                    "type": "TalkToNpc",
+                    "stage_id": {
+                        "id": 317
+                    },
+                    "announce_type": "CheckpointAndUpdate",
+                    "npc_id": "Bertrand",
+                    "message_id": 17155
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [1]
+                },
+                {
+                    "type": "DiscoverEnemy",
+                    "groups": [1]
+                },
+                {
+                    "type": "KillGroup",
+                    "reset_group": false,
+                    "result_commands": [
+                        {"type": "MyQstFlagOn", "Param1": 2}
+                    ],
+                    "groups": [1]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "announce_type": "Update",
+                    "set_flags": [3]
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [1]
+                },
+                {
+                    "type": "DiscoverEnemy",
+                    "groups": [2]
+                },
+                {
+                    "type": "KillGroup",
+                    "reset_group": false,
+                    "result_commands": [
+                        {"type": "MyQstFlagOn", "Param1": 2}
+                    ],
+                    "groups": [2]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "announce_type": "Update",
+                    "set_flags": [4]
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [1]
+                },
+                {
+                    "type": "DiscoverEnemy",
+                    "groups": [3]
+                },
+                {
+                    "type": "KillGroup",
+                    "reset_group": false,
+                    "result_commands": [
+                        {"type": "MyQstFlagOn", "Param1": 2}
+                    ],
+                    "groups": [3]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "set_flags": [5]
+                }
+            ]
+        }
+    ]
+}

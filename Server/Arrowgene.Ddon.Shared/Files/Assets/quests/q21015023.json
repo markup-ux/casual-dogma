@@ -1,0 +1,140 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Time Restriction: Mining in the Dead of Night",
+    "quest_id": 21015023,
+    "base_level": 75,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "FaranaPlains",
+    "news_image": 261,
+    "order_conditions": [{"type": "AreaRank", "Param1": 15, "Param2": 11}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 11233
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 1662
+        },
+        {
+            "type": "exp",
+            "amount": 5470
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "MorrowLauanWood",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "processes": [
+        {
+            "blocks": [
+                {
+                    "type": "NpcTalkAndOrder",
+                    "stage_id": {
+                        "id": 341
+                    },
+                    "npc_id": "Razanailt",
+                    "message_id": 20021
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "Accept",
+                    "check_commands": [
+                        {"type": "StageNo", "Param1": 930},
+                        {"type": "IngameTimeRangeNotEq", "Param1": 2, "Param2": 23}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 2501, "Param2": 20022}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "CheckpointAndUpdate",
+                    "check_commands": [
+                        {"type": "TalkNpc", "Param1": 930, "Param2": 2600},
+                        {"type": "IngameTimeRangeNotEq", "Param1": 2, "Param2": 23}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 2501, "Param2": 20023}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "CheckpointAndUpdate",
+                    "result_commands": [
+                        {"type": "MyQstFlagOn", "Param1": 0},
+                        {"type": "QstTalkChg", "Param1": 2501, "Param2": 20024}
+                    ],
+                    "check_commands": [
+                        {"type": "HaveItemAllBag", "Param1": 16001, "Param2": 5}
+                    ]
+                },
+                {
+                    "type": "DeliverItems",
+                    "announce_type": "CheckpointAndUpdate",
+                    "stage_id": {
+                        "id": 341
+                    },
+                    "npc_id": "Razanailt",
+                    "items": [
+                        {
+                            "comment": "Ashen Flower Rock",
+                            "id": 16001,
+                            "amount": 5
+                        }
+                    ],
+                    "message_id": 20025
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [0]
+                },
+                {
+                    "type": "Raw",
+                    "check_commands": [
+                        {"type": "IngameTimeRangeNotEq", "Param1": 2, "Param2": 23},
+                        {"type": "StageNoWithoutMarker", "Param1": 120}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "result_commands": [
+                        {"type": "QstLayoutFlagOn", "Param1": 4686},
+                        {"type": "CallMessage", "Param1": 1, "Param1": 20102}
+                    ],
+                    "check_commands": [
+                        {"type": "IngameTimeRangeEq", "Param1": 2, "Param2": 23}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "result_commands": [
+                        {"type": "QstLayoutFlagOff", "Param1": 4686},
+                        {"type": "CallMessage", "Param1": 1, "Param1": 20103}
+                    ]
+                }
+            ]
+        }
+    ]
+}

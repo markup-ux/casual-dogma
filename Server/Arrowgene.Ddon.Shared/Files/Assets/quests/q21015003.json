@@ -1,0 +1,73 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "To The Faraway Child",
+    "quest_id": 21015003,
+    "base_level": 73,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "FaranaPlains",
+    "order_conditions": [{"type": "AreaRank", "Param1": 15, "Param2": 7}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 11020
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 1387
+        },
+        {
+            "type": "exp",
+            "amount": 10925
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Icon Fragment",
+                    "item_id": 15923,
+                    "num": 6
+                },
+                {
+                    "comment": "Superior Healing Remedy",
+                    "item_id": 7555,
+                    "num": 3
+                },
+                {
+                    "comment": "Superior Strong Gala Extract",
+                    "item_id": 9364,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 341
+            },
+            "npc_id": "Lewela",
+            "message_id": 19417
+        },
+        {
+            "type": "DeliverItems",
+            "stage_id": {
+                "id": 374
+            },
+            "npc_id": "Reich",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2505, "Param2": 19418, "comment": "Extra dialogue - Llywela"},
+                {"type": "QstTalkChg", "Param1": 2607, "Param2": 19419, "comment": "Extra dialogue - Raith"}
+            ],
+            "items": [
+                {"id": 15919, "amount": 6, "comment": "Twisted Iron Scrap"}
+            ],
+            "message_id": 19420
+        }
+    ]
+}

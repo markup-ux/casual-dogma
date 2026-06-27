@@ -1,0 +1,394 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "High Difficulty: The Source of Commotion",
+    "quest_id": 21000011,
+    "base_level": 63,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "BloodbaneIsle",
+    "news_image": 522,
+    "rewards": [
+        {
+            "type": "exp",
+            "amount": 9302
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 2078
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 265
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "FrostMetal",
+                    "num": 1
+                },
+                {
+                    "item_id": "IronOreFragment",
+                    "num": 5
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "stage_id": {
+                "id": 335,
+                "group_id": 10
+            },
+            "enemies": [
+                {
+                    "comment": "Ghoul",
+                    "enemy_id": "0x015503",
+                    "level": 63,
+                    "exp": 3876,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Mudman",
+                    "enemy_id": "0x010509",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Mudman",
+                    "enemy_id": "0x010509",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Frost Skeleton",
+                    "enemy_id": "0x010315",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Frost Skeleton",
+                    "enemy_id": "0x010315",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Frost Skeleton",
+                    "enemy_id": "0x010315",
+                    "level": 63,
+                    "exp": 788
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 330,
+                "group_id": 1
+            },
+            "starting_index": 3,
+            "enemies": [
+                {
+                    "comment": "Frost Skeleton",
+                    "enemy_id": "0x010315",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Frost Skeleton",
+                    "enemy_id": "0x010315",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Frost Skeleton",
+                    "enemy_id": "0x010315",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Frost Skeleton",
+                    "enemy_id": "0x010315",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Mudman",
+                    "enemy_id": "0x010509",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Mudman",
+                    "enemy_id": "0x010509",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Mudman",
+                    "enemy_id": "0x010509",
+                    "level": 63,
+                    "exp": 788
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 330,
+                "group_id": 4
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Wight",
+                    "enemy_id": "0x015600",
+                    "level": 63,
+                    "exp": 3876,
+                    "is_boss": true,
+                    "index": 0
+                },
+                {
+                    "comment": "Wight",
+                    "enemy_id": "0x015600",
+                    "level": 63,
+                    "exp": 3876,
+                    "is_boss": true,
+                    "index": 5
+                },
+                {
+                    "comment": "Frost Corpse Punisher",
+                    "enemy_id": "0x010511",
+                    "level": 63,
+                    "exp": 788,
+                    "index": 7
+                },
+                {
+                    "comment": "Frost Corpse Punisher",
+                    "enemy_id": "0x010511",
+                    "level": 63,
+                    "exp": 788,
+                    "index": 8
+                },
+                {
+                    "comment": "Frost Corpse Torturer",
+                    "enemy_id": "0x010512",
+                    "level": 63,
+                    "exp": 788,
+                    "index": 9
+                },
+                {
+                    "comment": "Frost Corpse Torturer",
+                    "enemy_id": "0x010512",
+                    "level": 63,
+                    "exp": 788,
+                    "index": 10
+                },
+                {
+                    "comment": "Frost Corpse Torturer",
+                    "enemy_id": "0x010512",
+                    "level": 63,
+                    "exp": 788,
+                    "index": 11
+                },
+                {
+                    "comment": "Frost Corpse Torturer",
+                    "enemy_id": "0x010512",
+                    "level": 63,
+                    "exp": 788,
+                    "index": 12
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 330,
+                "group_id": 5
+            },
+            "enemies": [
+                {
+                    "comment": "Frost Machina",
+                    "enemy_id": "0x015851",
+                    "level": 63,
+                    "exp": 19380,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Saurian",
+                    "enemy_id": "0x010400",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Saurian",
+                    "enemy_id": "0x010400",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Saurian",
+                    "enemy_id": "0x010400",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Mudman",
+                    "enemy_id": "0x010509",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Mudman",
+                    "enemy_id": "0x010509",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Mudman",
+                    "enemy_id": "0x010509",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Mudman",
+                    "enemy_id": "0x010509",
+                    "level": 63,
+                    "exp": 788
+                },
+                {
+                    "comment": "Mudman",
+                    "enemy_id": "0x010509",
+                    "level": 63,
+                    "exp": 788
+                }
+            ]
+        }
+    ],
+    "processes": [
+        {
+            "blocks": [
+                {
+                    "type": "NpcTalkAndOrder",
+                    "stage_id": {
+                        "id": 317
+                    },
+                    "npc_id": "Bertrand",
+                    "message_id": 17141
+                },
+                {
+                    "type": "SeekOutEnemiesAtMarkedLocation",
+                    "announce_type": "Accept",
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 549, "Param2": 17142, "comment": "Extra dialogue - Bertrand"}
+                    ],
+                    "groups": [0]
+                },
+                {
+                    "type": "KillGroup",
+                    "announce_type": "Update",
+                    "reset_group": false,
+                    "groups": [0]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "announce_type": "CheckpointAndUpdate",
+                    "set_flags": [1],
+                    "check_flags": [2]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "announce_type": "CheckpointAndUpdate",
+                    "check_flags": [3, 4, 5]
+                },
+                {
+                    "type": "TalkToNpc",
+                    "stage_id": {
+                        "id": 317
+                    },
+                    "npc_id": "Bertrand",
+                    "message_id": 17143
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [1]
+                },
+                {
+                    "type": "DiscoverEnemy",
+                    "groups": [1]
+                },
+                {
+                    "type": "KillGroup",
+                    "reset_group": false,
+                    "result_commands": [
+                        {"type": "MyQstFlagOn", "Param1": 2}
+                    ],
+                    "groups": [1]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "announce_type": "Update",
+                    "set_flags": [3]
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [1]
+                },
+                {
+                    "type": "DiscoverEnemy",
+                    "groups": [2]
+                },
+                {
+                    "type": "KillGroup",
+                    "reset_group": false,
+                    "result_commands": [
+                        {"type": "MyQstFlagOn", "Param1": 2}
+                    ],
+                    "groups": [2]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "announce_type": "Update",
+                    "set_flags": [4]
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [1]
+                },
+                {
+                    "type": "DiscoverEnemy",
+                    "groups": [3]
+                },
+                {
+                    "type": "KillGroup",
+                    "reset_group": false,
+                    "result_commands": [
+                        {"type": "MyQstFlagOn", "Param1": 2}
+                    ],
+                    "groups": [3]
+                },
+                {
+                    "type": "MyQstFlags",
+                    "announce_type": "Update",
+                    "set_flags": [5]
+                }
+            ]
+        }
+    ]
+}

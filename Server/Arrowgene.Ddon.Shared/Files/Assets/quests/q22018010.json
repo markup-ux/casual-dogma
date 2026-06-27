@@ -1,0 +1,238 @@
+﻿{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Ambush of the Armed Demon Army",
+  "quest_id": 22018010,
+  "base_level": 83,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "RathniteFoothills",
+  "news_image": 330,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5500
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 555
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "AreaPoints",
+      "amount": 500
+    },
+    {
+      "type": "exp",
+      "amount": 50400
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Demon Beast's Liver",
+          "item_id": 18655,
+          "num": 3
+        },
+        {
+          "comment": "Royal Crest Medal (Rathnite District)",
+          "item_id": 18815,
+          "num": 5
+        },
+        {
+          "comment": "Mark of Brute Courage",
+          "item_id": 17859,
+          "num": 3
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Giant Animal Skull",
+          "item_id": 21232,
+          "num": 1,
+          "chance": 0.9
+        },
+        {
+          "comment": "Mark of Brute Courage",
+          "item_id": 17892,
+          "num": 1,
+          "chance": 0.6
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "comment": "GroupId: 13 - Griffin, War-Ready Grimwargs",
+      "stage_id": {
+        "id": 462,
+        "group_id": 13
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015300",
+          "level": 83,
+          "exp": 170000,
+          "is_boss": true,
+          "comment": "Griffin"
+        },
+        {
+          "enemy_id": "0x010230",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War-Ready Grimwarg"
+        },
+        {
+          "enemy_id": "0x010230",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War-Ready Grimwarg"
+        },
+        {
+          "enemy_id": "0x010230",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "War-Ready Grimwarg"
+        }
+      ]
+    },
+    {
+      "comment": "GroupId: 37 - Dwarf Orcs",
+      "stage_id": {
+        "id": 462,
+        "group_id": 37
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015823",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Heavy Soldier Dwarf Orc"
+        },
+        {
+          "enemy_id": "0x015824",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ranged Soldier Dwarf Orc"
+        },
+        {
+          "enemy_id": "0x015821",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Sword Soldier Dwarf Orc"
+        },
+        {
+          "enemy_id": "0x015821",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Sword Soldier Dwarf Orc"
+        }
+      ]
+    },
+    {
+      "comment": "GroupId: 18 - War-Ready Goremanticore, Dwarf Orcs",
+      "stage_id": {
+        "id": 462,
+        "group_id": 18
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015220",
+          "level": 83,
+          "exp": 220000,
+          "is_boss": true,
+          "comment": "War-Ready Goremanticore"
+        },
+        {
+          "enemy_id": "0x015821",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Sword Soldier Dwarf Orc"
+        },
+        {
+          "enemy_id": "0x015821",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Sword Soldier Dwarf Orc"
+        },
+        {
+          "enemy_id": "0x015821",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Sword Soldier Dwarf Orc"
+        },
+        {
+          "enemy_id": "0x015821",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Sword Soldier Dwarf Orc"
+        },
+        {
+          "enemy_id": "0x015824",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ranged Soldier Dwarf Orc"
+        },
+        {
+          "enemy_id": "0x015824",
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ranged Soldier Dwarf Orc"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Accept",
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [0]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [1]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [1]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [2]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [2]
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Missing Cohort",
+    "quest_id": 21015014,
+    "base_level": 73,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "FaranaPlains",
+    "news_image": 623,
+    "order_conditions": [{"type": "AreaRank", "Param1": 15, "Param2": 7}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4408
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 13110
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "TwistedIronScrap",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 420,
+                "group_id": 4
+            },
+            "enemies": []
+        },
+        {
+            "stage_id": {
+                "id": 420,
+                "group_id": 4
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Dark Skeleton Brute",
+                    "enemy_id": "0x010324",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 0
+                },
+                {
+                    "comment": "Dark Skeleton Brute",
+                    "enemy_id": "0x010324",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 1
+                },
+                {
+                    "comment": "Ghost",
+                    "enemy_id": "0x015620",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 7
+                },
+                {
+                    "comment": "Ghost",
+                    "enemy_id": "0x015620",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 8
+                },
+                {
+                    "comment": "Eliminator",
+                    "enemy_id": "0x010508",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 9
+                },
+                {
+                    "comment": "Ghost",
+                    "enemy_id": "0x015620",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 10
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 371
+            },
+            "npc_id": "Wine",
+            "message_id": 19569
+        },
+        {
+            "type": "SpawnGroup",
+            "announce_type": "Accept",
+            "groups": [0],
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2508, "Param2": 19570, "comment": "Extra dialogue - Wine"}
+            ],
+            "check_commands": [
+                {"type": "StageNo", "Param1": 827}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 420,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Corentin",
+            "message_id": 21100,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4338, "comment": "Spawns Corentin NPC"}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "groups": [1],
+            "result_commands": [
+                {"type": "CallMessage", "Param1": 560, "Param1": 19574},
+                {"type": "MyQstFlagOn", "Param1": 2114, "comment": "Corentin FSM"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 420,
+                "group_id": 2,
+                "layer_no": 0
+            },
+            "npc_id": "Corentin",
+            "message_id": 19572,
+            "result_commands": [
+                {"type": "QstLayoutFlagOff", "Param1": 4338, "comment": "Clears Corentin NPC"},
+                {"type": "QstLayoutFlagOn", "Param1": 4343, "comment": "Spawns Corentin (Alive) NPC"}
+            ]
+        },
+        {
+            "type": "TalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 371
+            },
+            "npc_id": "Wine",
+            "message_id": 19567
+        }
+    ]
+}

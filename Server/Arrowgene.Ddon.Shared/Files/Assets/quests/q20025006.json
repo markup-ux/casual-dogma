@@ -1,0 +1,90 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Paired Encounter",
+  "quest_id": 20025006,
+  "base_level": 36,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "news_image": 41,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 990
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 150
+    },
+    {
+      "type": "exp",
+      "amount": 1180
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Necrophagous Bristle",
+          "item_id": 7777,
+          "num": 1
+        },
+        {
+          "comment": "Agate",
+          "item_id": 7894,
+          "num": 5
+        },
+        {
+          "comment": "Throwblast",
+          "item_id": 52,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 255
+      },
+      "starting_index": 2,
+      "enemies": [
+        {
+          "comment": "Vigilant Ogre",
+          "enemy_id": "0x015500",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 53,
+          "level": 32,
+          "exp": 2420,
+          "scale": 90,
+          "is_boss": true
+        },
+        {
+          "comment": "Brutal Ogre",
+          "enemy_id": "0x015500",
+          "start_think_tbl_no": 2,
+          "named_enemy_params_id": 54,
+          "level": 36,
+          "exp": 2660,
+          "scale": 140,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

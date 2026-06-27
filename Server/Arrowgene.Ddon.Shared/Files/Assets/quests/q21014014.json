@@ -1,0 +1,161 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Water Grove Wayfarers",
+    "quest_id": 21014014,
+    "base_level": 73,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ElanWaterGrove",
+    "news_image": 623,
+    "order_conditions": [{"type": "AreaRank", "Param1": 14, "Param2": 7}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4408
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 19665
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "ShriekingMushroom",
+                    "num": 3
+                },
+                {
+                    "item_id": "BronzeTailFeather",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 425,
+                "group_id": 3
+            },
+            "enemies": []
+        },
+        {
+            "stage_id": {
+                "id": 425,
+                "group_id": 3
+            },
+            "enemies": [
+                {
+                    "comment": "Silver Roar",
+                    "enemy_id": "0x015505",
+                    "level": 73,
+                    "exp": 10925,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 73,
+                    "exp": 2185
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NewNpcTalkAndOrder",
+            "stage_id": {
+                "id": 372,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Nora",
+            "message_id": 19519,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4486, "comment": "Spawns Nora NPC"}
+            ]
+        },
+        {
+            "type": "SpawnGroup",
+            "announce_type": "Accept",
+            "groups": [0],
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 4753, "Param2": 19520, "comment": "Extra dialogue - Nora"}
+            ],
+            "check_commands": [
+                {"type": "StageNo", "Param1": 844}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 425,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Ifa",
+            "message_id": 21097,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4483, "comment": "Spawns Aoife NPC"}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "groups": [1],
+            "result_commands": [
+                {"type": "CallMessage", "Param1": 563, "Param1": 19522},
+                {"type": "MyQstFlagOn", "Param1": 2102, "comment": "Aoife FSM"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 425,
+                "group_id": 2,
+                "layer_no": 0
+            },
+            "npc_id": "Ifa",
+            "message_id": 19565,
+            "result_commands": [
+                {"type": "QstLayoutFlagOff", "Param1": 4483, "comment": "Clears Aoife NPC"},
+                {"type": "QstLayoutFlagOn", "Param1": 4488, "comment": "Spawns Aoife (Alive) NPC"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 372,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Nora",
+            "message_id": 19517
+        }
+    ]
+}

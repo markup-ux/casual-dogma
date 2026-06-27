@@ -1,0 +1,179 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Menace of the Ruins",
+  "quest_id": 21000053,
+  "base_level": 68,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "DeenanWoods",
+  "order_conditions": [{"type": "AreaRank", "Param1": 7, "Param2": 13}],
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 2243
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 290
+    },
+    {
+      "type": "exp",
+      "amount": 10665
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Prism Crystal",
+          "item_id": 11808,
+          "num": 3
+        },
+        {
+          "comment": "Soft Tectrix",
+          "item_id": 11799,
+          "num": 3
+        },
+        {
+          "comment": "Panacea",
+          "item_id": 41,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 428,
+        "group_id": 5
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Infected Gorecyclops - Severe",
+          "enemy_id": "0x015012",
+          "infection_type": 2,
+          "level": 68,
+          "exp": 5925,
+          "is_boss": true
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 428,
+        "group_id": 14
+      },
+      "enemies": [
+        {
+          "comment": "Infected Snow Harpy",
+          "enemy_id": "0x010612",
+          "start_think_tbl_no": 3,
+          "level": 68,
+          "exp": 1185
+        },
+        {
+          "comment": "Infected Snow Harpy",
+          "enemy_id": "0x010612",
+          "start_think_tbl_no": 3,
+          "level": 68,
+          "exp": 1185
+        },
+        {
+          "comment": "Infected Snow Harpy",
+          "enemy_id": "0x010612",
+          "start_think_tbl_no": 3,
+          "level": 68,
+          "exp": 1185
+        },
+        {
+          "comment": "Infected Snow Harpy",
+          "enemy_id": "0x010612",
+          "start_think_tbl_no": 3,
+          "level": 68,
+          "exp": 1185
+        },
+        {
+          "comment": "Infected Snow Harpy",
+          "enemy_id": "0x010612",
+          "start_think_tbl_no": 3,
+          "level": 68,
+          "exp": 1185
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "DiscoverEnemy",
+          "groups": [0],
+          "result_commands": [{"type": "QstLayoutFlagOn", "Param1": 3299}]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "announce_type": "Accept",
+          "groups": [0],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 0}],
+          "check_commands": [{"type": "MyQstFlagOff", "Param1": 1}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "comment": "Group 0 boss HP check",
+          "type": "Raw",
+          "check_commands": [{"type": "EmHpLess", "Param1": 851, "Param2": 5, "Param3": 5, "Param4": 40}]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "groups": [1],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 1}, {"type": "StartTimer", "Param1": 1, "Param2": 30}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 1}],
+          "check_commands": [{"type": "IsMyquestLayoutFlagOff", "Param1": 3301}, {"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 624}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "IsEndTimer", "Param1": 1}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 626}, {"type": "StartTimer", "Param1": 2, "Param2": 15}],
+          "check_commands": [{"type": "IsEndTimer", "Param1": 2}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 625}, {"type": "QstLayoutFlagOn", "Param1": 3301}]
+        }
+      ]
+    }
+  ]
+}

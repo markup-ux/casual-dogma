@@ -1,0 +1,133 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Sea-Watcher’s Hand",
+  "quest_id": 20010003,
+  "base_level": 11,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BreyaCoast",
+  "news_image": 24,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 360
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 30
+    },
+    {
+      "type": "exp",
+      "amount": 360
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Walker Tights",
+          "item_id": 8683,
+          "num": 1
+        },
+        {
+          "comment": "Eyedrops",
+          "item_id": 39,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 89
+      },
+      "position_index": 2,
+      "enemies": [
+        {
+          "comment": "Vigilant Rogue Fighter",
+          "enemy_id": "0x011000",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 45,
+          "level": 11,
+          "exp": 62
+        },
+        {
+          "comment": "Vigilant Rogue Fighter",
+          "enemy_id": "0x011000",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 45,
+          "level": 11,
+          "exp": 62
+        },
+        {
+          "comment": "Vigilant Rogue Fighter",
+          "enemy_id": "0x011000",
+          "named_enemy_params_id": 53,
+          "hm_present_no": 45,
+          "level": 11,
+          "exp": 62
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "NpcTalkAndOrder",
+          "stage_id": {
+            "id": 1
+          },
+          "npc_id": "Rosa",
+          "message_id": 11378
+        },
+        {
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 47
+          },
+          "announce_type": "Accept",
+          "result_commands": [
+            {
+              "comment": "Idle dialogue - Rosa",
+              "type": "QstTalkChg",
+              "Param1": 1201,
+              "Param2": 11874
+            },
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 0
+            }
+          ],
+          "npc_id": "Rudolfo",
+          "message_id": 11870
+        },
+        {
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 1
+          },
+          "announce_type": "CheckpointAndUpdate",
+          "npc_id": "Rosa",
+          "message_id": 11871
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [ { "type": "MyQstFlagOn", "Param1": 0 } ]
+        },
+        {
+          "type": "SpawnGroup",
+          "groups": [0]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Ancient Vengeance Demon",
+    "quest_id": 21017017,
+    "base_level": 75,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "KingalCanyon",
+    "news_image": 301,
+    "order_conditions": [{"type": "AreaRank", "Param1": 17, "Param2": 11}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4494
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "exp",
+            "amount": 24615
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "DemonEnvoysHorn",
+                    "num": 1
+                },
+                {
+                    "item_id": "EnvoysLoathsomeTail",
+                    "num": 1
+                },
+                {
+                    "item_id": "SeabirdSyrinx",
+                    "num": 1
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 4
+            },
+            "starting_index": 2,
+            "enemies": [
+                {
+                    "comment": "Bearded Grigori",
+                    "enemy_id": "0x015920",
+                    "level": 75,
+                    "exp": 2735
+                },
+                {
+                    "comment": "Grigori",
+                    "enemy_id": "0x015900",
+                    "level": 75,
+                    "exp": 2735
+                },
+                {
+                    "comment": "Grigori",
+                    "enemy_id": "0x015900",
+                    "level": 75,
+                    "exp": 2735
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 75,
+                    "exp": 2735
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 75,
+                    "exp": 2735
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 75,
+                    "exp": 2735
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 75,
+                    "exp": 2735
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 35
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 75,
+                    "exp": 2735
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 75,
+                    "exp": 2735
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 75,
+                    "exp": 2735
+                },
+                {
+                    "comment": "Severely Infected Demon",
+                    "enemy_id": "0x015910",
+                    "level": 75,
+                    "exp": 2735
+                },
+                {
+                    "comment": "Severely Infected Demon",
+                    "enemy_id": "0x015910",
+                    "level": 75,
+                    "exp": 2735
+                },
+                {
+                    "comment": "Severely Infected Demon",
+                    "enemy_id": "0x015910",
+                    "level": 75,
+                    "exp": 2735
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 38
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Medusa",
+                    "enemy_id": "0x015610",
+                    "level": 75,
+                    "exp": 13675,
+                    "is_boss": true,
+                    "index": 5
+                },
+                {
+                    "comment": "Severely Infected Demon",
+                    "enemy_id": "0x015910",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 6
+                },
+                {
+                    "comment": "Severely Infected Demon",
+                    "enemy_id": "0x015910",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 7
+                },
+                {
+                    "comment": "Severely Infected Demon",
+                    "enemy_id": "0x015910",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 9
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 373
+            },
+            "npc_id": "Mavail",
+            "message_id": 20045
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2706, "Param2": 20046}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [1]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [1]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 373
+            },
+            "announce_type": "Update",
+            "npc_id": "Mavail",
+            "message_id": 20047
+        }
+    ]
+}

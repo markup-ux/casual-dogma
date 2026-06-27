@@ -1,0 +1,148 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Door of Dragon Force: Verdant Tyrant",
+    "quest_id": 21016007,
+    "base_level": 73,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "MorrowForest",
+    "news_image": 537,
+    "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 4}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4408
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 26220
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Unappraised Flower Trinket (Soldier)",
+                    "item_id": 13483,
+                    "num": 3
+                },
+                {
+                    "comment": "Superior Healing Remedy",
+                    "item_id": 7555,
+                    "num": 3
+                },
+                {
+                    "comment": "Panacea",
+                    "item_id": 41,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 418,
+                "group_id": 8
+            },
+            "placement_type": "manual",
+            "comment": "2204 BO",
+            "enemies": [
+                {
+                    "comment": "Dragonforce-Bearing Severely Infected Behemoth (Critical)",
+                    "enemy_id": "0x015717",
+                    "named_enemy_params_id": 1582,
+                    "infection_type": 3,
+                    "level": 73,
+                    "exp": 13720,
+                    "blood_orbs": 956,
+                    "is_boss": true,
+                    "index": 0
+                },
+                {
+                    "comment": "Dragonforce-Bearing Severely Infected Pixie",
+                    "enemy_id": "0x010170",
+                    "named_enemy_params_id": 1582,
+                    "level": 73,
+                    "exp": 509,
+                    "blood_orbs": 156,
+                    "repop_count": 1,
+                    "repop_wait_second": 30,
+                    "index": 2
+                },
+                {
+                    "comment": "Dragonforce-Bearing Severely Infected Pixie",
+                    "enemy_id": "0x010170",
+                    "named_enemy_params_id": 1582,
+                    "level": 73,
+                    "exp": 509,
+                    "blood_orbs": 156,
+                    "repop_count": 1,
+                    "repop_wait_second": 30,
+                    "index": 3
+                },
+                {
+                    "comment": "Dragonforce-Bearing Severely Infected Pixie",
+                    "enemy_id": "0x010170",
+                    "named_enemy_params_id": 1582,
+                    "level": 73,
+                    "exp": 509,
+                    "blood_orbs": 156,
+                    "repop_count": 1,
+                    "repop_wait_second": 30,
+                    "index": 4
+                },
+                {
+                    "comment": "Dragonforce-Bearing Severely Infected Pixie",
+                    "enemy_id": "0x010170",
+                    "named_enemy_params_id": 1582,
+                    "level": 73,
+                    "exp": 509,
+                    "blood_orbs": 156,
+                    "repop_count": 1,
+                    "repop_wait_second": 30,
+                    "index": 5
+                },
+                {
+                    "comment": "Severely Infected Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 6
+                },
+                {
+                    "comment": "Severely Infected Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 7
+                },
+                {
+                    "comment": "Severely Infected Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 73,
+                    "exp": 2185,
+                    "index": 8
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "reset_group": false,
+            "groups": [0]
+        }
+    ]
+}

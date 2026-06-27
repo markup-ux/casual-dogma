@@ -1,0 +1,230 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Flight of the Ravenous Birds",
+  "quest_id": 21016008,
+  "base_level": 73,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MorrowForest",
+  "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 4}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 19665
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 4408
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 555
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Unappraised Flower Trinket (Soldier)",
+          "item_id": 13483,
+          "num": 3
+        },
+        {
+          "comment": "Superior Healing Remedy",
+          "item_id": 7555,
+          "num": 3
+        },
+        {
+          "comment": "Superior Strong Gala Extract",
+          "item_id": 9364,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups" : [
+    {
+      "stage_id": {
+        "id": 418,
+        "group_id": 3
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Infected Griffin (Severe)",
+          "enemy_id": "0x015306",
+          "level": 73,
+          "exp": 10925,
+          "is_boss": true,
+          "infection_type": 2,
+          "index": 0
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 73,
+          "exp": 2185,
+          "index": 5
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 73,
+          "exp": 2185,
+          "index": 6
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 73,
+          "exp": 2185,
+          "index": 7
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 73,
+          "exp": 2185,
+          "index": 8
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 73,
+          "exp": 2185,
+          "index": 9
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 73,
+          "exp": 2185,
+          "index": 10
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 73,
+          "exp": 2185,
+          "index": 11
+        },
+        {
+          "comment": "Stymphalides",
+          "enemy_id": "0x010611",
+          "level": 73,
+          "exp": 2185,
+          "index": 12
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 418,
+        "group_id": 7
+      },
+      "enemies": [
+        {
+          "comment": "Infected Hobgoblin Fighter",
+          "enemy_id": "0x010161",
+          "level": 73,
+          "exp": 2185
+        },
+        {
+          "comment": "Infected Hobgoblin Fighter",
+          "enemy_id": "0x010161",
+          "level": 73,
+          "exp": 2185
+        },
+        {
+          "comment": "Infected Hobgoblin Fighter",
+          "enemy_id": "0x010161",
+          "level": 73,
+          "exp": 2185
+        },
+        {
+          "comment": "Infected Hobgoblin Fighter",
+          "enemy_id": "0x010161",
+          "level": 73,
+          "exp": 2185
+        },
+        {
+          "comment": "Infected Hobgoblin Fighter",
+          "enemy_id": "0x010161",
+          "level": 73,
+          "exp": 2185
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "DiscoverEnemy",
+          "groups": [0]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "announce_type": "Accept",
+          "groups": [0],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 0}],
+          "check_commands": [{"type": "MyQstFlagOff", "Param1": 1}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "comment": "Group 0 boss HP check",
+          "type": "Raw",
+          "check_commands": [{"type": "EmHpLess", "Param1": 817, "Param2": 3, "Param3": 0, "Param4": 40}]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "groups": [1],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 1}, {"type": "StartTimer", "Param1": 1, "Param2": 30}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 1}],
+          "check_commands": [{"type": "IsMyquestLayoutFlagOff", "Param1": 4419}, {"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 747}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "IsEndTimer", "Param1": 1}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 749}, {"type": "StartTimer", "Param1": 2, "Param2": 15}],
+          "check_commands": [{"type": "IsEndTimer", "Param1": 2}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 748}, {"type": "QstLayoutFlagOn", "Param1": 4419}]
+        }
+      ]
+    }
+  ]
+}

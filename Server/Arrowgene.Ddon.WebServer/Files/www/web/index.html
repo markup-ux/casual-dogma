@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CrazyOnlineGames</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #response_area {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <div>
+            <label><b>Username</b></label>
+            <input id="input_account" type="text">
+        </div>
+        <div>
+            <label><b>Password</b></label>
+            <input id="input_password" type="password">
+        </div>
+        <div>
+            <label><b>Email</b></label>
+            <input id="input_email" type="email">
+        </div>
+        <div>
+            <button id="button_login" type="button">Login</button>
+            <button id="button_create_account" type="button">Create Account</button>
+        </div>
+    </div>
+
+    <div id="response_area">
+        <div><span class="label">Error:</span> <span id="resp_error"></span></div>
+        <div><span class="label">Message:</span> <span id="resp_message"></span></div>
+        <div><span class="label">Token:</span> <span id="resp_token"></span></div>
+    </div>
+
+    <script>
+        (function () {
+            window.DDON = {
+                API_ACCOUNT: "/api/account",
+
+                setup: function () {
+                    DDON.addClick("button_login", DDON.login);
+                    DDON.addClick("button_create_account", DDON.createAccount);
+                },
+
+                login: function () {
+                    DDON.post({
+                        Action: "login",
+                        Account: DDON.getText("input_account"),
+                        Password: DDON.getText("input_password")
+                    });
+                },
+
+                createAccount: function () {
+                    DDON.post({
+                        Action: "create",
+                        Account: DDON.getText("input_account"),
+                        Password: DDON.getText("input_password"),
+                        Email: DDON.getText("input_email")
+                    });
+                },
+
+                post: function (data) {
+                    fetch(DDON.API_ACCOUNT, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(data)
+                    })
+                        .then(r => r.json())
+                        .then(DDON.showResponse);
+                },
+
+                showResponse: function (data) {
+                    document.getElementById("resp_error").textContent = data.Error;
+                    document.getElementById("resp_message").textContent = data.Message;
+                    document.getElementById("resp_token").textContent = data.Token;
+
+                    window.postMessage(data, "*");
+                },
+
+                addClick: function (id, cb) {
+                    document.getElementById(id).onclick = cb;
+                },
+
+                getText: function (id) {
+                    return document.getElementById(id).value;
+                }
+            };
+
+            DDON.setup();
+        })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Beckoning Demons",
+    "quest_id": 21017018,
+    "base_level": 80,
+    "minimum_item_rank": 0,
+    "discoverable": false,
+    "area_id": "KingalCanyon",
+    "order_conditions": [{"type": "AreaRank", "Param1": 17, "Param2": 14}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5106
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 665
+        },
+        {
+            "type": "exp",
+            "amount": 48420
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "DubiousAnimalPelt",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 5
+            },
+            "enemies": [
+                {
+                    "comment": "Skeleton Mage",
+                    "enemy_id": "0x010308",
+                    "level": 78,
+                    "exp": 586
+                },
+                {
+                    "comment": "Frost Skeleton",
+                    "enemy_id": "0x010315",
+                    "level": 78,
+                    "exp": 586
+                },
+                {
+                    "comment": "Skeleton Mage",
+                    "enemy_id": "0x010308",
+                    "level": 78,
+                    "exp": 586
+                },
+                {
+                    "comment": "Frost Skeleton",
+                    "enemy_id": "0x010315",
+                    "level": 78,
+                    "exp": 586
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 47
+            },
+            "enemies": [
+                {
+                    "comment": "Empress Ghost",
+                    "enemy_id": "0x015605",
+                    "level": 80,
+                    "exp": 20175,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 80,
+                    "exp": 4035
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 80,
+                    "exp": 4035
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 448,
+                "group_id": 7
+            },
+            "starting_index": 6,
+            "enemies": [
+                {
+                    "comment": "Behemoth",
+                    "enemy_id": "0x015709",
+                    "level": 80,
+                    "exp": 20175,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Wounded Empress Ghost",
+                    "enemy_id": "0x015605",
+                    "named_enemy_params_id": 1563,
+                    "level": 80,
+                    "exp": 5376,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Wounded Siren",
+                    "enemy_id": "0x010605",
+                    "named_enemy_params_id": 1563,
+                    "level": 80,
+                    "exp": 630
+                },
+                {
+                    "comment": "Wounded Siren",
+                    "enemy_id": "0x010605",
+                    "named_enemy_params_id": 1563,
+                    "level": 80,
+                    "exp": 630
+                },
+                {
+                    "comment": "Wounded Siren",
+                    "enemy_id": "0x010605",
+                    "named_enemy_params_id": 1563,
+                    "level": 80,
+                    "exp": 630
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "IsStageNo",
+			"stage_id": {
+				"id": 373
+			},
+            "result_commands": [
+                {"type": "CallGeneralAnnounce", "Param1": 0, "Param2": 100035}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "groups": [1]
+        },
+        {
+            "type": "CollectItem",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 373, "group_id": 0, "layer_no": 0
+            },
+            "flags": [
+                {"type": "QstLayout", "action": "Set", "value": 4666}
+            ],
+            "result_commands": [
+                {"type": "CallGeneralAnnounce", "Param1": 0, "Param2": 815}
+            ]
+        },
+        {
+            "type": "DiscoverEnemy",
+            "announce_type": "Update",
+            "flags": [
+                {"type": "QstLayout", "action": "Clear", "value": 4666}
+            ],
+            "result_commands": [
+                {"type": "CallGeneralAnnounce", "Param1": 0, "Param2": 21080}
+            ],
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]
+        }
+    ]
+}

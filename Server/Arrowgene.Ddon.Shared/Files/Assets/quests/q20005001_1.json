@@ -1,0 +1,196 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Confrontation With Scouts (II)",
+  "quest_id": 20005001,
+  "base_level": 18,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "HidellPlains",
+  "news_image": 6,
+  "variant_index": 1,
+  "quest_layout_set_info_flags": [
+    {
+      "flag_no": 346,
+      "stage_no": 100,
+      "group_id": 8
+    },
+    {
+      "flag_no": 2213,
+      "stage_no": 100,
+      "group_id": 28
+
+    },
+    {
+      "flag_no": 886,
+      "stage_no": 100,
+      "group_id": 6
+    }
+  ],
+  "rewards": [
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "item_id": 8203,
+          "num": 1,
+          "comment": "Chain Hood"
+        },
+        {
+          "item_id": 9373,
+          "num": 3,
+          "comment": "Recovery Decoction"
+        },
+        {
+          "item_id": 1351,
+          "num": 2,
+          "comment": "Mushroom Sauté"
+        }
+      ]
+    },
+    {
+      "type": "exp",
+      "amount": 710
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 590
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 70
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 8
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Vigilant Redcap Fighter",
+          "enemy_id": "0x011111",
+          "named_enemy_params_id": 53,
+          "start_think_tbl_no": 1,
+          "level": 18,
+          "exp": 84,
+          "index": 7
+        },
+        {
+          "comment": "Vigilant Redcap Sling",
+          "enemy_id": "0x011112",
+          "named_enemy_params_id": 53,
+          "start_think_tbl_no": 1,
+          "level": 18,
+          "exp": 84,
+          "index": 10
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 28
+      },
+      "starting_index": 11,
+      "enemies": [
+        {
+          "comment": "Vigilant Redcap Sling",
+          "enemy_id": "0x011112",
+          "named_enemy_params_id": 53,
+          "start_think_tbl_no": 1,
+          "level": 18,
+          "exp": 84
+        },
+        {
+          "comment": "Vigilant Redcap Fighter",
+          "enemy_id": "0x011111",
+          "named_enemy_params_id": 53,
+          "start_think_tbl_no": 1,
+          "level": 18,
+          "exp": 84
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 6
+      },
+      "starting_index": 8,
+      "enemies": [
+        {
+          "comment": "Brutal Redcap Sling",
+          "enemy_id": "0x011112",
+          "named_enemy_params_id": 54,
+          "start_think_tbl_no": 1,
+          "level": 18,
+          "exp": 84
+        },
+        {
+          "comment": "Brutal Redcap Sling",
+          "enemy_id": "0x011112",
+          "named_enemy_params_id": 54,
+          "start_think_tbl_no": 1,
+          "level": 18,
+          "exp": 84
+        },
+        {
+          "comment": "Brutal Cyclops",
+          "enemy_id": "0x015000",
+          "named_enemy_params_id": 54,
+          "start_think_tbl_no": 1,
+          "level": 18,
+          "exp": 2064,
+          "is_boss": true
+        },
+        {
+          "comment": "Brutal Redcap Sling",
+          "enemy_id": "0x011112",
+          "named_enemy_params_id": 54,
+          "start_think_tbl_no": 1,
+          "level": 18,
+          "exp": 84
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [ 1 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 1 ]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [ 2 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 2 ]
+    }
+  ]
+}

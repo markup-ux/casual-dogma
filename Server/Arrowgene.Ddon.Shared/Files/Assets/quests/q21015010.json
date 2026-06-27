@@ -1,0 +1,237 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "An Old Hand at the Spear",
+    "quest_id": 21015010,
+    "base_level": 73,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "FaranaPlains",
+    "news_image": 282,
+    "order_conditions": [{"type": "AreaRank", "Param1": 15, "Param2": 6}],
+    "rewards": [
+        {
+            "type": "exp",
+            "amount": 13110
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4408
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "ScrollOfGreatSorcery",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "stage_id": {
+                "id": 371,
+                "group_id": 11
+            },
+            "starting_index": 9,
+            "enemies": [
+                {
+                    "comment": "Pixie Biff",
+                    "enemy_id": "0x010151",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Pixie Biff",
+                    "enemy_id": "0x010151",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Pixie Biff",
+                    "enemy_id": "0x010151",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Pixie Biff",
+                    "enemy_id": "0x010151",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 73,
+                    "exp": 2185
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 371,
+                "group_id": 31
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Pixie Pow",
+                    "enemy_id": "0x010153",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Pixie Pow",
+                    "enemy_id": "0x010153",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Pixie Pow",
+                    "enemy_id": "0x010153",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Pixie Pow",
+                    "enemy_id": "0x010153",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Bolt Grimwarg",
+                    "enemy_id": "0x010211",
+                    "level": 73,
+                    "exp": 2185
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 371,
+                "group_id": 28
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Blue Newt",
+                    "enemy_id": "0x010460",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Large Newt",
+                    "enemy_id": "0x010461",
+                    "level": 73,
+                    "exp": 2185
+                },
+                {
+                    "comment": "Large Newt",
+                    "enemy_id": "0x010461",
+                    "level": 73,
+                    "exp": 2185
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 341
+            },
+            "npc_id": "Audran",
+            "message_id": 19630
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2502, "Param2": 19631}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [1]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [1]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 341
+            },
+            "announce_type": "Update",
+            "npc_id": "Audran",
+            "message_id": 19629
+        }
+    ]
+}

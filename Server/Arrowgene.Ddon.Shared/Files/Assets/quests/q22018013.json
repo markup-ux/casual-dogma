@@ -1,0 +1,183 @@
+﻿{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Merchant's Requital",
+  "quest_id": 22018013,
+  "base_level": 85,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "RathniteFoothills",
+  "news_image": 330,
+  "order_conditions": [{"type": "MainQuestCompleted", "Param1": 30050}, {"type": "AreaRank", "Param1": 18, "Param2": 8}],
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5500
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 665
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "AreaPoints",
+      "amount": 500
+    },
+    {
+      "type": "exp",
+      "amount": 37800
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Royal Crest Medal (Rathnite District)",
+          "item_id": 18815,
+          "num": 5
+        },
+        {
+          "comment": "Blood-Colored Spiral Shell",
+          "item_id": 17910,
+          "num": 1
+        },
+        {
+          "comment": "Demonic Beast Snakeskin",
+          "item_id": 17857,
+          "num": 1
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Cloud Trinket Soldier",
+          "item_id": 21280,
+          "num": 1,
+          "chance": 0.6
+        },
+        {
+          "comment": "Blood-Colored Spiral Shell",
+          "item_id": 17910,
+          "num": 2,
+          "chance": 0.6
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "comment": "GroupId: 10 - Gorechimera, Manticore, Aqua Slimes",
+      "stage_id": {
+        "id": 497,
+        "group_id": 22
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015210",
+          "level": 85,
+          "exp": 220000,
+          "is_boss": true,
+          "comment": "Gorechimera"
+        },
+        {
+          "enemy_id": "0x015200",
+          "level": 85,
+          "exp": 220000,
+          "is_boss": true,
+          "comment": "Manticore"
+        },
+        {
+          "enemy_id": "0x010500",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Aqua Slime"
+        },
+        {
+          "enemy_id": "0x010500",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Aqua Slime"
+        },
+        {
+          "enemy_id": "0x010500",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Aqua Slime"
+        },
+        {
+          "enemy_id": "0x010500",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Aqua Slime"
+        },
+        {
+          "enemy_id": "0x010500",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Aqua Slime"
+        },
+        {
+          "enemy_id": "0x010500",
+          "level": 85,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Aqua Slime"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 513
+      },
+      "npc_id": "Elsen",
+      "message_id": 23571
+    },
+    {
+      "type": "DeliverItems",
+      "stage_id": {
+        "id": 513
+      },
+      "npc_id": "Elsen",
+      "announce_type": "Accept",
+      "items": [
+        {
+          "id": 17909,
+          "amount": 9,
+          "comment": "Flesh-Eating Snail"
+        }
+      ],
+      "message_id": 23573
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [0]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 513
+      },
+      "announce_type": "Update",
+      "npc_id": "Elsen",
+      "message_id": 23574
+    }
+  ]
+}

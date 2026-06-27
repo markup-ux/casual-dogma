@@ -1,0 +1,180 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "When the Footsteps Fade",
+    "quest_id": 21017013,
+    "base_level": 70,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "KingalCanyon",
+    "news_image": 614,
+    "order_conditions": [{"type": "AreaRank", "Param1": 17, "Param2": 4}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4408
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 13110
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "UnappraisedFlowerTrinketSoldier",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 368,
+                "group_id": 1
+            },
+            "placement_type": "manual",
+            "enemies": []
+        },
+        {
+            "stage_id": {
+                "id": 368,
+                "group_id": 1
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Bolt Skeleton Brute",
+                    "enemy_id": "0x010322",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 0
+                },
+                {
+                    "comment": "Bolt Skeleton Brute",
+                    "enemy_id": "0x010322",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 1
+                },
+                {
+                    "comment": "Skeleton Mage",
+                    "enemy_id": "0x010308",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 3
+                },
+                {
+                    "comment": "Skeleton Mage",
+                    "enemy_id": "0x010308",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 4
+                },
+                {
+                    "comment": "Bolt Skeleton Brute",
+                    "enemy_id": "0x010322",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 12
+                },
+                {
+                    "comment": "Eliminator",
+                    "enemy_id": "0x010508",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 13
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NewNpcTalkAndOrder",
+            "stage_id": {
+                "id": 373,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Glenis",
+            "message_id": 19599,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4359, "comment": "Spawns Glenis NPC"}
+            ]
+        },
+        {
+            "type": "SpawnGroup",
+            "announce_type": "Accept",
+            "groups": [0],
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 562, "Param2": 19600, "comment": "Extra dialogue - Glenis"}
+            ],
+            "check_commands": [
+				{"type": "StageNo", "Param1": 862}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 368,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Sullivan",
+            "message_id": 21104,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4356, "comment": "Spawns Sullivan NPC"}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "groups": [1],
+            "result_commands": [
+				{"type": "CallMessage", "Param1": 561, "Param1": 19604},
+				{"type": "MyQstFlagOn", "Param1": 2126, "comment": "Sullivan FSM"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 368,
+                "group_id": 2,
+                "layer_no": 0
+            },
+            "npc_id": "Sullivan",
+            "message_id": 19602,
+            "result_commands": [
+                {"type": "QstLayoutFlagOff", "Param1": 4356, "comment": "Clears Sullivan NPC"},
+                {"type": "QstLayoutFlagOn", "Param1": 4361, "comment": "Spawns Sullivan (Alive) NPC"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 373,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Glenis",
+            "message_id": 19597
+        }
+    ]
+}

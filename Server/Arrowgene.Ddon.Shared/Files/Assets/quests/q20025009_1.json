@@ -1,0 +1,88 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Whirling Hawk on a Dark Night (II)",
+  "quest_id": 20025009,
+  "base_level": 57,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "news_image": 43,
+  "variant_index": 1,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1880
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 320
+    },
+    {
+      "type": "exp",
+      "amount": 2850
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Griffin Glossy Plume",
+          "item_id": 9439,
+          "num": 1
+        },
+        {
+          "comment": "Ambrosial Beast-Steak",
+          "item_id": 7727,
+          "num": 1
+        },
+        {
+          "comment": "Griffin Beak",
+          "item_id": 7758,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 242
+      },
+        "placement_type": "manual",
+        "enemies": [
+        {
+          "comment": "Dangerous Griffin",
+          "enemy_id": "0x015300",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 56,
+          "level": 57,
+          "exp": 5775,
+          "is_boss": true,
+          "index": 6
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Raw",
+      "check_commands": [
+        {"type": "IngameTimeRangeNotEq", "Param1": 6, "Param2": 18},
+        {"type": "StageNo", "Param1": 100}
+      ]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

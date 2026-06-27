@@ -1,0 +1,79 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "An Unexpected Encounter (III)",
+  "quest_id": 20015003,
+  "base_level": 60,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BreyaCoast",
+  "news_image": 23,
+  "variant_index": 2,
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 3460
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1980
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 490
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Azure Dragonscale",
+          "item_id": 7931,
+          "num": 1
+        },
+        {
+          "comment": "Huge Dragon Bone Lump",
+          "item_id": 7806,
+          "num": 1
+        },
+        {
+          "comment": "Dragon Hide",
+          "item_id": 7928,
+          "num": 5
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 99
+      },
+      "enemies": [
+        {
+          "comment": "Dangerous Wyrm",
+          "enemy_id": "0x015701",
+          "start_think_tbl_no": 1,
+          "named_enemy_params_id": 56,
+          "level": 60,
+          "exp": 9860,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

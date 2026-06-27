@@ -1,0 +1,2 @@
+﻿#Id,Name,Brief,MaxLoginNum,IpAddress,Port,IsHide,RpcPort,RpcAuth,LoginId,PreventLogin
+10,Casual Dogma,A relaxed Dragon's Dogma Online server,1000,127.0.0.1,52000,false,52099,AuthToken,1,FALSE

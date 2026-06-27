@@ -1,0 +1,112 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The King of Bones",
+  "quest_id": 20025007,
+  "base_level": 38,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "news_image": 511,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1250
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 200
+    },
+    {
+      "type": "exp",
+      "amount": 1500
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Crest of Unburdening",
+          "item_id": 9286,
+          "num": 1
+        },
+        {
+          "comment": "Throwing Knife",
+          "item_id": 9398,
+          "num": 3
+        },
+        {
+          "comment": "Enhanced Pickaxe",
+          "item_id": 9401,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 40,
+        "group_id": 2
+      },
+      "starting_index": 6,
+      "enemies": [
+        {
+          "comment": "Vigilant Skeleton Knight",
+          "enemy_id": "0x010301",
+          "named_enemy_params_id": 53,
+          "level": 38,
+          "exp": 155
+        },
+        {
+          "comment": "Vigilant Skeleton Knight",
+          "enemy_id": "0x010301",
+          "named_enemy_params_id": 53,
+          "level": 38,
+          "exp": 155
+        },
+        {
+          "comment": "Vigilant Skeleton Knight",
+          "enemy_id": "0x010301",
+          "named_enemy_params_id": 53,
+          "level": 38,
+          "exp": 155
+        },
+        {
+          "comment": "Vigilant Skeleton Knight",
+          "enemy_id": "0x010301",
+          "named_enemy_params_id": 53,
+          "level": 38,
+          "exp": 155
+        },
+        {
+          "comment": "Vigilant Skeleton Mage",
+          "enemy_id": "0x010308",
+          "named_enemy_params_id": 53,
+          "level": 38,
+          "exp": 147
+        },
+        {
+          "comment": "Vigilant Skeleton Mage",
+          "enemy_id": "0x010308",
+          "named_enemy_params_id": 53,
+          "level": 38,
+          "exp": 147
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

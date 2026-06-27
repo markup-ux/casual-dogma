@@ -1,0 +1,114 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Sinister Beasts",
+    "quest_id": 20095003,
+    "base_level": 48,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ZandoraWastelands",
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1050
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 210
+        },
+        {
+            "type": "exp",
+            "amount": 1320
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Transmuted Fur",
+                    "item_id": 7781,
+                    "num": 2
+                },
+                {
+                    "comment": "Strong Gala Extract",
+                    "item_id": 9363,
+                    "num": 3
+                },
+                {
+                    "comment": "Panacea",
+                    "item_id": 41,
+                    "num": 1
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 164,
+                "group_id": 0
+            },
+            "starting_index": 7,
+            "enemies": [
+                {
+                    "comment": "Brutal Shadow Wolf",
+                    "enemy_id": "0x010206",
+                    "named_enemy_params_id": 54,
+                    "level": 48,
+                    "exp": 248,
+                    "repop_count": 1,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "Brutal Shadow Wolf",
+                    "enemy_id": "0x010206",
+                    "named_enemy_params_id": 54,
+                    "level": 48,
+                    "exp": 248,
+                    "repop_count": 1,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "Brutal Shadow Goblin",
+                    "enemy_id": "0x011130",
+                    "named_enemy_params_id": 54,
+                    "level": 48,
+                    "exp": 201,
+                    "repop_count": 1,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "Brutal Shadow Goblin",
+                    "enemy_id": "0x011130",
+                    "named_enemy_params_id": 54,
+                    "level": 48,
+                    "exp": 201,
+                    "repop_count": 1,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "Brutal Shadow Goblin",
+                    "enemy_id": "0x011130",
+                    "named_enemy_params_id": 54,
+                    "level": 48,
+                    "exp": 201,
+                    "repop_count": 1,
+                    "repop_wait_second": 10
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "reset_group": false,
+            "groups": [0]
+        }
+    ]
+}

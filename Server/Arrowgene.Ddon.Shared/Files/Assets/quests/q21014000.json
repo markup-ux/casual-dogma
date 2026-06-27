@@ -1,0 +1,230 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Protecting the Protectors",
+    "quest_id": 21014000,
+    "base_level": 70,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ElanWaterGrove",
+    "news_image": 282,
+    "rewards": [
+        {
+            "type": "exp",
+            "amount": 9210
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 2309
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "HardLeatherCloth",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "stage_id": {
+                "id": 372,
+                "group_id": 23
+            },
+            "starting_index": 5,
+            "enemies": [
+                {
+                    "comment": "Sulfur Saurian",
+                    "enemy_id": "0x010410",
+                    "level": 70,
+                    "exp": 1535
+                },
+                {
+                    "comment": "Sulfur Saurian",
+                    "enemy_id": "0x010410",
+                    "level": 70,
+                    "exp": 1535
+                },
+                {
+                    "comment": "Sulfur Saurian",
+                    "enemy_id": "0x010410",
+                    "level": 70,
+                    "exp": 1535
+                },
+                {
+                    "comment": "Sulfur Saurian",
+                    "enemy_id": "0x010410",
+                    "level": 70,
+                    "exp": 1535
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 372,
+                "group_id": 24
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Giant Sulfur Saurian",
+                    "enemy_id": "0x010411",
+                    "level": 70,
+                    "exp": 1535
+                },
+                {
+                    "comment": "Giant Sulfur Saurian",
+                    "enemy_id": "0x010411",
+                    "level": 70,
+                    "exp": 1535
+                },
+                {
+                    "comment": "Sulfur Saurian",
+                    "enemy_id": "0x010410",
+                    "level": 70,
+                    "exp": 1535
+                },
+                {
+                    "comment": "Giant Sulfur Saurian",
+                    "enemy_id": "0x010411",
+                    "level": 70,
+                    "exp": 1535
+                },
+                {
+                    "comment": "Sulfur Saurian",
+                    "enemy_id": "0x010410",
+                    "level": 70,
+                    "exp": 1535
+                },
+                {
+                    "comment": "Sulfur Saurian",
+                    "enemy_id": "0x010410",
+                    "level": 70,
+                    "exp": 1535
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 372,
+                "group_id": 27
+            },
+            "placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Saurian Sage",
+                    "enemy_id": "0x010430",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 4
+                },
+                {
+                    "comment": "Saurian Sage",
+                    "enemy_id": "0x010430",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 5
+                },
+                {
+                    "comment": "Saurian Sage",
+                    "enemy_id": "0x010430",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 6
+                },
+                {
+                    "comment": "Sulfur Saurian",
+                    "enemy_id": "0x010410",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 7
+                },
+                {
+                    "comment": "Sulfur Saurian",
+                    "enemy_id": "0x010410",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 8
+                },
+                {
+                    "comment": "Sulfur Saurian",
+                    "enemy_id": "0x010410",
+                    "level": 70,
+                    "exp": 1535,
+                    "index": 10
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 339
+            },
+            "npc_id": "Dirith1",
+            "message_id": 19249
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 559, "Param2": 19250}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [1]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [1]
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 339
+            },
+            "announce_type": "Update",
+            "npc_id": "Dirith1",
+            "message_id": 19251
+        }
+    ]
+}

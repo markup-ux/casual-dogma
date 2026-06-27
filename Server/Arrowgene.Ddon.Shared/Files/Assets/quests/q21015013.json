@@ -1,0 +1,158 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Troubled Fortification",
+    "quest_id": 21015013,
+    "base_level": 70,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "FaranaPlains",
+    "news_image": 611,
+    "order_conditions": [{"type": "AreaRank", "Param1": 15, "Param2": 4}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 2309
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "exp",
+            "amount": 13814
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Carved Potsherd",
+                    "item_id": 15913,
+                    "num": 3
+                },
+                {
+                    "comment": "Superior Healing Remedy",
+                    "item_id": 7555,
+                    "num": 3
+                },
+                {
+                    "comment": "Superior Strong Gala Extract",
+                    "item_id": 9364,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 366,
+                "group_id": 2
+            },
+            "enemies": []
+        },
+        {
+            "stage_id": {
+                "id": 366,
+                "group_id": 2
+            },
+            "starting_index": 5,
+            "enemies": [
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 70,
+                    "exp": 1535
+                },
+                {
+                    "comment": "Wight",
+                    "enemy_id": "0x015600",
+                    "level": 70,
+                    "exp": 7675,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 70,
+                    "exp": 1535
+                },
+                {
+                    "comment": "Strix",
+                    "enemy_id": "0x010610",
+                    "level": 70,
+                    "exp": 1535
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 341
+            },
+            "npc_id": "Etna",
+            "message_id": 19551
+        },
+        {
+            "type": "SpawnGroup",
+            "announce_type": "Accept",
+            "groups": [0],
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2511, "Param2": 19552, "comment": "Extra dialogue - Eithne"}
+            ],
+            "check_commands": [
+                {"type": "StageNo", "Param1": 860}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 366,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Alan0",
+            "message_id": 21099,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4332, "comment": "Spawns Alan NPC"}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "groups": [1],
+            "result_commands": [
+                {"type": "CallMessage", "Param1": 1027, "Param1": 19554},
+                {"type": "MyQstFlagOn", "Param1": 2110, "comment": "Alan FSM"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 366,
+                "group_id": 2,
+                "layer_no": 0
+            },
+            "npc_id": "Alan0",
+            "message_id": 19557,
+            "result_commands": [
+                {"type": "QstLayoutFlagOff", "Param1": 4332, "comment": "Clears Alan NPC"},
+                {"type": "QstLayoutFlagOn", "Param1": 4337, "comment": "Spawns Alan (Alive) NPC"}
+            ]
+        },
+        {
+            "type": "TalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 341
+            },
+            "npc_id": "Etna",
+            "message_id": 19549
+        }
+    ]
+}

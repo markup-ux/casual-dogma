@@ -1,0 +1,189 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Two Grotesque Feet",
+  "quest_id": 21016018,
+  "base_level": 75,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MorrowForest",
+  "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 11}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 24615
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 4494
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 300
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "item_id": "GnarledBranch",
+          "num": 3
+        },
+        {
+          "item_id": "CorrodedGiantEyeball",
+          "num": 1
+        },
+        {
+          "item_id": "SuperiorHealingRemedy",
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups" : [
+    {
+      "stage_id": {
+        "id": 404,
+        "group_id": 2
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Severely Infected Gorecyclops (Critical)",
+          "enemy_id": "0x015017",
+          "level": 75,
+          "exp": 13675,
+          "is_boss": true,
+          "infection_type": 3
+        },
+        {
+          "comment": "Phindymian Sorcerer",
+          "enemy_id": "0x011065",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 99
+        },
+        {
+          "comment": "Phindymian Sorcerer",
+          "enemy_id": "0x011065",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 99
+        },
+        {
+          "comment": "Phindymian Sorcerer",
+          "enemy_id": "0x011065",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 99
+        },
+        {
+          "comment": "Phindymian Sorcerer",
+          "enemy_id": "0x011065",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 99
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 404,
+        "group_id": 10
+      },
+      "enemies": [
+        {
+          "comment": "Phindymian Element Archer",
+          "enemy_id": "0x011067",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 101
+        },
+        {
+          "comment": "Phindymian Element Archer",
+          "enemy_id": "0x011067",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 101
+        },
+        {
+          "comment": "Phindymian Element Archer",
+          "enemy_id": "0x011067",
+          "level": 75,
+          "exp": 2735,
+          "hm_present_no": 101
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "DiscoverEnemy",
+          "groups": [0]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "announce_type": "Accept",
+          "groups": [0],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 0}],
+          "check_commands": [{"type": "MyQstFlagOff", "Param1": 1}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "comment": "Group 0 boss HP check",
+          "type": "Raw",
+          "check_commands": [{"type": "EmHpLess", "Param1": 952, "Param2": 2, "Param3": 5, "Param4": 40}]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "groups": [1],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 1}, {"type": "StartTimer", "Param1": 1, "Param2": 30}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 1}],
+          "check_commands": [{"type": "IsMyquestLayoutFlagOff", "Param1": 4778}, {"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 100003}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "IsEndTimer", "Param1": 1}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 100005}, {"type": "StartTimer", "Param1": 2, "Param2": 15}],
+          "check_commands": [{"type": "IsEndTimer", "Param1": 2}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 100004}, {"type": "QstLayoutFlagOn", "Param1": 4778}]
+        }
+      ]
+    }
+  ]
+}

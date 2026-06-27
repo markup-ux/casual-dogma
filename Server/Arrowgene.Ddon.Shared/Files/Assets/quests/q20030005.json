@@ -1,0 +1,172 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Petty Thief’s Woes",
+  "quest_id": 20030005,
+  "base_level": 38,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "DoweValley",
+  "news_image": 548,
+  "order_conditions": [{"type": "AreaRank", "Param1": 5, "Param2": 7}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 1250
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1040
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 160
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Ruby",
+          "item_id": 7900,
+          "num": 3
+        },
+        {
+          "comment": "Blue Whiskey",
+          "item_id": 9417,
+          "num": 2
+        },
+        {
+          "comment": "Wine-Boiled Mushroom",
+          "item_id": 9411,
+          "num": 2
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 90,
+        "group_id": 6
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Vigilant Undead Swordsman",
+          "enemy_id": "0x010503",
+          "named_enemy_params_id": 53,
+          "level": 37,
+          "exp": 141,
+          "index": 0
+        },
+        {
+          "comment": "Vigilant Undead Swordsman",
+          "enemy_id": "0x010503",
+          "named_enemy_params_id": 53,
+          "level": 37,
+          "exp": 141,
+          "index": 3
+        },
+        {
+          "comment": "Vigilant Undead Swordsman",
+          "enemy_id": "0x010503",
+          "named_enemy_params_id": 53,
+          "level": 37,
+          "exp": 141,
+          "index": 4
+        },
+        {
+          "comment": "Vigilant Stout Undead",
+          "enemy_id": "0x010502",
+          "named_enemy_params_id": 53,
+          "level": 34,
+          "exp": 152,
+          "repop_count": 1,
+          "repop_wait_second": 10,
+          "index": 6
+        },
+        {
+          "comment": "Vigilant Stout Undead",
+          "enemy_id": "0x010502",
+          "named_enemy_params_id": 53,
+          "level": 34,
+          "exp": 152,
+          "repop_count": 1,
+          "repop_wait_second": 10,
+          "index": 7
+        },
+        {
+          "comment": "Vigilant Stout Undead",
+          "enemy_id": "0x010502",
+          "named_enemy_params_id": 53,
+          "level": 34,
+          "exp": 152,
+          "repop_count": 1,
+          "repop_wait_second": 10,
+          "index": 8
+        },
+        {
+          "comment": "Brutal Armored Cyclops",
+          "enemy_id": "0x015002",
+          "named_enemy_params_id": 54,
+          "level": 38,
+          "exp": 3339,
+          "is_boss": true,
+          "index": 15
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NewNpcTalkAndOrder",
+      "flags": [
+        {
+          "type": "QstLayout",
+          "action": "Set",
+          "value": 1042,
+          "comment": "Spawns Bandit0 NPC"
+        }
+      ],
+      "stage_id": {
+        "id": 90,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "npc_id": "Bandit0",
+      "message_id": 11989
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Accept",
+      "result_commands": [
+        {
+          "type": "QstTalkChg",
+          "Param1": 522,
+          "Param2": 11988,
+          "comment": "Idle dialogue"
+        }
+      ],
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "NewTalkToNpc",
+      "stage_id": {
+        "id": 90,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "announce_type": "Update",
+      "npc_id": "Bandit0",
+      "message_id": 11986
+    }
+  ]
+}

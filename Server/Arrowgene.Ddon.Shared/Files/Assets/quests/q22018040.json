@@ -1,0 +1,96 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Last Lie",
+  "quest_id": 22018040,
+  "base_level": 92,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MegadosysPlateau",
+  "news_image": 330,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 13750
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 555
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "AreaPoints",
+      "amount": 500
+    },
+    {
+      "type": "exp",
+      "amount": 21000
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Royal Crest Medal (Megadosys District)",
+          "item_id": 18820,
+          "num": 5
+        },
+        {
+          "comment": "Superior Healing Remedy",
+          "item_id": 7555,
+          "num": 10
+        },
+        {
+          "comment": "Superior Strong Gala Extract",
+          "item_id": 9364,
+          "num": 10
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Blazing Lizard Pelt",
+          "item_id": 21262,
+          "num": 1,
+          "chance": 0.6
+        },
+        {
+          "comment": "Crest of Shock Immunity",
+          "item_id": 9322,
+          "num": 1,
+          "chance": 0.6
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 487
+      },
+      "npc_id": "Fred",
+      "message_id": 27953
+    },
+    {
+      "type": "DeliverItems",
+      "stage_id": {
+        "id": 487
+      },
+      "npc_id": "Fred",
+      "announce_type": "Accept",
+      "items": [
+        {
+          "id": 21244,
+          "amount": 9,
+          "comment": "Spirit Purifier Stone Shards"
+        }
+      ],
+      "message_id": 27956
+    }
+  ]
+}

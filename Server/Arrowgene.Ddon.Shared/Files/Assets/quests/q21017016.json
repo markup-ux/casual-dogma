@@ -1,0 +1,206 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Scrap Maker",
+    "quest_id": 21017016,
+    "base_level": 75,
+    "minimum_item_rank": 0,
+    "discoverable": false,
+    "area_id": "KingalCanyon",
+    "news_image": 303,
+    "order_conditions": [{"type": "AreaRank", "Param1": 17, "Param2": 12}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4494
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "exp",
+            "amount": 32820
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "IllustratedOldCloth",
+                    "num": 3
+                },
+                {
+                    "item_id": "SilverySnowSteelIngot",
+                    "num": 3
+                },
+                {
+                    "item_id": "ScrollOfTrueShadow",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 1
+            },
+            "enemies": [
+                {
+                    "comment": "Stout Undead",
+                    "enemy_id": "0x010502",
+					"start_think_tbl_no": 2,
+                    "level": 75,
+                    "exp": 275
+                },
+                {
+                    "comment": "Stout Undead",
+                    "enemy_id": "0x010502",
+					"start_think_tbl_no": 2,
+                    "level": 75,
+                    "exp": 275
+                },
+                {
+                    "comment": "Stout Undead",
+                    "enemy_id": "0x010502",
+					"start_think_tbl_no": 2,
+                    "level": 75,
+                    "exp": 275
+                },
+                {
+                    "comment": "Stout Undead",
+                    "enemy_id": "0x010502",
+					"start_think_tbl_no": 2,
+                    "level": 75,
+                    "exp": 275
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 373,
+                "group_id": 52
+            },
+            "enemies": [
+                {
+                    "comment": "Death Knight",
+                    "enemy_id": "0x010310",
+                    "level": 75,
+                    "exp": 2735
+                }
+            ]
+        },
+        {
+            "stage_id": {
+                "id": 369,
+                "group_id": 6
+            },
+			"placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Dark Skeleton Brute",
+                    "enemy_id": "0x010324",
+                    "level": 75,
+                    "exp": 2735,
+					"index": 0
+                },
+                {
+                    "comment": "Dark Skeleton Brute",
+                    "enemy_id": "0x010324",
+                    "level": 75,
+                    "exp": 2735,
+					"index": 1
+                },
+                {
+                    "comment": "Dark Skeleton Brute",
+                    "enemy_id": "0x010324",
+                    "level": 75,
+                    "exp": 2735,
+					"index": 2
+                },
+                {
+                    "comment": "Dark Skeleton Brute",
+                    "enemy_id": "0x010324",
+                    "level": 75,
+                    "exp": 2735,
+					"index": 3
+                },
+                {
+                    "comment": "Medusa",
+                    "enemy_id": "0x015610",
+                    "level": 75,
+                    "exp": 13675,
+					"is_boss": true,
+					"index": 10
+                },
+                {
+                    "comment": "Wounded Death Knight",
+                    "enemy_id": "0x010310",
+                    "named_enemy_params_id": 1563,
+                    "level": 75,
+                    "exp": 2735,
+					"is_boss": true,
+					"index": 13
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "IsStageNo",
+			"stage_id": {
+				"id": 373
+			},
+            "result_commands": [
+                {"type": "CallGeneralAnnounce", "Param1": 0, "Param2": 100035}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "groups": [1]
+        },
+        {
+            "type": "CollectItem",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 373, "group_id": 1, "layer_no": 0
+            },
+            "flags": [
+                {"type": "QstLayout", "action": "Set", "value": 4655}
+            ],
+            "result_commands": [
+                {"type": "CallGeneralAnnounce", "Param1": 0, "Param2": 815}
+            ]
+        },
+        {
+            "type": "DiscoverEnemy",
+            "announce_type": "Update",
+            "flags": [
+                {"type": "QstLayout", "action": "Clear", "value": 4655}
+            ],
+            "result_commands": [
+                {"type": "CallGeneralAnnounce", "Param1": 0, "Param2": 21079}
+            ],
+            "groups": [2]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [2]
+        }
+    ]
+}

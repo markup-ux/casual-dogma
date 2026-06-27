@@ -1,0 +1,283 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Request For Medicine",
+  "quest_id": 20000009,
+  "base_level": 7,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "HidellPlains",
+  "news_image": 9,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 300
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 20
+    },
+    {
+      "type": "exp",
+      "amount": 260
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Battle Greaves",
+          "item_id": 430,
+          "num": 1
+        },
+        {
+          "comment": "Pickaxe",
+          "item_id": 57,
+          "num": 2
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+	  "blocks": [
+        {
+		  "type": "NpcTalkAndOrder",
+		  "stage_id": {
+            "id": 1
+          },
+          "npc_id": "Henry",
+          "message_id": 10922
+        },
+		{
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 2
+          },
+          "announce_type": "Accept",
+          "npc_id": "Vicelot",
+          "message_id": 10930,
+          "result_commands": [
+            {
+              "comment": "Idle dialogue",
+              "type": "QstTalkChg",
+              "Param1": 1305,
+              "Param2": 10928
+            }
+          ]
+		},
+        {
+          "type": "Raw",
+          "announce_type": "CheckpointAndUpdate",
+          "result_commands": [
+            {"type": "MyQstFlagOn", "Param1": 262},
+            {"type": "LayoutFlagRandomOn", "Param1": 313, "Param2": 314, "Param3": 315},
+            {"type": "QstTalkChg", "Param1": 1006, "Param2": 10932, "comment": "Vicelot idle dialogue"}
+          ],
+          "check_commands": [
+            {"type": "MyQstFlagOff", "Param1": 262}
+          ]
+        },
+		{
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 2
+          },
+          "npc_id": "Vicelot",
+          "message_id": 10931
+		},
+		{
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 1,
+            "group_id": 0
+          },
+          "announce_type": "CheckpointAndUpdate",
+          "npc_id": "Henry",
+          "message_id": 10925
+		}
+      ]
+    },
+    {
+	  "blocks": [
+        {
+		  "type": "Raw",
+		  "check_commands": [
+            {"type": "MyQstFlagOn", "Param1": 262},
+            {"type": "IsMyquestLayoutFlagOn", "Param1": 313}
+          ]
+        },
+        {
+		  "type": "Raw",
+          "result_commands": [
+            {"type": "QstLayoutFlagOn", "Param1": 1133},
+            {"type": "QstLayoutFlagOn", "Param1": 2216}
+          ],
+		  "check_commands": [
+            {"type": "IsMyquestLayoutFlagOff", "Param1": 1133},
+            {"type": "IsMyquestLayoutFlagOff", "Param1": 2216}
+          ]
+        },
+        {
+		  "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 262}]
+        }
+      ]
+    },
+    {
+	  "blocks": [
+        {
+		  "type": "Raw",
+		  "check_commands": [
+            {"type": "MyQstFlagOn", "Param1": 262},
+            {"type": "IsMyquestLayoutFlagOn", "Param1": 314}
+          ]
+        },
+        {
+		  "type": "Raw",
+          "result_commands": [
+            {"type": "QstLayoutFlagOn", "Param1": 2217},
+            {"type": "QstLayoutFlagOn", "Param1": 2218}
+          ],
+		  "check_commands": [
+            {"type": "IsMyquestLayoutFlagOff", "Param1": 2217},
+            {"type": "IsMyquestLayoutFlagOff", "Param1": 2218}
+          ]
+        },
+        {
+		  "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 262}]
+        }
+      ]
+    },
+    {
+	  "blocks": [
+        {
+		  "type": "Raw",
+		  "check_commands": [
+            {"type": "MyQstFlagOn", "Param1": 262},
+            {"type": "IsMyquestLayoutFlagOn", "Param1": 315}
+          ]
+        },
+        {
+		  "type": "Raw",
+          "result_commands": [
+            {"type": "QstLayoutFlagOn", "Param1": 2219},
+            {"type": "QstLayoutFlagOn", "Param1": 2220}
+          ],
+		  "check_commands": [
+            {"type": "IsMyquestLayoutFlagOff", "Param1": 2219},
+            {"type": "IsMyquestLayoutFlagOff", "Param1": 2220}
+          ]
+        },
+        {
+		  "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 262}]
+        }
+      ]
+    },
+    {
+	  "blocks": [
+        {
+		  "type": "Raw",
+		  "check_commands": [{"type": "IsMyquestLayoutFlagOn", "Param1": 1133}]
+        },
+        {
+		  "type": "Raw",
+		  "check_commands": [{"type": "QuestOmSetTouch", "Param1": 100, "Param2": 1, "Param3": 1}]
+        },
+        {
+		  "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "QstLayoutFlagOff", "Param1": 1133}]
+        }
+      ]
+    },
+    {
+	  "blocks": [
+        {
+		  "type": "Raw",
+		  "check_commands": [{"type": "IsMyquestLayoutFlagOn", "Param1": 2216}]
+        },
+        {
+		  "type": "Raw",
+		  "check_commands": [{"type": "QuestOmSetTouch", "Param1": 100, "Param2": 2, "Param3": 1}]
+        },
+        {
+		  "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "QstLayoutFlagOff", "Param1": 2216}]
+        }
+      ]
+    },
+    {
+	  "blocks": [
+        {
+		  "type": "Raw",
+		  "check_commands": [{"type": "IsMyquestLayoutFlagOn", "Param1": 2217}]
+        },
+        {
+		  "type": "Raw",
+		  "check_commands": [{"type": "QuestOmSetTouch", "Param1": 100, "Param2": 3, "Param3": 1}]
+        },
+        {
+		  "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "QstLayoutFlagOff", "Param1": 2217}]
+        }
+      ]
+    },
+    {
+	  "blocks": [
+        {
+		  "type": "Raw",
+		  "check_commands": [{"type": "IsMyquestLayoutFlagOn", "Param1": 2218}]
+        },
+        {
+		  "type": "Raw",
+		  "check_commands": [{"type": "QuestOmSetTouch", "Param1": 100, "Param2": 4, "Param3": 1}]
+        },
+        {
+		  "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "QstLayoutFlagOff", "Param1": 2218}]
+        }
+      ]
+    },
+    {
+	  "blocks": [
+        {
+		  "type": "Raw",
+		  "check_commands": [{"type": "IsMyquestLayoutFlagOn", "Param1": 2219}]
+        },
+        {
+		  "type": "Raw",
+		  "check_commands": [{"type": "QuestOmSetTouch", "Param1": 100, "Param2": 5, "Param3": 1}]
+        },
+        {
+		  "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "QstLayoutFlagOff", "Param1": 2219}]
+        }
+      ]
+    },
+    {
+	  "blocks": [
+        {
+		  "type": "Raw",
+		  "check_commands": [{"type": "IsMyquestLayoutFlagOn", "Param1": 2220}]
+        },
+        {
+		  "type": "Raw",
+		  "check_commands": [{"type": "QuestOmSetTouch", "Param1": 100, "Param2": 6, "Param3": 1}]
+        },
+        {
+		  "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "QstLayoutFlagOff", "Param1": 2220}]
+        }
+      ]
+    }
+  ]
+}

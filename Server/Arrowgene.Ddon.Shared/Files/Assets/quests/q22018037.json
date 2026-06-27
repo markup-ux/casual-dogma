@@ -1,0 +1,152 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Eager to Train",
+  "quest_id": 22018037,
+  "base_level": 93,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MegadosysPlateau",
+  "news_image": 330,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5500
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 555
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "AreaPoints",
+      "amount": 500
+    },
+    {
+      "type": "exp",
+      "amount": 37800
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Royal Crest Medal (Megadosys District)",
+          "item_id": 18820,
+          "num": 5
+        },
+        {
+          "comment": "Fluttering Rags",
+          "item_id": 17929,
+          "num": 3
+        },
+        {
+          "comment": "Cursed Letter",
+          "item_id": 17878,
+          "num": 1
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Crest of Greater Power",
+          "item_id": 9196,
+          "num": 1,
+          "chance": 0.6
+        },
+        {
+          "comment": "Cursed Letter",
+          "item_id": 17878,
+          "num": 1,
+          "chance": 0.6
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "comment": "GroupId: 1 - Medusa, Bolt Skeleton Brutes, Misery Ghosts",
+      "stage_id": {
+        "id": 504,
+        "group_id": 1
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015610",
+          "level": 93,
+          "exp": 44000,
+          "is_boss": true,
+          "comment": "Medusa"
+        },
+        {
+          "enemy_id": "0x010323",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Bolt Skeleton Brute"
+        },
+        {
+          "enemy_id": "0x010323",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Bolt Skeleton Brute"
+        },
+        {
+          "enemy_id": "0x015621",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Misery Ghost"
+        },
+        {
+          "enemy_id": "0x015621",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Misery Ghost"
+        },
+        {
+          "enemy_id": "0x015621",
+          "level": 93,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Misery Ghost"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 584
+      },
+      "npc_id": "Lucas",
+      "message_id": 27934
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Accept",
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [0]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 584
+      },
+      "announce_type": "Update",
+      "npc_id": "Lucas",
+      "message_id": 27937
+    }
+  ]
+}

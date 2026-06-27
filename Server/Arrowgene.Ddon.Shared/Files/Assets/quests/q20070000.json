@@ -1,0 +1,121 @@
+    {
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Seeking Vengeance",
+    "quest_id": 20070000,
+    "base_level": 43,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "NorthernBetlandPlains",
+    "news_image": 141,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1410
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 220
+        },
+        {
+            "type": "exp",
+            "amount": 1980
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Crest of Restoration",
+                    "item_id": 9297,
+                    "num": 1
+                },
+                {
+                    "comment": "Rare Meat Paté",
+                    "item_id": 9420,
+                    "num": 1
+                },
+                {
+                    "comment": "Enhanced Lumber Knife",
+                    "item_id": 9402,
+                    "num": 3
+                }
+            ]
+        },
+        {
+            "type": "random",
+            "loot_pool": [
+                {
+                    "comment": "Superior Healing Potion",
+                    "item_id": 35,
+                    "num": 4,
+                    "chance": 1.0
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "stage_id": {
+                "id": 1,
+                "group_id": 299
+            },
+            "starting_index": 2,
+            "enemies": [
+                {
+                    "comment": "Dangerous Colossus",
+                    "enemy_id": "0x015020",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 56,
+                    "level": 43,
+                    "exp": 3808,
+                    "scale": 120,
+                    "is_boss": true
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 53,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "npc_id": "Johann",
+            "message_id": 11231
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {
+                    "comment": "Idle dialogue",
+                    "type": "QstTalkChg",
+                    "Param1": 1705,
+                    "Param2": 11237
+                }
+            ],
+            "groups": [ 0 ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [ 0 ]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 53,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "announce_type": "Update",
+            "npc_id": "Johann",
+            "message_id": 11234
+        }
+    ]
+}

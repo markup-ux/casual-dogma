@@ -1,0 +1,112 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Trapped in a Nightmare",
+  "quest_id": 20045005,
+  "base_level": 25,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "VoldenMines",
+  "news_image": 93,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 680
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 110
+    },
+    {
+      "type": "exp",
+      "amount": 820
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Saintly Hood",
+          "item_id": 734,
+          "num": 1
+        },
+        {
+          "comment": "Old Forest Dwellers' Key",
+          "item_id": 9066,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 96,
+        "group_id": 2
+      },
+      "enemies": [
+        {
+          "comment": "Vigilant Rock Saurian",
+          "enemy_id": "0x010450",
+          "named_enemy_params_id": 53,
+          "level": 27,
+          "exp": 112,
+          "is_boss": false
+        },
+        {
+          "comment": "Vigilant Rock Saurian",
+          "enemy_id": "0x010450",
+          "named_enemy_params_id": 53,
+          "level": 27,
+          "exp": 112,
+          "is_boss": false
+        },
+        {
+          "comment": "Vigilant Rock Saurian",
+          "enemy_id": "0x010450",
+          "named_enemy_params_id": 53,
+          "level": 27,
+          "exp": 112,
+          "is_boss": false
+        },
+        {
+          "comment": "Vigilant Rock Saurian",
+          "enemy_id": "0x010450",
+          "named_enemy_params_id": 53,
+          "level": 27,
+          "exp": 112,
+          "is_boss": false
+        },
+        {
+          "comment": "Vigilant Rock Saurian",
+          "enemy_id": "0x010450",
+          "named_enemy_params_id": 53,
+          "level": 27,
+          "exp": 112,
+          "is_boss": false
+        },
+        {
+          "comment": "Vigilant Rock Saurian",
+          "enemy_id": "0x010450",
+          "named_enemy_params_id": 53,
+          "level": 27,
+          "exp": 112,
+          "is_boss": false
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "DiscoverEnemy",
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Accept",
+      "reset_group": false,
+      "groups": [ 0 ]
+    }
+  ]
+}

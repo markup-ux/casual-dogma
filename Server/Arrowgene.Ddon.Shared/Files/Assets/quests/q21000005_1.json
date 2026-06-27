@@ -1,0 +1,474 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "High Difficulty: Forest Patrol (Crests x Quests 2017)",
+  "quest_id": 21000005,
+  "base_level": 70,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MysreeForest",
+  "variant_index": 1,
+  "order_conditions": [ { "type": "AreaRank", "Param1": 3, "Param2": 13 } ],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 18420
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 2309
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 300
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Crest of Herculean Power (Frozen)",
+          "item_id": 16031,
+          "num": 1
+        },
+        {
+          "comment": "Crest of Superior Magick (Frozen)",
+          "item_id": 16036,
+          "num": 1
+        },
+        {
+          "comment": "Panacea",
+          "item_id": 41,
+          "num": 3
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Crest of Freezing+",
+          "item_id": 13654,
+          "num": 1,
+          "chance": 0.1
+        },
+        {	
+          "comment": "Crest of Permafrost (Decreased Ice Resist)",
+          "item_id": 16062,
+          "num": 1,
+          "chance": 0.1
+        },
+        {
+          "comment": "Crest of Herculean Power (Frozen)",
+          "item_id": 16031,
+          "num": 1,
+          "chance": 0.1
+        },
+        {
+          "comment": "Crest of Superior Magick (Frozen)",
+          "item_id": 16036,
+          "num": 1,
+          "chance": 0.1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 67,
+        "group_id": 0
+      },
+      "starting_index": 7,
+      "enemies": [
+        {
+          "comment": "Medusa",
+          "enemy_id": "0x015610",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 7675,
+          "is_boss": true
+        },
+        {
+          "comment": "Dark Skeleton Brute",
+          "enemy_id": "0x010324",
+          "start_think_tbl_no": 1,
+          "level": 70,
+          "exp": 1185
+        },
+        {
+          "comment": "Dark Skeleton Brute",
+          "enemy_id": "0x010324",
+          "start_think_tbl_no": 1,
+          "level": 70,
+          "exp": 1185
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 8,
+          "level": 70,
+          "exp": 1185,
+          "is_manual_set": true,
+          "is_required": false
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 8,
+          "level": 70,
+          "exp": 1185,
+          "is_manual_set": true,
+          "is_required": false
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 8,
+          "level": 70,
+          "exp": 1185,
+          "is_manual_set": true,
+          "is_required": false
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 430,
+        "group_id": 11
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Shadow Chimera",
+          "enemy_id": "0x015203",
+          "start_think_tbl_no": 1,
+          "level": 70,
+          "exp": 7675,
+          "is_boss": true
+        },
+        {
+          "comment": "Eliminator",
+          "enemy_id": "0x010508",
+          "start_think_tbl_no": 1,
+          "level": 70,
+          "exp": 1185
+        },
+        {
+          "comment": "Eliminator",
+          "enemy_id": "0x010508",
+          "start_think_tbl_no": 1,
+          "level": 70,
+          "exp": 1185
+        },
+        {
+          "comment": "Shadow Harpy",
+          "enemy_id": "0x010607",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 1185
+        },
+        {
+          "comment": "Shadow Harpy",
+          "enemy_id": "0x010607",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 1185
+        },
+        {
+          "comment": "Shadow Harpy",
+          "enemy_id": "0x010607",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 1185
+        },
+        {
+          "comment": "Shadow Harpy",
+          "enemy_id": "0x010607",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 1185
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 430,
+        "group_id": 5
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Death Knight",
+          "enemy_id": "0x010310",
+          "level": 70,
+          "exp": 1535,
+          "index": 0
+        },
+        {
+          "comment": "Dark Skeleton Brute",
+          "enemy_id": "0x010324",
+          "level": 70,
+          "exp": 1185,
+          "index": 6
+        },
+        {
+          "comment": "Dark Skeleton Brute",
+          "enemy_id": "0x010324",
+          "level": 70,
+          "exp": 1185,
+          "index": 7
+        },
+        {
+          "comment": "Dark Skeleton Brute",
+          "enemy_id": "0x010324",
+          "level": 70,
+          "exp": 1185,
+          "index": 8
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 1185,
+          "index": 9
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 1185,
+          "index": 10
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 1185,
+          "index": 11
+        },
+        {
+          "comment": "Dark Skeleton",
+          "enemy_id": "0x010318",
+          "start_think_tbl_no": 2,
+          "level": 70,
+          "exp": 1185,
+          "index": 12
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 430,
+        "group_id": 12
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Manticore",
+          "enemy_id": "0x015210",
+          "level": 70,
+          "exp": 6675,
+          "is_boss": true,
+          "index": 1
+        },
+        {
+          "comment": "Medusa",
+          "enemy_id": "0x015610",
+          "level": 70,
+          "exp": 1335,
+          "index": 3
+        },
+        {
+          "comment": "Medusa",
+          "enemy_id": "0x015610",
+          "level": 70,
+          "exp": 1335,
+          "index": 4
+        },
+        {
+          "comment": "Shadow Goblin Leader",
+          "enemy_id": "0x011160",
+          "level": 70,
+          "exp": 1185,
+          "index": 5
+        },
+        {
+          "comment": "Shadow Goblin Leader",
+          "enemy_id": "0x011160",
+          "level": 70,
+          "exp": 1185,
+          "index": 6
+        },
+        {
+          "comment": "Shadow Goblin Leader",
+          "enemy_id": "0x011160",
+          "level": 70,
+          "exp": 1185,
+          "index": 7
+        },
+        {
+          "comment": "Shadow Goblin Leader",
+          "enemy_id": "0x011160",
+          "level": 70,
+          "exp": 1185,
+          "index": 8
+        },
+        {
+          "comment": "Shadow Goblin Leader",
+          "enemy_id": "0x011160",
+          "level": 70,
+          "exp": 1185,
+          "index": 9
+        },
+        {
+          "comment": "Shadow Goblin Leader",
+          "enemy_id": "0x011160",
+          "level": 70,
+          "exp": 1185,
+          "index": 10
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "NpcTalkAndOrder",
+          "stage_id": {
+            "id": 24
+          },
+          "npc_id": "Patricia",
+          "message_id": 17058
+        },
+        {
+          "type": "SeekOutEnemiesAtMarkedLocation",
+          "announce_type": "Accept",
+          "result_commands": [
+            {
+              "comment": "Idle dialogue",
+              "type": "QstTalkChg",
+              "Param1": 1412,
+              "Param2": 17059
+            }
+          ],
+          "groups": [0]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 0 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "set_flags": [1],
+          "check_flags": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "check_flags": [3, 4, 5]
+        },
+        {
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 24
+          },
+          "npc_id": "Patricia",
+          "message_id": 17060
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [1]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [1]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [3]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [2]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [4]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [3]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [3]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [5]
+        }
+      ]
+    }
+  ]
+}

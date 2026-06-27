@@ -1,0 +1,188 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "From One Thing to Another (II)",
+  "quest_id": 20070006,
+  "base_level": 44,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "NorthernBetlandPlains",
+  "news_image": 504,
+  "variant_index": 1,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1880
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 190
+    },
+    {
+      "type": "exp",
+      "amount": 960
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Crest of Greater Magick",
+          "item_id": 9200,
+          "num": 1
+        },
+        {
+          "comment": "Throwblast",
+          "item_id": 52,
+          "num": 3
+        },
+        {
+          "comment": "Superior Healing Elixir",
+          "item_id": 7553,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 130,
+        "group_id": 0
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Sludgeman",
+          "enemy_id": "0x010510",
+          "start_think_tbl_no": 8,
+          "level": 43,
+          "exp": 200,
+          "is_required": false,
+          "is_manual_set": true
+        },
+        {
+          "comment": "Sludgeman",
+          "enemy_id": "0x010510",
+          "start_think_tbl_no": 8,
+          "level": 43,
+          "exp": 200,
+          "is_required": false,
+          "is_manual_set": true
+        },
+        {
+          "comment": "Sludgeman",
+          "enemy_id": "0x010510",
+          "start_think_tbl_no": 8,
+          "level": 43,
+          "exp": 200,
+          "is_required": false,
+          "is_manual_set": true
+        },
+        {
+          "comment": "Sludgeman",
+          "enemy_id": "0x010510",
+          "start_think_tbl_no": 8,
+          "level": 43,
+          "exp": 200,
+          "is_required": false,
+          "is_manual_set": true
+        },
+        {
+          "comment": "Brutal Witch",
+          "enemy_id": "0x015604",
+          "named_enemy_params_id": 54,
+          "start_think_tbl_no": 2,
+          "level": 44,
+          "exp": 2898,
+          "is_boss": true
+        },
+        {
+          "comment": "Brutal Witch",
+          "enemy_id": "0x015604",
+          "named_enemy_params_id": 54,
+          "start_think_tbl_no": 2,
+          "level": 44,
+          "exp": 2898,
+          "is_boss": true
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NewNpcTalkAndOrder",
+      "flags": [
+        {
+          "type": "QstLayout",
+          "action": "Set",
+          "value": 1068,
+          "comment": "Spawns LightlyEquippedSoldier NPC"
+        }
+      ],
+      "stage_id": {
+        "id": 130,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "npc_id": "LightlyEquippedSoldier",
+      "message_id": 13287
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Accept",
+      "result_commands": [
+        {
+          "comment": "Idle dialogue",
+          "type": "QstTalkChg",
+          "Param1": 539,
+          "Param2": 13339
+        }
+      ],
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "NewTalkToNpc",
+      "stage_id": {
+        "id": 130,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "npc_id": "LightlyEquippedSoldier",
+      "announce_type": "Update",
+      "message_id": 13288
+    },
+    {
+      "type": "NewDeliverItems",
+      "stage_id": {
+        "id": 130,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "npc_id": "LightlyEquippedSoldier",
+      "announce_type": "CheckpointAndUpdate",
+      "result_commands": [
+        {
+          "comment": "Idle dialogue",
+          "type": "QstTalkChg",
+          "Param1": 539,
+          "Param2": 13339
+        }
+      ],
+      "items": [
+        {
+          "comment": "Superior Healing Elixir",
+          "id": 7553,
+          "amount": 5
+        }
+      ],
+      "message_id": 13337
+    }
+  ]
+}

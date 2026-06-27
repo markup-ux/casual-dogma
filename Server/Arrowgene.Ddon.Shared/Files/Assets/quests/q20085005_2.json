@@ -1,0 +1,111 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Barren Black Wings (III)",
+    "quest_id": 20085005,
+    "base_level": 57,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "EasternZandora",
+    "order_conditions": [{"type": "AreaRank", "Param1": 11, "Param2": 3}],
+    "variant_index": 2,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1880
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "exp",
+            "amount": 2630
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Magick Gold Ingot",
+                    "item_id": 7886,
+                    "num": 1
+                },
+                {
+                    "comment": "Moist Black Leather",
+                    "item_id": 7742,
+                    "num": 1
+                },
+                {
+                    "comment": "Glossy Black Feather",
+                    "item_id": 7818,
+                    "num": 2
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 1,
+                "group_id": 459
+            },
+            "enemies": [
+                {
+                    "comment": "Dangerous Black Griffin",
+                    "enemy_id": "0x015303",
+                    "start_think_tbl_no": 1,
+                    "named_enemy_params_id": 56,
+                    "level": 57,
+                    "exp": 5959,
+                    "is_boss": true
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 61,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "npc_id": "Sonya",
+            "message_id": 16046
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "spawn_time_start": "18 * 3600000 + 0 * 60000",
+            "spawn_time_end": "6 * 3600000 + 59 * 60000",
+            "result_commands": [
+                {
+                    "comment": "Idle dialogue",
+                    "type": "QstTalkChg",
+                    "Param1": 1808,
+                    "Param2": 16047
+                }
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 61,
+                "group_id": 1,
+                "layer_no": 1
+            },
+            "announce_type": "Update",
+            "npc_id": "Sonya",
+            "message_id": 16048
+        }
+    ]
+}

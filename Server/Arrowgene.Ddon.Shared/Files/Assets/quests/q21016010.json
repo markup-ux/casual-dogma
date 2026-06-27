@@ -1,0 +1,173 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Guardian of The Diseased Forest",
+  "quest_id": 21016010,
+  "base_level": 70,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MorrowForest",
+  "news_image": 538,
+  "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 2}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 13814
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 2309
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 300
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Ancient Iron Ore",
+          "item_id": 15917,
+          "num": 3
+        },
+        {
+          "comment": "Superior Strong Gala Extract",
+          "item_id": 9364,
+          "num": 3
+        },
+        {
+          "comment": "Panacea",
+          "item_id": 41,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups" : [
+    {
+      "stage_id": {
+        "id": 417,
+        "group_id": 3
+      },
+      "enemies": [
+        {
+          "comment": "Severely Infected Behemoth (Severe)",
+          "enemy_id": "0x015717",
+          "level": 70,
+          "exp": 7675,
+          "is_boss": true,
+          "infection_type": 1
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 417,
+        "group_id": 8
+      },
+      "enemies": [
+        {
+          "comment": "Severely Infected Pixie",
+          "enemy_id": "0x010170",
+          "level": 70,
+          "exp": 1535
+        },
+        {
+          "comment": "Severely Infected Pixie",
+          "enemy_id": "0x010170",
+          "level": 70,
+          "exp": 1535
+        },
+        {
+          "comment": "Severely Infected Pixie",
+          "enemy_id": "0x010170",
+          "level": 70,
+          "exp": 1535
+        },
+        {
+          "comment": "Severely Infected Pixie",
+          "enemy_id": "0x010170",
+          "level": 70,
+          "exp": 1535
+        },
+        {
+          "comment": "Severely Infected Pixie",
+          "enemy_id": "0x010170",
+          "level": 70,
+          "exp": 1535
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "DiscoverEnemy",
+          "groups": [0]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "announce_type": "Accept",
+          "groups": [0],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 0}],
+          "check_commands": [{"type": "MyQstFlagOff", "Param1": 1}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "comment": "Group 0 boss HP check",
+          "type": "Raw",
+          "check_commands": [{"type": "EmHpLess", "Param1": 816, "Param2": 3, "Param3": 0, "Param4": 40}]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "groups": [1],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 1}, {"type": "StartTimer", "Param1": 1, "Param2": 30}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 1}],
+          "check_commands": [{"type": "IsMyquestLayoutFlagOff", "Param1": 4422}, {"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 750}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "IsEndTimer", "Param1": 1}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 752}, {"type": "StartTimer", "Param1": 2, "Param2": 15}],
+          "check_commands": [{"type": "IsEndTimer", "Param1": 2}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 751}, {"type": "QstLayoutFlagOn", "Param1": 4422}]
+        }
+      ]
+    }
+  ]
+}

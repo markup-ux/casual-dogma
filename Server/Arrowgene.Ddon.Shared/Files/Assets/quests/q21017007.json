@@ -1,0 +1,126 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Door of Jewellery: Elegy of The Grotesque",
+    "quest_id": 21017007,
+    "base_level": 73,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+	"area_id": "KingalCanyon",
+    "news_image": 613,
+    "order_conditions": [{"type": "AreaRank", "Param1": 17, "Param2": 7}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4408
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 555
+        },
+        {
+            "type": "exp",
+            "amount": 26200
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "UnappraisedFlowerTrinketGeneral",
+                    "num": 3
+                },
+                {					
+                    "item_id": "ManticoresScorpionTail",
+                    "num": 1
+                },
+                {				
+                    "item_id": "MedusasSerpentHair",
+                    "num": 1					
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 429,
+                "group_id": 7
+            },
+			"placement_type": "manual",
+            "enemies": [
+                {
+                    "comment": "Jewelry-Bearing Manticore",
+                    "enemy_id": "0x015210",
+                    "named_enemy_params_id": 1587,
+                    "level": 73,
+                    "exp": 9800,				
+                    "is_boss": true,
+					"index": 0
+                },
+                {
+                    "comment": "Jewelry-Bearing Medusa",
+                    "enemy_id": "0x015610",
+                    "named_enemy_params_id": 1587,
+                    "level": 73,
+                    "exp": 5880,				
+                    "is_boss": true,
+					"index": 2
+                },
+                {
+                    "comment": "Jewelry-Bearing Gargoyle",
+                    "enemy_id": "0x010603",
+                    "named_enemy_params_id": 1587,
+                    "level": 73,
+                    "exp": 509,
+					"index": 4
+                },
+                {
+                    "comment": "Jewelry-Bearing Gargoyle",
+                    "enemy_id": "0x010603",
+                    "named_enemy_params_id": 1587,
+                    "level": 73,
+                    "exp": 509,
+					"index": 5
+                },
+                {
+                    "comment": "Jewelry-Bearing Gargoyle",
+                    "enemy_id": "0x010603",
+                    "named_enemy_params_id": 1587,
+                    "level": 73,
+                    "exp": 509,
+					"index": 6
+                },
+                {
+                    "comment": "Jewelry-Bearing Gargoyle",
+                    "enemy_id": "0x010603",
+                    "named_enemy_params_id": 1587,
+                    "level": 73,
+                    "exp": 509,
+					"index": 7
+                },
+                {
+                    "comment": "Jewelry-Bearing Gargoyle",
+                    "enemy_id": "0x010603",
+                    "named_enemy_params_id": 1587,
+                    "level": 73,
+                    "exp": 509,
+					"index": 8
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "reset_group": false,
+            "groups": [0]
+        }
+    ]
+}

@@ -1,0 +1,178 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Petty Thief’s Woes (II)",
+  "quest_id": 20030005,
+  "base_level": 56,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "DoweValley",
+  "news_image": 548,
+  "order_conditions": [{"type": "AreaRank", "Param1": 5, "Param2": 7}],
+  "variant_index": 1,
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 1540
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 1350
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 240
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Witch's Velvet",
+          "item_id": 7949,
+          "num": 1
+        },
+        {
+          "comment": "Witch's Grimoire",
+          "item_id": 7808,
+          "num": 1
+        },
+        {
+          "comment": "Smoky Quartz",
+          "item_id": 7908,
+          "num": 1
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 90,
+        "group_id": 6
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Vigilant Skeleton",
+          "enemy_id": "0x010300",
+          "named_enemy_params_id": 53,
+          "level": 55,
+          "exp": 166,
+          "repop_count": 1,
+          "repop_wait_second": 10,
+          "index": 0
+        },
+        {
+          "comment": "Vigilant Skeleton",
+          "enemy_id": "0x010300",
+          "named_enemy_params_id": 53,
+          "level": 55,
+          "exp": 166,
+          "repop_count": 1,
+          "repop_wait_second": 10,
+          "index": 3
+        },
+        {
+          "comment": "Vigilant Skeleton",
+          "enemy_id": "0x010300",
+          "named_enemy_params_id": 53,
+          "level": 55,
+          "exp": 166,
+          "index": 4
+        },
+        {
+          "comment": "Mudman",
+          "enemy_id": "0x010509",
+          "start_think_tbl_no": 8,
+          "level": 55,
+          "exp": 245,
+          "is_required": false,
+          "is_manual_set": true,
+          "index": 6
+        },
+        {
+          "comment": "Mudman",
+          "enemy_id": "0x010509",
+          "start_think_tbl_no": 8,
+          "level": 55,
+          "exp": 245,
+          "is_required": false,
+          "is_manual_set": true,
+          "index": 7
+        },
+        {
+          "comment": "Mudman",
+          "enemy_id": "0x010509",
+          "start_think_tbl_no": 8,
+          "level": 55,
+          "exp": 245,
+          "is_required": false,
+          "is_manual_set": true,
+          "index": 8
+        },
+        {
+          "comment": "Brutal Empress Ghost",
+          "enemy_id": "0x015605",
+          "named_enemy_params_id": 56,
+          "start_think_tbl_no": 2,
+          "level": 56,
+          "exp": 4147,
+          "is_boss": true,
+          "index": 15
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NewNpcTalkAndOrder",
+      "flags": [
+        {
+          "type": "QstLayout",
+          "action": "Set",
+          "value": 1042,
+          "comment": "Spawns Bandit0 NPC"
+        }
+      ],
+      "stage_id": {
+        "id": 90,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "npc_id": "Bandit0",
+      "message_id": 11989
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Accept",
+      "result_commands": [
+        {
+          "type": "QstTalkChg",
+          "Param1": 522,
+          "Param2": 11988,
+          "comment": "Idle dialogue"
+        }
+      ],
+      "groups": [ 0 ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "NewTalkToNpc",
+      "stage_id": {
+        "id": 90,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "announce_type": "Update",
+      "npc_id": "Bandit0",
+      "message_id": 11986
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Mighty Brutes (II)",
+    "quest_id": 20085001,
+    "base_level": 47,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "EasternZandora",
+    "variant_index": 1,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 1030
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 200
+        },
+        {
+            "type": "exp",
+            "amount": 1290
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Pigeon Blood",
+                    "item_id": 7910,
+                    "num": 1
+                },
+                {
+                    "comment": "Orc's War Tusk",
+                    "item_id": 7761,
+                    "num": 3
+                },
+                {
+                    "comment": "Strong Gala Extract",
+                    "item_id": 9363,
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 1,
+                "group_id": 452
+            },
+            "enemies": [
+                {
+                    "comment": "Brutal Orc Trooper",
+                    "enemy_id": "0x015812",
+                    "named_enemy_params_id": 54,
+                    "level": 47,
+                    "exp": 273,
+                    "is_boss": false,
+                    "repop_count": 1,
+                    "repop_wait_second": 10
+                },
+                {
+                    "comment": "Brutal Orc Trooper",
+                    "enemy_id": "0x015812",
+                    "named_enemy_params_id": 54,
+                    "level": 47,
+                    "exp": 273,
+                    "is_boss": false
+                },
+                {
+                    "comment": "Brutal Orc Trooper",
+                    "enemy_id": "0x015812",
+                    "named_enemy_params_id": 54,
+                    "level": 47,
+                    "exp": 273,
+                    "is_boss": false
+                },
+                {
+                    "comment": "Brutal Orc Trooper",
+                    "enemy_id": "0x015812",
+                    "named_enemy_params_id": 54,
+                    "level": 47,
+                    "exp": 273,
+                    "is_boss": false
+                },
+                {
+                    "comment": "Brutal Orc General",
+                    "enemy_id": "0x015830",
+                    "named_enemy_params_id": 54,
+                    "level": 47,
+                    "exp": 1337,
+                    "is_boss": false
+                },
+                {
+                    "comment": "Brutal Orc General",
+                    "enemy_id": "0x015830",
+                    "named_enemy_params_id": 54,
+                    "level": 47,
+                    "exp": 1337,
+                    "is_boss": false
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "DiscoverEnemy",
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Accept",
+            "reset_group": false,
+            "groups": [0]
+        }
+    ]
+}

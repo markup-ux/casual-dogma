@@ -1,0 +1,179 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Place of Regrets",
+  "quest_id": 21000090,
+  "base_level": 65,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MergodaRuins",
+  "order_conditions": [{"type": "AreaRank", "Param1": 12, "Param2": 13}],
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 2243
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 290
+    },
+    {
+      "type": "exp",
+      "amount": 10665
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Gold-Stained Animal Fur",
+          "item_id": 11803,
+          "num": 3
+        },
+        {
+          "comment": "Superior Healing Remedy",
+          "item_id": 7555,
+          "num": 3
+        },
+        {
+          "comment": "Superior Strong Gala Extract",
+          "item_id": 9364,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 424,
+        "group_id": 2
+      },
+      "starting_index": 9,
+      "enemies": [
+        {
+          "comment": "Infected Gorecyclops - Severe",
+          "enemy_id": "0x015012",
+          "infection_type": 2,
+          "level": 65,
+          "exp": 3743,
+          "is_boss": true
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 424,
+        "group_id": 6
+      },
+      "enemies": [
+        {
+          "comment": "Bolt Skeleton",
+          "enemy_id": "0x010316",
+          "start_think_tbl_no": 2,
+          "level": 65,
+          "exp": 788
+        },
+        {
+          "comment": "Bolt Skeleton",
+          "enemy_id": "0x010316",
+          "start_think_tbl_no": 2,
+          "level": 65,
+          "exp": 788
+        },
+        {
+          "comment": "Bolt Skeleton",
+          "enemy_id": "0x010316",
+          "start_think_tbl_no": 2,
+          "level": 65,
+          "exp": 788
+        },
+        {
+          "comment": "Bolt Skeleton",
+          "enemy_id": "0x010316",
+          "start_think_tbl_no": 2,
+          "level": 65,
+          "exp": 788
+        },
+        {
+          "comment": "Bolt Skeleton",
+          "enemy_id": "0x010316",
+          "start_think_tbl_no": 2,
+          "level": 65,
+          "exp": 788
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "DiscoverEnemy",
+          "groups": [0],
+          "result_commands": [{"type": "QstLayoutFlagOn", "Param1": 3374}]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "announce_type": "Accept",
+          "groups": [0],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 0}],
+          "check_commands": [{"type": "MyQstFlagOff", "Param1": 1}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "comment": "Group 0 boss HP check",
+          "type": "Raw",
+          "check_commands": [{"type": "EmHpLess", "Param1": 843, "Param2": 2, "Param3": 9, "Param4": 40}]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "groups": [1],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 1}, {"type": "StartTimer", "Param1": 1, "Param2": 30}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 1}],
+          "check_commands": [{"type": "IsMyquestLayoutFlagOff", "Param1": 3376}, {"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 642}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "IsEndTimer", "Param1": 1}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 644}, {"type": "StartTimer", "Param1": 2, "Param2": 15}],
+          "check_commands": [{"type": "IsEndTimer", "Param1": 2}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 643}, {"type": "QstLayoutFlagOn", "Param1": 3376}]
+        }
+      ]
+    }
+  ]
+}

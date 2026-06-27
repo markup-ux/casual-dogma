@@ -1,0 +1,180 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Searching For a Partner!",
+    "quest_id": 21014012,
+    "base_level": 75,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ElanWaterGrove",
+    "news_image": 582,
+    "order_conditions": [{"type": "AreaRank", "Param1": 14, "Param2": 10}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 4493
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 665
+        },
+        {
+            "type": "exp",
+            "amount": 14610
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "UnappraisedFlowerTrinketSoldier",
+                    "num": 3
+                },
+                {
+                    "item_id": "BronzeTailFeather",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 416,
+                "group_id": 5
+            },
+            "enemies": []
+        },
+        {
+            "stage_id": {
+                "id": 416,
+                "group_id": 5
+            },
+            "starting_index": 4,
+            "enemies": [
+                {
+                    "comment": "Brute Ape",
+                    "enemy_id": "0x015504",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Brute Ape",
+                    "enemy_id": "0x015504",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Brute Ape",
+                    "enemy_id": "0x015504",
+                    "level": 75,
+                    "exp": 2435
+                },
+                {
+                    "comment": "Stymphalides",
+                    "enemy_id": "0x010611",
+                    "level": 75,
+                    "exp": 2435
+                }
+            ]
+        }
+    ],
+
+    "blocks": [
+        {
+            "type": "NewNpcTalkAndOrder",
+            "stage_id": {
+                "id": 372,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Sullivan",
+            "message_id": 19495,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4474, "comment": "Spawns Sullivan NPC"}
+            ]
+        },
+        {
+            "type": "SpawnGroup",
+            "announce_type": "Accept",
+            "groups": [0],
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 561, "Param2": 19496, "comment": "Extra dialogue - Sullivan"}
+            ],
+            "check_commands": [
+                {"type": "StageNo", "Param1": 815}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 416,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Glenis",
+            "message_id": 21095,
+            "result_commands": [
+                {"type": "QstLayoutFlagOn", "Param1": 4471, "comment": "Spawns Glenis NPC"}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "groups": [1],
+            "result_commands": [
+                {"type": "CallMessage", "Param1": 562, "Param1": 19498},
+                {"type": "MyQstFlagOn", "Param1": 2094, "comment": "Glenis FSM"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 416,
+                "group_id": 2,
+                "layer_no": 0
+            },
+            "npc_id": "Glenis",
+            "message_id": 19561,
+            "result_commands": [
+                {"type": "QstLayoutFlagOff", "Param1": 4471, "comment": "Clears Glenis NPC"},
+                {"type": "QstLayoutFlagOn", "Param1": 4476, "comment": "Spawns Glenis (Alive) NPC"}
+            ]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "announce_type": "Update",
+            "stage_id": {
+                "id": 372,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "npc_id": "Sullivan",
+            "message_id": 19477
+        }
+    ]
+}

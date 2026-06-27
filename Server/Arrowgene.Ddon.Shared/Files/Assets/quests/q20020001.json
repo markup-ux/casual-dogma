@@ -1,0 +1,180 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Missing Report",
+  "quest_id": 20020001,
+  "base_level": 31,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BetlandPlains",
+  "news_image": 41,
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 1020
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 850
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 130
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Loneliness Gloves",
+          "item_id": 9659,
+          "num": 1
+        },
+        {
+          "comment": "Blue Whiskey",
+          "item_id": 9417,
+          "num": 1
+        },
+        {
+          "comment": "Superior Quality Gala Extract",
+          "item_id": 9362,
+          "num": 2
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 1,
+        "group_id": 264
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Brutal Rogue Seeker",
+          "enemy_id": "0x011001",
+          "named_enemy_params_id": 54,
+          "hm_present_no": 46,
+          "level": 31,
+          "exp": 138,
+          "index": 0
+        },
+        {
+          "comment": "Brutal Rogue Seeker",
+          "enemy_id": "0x011001",
+          "named_enemy_params_id": 54,
+          "hm_present_no": 46,
+          "level": 31,
+          "exp": 138,
+          "index": 8
+        },
+        {
+          "comment": "Brutal Rogue Hunter",
+          "enemy_id": "0x011002",
+          "named_enemy_params_id": 54,
+          "hm_present_no": 47,
+          "level": 31,
+          "exp": 138,
+          "index": 14
+        },
+        {
+          "comment": "Brutal Rogue Seeker",
+          "enemy_id": "0x011001",
+          "named_enemy_params_id": 54,
+          "hm_present_no": 46,
+          "level": 31,
+          "exp": 138,
+          "index": 15
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NewNpcTalkAndOrder",
+      "flags": [
+        {
+          "type": "QstLayout",
+          "action": "Set",
+          "value": 995,
+          "comment": "Spawns ArisenCorpsRegimentalSoldier10"
+        }
+      ],
+      "stage_id": {
+        "id": 66,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "npc_id": "ArisenCorpsRegimentalSoldier10",
+      "message_id": 8636
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Accept",
+      "groups": [ 0 ],
+      "result_commands": [
+        {
+          "comment": "Idle dialogue - Soldier10",
+          "type": "QstTalkChg",
+          "Param1": 533,
+          "Param2": 8646
+        },
+        {
+          "comment": "Idle dialogue - Soldier7",
+          "type": "QstTalkChg",
+          "Param1": 530,
+          "Param2": 14839
+        }
+      ]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "NewTalkToNpc",
+      "flags": [
+        {
+          "type": "QstLayout",
+          "action": "Set",
+          "value": 996,
+          "comment": "Spawns ArisenCorpsRegimentalSoldier7 Message"
+        }
+      ],
+      "stage_id": {
+        "id": 1,
+        "group_id": 2,
+        "layer_no": 1
+      },
+      "announce_type": "Update",
+      "npc_id": "ArisenCorpsRegimentalSoldier7",
+      "message_id": 8639
+    },
+    {
+      "type": "NewTalkToNpc",
+      "stage_id": {
+        "id": 66,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "announce_type": "Update",
+      "npc_id": "ArisenCorpsRegimentalSoldier10",
+      "message_id": 8640
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 66,
+        "group_id": 1,
+        "layer_no": 1
+      },
+      "announce_type": "Update",
+      "npc_id": "Vanessa0",
+      "message_id": 8641
+    }
+  ]
+}

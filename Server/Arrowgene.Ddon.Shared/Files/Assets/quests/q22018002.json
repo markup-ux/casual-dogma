@@ -1,0 +1,183 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "A Reckless Action",
+    "quest_id": 22018002,
+    "base_level": 80,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "RathniteFoothills",
+    "news_image": 330,
+    "rewards": [
+        {
+            "type": "exp",
+            "amount": 25200
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5139
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 300
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "AreaPoints",
+            "amount": 500
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "comment": "Royal Crest Medal",
+                    "item_id": 18815,
+                    "num": 5
+                },
+                {
+                    "comment": "Rock Leather",
+                    "item_id": 17870,
+                    "num": 3
+                },
+                {
+                    "comment": "Harpy Breast Meat",
+                    "item_id": 17928,
+                    "num": 3
+                }
+            ]
+        },
+        {
+            "type": "random",
+            "loot_pool": [
+                {
+                    "comment": "Random Item 1",
+                    "item_id": 17870,
+                    "num": 2,
+                    "chance": 0.6
+                },
+                {
+                    "comment": "Random Item 2",
+                    "item_id": 9324,
+                    "num": 1,
+                    "chance": 0.6
+                }
+            ]
+        }
+    ],
+    "enemy_groups": [
+        {
+            "comment": "GroupId: 0",
+            "stage_id": {
+                "id": 495,
+                "group_id": 16
+            },
+            "placement_type": "Manual",
+            "enemies": [
+                {
+                    "comment": "Little Crag",
+                    "enemy_id": "0x015509",
+                    "level": 80,
+                    "exp_scheme": "Automatic",
+                    "index": 2
+                },
+                {
+                    "comment": "Little Crag",
+                    "enemy_id": "0x015509",
+                    "level": 80,
+                    "exp_scheme": "Automatic",
+                    "index": 3
+                },
+                {
+                    "comment": "Little Crag",
+                    "enemy_id": "0x015509",
+                    "level": 80,
+                    "exp_scheme": "Automatic",
+                    "index": 4
+                },
+                {
+                    "comment": "Little Crag",
+                    "enemy_id": "0x015509",
+                    "level": 80,
+                    "exp_scheme": "Automatic",
+                    "index": 5
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 80,
+                    "exp_scheme": "Automatic",
+                    "index": 7
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 80,
+                    "exp_scheme": "Automatic",
+                    "index": 8
+                },
+                {
+                    "comment": "Siren",
+                    "enemy_id": "0x010605",
+                    "level": 80,
+                    "exp_scheme": "Automatic",
+                    "index": 9
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 461
+            },
+            "npc_id": "Andrea",
+            "message_id": 23477
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 495,
+                "group_id": 0,
+                "layer_no": 0
+            },
+            "announce_type": "Accept",
+            "npc_id": "Elton",
+            "message_id": 23860,
+            "flags": [
+                {"type": "QstLayout", "action": "Set", "value": 5462, "comment": "Spawns Elton"}
+            ]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "groups": [0]
+        },
+        {
+            "type": "NewTalkToNpc",
+            "stage_id": {
+                "id": 495,
+                "group_id": 1,
+                "layer_no": 0
+            },
+            "announce_type": "Update",
+            "npc_id": "Elton",
+            "message_id": 23479,
+            "flags": [
+                {"type": "QstLayout", "action": "Clear", "value": 5462, "comment": "Spawns Elton"},
+                {"type": "QstLayout", "action": "Set", "value": 5465, "comment": "Spawns post fight Elton"}
+            ]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 461
+            },
+            "announce_type": "Update",
+            "npc_id": "Andrea",
+            "message_id": 23476
+        }
+    ]
+}

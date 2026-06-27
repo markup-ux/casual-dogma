@@ -1,0 +1,74 @@
+using Arrowgene.Ddon.GameServer.Characters;
+using Arrowgene.Ddon.GameServer.Party;
+using Arrowgene.Ddon.GameServer.Quests;
+using Arrowgene.Ddon.Server;
+using Arrowgene.Ddon.Shared.Entity.PacketStructure;
+using Arrowgene.Ddon.Shared.Model;
+using Arrowgene.Ddon.Shared.Model.Quest;
+using Arrowgene.Logging;
+using System.Linq;
+
+namespace Arrowgene.Ddon.GameServer.Handler
+{
+    public class PartyPartyCreateHandler : GameRequestPacketHandler<C2SPartyPartyCreateReq, S2CPartyPartyCreateRes>
+    {
+        private static readonly ServerLogger Logger = LogProvider.Logger<ServerLogger>(typeof(PartyPartyCreateHandler));
+
+        public PartyPartyCreateHandler(DdonGameServer server) : base(server)
+        {
+        }
+
+        public override S2CPartyPartyCreateRes Handle(GameClient client, C2SPartyPartyCreateReq request)
+        {
+            S2CPartyPartyCreateRes res = new S2CPartyPartyCreateRes();
+
+            PartyGroup party = Server.PartyManager.NewParty()
+                ?? throw new ResponseErrorException(ErrorCode.ERROR_CODE_PARTY_CREATE_ERROR, "can not create party (Server.PartyManager.NewParty() == null)");
+
+            party.AddHost(client);
+
+            PlayerPartyMember join = party.Join(client);
+            // Re-roll any world quests the leader can't take yet (base constructor rolls unfiltered).
+            party.QuestState.EnforceInitialPoolEligibility();
+            
+            var progress = Server.Database.GetQuestProgressByType(client.Character.CommonId, QuestType.All);
+            var deliveryProgressByQuest = Server.Database.GetAllQuestDeliveryProgress(client.Character.CommonId)
+                .GroupBy(x => x.QuestScheduleId)
+                .ToDictionary(g => g.Key, g => g.ToList());
+            foreach (var questProgress in progress)
+            {
+                var quest = QuestManager.GetQuestByScheduleId(questProgress.QuestScheduleId);
+                if (quest is null)
+                {
+                    continue;
+                }
+
+                Logger.Info($"QuestScheduleId={quest.QuestScheduleId}");
+
+                QuestStateManager questStateManager = QuestManager.GetQuestStateManager(client, quest);
+                questStateManager.AddNewQuest(questProgress.QuestScheduleId, questProgress.Step);
+
+                if (deliveryProgressByQuest.TryGetValue(questProgress.QuestScheduleId, out var deliveryItems))
+                {
+                    foreach (var dp in deliveryItems)
+                        questStateManager.RestoreDeliveryProgress(questProgress.QuestScheduleId, (ItemId)dp.ItemId, dp.AmountDelivered);
+                }
+            }
+
+            // Add quest for debug command
+            party.QuestState.AddNewQuest(QuestManager.GetQuestByQuestId((QuestId)70000001));
+
+            S2CPartyPartyJoinNtc ntc = new S2CPartyPartyJoinNtc();
+            ntc.HostCharacterId = client.Character.CharacterId;
+            ntc.LeaderCharacterId = client.Character.CharacterId;
+            ntc.PartyMembers.Add(join.CDataPartyMember);
+            client.Send(ntc);
+
+            res.PartyId = party.Id;
+
+            Logger.Info(client, $"created party with PartyId:{party.Id}");
+
+            return res;
+        }
+    }
+}

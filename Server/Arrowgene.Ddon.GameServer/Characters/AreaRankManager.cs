@@ -1,0 +1,420 @@
+using Arrowgene.Ddon.GameServer.Quests;
+using Arrowgene.Ddon.Server;
+using Arrowgene.Ddon.Server.Network;
+using Arrowgene.Ddon.Shared.Entity.PacketStructure;
+using Arrowgene.Ddon.Shared.Entity.Structure;
+using Arrowgene.Ddon.Shared.Model;
+using Arrowgene.Ddon.Shared.Model.Quest;
+using Arrowgene.Logging;
+using System;
+using System.Collections.Generic;
+using System.Data.Common;
+using System.Linq;
+
+namespace Arrowgene.Ddon.GameServer.Characters
+{
+    public class AreaRankManager(DdonGameServer server)
+    {
+        private static readonly ServerLogger Logger = LogProvider.Logger<ServerLogger>(typeof(ClanManager));
+
+        private readonly DdonGameServer Server = server;
+
+        public List<CDataRewardItemInfo> GetSupplyRewardList(QuestAreaId areaId, uint rank, uint points)
+        {
+
+            if (!IsValidAreaId(areaId))
+            {
+                return [];
+            }
+            List<CDataRewardItemInfo> list = [];
+
+            var areaSupplies = Server.AssetRepository.AreaRankSupplyAsset.GetValueOrDefault(areaId)
+                ?? throw new ResponseErrorException(ErrorCode.ERROR_CODE_AREAMASTER_AREA_INFO_NOT_FOUND);
+            if (areaSupplies.Count == 0)
+            {
+                throw new ResponseErrorException(ErrorCode.ERROR_CODE_AREAMASTER_SUPPLY_NOT_AVAILABLE, $"No valid asset for {areaId} found in AreaRankSupply asset.");
+            }
+
+            var rankSupplies = areaSupplies.Where(x => x.MinRank <= rank).OrderBy(x => x.MinRank).LastOrDefault()
+                ?? throw new ResponseErrorException(ErrorCode.ERROR_CODE_AREAMASTER_SUPPLY_NOT_AVAILABLE, $"No valid asset for {areaId}, rank {rank} found in AreaRankSupply asset.");
+
+            var pointSupplies = rankSupplies.SupplyItemInfoList.Where(x => x.MinAreaPoint <= points).OrderBy(x => x.MinAreaPoint).LastOrDefault() 
+                ?? throw new ResponseErrorException(ErrorCode.ERROR_CODE_AREAMASTER_SUPPLY_NOT_AVAILABLE, $"No valid asset for {areaId}, rank {rank}, {points} points found in AreaRankSupply asset.");
+
+            var rewardMult = Server.GpCourseManager.AreaMasterSupply() ? 2 : 1;
+
+            return [.. pointSupplies.SupplyItemList.Select((x, i) => new CDataRewardItemInfo()
+            {
+                Index = (uint)i,
+                ItemId = (uint) x.ItemId,
+                Num = (byte)(x.ItemNum * rewardMult),
+            })];
+        }
+
+        public uint MaxRank(QuestAreaId areaId)
+        {
+            return (uint)Server.AssetRepository.AreaRankRequirementAsset[areaId].Count;
+        }
+
+        /// <summary>
+        /// Grants the character the maximum rank in every valid area, persisting any change.
+        /// Used by the GrantMaxAreaRank server setting to make area-rank progression (and by
+        /// extension the main story quest) optional. Areas already at max rank are left untouched.
+        /// </summary>
+        public void GrantMaxAreaRanks(Character character, DbConnection? connectionIn = null)
+        {
+            foreach ((var areaId, var clientRank) in character.AreaRanks)
+            {
+                if (!IsValidAreaId(areaId))
+                {
+                    continue;
+                }
+
+                uint maxRank = MaxRank(areaId);
+                if (maxRank == 0 || clientRank.Rank >= maxRank)
+                {
+                    continue;
+                }
+
+                List<AreaRankRequirement> requirements = Server.AssetRepository.AreaRankRequirementAsset[areaId];
+                var maxRequirement = requirements.Find(x => x.Rank == maxRank);
+
+                clientRank.Rank = maxRank;
+                clientRank.Point = Math.Max(clientRank.Point, maxRequirement?.MinPoint ?? clientRank.Point);
+
+                Server.Database.UpdateAreaRank(character.CharacterId, clientRank, connectionIn);
+            }
+        }
+
+        public uint GetMaxPoints(QuestAreaId areaId, uint rank)
+        {
+            var requirements = Server.AssetRepository.AreaRankRequirementAsset[areaId];
+
+            if (rank >= requirements.Count)
+            {
+                return 0;
+            }
+            
+            var nextRank = requirements.Find(x => x.Rank == rank + 1);
+            return nextRank.MinPoint;
+        }
+
+        public bool CanRankUp(GameClient client, QuestAreaId areaId)
+        {
+            if (!IsValidAreaId(areaId))
+            {
+                return false;
+            }
+
+            AreaRank clientRank = client.Character.AreaRanks.GetValueOrDefault(areaId)
+                ?? throw new ResponseErrorException(ErrorCode.ERROR_CODE_AREAMASTER_AREA_INFO_NOT_FOUND);
+            Dictionary<QuestId, CompletedQuest> completedQuests = client.Character.CompletedQuests;
+            List<AreaRankRequirement> requirements = Server.AssetRepository.AreaRankRequirementAsset[areaId];
+
+            if (clientRank.Rank >= requirements.Count)
+            {
+                return false;
+            }
+
+            var nextRank = requirements.Find(x => x.Rank == clientRank.Rank + 1);
+            if (nextRank.ExternalQuest > 0 && !completedQuests.ContainsKey((QuestId)nextRank.ExternalQuest))
+            {
+                return false;
+            }
+            if (nextRank.AreaTrial > 0 && !completedQuests.ContainsKey((QuestId)nextRank.AreaTrial))
+            {
+                return false;
+            }
+            if (nextRank.MinPoint > 0 && clientRank.Point < nextRank.MinPoint)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public List<CDataAreaRankUpQuestInfo> RankUpQuestInfo(QuestAreaId areaId)
+        {
+            return [.. Server.AssetRepository.AreaRankRequirementAsset[areaId]
+                .Where(x => x.AreaTrial > 0 || x.ExternalQuest > 0)
+                .Select(x => new CDataAreaRankUpQuestInfo()
+                {
+                    Rank = x.Rank - 1,
+                    QuestId = x.AreaTrial > 0 ? x.AreaTrial : x.ExternalQuest
+                })];
+        }
+
+        public PacketQueue AddAreaPoint(GameClient client, QuestAreaId areaId, (uint BasePoints, uint BonusPoints) points, DbConnection? connectionIn = null)
+        {
+            PacketQueue queue = new PacketQueue();
+
+            if (!IsValidAreaId(areaId))
+            {
+                return queue;
+            }
+
+            if (points.BasePoints + points.BonusPoints == 0)
+            {
+                return queue;
+            }
+
+            // Convert the area point reward into character/job EXP at a 1:1 ratio instead of
+            // advancing the player's area rank. Applies to every area point source since they all
+            // funnel through this method.
+            if (Server.GameSettings.GameServerSettings.ConvertAreaPointsToExp)
+            {
+                queue.AddRange(Server.ExpManager.AddExp(client, client.Character, points, RewardSource.Quest, QuestType.All, connectionIn));
+                return queue;
+            }
+
+            AreaRank clientRank = client.Character.AreaRanks.GetValueOrDefault(areaId)
+                ?? throw new ResponseErrorException(ErrorCode.ERROR_CODE_AREAMASTER_AREA_INFO_NOT_FOUND);
+            if (clientRank is null || clientRank.Rank == 0) {
+                return queue;
+            }
+
+            List<AreaRankRequirement> requirements = Server.AssetRepository.AreaRankRequirementAsset[areaId];
+            var nextRank = requirements.Find(x => x.Rank == clientRank.Rank + 1);
+
+            clientRank.Point += points.BasePoints + points.BonusPoints;
+            clientRank.WeekPoint += points.BasePoints + points.BonusPoints;
+            bool canRankUp = clientRank.Rank < MaxRank(areaId) && nextRank.MinPoint > 0 && clientRank.Point >= nextRank.MinPoint;
+
+            client.Enqueue(new S2CAreaPointUpNtc()
+            {
+                AreaId = areaId,
+                AddPoint = points.BasePoints,
+                AddPointByCharge = points.BonusPoints,
+                TotalPoint = clientRank.Point,
+                WeekPoint = clientRank.WeekPoint,
+                CanRankUp = canRankUp,
+            }, queue);
+
+            if (canRankUp)
+            {
+                client.Enqueue(new S2CAreaRankUpReadyNtc()
+                {
+                    AreaRankList = [new() { AreaId = areaId, Rank = nextRank.Rank }]
+                }, queue);
+            }
+
+            Server.Database.UpdateAreaRank(client.Character.CharacterId, clientRank, connectionIn);
+
+            return queue;
+        }
+
+        public uint GetEffectiveRank(Character character, QuestAreaId areaId)
+        {
+            if (!IsValidAreaId(areaId))
+            {
+                return 0;
+            }
+
+            AreaRank rank = character.AreaRanks.GetValueOrDefault(areaId) 
+                ?? throw new ResponseErrorException(ErrorCode.ERROR_CODE_AREAMASTER_AREA_INFO_NOT_FOUND);
+
+            uint effectiveRank = rank.Rank;
+            if (!Server.GameSettings.GameServerSettings.EnableAreaRankSpotLocks)
+            {
+                effectiveRank = MaxRank(areaId);
+            }
+            return effectiveRank;
+        }
+
+        public uint GetEffectiveRank(Character character, StageInfo stageInfo)
+        {
+            if (!IsValidAreaId(stageInfo.AreaId))
+            {
+                return 0;
+            }
+
+            return GetEffectiveRank(character, stageInfo.AreaId);
+        }
+
+        public static uint GetAreaPointReward(Quest quest)
+        {
+            QuestAreaId areaId = quest.QuestAreaId;
+            if (QuestManager.IsBoardQuest(quest))
+            {
+                areaId = (QuestAreaId)quest.LightQuestDetail.AreaId;
+            }
+
+            return GetAreaPointReward(quest.BaseLevel, areaId, QuestManager.IsBoardQuest(quest));
+        }
+
+        public static uint GetAreaPointReward(uint level, QuestAreaId areaId, bool isBoardQuest)
+        {
+            uint amount;
+            if (!IsValidAreaId(areaId))
+            {
+                return 0;
+            }
+            else if (areaId >= QuestAreaId.BloodbaneIsle)
+            {
+                amount = 500;
+            }
+            else
+            {
+                uint tier = level / 5;
+                amount = 5 * tier * tier + 5 * tier + 30;
+            }
+
+            if (isBoardQuest)
+            {
+                amount /= 2;
+            }
+
+            return amount;
+        }
+
+        public static bool IsValidAreaId(QuestAreaId areaId)
+        {
+            return areaId >= QuestAreaId.HidellPlains && areaId <= QuestAreaId.UrtecaMountains;
+        }
+
+        public PacketQueue NotifyAreaRankUpOnQuestComplete(GameClient client, Quest quest)
+        {
+            PacketQueue queue = new();
+            S2CAreaRankUpReadyNtc ntc = new();
+
+            if (quest.QuestType == QuestType.Main)
+            {
+                foreach ((var area, var rank) in client.Character.AreaRanks)
+                {
+                    List<AreaRankRequirement> requirements = Server.AssetRepository.AreaRankRequirementAsset[area];
+
+                    if (rank.Rank >= requirements.Count())
+                    {
+                        continue;
+                    }
+
+                    var nextRank = requirements.Find(x => x.Rank == rank.Rank + 1);
+                    if (nextRank.ExternalQuest == (uint)quest.QuestId)
+                    {
+                        ntc.AreaRankList.Add(new() { AreaId = area, Rank = nextRank.Rank });
+                    }
+                }
+            }
+            else if (quest.QuestType == QuestType.Tutorial)
+            {
+                var area = quest.QuestAreaId;
+                if (!client.Character.AreaRanks.TryGetValue(area, out var rank))
+                {
+                    return queue;
+                }
+                List<AreaRankRequirement> requirements = Server.AssetRepository.AreaRankRequirementAsset[area];
+
+                if (rank.Rank < requirements.Count)
+                {
+                    var nextRank = requirements.Find(x => x.Rank == rank.Rank + 1);
+                    if (nextRank.AreaTrial == (uint)quest.QuestId)
+                    {
+                        ntc.AreaRankList.Add(new() { AreaId = area, Rank = nextRank.Rank });
+                    }
+                }
+            }
+
+            if (ntc.AreaRankList.Count != 0)
+            {
+                client.Enqueue(ntc, queue);
+            }
+
+            return queue;
+        }
+
+        public bool CheckSpot(GameClient client, AreaRankSpotInfo spot)
+        {
+            AreaRank rank = client.Character.AreaRanks.GetValueOrDefault(spot.AreaId)
+                ?? throw new ResponseErrorException(ErrorCode.ERROR_CODE_AREAMASTER_AREA_INFO_NOT_FOUND);
+
+            if (!Server.GameSettings.GameServerSettings.EnableAreaRankSpotLocks)
+            {
+                return true;
+            }
+
+            // Until S3.
+            if (spot.AreaId >= QuestAreaId.MegadosysPlateau)
+            {
+                return true;
+            }
+
+            if (rank.Rank < spot.UnlockRank)
+            {
+                return false;
+            }
+
+            var completedQuests = client.Character.CompletedQuests;
+            if (spot.UnlockQuest != 0 && !completedQuests.ContainsKey((QuestId)spot.UnlockQuest))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool PlayerCanParticipateInTrial(GameClient client, Quest quest)
+        {
+            if (quest.AdventureGuideCategory != QuestAdventureGuideCategory.AreaTrialOrMission)
+            {
+                return false;
+            }
+
+            // Scripted quests may have QuestAreaId = None - resolve from the stored rankings
+            var areaId = quest.QuestAreaId != QuestAreaId.None
+                ? quest.QuestAreaId
+                : QuestManager.GetAreaIdForTrial(quest.QuestScheduleId);
+
+            if (areaId == QuestAreaId.None)
+            {
+                return false;
+            }
+
+            var plAreaRank = GetEffectiveRank(client.Character, areaId);
+            if (plAreaRank == 0)
+            {
+                return false;
+            }
+
+            var areaTrialRanks = QuestManager.GetAreaTrialRankings(areaId);
+            if (!areaTrialRanks.TryGetValue(quest.QuestScheduleId, out uint value) || value > plAreaRank)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        // TODO: Implement this properly.
+        public List<CDataAreaRankMonsterGatheringSpot> CheckMonsterGatheringSpots(GameClient client)
+        {
+            List<CDataAreaRankMonsterGatheringSpot> spots = [];
+            foreach (uint spot in new List<uint> { 1081, 1082, 1085, 1086, 1087, 1088, 1089, 1090 })
+            {
+                spots.Add(new()
+                {
+                    SpotId = spot,
+                    SpotState = 3,
+                    Unk2 = DateTimeOffset.UtcNow // No idea what this time controls.
+                });
+            }
+
+            return spots;
+        }
+
+        // TODO: Implement this properly.
+        public List<CDataAreaRankPeriodicallyReleasedSpot> CheckPeriodicallyReleasedSpots(GameClient client)
+        {
+            List<CDataAreaRankPeriodicallyReleasedSpot> spots = [];
+            foreach (uint spot in new List<uint> { 1068, 1070, 1076, 1080 })
+            {
+                spots.Add(new()
+                {
+                    SpotId = spot,
+                    ChangeTime = DateTimeOffset.UtcNow,
+                    IsOpen = true
+                });
+            }
+            return spots;
+        }
+    }
+}

@@ -1,0 +1,139 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "Time Restriction: Late Night Harvest",
+    "quest_id": 21014005,
+    "base_level": 70,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "ElanWaterGrove",
+    "news_image": 284,
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5772
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 750
+        },
+        {
+            "type": "exp",
+            "amount": 3070
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "PremiumFragrantWood",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "processes": [
+        {
+            "blocks": [
+                {
+                    "type": "NpcTalkAndOrder",
+                    "stage_id": {
+                        "id": 339
+                    },
+                    "npc_id": "Musel0",
+                    "message_id": 19659
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "Accept",
+                    "check_commands": [
+                        {"type": "StageNo", "Param1": 910},
+                        {"type": "IngameTimeRangeNotEq", "Param1": 2, "Param2": 22}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 4509, "Param2": 19660}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "CheckpointAndUpdate",
+                    "check_commands": [
+                        {"type": "TalkNpc", "Param1": 910, "Param2": 2600},
+                        {"type": "IngameTimeRangeNotEq", "Param1": 2, "Param2": 22}
+                    ],
+                    "result_commands": [
+                        {"type": "QstTalkChg", "Param1": 4509, "Param2": 19661}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "announce_type": "CheckpointAndUpdate",
+                    "result_commands": [
+                        {"type": "MyQstFlagOn", "Param1": 0},
+                        {"type": "QstTalkChg", "Param1": 4509, "Param2": 19662}
+                    ],
+                    "check_commands": [
+                        {"type": "HaveItemAllBag", "Param1": 15947, "Param2": 5}
+                    ]
+                },
+                {
+                    "type": "DeliverItems",
+                    "announce_type": "CheckpointAndUpdate",
+                    "stage_id": {
+                        "id": 339
+                    },
+                    "npc_id": "Musel0",
+                    "items": [
+                        {
+                            "comment": "Old Geranium",
+                            "id": 15947,
+                            "amount": 5
+                        }
+                    ],
+                    "message_id": 19663
+                }
+            ]
+        },
+        {
+            "blocks": [
+                {
+                    "type": "MyQstFlags",
+                    "check_flags": [0]
+                },
+                {
+                    "type": "Raw",
+                    "check_commands": [
+                        {"type": "IngameTimeRangeNotEq", "Param1": 2, "Param2": 22},
+                        {"type": "StageNo", "Param1": 121}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "result_commands": [
+                        {"type": "QstLayoutFlagOn", "Param1": 4316},
+                        {"type": "CallMessage", "Param1": 1, "Param1": 19906}
+                    ],
+                    "check_commands": [
+                        {"type": "IngameTimeRangeEq", "Param1": 2, "Param2": 22}
+                    ]
+                },
+                {
+                    "type": "Raw",
+                    "result_commands": [
+                        {"type": "QstLayoutFlagOff", "Param1": 4316},
+                        {"type": "CallMessage", "Param1": 1, "Param1": 19910}
+                    ]
+                }
+            ]
+        }
+    ]
+}

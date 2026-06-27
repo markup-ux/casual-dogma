@@ -1,0 +1,75 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "The Young Custodian",
+    "quest_id": 21016004,
+    "base_level": 70,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "MorrowForest",
+    "news_image": 326,
+    "order_conditions": [{"type": "AreaRank", "Param1": 16, "Param2": 2}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 5772
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 750
+        },
+        {
+            "type": "exp",
+            "amount": 7675
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "SilverIngot",
+                    "num": 1
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 374
+            },
+            "npc_id": "Reich",
+            "message_id": 19444
+        },
+        {
+            "type": "DeliverItems",
+            "stage_id": {
+                "id": 372
+            },
+            "npc_id": "Gobinet",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type":"QstTalkChg", "Param1": 2607, "Param2": 19445, "comment": "Extra dialogue - Reich"},
+                {"type":"QstTalkChg", "Param1": 557, "Param2": 19446, "comment": "Extra dialogue - Gobinet"}
+            ],
+            "items": [
+                {
+                    "comment": "Twisted Iron Scrap",
+                    "id": 15919,
+                    "amount": 6
+                }
+            ],
+            "message_id": 19447
+        }
+    ]
+}

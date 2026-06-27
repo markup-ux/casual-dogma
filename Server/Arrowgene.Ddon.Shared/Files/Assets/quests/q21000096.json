@@ -1,0 +1,138 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "A Sign of Nightmares",
+    "quest_id": 21000096,
+    "base_level": 68,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "BloodbaneIsle",
+    "news_image": 249,
+    "order_conditions": [{"type": "MainQuestCompleted", "Param1": 20140}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 2243
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 290
+        },
+        {
+            "type": "exp",
+            "amount": 10665
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "WindTwine",
+                    "num": 1
+                },
+                {
+                    "item_id": "SuperiorHealingRemedy",
+                    "num": 3
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 336,
+                "group_id": 5
+            },
+            "starting_index": 5,
+            "enemies": [
+                {
+                    "comment": "Golem",
+                    "enemy_id": "0x015100",
+                    "level": 68,
+                    "exp": 5925,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Eliminator",
+                    "enemy_id": "0x010508",
+                    "level": 68,
+                    "exp": 1185
+                },
+                {
+                    "comment": "Eliminator",
+                    "enemy_id": "0x010508",
+                    "level": 68,
+                    "exp": 1185
+                },
+                {
+                    "comment": "Large Newt",
+                    "enemy_id": "0x010461",
+                    "level": 68,
+                    "exp": 1185
+                },
+                {
+                    "comment": "Large Newt",
+                    "enemy_id": "0x010461",
+                    "level": 68,
+                    "exp": 1185
+                },
+                {
+                    "comment": "Large Newt",
+                    "enemy_id": "0x010461",
+                    "level": 68,
+                    "exp": 1185
+                },
+                {
+                    "comment": "Large Newt",
+                    "enemy_id": "0x010461",
+                    "level": 68,
+                    "exp": 1185
+                },
+                {
+                    "comment": "Large Newt",
+                    "enemy_id": "0x010461",
+                    "level": 68,
+                    "exp": 1185
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 317
+            },
+            "npc_id": "Clarissa",
+            "message_id": 17477
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2400, "Param2": 17478, "comment": "Extra dialogue - Clarissa"}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 317
+            },
+            "announce_type": "Update",
+            "npc_id": "Clarissa",
+            "message_id": 17479
+        }
+    ]
+}

@@ -1,0 +1,283 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "The Nightmare of the Gloomy Forest",
+  "quest_id": 22018034,
+  "base_level": 90,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MegadosysPlateau",
+  "news_image": 338,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5500
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 300
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "AreaPoints",
+      "amount": 500
+    },
+    {
+      "type": "exp",
+      "amount": 25200
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Royal Crest Medal (Megadosys District)",
+          "item_id": 18820,
+          "num": 5
+        },
+        {
+          "comment": "Cracked Amulet",
+          "item_id": 21222,
+          "num": 3
+        },
+        {
+          "comment": "Superior Strong Gala Extract",
+          "item_id": 9364,
+          "num": 10
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Crest of Shock Immunity",
+          "item_id": 9322,
+          "num": 1,
+          "chance": 0.6
+        },
+        {
+          "comment": "Cursed Bone Fragment",
+          "item_id": 19650,
+          "num": 1,
+          "chance": 0.6
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "comment": "GroupId: 33 - Ghost Mail, Dark Corpse Torturers, Grudge Ghosts",
+      "stage_id": {
+        "id": 464,
+        "group_id": 31
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x010311",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Ghost Mail"
+        },
+        {
+          "enemy_id": "0x010520",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Dark Corpse Torturer"
+        },
+        {
+          "enemy_id": "0x010520",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Dark Corpse Torturer"
+        },
+        {
+          "enemy_id": "0x015622",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Grudge Ghost"
+        },
+        {
+          "enemy_id": "0x015622",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Grudge Ghost"
+        },
+        {
+          "enemy_id": "0x015622",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Grudge Ghost"
+        }
+      ]
+    },
+    {
+      "comment": "GroupId: 34 - Dark Skeleton Brute, Dark Corpse Punishers, Grudge Ghosts",
+      "stage_id": {
+        "id": 464,
+        "group_id": 33
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x010324",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Dark Skeleton Brute"
+        },
+        {
+          "enemy_id": "0x010516",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Dark Corpse Punisher"
+        },
+        {
+          "enemy_id": "0x010516",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Dark Corpse Punisher"
+        },
+        {
+          "enemy_id": "0x015622",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Grudge Ghost"
+        },
+        {
+          "enemy_id": "0x015622",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Grudge Ghost"
+        },
+        {
+          "enemy_id": "0x015622",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Grudge Ghost"
+        },
+        {
+          "enemy_id": "0x015622",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Grudge Ghost"
+        }
+      ]
+    },
+    {
+      "comment": "GroupId: 36 - Skeleton Cyclops, Skeleton Warg, Grudge Ghosts",
+      "stage_id": {
+        "id": 464,
+        "group_id": 36
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015050",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Skeleton Cyclops"
+        },
+        {
+          "enemy_id": "0x010221",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Skeleton Warg"
+        },
+        {
+          "enemy_id": "0x010221",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Skeleton Warg"
+        },
+        {
+          "enemy_id": "0x015622",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Grudge Ghost"
+        },
+        {
+          "enemy_id": "0x015622",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Grudge Ghost"
+        },
+        {
+          "enemy_id": "0x015622",
+          "level": 90,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Grudge Ghost"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 584
+      },
+      "npc_id": "Umit",
+      "message_id": 27836
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Accept",
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [0]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [1]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [1]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [2]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [2]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 584
+      },
+      "announce_type": "Update",
+      "npc_id": "Umit",
+      "message_id": 27838
+    }
+  ]
+}

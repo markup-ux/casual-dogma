@@ -1,0 +1,123 @@
+{
+    "state_machine": "GenericStateMachine",
+    "type": "World",
+    "comment": "A Trial of Strength's Outcome",
+    "quest_id": 21000062,
+    "base_level": 65,
+    "minimum_item_rank": 0,
+    "discoverable": true,
+    "area_id": "BloodbaneIsle",
+    "news_image": 583,
+    "order_conditions": [{"type": "MainQuestCompleted", "Param1": 20140}, {"type": "AreaRank", "Param1": 13, "Param2": 11}],
+    "rewards": [
+        {
+            "type": "wallet",
+            "wallet_type": "Gold",
+            "amount": 2144
+        },
+        {
+            "type": "wallet",
+            "wallet_type": "RiftPoints",
+            "amount": 275
+        },
+        {
+            "type": "exp",
+            "amount": 7092
+        },
+        {
+            "type": "select",
+            "loot_pool": [
+                {
+                    "item_id": "MagickGoldIngot",
+                    "num": 1
+                },
+                {
+                    "item_id": "SuperiorStrongGalaExtract",
+                    "num": 3
+                },
+                {
+                    "item_id": "Panacea",
+                    "num": 3
+                }
+            ]
+        }
+    ],
+    "enemy_groups" : [
+        {
+            "stage_id": {
+                "id": 409,
+                "group_id": 3
+            },
+            "starting_index": 6,
+            "enemies": [
+                {
+                    "comment": "Chimera",
+                    "enemy_id": "0x015200",
+                    "level": 65,
+                    "exp": 5100,
+                    "is_boss": true
+                },
+                {
+                    "comment": "Flame Skeleton Brute",
+                    "enemy_id": "0x010320",
+                    "level": 65,
+                    "exp": 540
+                },
+                {
+                    "comment": "Flame Skeleton Brute",
+                    "enemy_id": "0x010320",
+                    "level": 65,
+                    "exp": 540
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "NpcTalkAndOrder",
+            "stage_id": {
+                "id": 317
+            },
+            "npc_id": "Clarissa",
+            "message_id": 17453
+        },
+        {
+            "type": "DeliverItems",
+            "stage_id": {
+                "id": 317
+            },
+            "npc_id": "Clarissa",
+            "announce_type": "Accept",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2400, "Param2": 17454, "comment": "Extra dialogue - Clarissa"}
+            ],
+            "items": [
+                {"id": 8011, "amount": 2, "comment": "Scroll of Fire"}
+            ],
+            "message_id": 17455
+        },
+        {
+            "type": "SeekOutEnemiesAtMarkedLocation",
+            "announce_type": "Update",
+            "result_commands": [
+                {"type": "QstTalkChg", "Param1": 2400, "Param2": 17456, "comment": "Extra dialogue 2 - Clarissa"}
+            ],
+            "groups": [0]
+        },
+        {
+            "type": "KillGroup",
+            "announce_type": "Update",
+            "reset_group": false,
+            "groups": [0]
+        },
+        {
+            "type": "TalkToNpc",
+            "stage_id": {
+                "id": 317
+            },
+            "announce_type": "Update",
+            "npc_id": "Clarissa",
+            "message_id": 17457
+        }
+    ]
+}

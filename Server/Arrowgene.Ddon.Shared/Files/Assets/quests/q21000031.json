@@ -1,0 +1,451 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "High Difficulty: To Rest, Once More (Dual Crests ★ Debut)",
+  "quest_id": 21000031,
+  "base_level": 65,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "MysreeGrove",
+  "order_conditions": [ { "type": "AreaRank", "Param1": 6, "Param2": 13 } ],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 9379
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 2144
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 275
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Crest of Incineration (Decreased Fire Resist)",
+          "item_id": 16061,
+          "num": 2
+        },
+        {
+          "comment": "Crest of Incineration",
+          "item_id": 9258,
+          "num": 2
+        },
+        {
+          "comment": "Crest of Diminished Fire Resist",
+          "item_id": 9268,
+          "num": 2
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 427,
+        "group_id": 2
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Silver Roar",
+          "enemy_id": "0x015505",
+          "level": 65,
+          "exp": 3026,
+          "is_boss": true,
+          "index": 0
+        },
+        {
+          "comment": "Snow Harpy",
+          "enemy_id": "0x010601",
+          "level": 65,
+          "exp": 630,
+          "index": 10
+        },
+        {
+          "comment": "Snow Harpy",
+          "enemy_id": "0x010601",
+          "level": 65,
+          "exp": 630,
+          "index": 11
+        },
+        {
+          "comment": "Snow Harpy",
+          "enemy_id": "0x010601",
+          "level": 65,
+          "exp": 630,
+          "index": 12
+        },
+        {
+          "comment": "Skeleton Mage",
+          "enemy_id": "0x010308",
+          "level": 65,
+          "exp": 630,
+          "index": 13
+        },
+        {
+          "comment": "Skeleton Mage",
+          "enemy_id": "0x010308",
+          "level": 65,
+          "exp": 630,
+          "index": 14
+        },
+        {
+          "comment": "Skeleton Mage",
+          "enemy_id": "0x010308",
+          "level": 65,
+          "exp": 630,
+          "index": 15
+        },
+        {
+          "comment": "Skeleton Mage",
+          "enemy_id": "0x010308",
+          "level": 65,
+          "exp": 630,
+          "index": 16
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 427,
+        "group_id": 11
+      },
+      "starting_index": 5,
+      "enemies": [
+        {
+          "comment": "Cockatrice",
+          "enemy_id": "0x015301",
+          "level": 65,
+          "exp": 3026,
+          "is_boss": true
+        },
+        {
+          "comment": "Gargoyle",
+          "enemy_id": "0x010603",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Gargoyle",
+          "enemy_id": "0x010603",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Gargoyle",
+          "enemy_id": "0x010603",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Strix",
+          "enemy_id": "0x010610",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Strix",
+          "enemy_id": "0x010610",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Strix",
+          "enemy_id": "0x010610",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Strix",
+          "enemy_id": "0x010610",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Strix",
+          "enemy_id": "0x010610",
+          "level": 65,
+          "exp": 630
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 427,
+        "group_id": 13
+      },
+      "starting_index": 4,
+      "enemies": [
+        {
+          "comment": "Scarlet Fighter",
+          "enemy_id": "0x011070",
+          "hm_present_no": 87,
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Scarlet Fighter",
+          "enemy_id": "0x011070",
+          "hm_present_no": 87,
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Scarlet Defender",
+          "enemy_id": "0x011074",
+          "hm_present_no": 91,
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Scarlet Defender",
+          "enemy_id": "0x011074",
+          "hm_present_no": 91,
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Scarlet Defender",
+          "enemy_id": "0x011074",
+          "hm_present_no": 91,
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Scarlet Healer",
+          "enemy_id": "0x011073",
+          "hm_present_no": 90,
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Scarlet Healer",
+          "enemy_id": "0x011073",
+          "hm_present_no": 90,
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Scarlet Healer",
+          "enemy_id": "0x011073",
+          "hm_present_no": 90,
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Scarlet Healer",
+          "enemy_id": "0x011073",
+          "hm_present_no": 90,
+          "level": 65,
+          "exp": 630
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 427,
+        "group_id": 15
+      },
+      "starting_index": 1,
+      "enemies": [
+        {
+          "comment": "Drake",
+          "enemy_id": "0x015700",
+          "level": 65,
+          "exp": 15761,
+          "is_boss": true
+        },
+        {
+          "comment": "Rock Saurian",
+          "enemy_id": "0x010450",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Rock Saurian",
+          "enemy_id": "0x010450",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Rock Saurian",
+          "enemy_id": "0x010450",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Rock Saurian",
+          "enemy_id": "0x010450",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Oil Jelly",
+          "enemy_id": "0x010920",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Oil Jelly",
+          "enemy_id": "0x010920",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Oil Jelly",
+          "enemy_id": "0x010920",
+          "level": 65,
+          "exp": 630
+        },
+        {
+          "comment": "Oil Jelly",
+          "enemy_id": "0x010920",
+          "level": 65,
+          "exp": 630
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "NpcTalkAndOrder",
+          "stage_id": {
+            "id": 137
+          },
+          "npc_id": "Christine",
+          "message_id": 17099
+        },
+        {
+          "type": "SeekOutEnemiesAtMarkedLocation",
+          "announce_type": "Accept",
+          "result_commands": [
+            {
+              "comment": "Idle dialogue",
+              "type": "QstTalkChg",
+              "Param1": 4506,
+              "Param2": 17100
+            }
+          ],
+          "groups": [0]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "reset_group": false,
+          "groups": [ 0 ]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "set_flags": [1],
+          "check_flags": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "CheckpointAndUpdate",
+          "check_flags": [3, 4, 5]
+        },
+        {
+          "type": "TalkToNpc",
+          "stage_id": {
+            "id": 137
+          },
+          "npc_id": "Christine",
+          "message_id": 17101
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [1]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [1]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [3]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [2]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [2]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [4]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "MyQstFlags",
+          "check_flags": [1]
+        },
+        {
+          "type": "DiscoverEnemy",
+          "groups": [3]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "result_commands": [
+            {
+              "type": "MyQstFlagOn",
+              "Param1": 2
+            }
+          ],
+          "groups": [3]
+        },
+        {
+          "type": "MyQstFlags",
+          "announce_type": "Update",
+          "set_flags": [5]
+        }
+      ]
+    }
+  ]
+}

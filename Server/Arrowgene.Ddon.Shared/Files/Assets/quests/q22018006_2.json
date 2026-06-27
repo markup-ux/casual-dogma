@@ -1,0 +1,272 @@
+﻿{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Waiting to Catch Monsters (Variant 2)",
+  "quest_id": 22018006,
+  "base_level": 83,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "RathniteFoothills",
+  "news_image": 330,
+  "order_conditions": [{"type": "MainQuestCompleted", "Param1": 30050}],
+  "variant_index": 2,
+  "rewards": [
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 5500
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 555
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "AreaPoints",
+      "amount": 500
+    },
+    {
+      "type": "exp",
+      "amount": 37800
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Royal Crest Medal (Rathnite District)",
+          "item_id": 18815,
+          "num": 5
+        },
+        {
+          "comment": "Rock-Cutter",
+          "item_id": 17871,
+          "num": 1
+        },
+        {
+          "comment": "Rock Leather",
+          "item_id": 17870,
+          "num": 3
+        }
+      ]
+    },
+    {
+      "type": "random",
+      "loot_pool": [
+        {
+          "comment": "Volcanic Mountain Ash",
+          "item_id": 21259,
+          "num": 1,
+          "chance": 0.6
+        },
+        {
+          "comment": "Cobalt Ingot",
+          "item_id": 17892,
+          "num": 1,
+          "chance": 0.6
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "comment": "GroupId: 23 - Strix, Brute Apes",
+      "stage_id": {
+        "id": 462,
+        "group_id": 23
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x010610",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Strix"
+        },
+        {
+          "enemy_id": "0x010610",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Strix"
+        },
+        {
+          "enemy_id": "0x010610",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Strix"
+        },
+        {
+          "enemy_id": "0x010610",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Strix"
+        },
+        {
+          "enemy_id": "0x015504",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Brute Ape"
+        },
+        {
+          "enemy_id": "0x015504",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Brute Ape"
+        }
+      ]
+    },
+    {
+      "comment": "GroupId: 28 - Strix, Little Crag",
+      "stage_id": {
+        "id": 462,
+        "group_id": 28
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x010610",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Strix"
+        },
+        {
+          "enemy_id": "0x010610",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Strix"
+        },
+        {
+          "enemy_id": "0x010610",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Strix"
+        },
+        {
+          "enemy_id": "0x010610",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Strix"
+        },
+        {
+          "enemy_id": "0x010610",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Strix"
+        },
+        {
+          "enemy_id": "0x015509",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Little Crag"
+        },
+        {
+          "enemy_id": "0x015509",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 18000,
+          "is_boss": false,
+          "comment": "Little Crag"
+        }
+      ]
+    },
+    {
+      "comment": "GroupId: 1 - Ogre, Cragger",
+      "stage_id": {
+        "id": 479,
+        "group_id": 1
+      },
+      "enemies": [
+        {
+          "enemy_id": "0x015500",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 190000,
+          "is_boss": true,
+          "comment": "Ogre"
+        },
+        {
+          "enemy_id": "0x015508",
+          "named_enemy_params_id": 53,
+          "level": 83,
+          "exp": 200000,
+          "is_boss": true,
+          "comment": "Cragger"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 462
+      },
+      "npc_id": "Paul",
+      "message_id": 23513
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Accept",
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [0]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [1]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [1]
+    },
+    {
+      "type": "DiscoverEnemy",
+      "announce_type": "Update",
+      "groups": [2]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [2]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 462
+      },
+      "announce_type": "Update",
+      "npc_id": "Paul",
+      "message_id": 23516
+    }
+  ]
+}

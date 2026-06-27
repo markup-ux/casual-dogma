@@ -1,0 +1,202 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "A Monstrous Rampage",
+  "quest_id": 21000003,
+  "base_level": 63,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "BreyaCoast",
+  "news_image": 592,
+  "order_conditions": [{"type": "AreaRank", "Param1": 2, "Param2": 13}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 6976
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 2078
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 265
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Corroded Giant Eyeball",
+          "item_id": 11774,
+          "num": 1
+        },
+        {
+          "comment": "Quality Gala Mushroom",
+          "item_id": 7994,
+          "num": 7
+        },
+        {
+          "comment": "Superior Healing Remedy",
+          "item_id": 7555,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 333,
+        "group_id": 4
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Infected Gorecyclops (Slight)",
+          "enemy_id": "0x015012",
+          "level": 60,
+          "exp": 3783,
+          "is_boss": true,
+          "infection_type": 1,
+          "index": 5
+        },
+        {
+          "comment": "Infected Direwolf",
+          "enemy_id": "0x010209",
+          "level": 60,
+          "exp": 756,
+          "index": 7
+        },
+        {
+          "comment": "Infected Direwolf",
+          "enemy_id": "0x010209",
+          "level": 60,
+          "exp": 756,
+          "index": 8
+        },
+        {
+          "comment": "Infected Direwolf",
+          "enemy_id": "0x010209",
+          "level": 60,
+          "exp": 756,
+          "index": 9
+        }
+      ]
+    },
+    {
+      "stage_id": {
+        "id": 333,
+        "group_id": 9
+      },
+      "enemies": [
+        {
+          "comment": "Lux Skeleton",
+          "enemy_id": "0x010317",
+          "start_think_tbl_no": 2,
+          "level": 60,
+          "exp": 756
+        },
+        {
+          "comment": "Lux Skeleton",
+          "enemy_id": "0x010317",
+          "start_think_tbl_no": 2,
+          "level": 60,
+          "exp": 756
+        },
+        {
+          "comment": "Lux Skeleton",
+          "enemy_id": "0x010317",
+          "start_think_tbl_no": 2,
+          "level": 60,
+          "exp": 756
+        },
+        {
+          "comment": "Lux Skeleton",
+          "enemy_id": "0x010317",
+          "start_think_tbl_no": 2,
+          "level": 60,
+          "exp": 756
+        },
+        {
+          "comment": "Lux Skeleton",
+          "enemy_id": "0x010317",
+          "start_think_tbl_no": 2,
+          "level": 60,
+          "exp": 756
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "blocks": [
+        {
+          "type": "DiscoverEnemy",
+          "groups": [0],
+          "result_commands": [{"type": "QstLayoutFlagOn", "Param1": 3007}]
+        },
+        {
+          "type": "KillGroup",
+          "reset_group": false,
+          "announce_type": "Accept",
+          "groups": [0],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 0}],
+          "check_commands": [{"type": "MyQstFlagOff", "Param1": 1}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "comment": "Group 0 boss HP check",
+          "type": "Raw",
+          "check_commands": [{"type": "EmHpLess", "Param1": 824, "Param2": 4, "Param3": 5, "Param4": 40}]
+        },
+        {
+          "type": "KillGroup",
+          "announce_type": "Update",
+          "groups": [1],
+          "result_commands": [{"type": "MyQstFlagOn", "Param1": 1}, {"type": "StartTimer", "Param1": 1, "Param2": 30}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "MyQstFlagOff", "Param1": 1}],
+          "check_commands": [{"type": "IsMyquestLayoutFlagOff", "Param1": 3009}, {"type": "MyQstFlagOn", "Param1": 0}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 568}]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "Raw",
+          "check_commands": [{"type": "IsEndTimer", "Param1": 1}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 570}, {"type": "StartTimer", "Param1": 2, "Param2": 15}],
+          "check_commands": [{"type": "IsEndTimer", "Param1": 2}, {"type": "MyQstFlagOn", "Param1": 1}]
+        },
+        {
+          "type": "Raw",
+          "announce_type": "Update",
+          "result_commands": [{"type": "CallGeneralAnnounce", "Param1": 1, "Param2": 569}, {"type": "QstLayoutFlagOn", "Param1": 3009}]
+        }
+      ]
+    }
+  ]
+}

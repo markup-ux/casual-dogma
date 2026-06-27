@@ -1,0 +1,143 @@
+{
+  "state_machine": "GenericStateMachine",
+  "type": "World",
+  "comment": "Wealth and Power",
+  "quest_id": 21014003,
+  "base_level": 73,
+  "minimum_item_rank": 0,
+  "discoverable": true,
+  "area_id": "ElanWaterGrove",
+  "news_image": 538,
+  "order_conditions": [{"type": "AreaRank", "Param1": 14, "Param2": 7}],
+  "rewards": [
+    {
+      "type": "exp",
+      "amount": 19665
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "Gold",
+      "amount": 4408
+    },
+    {
+      "type": "wallet",
+      "wallet_type": "RiftPoints",
+      "amount": 555
+    },
+    {
+      "type": "select",
+      "loot_pool": [
+        {
+          "comment": "Twisted Iron Scrap",
+          "item_id": 15919,
+          "num": 4
+        },
+        {
+          "comment": "Superior Strong Gala Extract",
+          "item_id": 9364,
+          "num": 3
+        },
+        {
+          "comment": "Panacea",
+          "item_id": 41,
+          "num": 3
+        }
+      ]
+    }
+  ],
+  "enemy_groups": [
+    {
+      "stage_id": {
+        "id": 425,
+        "group_id": 3
+      },
+      "placement_type": "manual",
+      "enemies": [
+        {
+          "comment": "Troll",
+          "enemy_id": "0x015040",
+          "level": 75,
+          "exp": 12175,
+          "is_boss": true,
+          "index": 3
+        },
+        {
+          "comment": "Little Spine",
+          "enemy_id": "0x015507",
+          "level": 75,
+          "exp": 2435,
+          "index": 13
+        },
+        {
+          "comment": "Little Spine",
+          "enemy_id": "0x015507",
+          "level": 75,
+          "exp": 2435,
+          "index": 14
+        },
+        {
+          "comment": "Little Spine",
+          "enemy_id": "0x015507",
+          "level": 75,
+          "exp": 2435,
+          "index": 15
+        },
+        {
+          "comment": "Little Spine",
+          "enemy_id": "0x015507",
+          "level": 75,
+          "exp": 2435,
+          "index": 16
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "NpcTalkAndOrder",
+      "stage_id": {
+        "id": 339
+      },
+      "npc_id": "Dirith1",
+      "message_id": 19396
+    },
+    {
+      "type": "DeliverItems",
+      "stage_id": {
+        "id": 339
+      },
+      "npc_id": "Dirith1",
+      "announce_type": "Accept",
+      "result_commands": [
+        {"type": "QstTalkChg", "Param1": 559, "Param2": 19397}
+      ],
+      "items": [
+        {"id": 15921, "amount": 4, "comment": "Shrieking Mushroom"}
+      ],
+      "message_id": 19398
+    },
+    {
+      "type": "SeekOutEnemiesAtMarkedLocation",
+      "announce_type": "Update",
+      "result_commands": [
+        {"type": "QstTalkChg", "Param1": 559, "Param2": 19399}
+      ],
+      "groups": [0]
+    },
+    {
+      "type": "KillGroup",
+      "announce_type": "Update",
+      "reset_group": false,
+      "groups": [ 0 ]
+    },
+    {
+      "type": "TalkToNpc",
+      "stage_id": {
+        "id": 339
+      },
+      "announce_type": "Update",
+      "npc_id": "Dirith1",
+      "message_id": 19400
+    }
+  ]
+}
