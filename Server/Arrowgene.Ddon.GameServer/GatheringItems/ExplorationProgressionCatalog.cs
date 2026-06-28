@@ -151,8 +151,11 @@ namespace Arrowgene.Ddon.GameServer.GatheringItems
         }
 
         /// <summary>
+        /// Resolves the loot tier from job level, area rank, and dungeon sync level.
         /// When <paramref name="ignoreAreaRankWhenSynced"/> is true and the stage has a sync level,
         /// area rank is excluded so a rec-6 dungeon stays a rec-6 loot band even at high area rank.
+        /// Loot never exceeds the player's job level when they are under-leveled for the zone; over-leveled
+        /// players in sync dungeons receive sync-level gear instead of upgrades above the zone.
         /// </summary>
         public static uint ResolveEffectiveTier(
             uint playerLevel,
@@ -163,11 +166,15 @@ namespace Arrowgene.Ddon.GameServer.GatheringItems
         {
             if (syncRecommendedLevel > 0 && ignoreAreaRankWhenSynced)
             {
-                return Math.Max(playerLevel, syncRecommendedLevel);
+                if (playerLevel > syncRecommendedLevel)
+                {
+                    return syncRecommendedLevel;
+                }
+
+                return playerLevel;
             }
 
-            uint areaTier = (uint)Math.Floor(areaRank * areaRankTierMultiplier);
-            return Math.Max(playerLevel, Math.Max(areaTier, syncRecommendedLevel));
+            return playerLevel;
         }
 
         /// <summary>
